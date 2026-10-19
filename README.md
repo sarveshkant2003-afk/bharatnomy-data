@@ -12,7 +12,7 @@ GitHub shows it automatically when you open the folder.
 |---|---|---|---|---|
 | [`moafw-lus/`](moafw-lus/) | Land Use Statistics at a Glance 2024-25, MoA&FW | All 10 tables: nine-fold land use, irrigation by source and by crop, area under 80+ crops | All India; state | 1950-51 to 2024-25 (national); 2015-16 to 2024-25 (state) |
 | [`rbi-hsis/`](rbi-hsis/) | RBI Handbook of Statistics on Indian States | Number of factories (from ASI); net sown and net irrigated area (from Land Use Statistics) | State | 2004-05 to 2023-24 / 2020-21 |
-| [`fsi-isfr/`](fsi-isfr/) | India State of Forest Report 2023, Forest Survey of India | Forest and tree cover | State | 2023 |
+| [`fsi-isfr/`](fsi-isfr/) | India State of Forest Report 2023, Forest Survey of India | Forest cover by canopy density for 750 districts; forest and tree cover by state | District; state | 2023 |
 | [`mohua-swachhatam/`](mohua-swachhatam/) | MoHUA, Swachhatam portal (via Lok Sabha answer) | Municipal solid waste generated and processed | State | Dec 2023 |
 
 ## Find data by topic
@@ -23,7 +23,7 @@ GitHub shows it automatically when you open the folder.
 | Irrigation (by source, by crop) | `moafw-lus/` (tables 2, 3, 6-9); older state years in `rbi-hsis/` |
 | Crop area | `moafw-lus/` (tables 4, 10) |
 | Factories, industry | `rbi-hsis/` |
-| Forest and tree cover (satellite) | `fsi-isfr/` |
+| Forest cover by district, forest and tree cover (satellite) | `fsi-isfr/` |
 | Urban solid waste | `mohua-swachhatam/` |
 
 ## File naming

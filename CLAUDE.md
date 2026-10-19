@@ -128,7 +128,7 @@ Keep it short and plain: it is for teammates who will never open the code.
 
 ## Known gaps (update this list as you fix them)
 
-- `rbi-hsis/`, `fsi-isfr/` and `mohua-swachhatam/` still hold one table each, taken from republications. Replace or extend them with the full releases: all state tables of the RBI Handbook; all ISFR 2023 tables from the FSI report PDFs (including district-level forest cover); the Swachhatam portal's full data if it can be downloaded.
+- `rbi-hsis/`, `fsi-isfr/` and `mohua-swachhatam/` still hold one table each, taken from republications. Replace or extend them with the full releases: all state tables of the RBI Handbook; the remaining ISFR 2023 tables (district forest cover is done; fire, carbon, tree cover, forest types, mangroves etc. are still only in `fsi-isfr/raw/`); the Swachhatam portal's full data if it can be downloaded.
 - `rbi-hsis/` files have no `raw/` files or `scripts/` yet.
 - `moafw-lus/` table 5 is missing columns 12-21 for seven states because a page is duplicated in the source PDF. The LUS portal (https://data.desagri.gov.in/weblus/classification-of-area-report-web) may have them.
 - State land use before 2015-16 is only in `rbi-hsis/` (net sown and net irrigated area). Older LUS editions would give the full tables.
