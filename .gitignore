@@ -9,3 +9,6 @@ __pycache__/
 
 # scratch work
 tmp/
+
+# API download cache
+mospi-asi/raw/_chunks/

@@ -6,20 +6,25 @@ Also read @README.md: its naming pattern, source codes and conventions are bindi
 ## What this repo is
 
 A shared, browsable store of public datasets for Bharatnomy's research (first use: heat resilience).
-It is not a database yet: one folder per theme, tidy CSV files, and a README.md in every folder.
+It is not a database yet: one folder per source, tidy CSV files, and a README.md in every folder.
 Most teammates only read it on GitHub, so every file must make sense in the browser.
+
+**Keep the whole release.** The point of the repo is to collect everything a source publishes, not just the
+variable the current task needs: other tables and indicators will help later work. When adding a source, take
+all of its tables (every table in the publication, every indicator in the API, every geography level it offers).
 
 ## Main job: add a dataset
 
-When I say something like "add this: <link | file | pasted table>", do the whole job without asking.
+When I say something like "add this: <link | file | pasted table>", do the whole job without asking,
+for the whole release that table belongs to (see above).
 Ask only when the source itself is ambiguous (which table, year, unit or geography I mean) or a rule below says stop.
 
-1. **Get the original.** Download it with `curl -L` into `<theme>/raw/`, named like the CSV will be (same base name, original extension). Prefer the agency's own CSV/XLSX, then PDF, then an HTML table. If the site needs a login, form, CAPTCHA or API key, or blocks scripts, stop and ask me to put the file in `raw/` myself.
-2. **Extract exactly what is published.** Parse the file with code; never retype numbers that can be parsed. If the only copy is a scan or image, tell me before transcribing and say so in the README.
-3. **Clean** it to the CSV rules below. Save the conversion code as `scripts/<csv base name>.py`: it reads from `raw/`, writes the CSV, and can be re-run.
-4. **Name** the file with the pattern in README.md. New theme: new folder (lowercase, hyphenated). New source: add its code to the Source codes table in README.md.
+1. **Get the original.** Find the original agency's full release (not a republication of one table) and download it with `curl -L` into `<source>/raw/`, named `<source>_<publication>_<period>.<ext>`. Prefer the agency's own CSV/XLSX or API, then PDF, then an HTML table. If the site needs a login, form, CAPTCHA or API key, or blocks scripts, stop and ask me to put the file in `raw/` myself. For an API, save a fetch script in `scripts/` that writes the raw responses to `raw/`.
+2. **Extract exactly what is published, all of it.** Convert every table in the release to its own CSV. Parse the file with code; never retype numbers that can be parsed. If the only copy is a scan or image, tell me before transcribing and say so in the README. For PDFs, place numbers by their x-position under the column headers, so blank cells stay blank instead of shifting values left.
+3. **Clean** it to the CSV rules below. Save the conversion code in `scripts/` (one script per release is fine): it reads from `raw/`, writes the CSVs, and can be re-run. Save the checks as a script too.
+4. **Name** the files with the pattern in README.md. New source: new folder named after its source code, and add the code to the Source codes table in README.md.
 5. **Check** it (section below). Never edit values to make a check pass; report the failure instead.
-6. **Document** it: write or update `<theme>/README.md` from the template below, and add a row to the "What's here" table in the root README.md.
+6. **Document** it: write or update `<source>/README.md` from the template below, and update the "What's here" and "Find data by topic" tables in the root README.md.
 7. **Report back:** file path, rows x columns, period covered, every check with its result, and anything odd in the source.
 8. **Commit** (see Git). Do not push unless I ask.
 
@@ -33,8 +38,9 @@ Newer release of an existing dataset: replace the CSV (use `git mv` if the perio
 - Data with more than one period is stored long: one row per place per period, one column per variable.
 - Column names in snake_case with the unit as a suffix: `_sq_km`, `_000_ha` (thousand hectares), `_tpd` (tonnes per day), `_pct`, `_inr_crore`. Keep the source's unit; never rescale.
 - Numbers: plain digits, `.` as decimal. Convert Indian grouping (`1,23,456.78` becomes `123456.78`). Keep the source's decimals. No `%`, `₹` or words in numeric cells.
-- A blank cell needs a reason in a `source_flag` column, using only: `not_applicable`, `not_available`, `estimated`, `provisional`, `revised`. Say in the README which source symbol maps to which flag. Leave out `source_flag` if the source has no markers or blanks.
-- Keep published totals as rows: `All India` in state files, `State total` in district files.
+- A blank cell needs a reason in a `source_flag` column, using only: `not_applicable`, `not_available`, `estimated`, `provisional`, `revised`. Say in the README which source symbol maps to which flag. Leave out `source_flag` if the source has no markers or blanks. If the source leaves cells blank without saying why, keep them blank and say so in the README.
+- Symbols printed next to individual numbers that the flag list can't express (undefined `*`, bracketed sub-figures, `N.A.S.`) go in a `source_marks` column as `<column>:<symbol>`, separated by `; `. Explain each symbol in the README, or say that the source doesn't.
+- Keep published totals as rows: `All India` in state files, `State total` in district files. National-only tables also get `state_ut` = `All India`.
 - Store data as published: no derived columns (shares, per capita, growth) and no filling of gaps.
 - Sort by the key columns, totals last.
 
@@ -65,7 +71,7 @@ Districts: keep the source's spelling. If the source gives LGD or Census codes, 
 - If the source prints totals, recompute them and compare. Report differences; never change data to match.
 - Logical limits: percentages within 0-100; a part never larger than its whole (e.g. irrigated area <= sown area).
 - Spot check: show me 5 random rows next to the same cells in the source.
-- Size: a CSV over 25 MB, stop and ask. Never commit any file over 50 MB (GitHub warns at 50 MB and rejects over 100 MB). Raw files over 25 MB are not committed; put their link in the README instead.
+- Size: a CSV over 25 MB, split it (by year range or by sub-table) and say so in the README; if it can't be split sensibly, stop and ask. Never commit any file over 50 MB (GitHub warns at 50 MB and rejects over 100 MB). Raw files over 25 MB are not committed; put their link in the README instead.
 
 ## Folder README template
 
@@ -122,6 +128,8 @@ Keep it short and plain: it is for teammates who will never open the code.
 
 ## Known gaps (update this list as you fix them)
 
-- `land-use/` and `irrigation/` stop at 2020-21. RBI's Handbook of Statistics on Indian States 2024-25 has both up to 2023-24 (net irrigated area is Table 56 there). Update the two together so they stay joinable on `state_ut` + `year`.
-- The first five datasets have no `raw/` files yet. Save the originals (the RBI table pages offer XLSX downloads; the Lok Sabha answer is a PDF; the forest table is in a PIB release), confirm they match the CSVs, then add their `scripts/`.
-- Everything is state level. The heat-resilience work needs district-level data next.
+- `rbi-hsis/`, `fsi-isfr/` and `mohua-swachhatam/` still hold one table each, taken from republications. Replace or extend them with the full releases: all state tables of the RBI Handbook; all ISFR 2023 tables from the FSI report PDFs (including district-level forest cover); the Swachhatam portal's full data if it can be downloaded.
+- `rbi-hsis/` files have no `raw/` files or `scripts/` yet.
+- `moafw-lus/` table 5 is missing columns 12-21 for seven states because a page is duplicated in the source PDF. The LUS portal (https://data.desagri.gov.in/weblus/classification-of-area-report-web) may have them.
+- State land use before 2015-16 is only in `rbi-hsis/` (net sown and net irrigated area). Older LUS editions would give the full tables.
+- Almost everything is state level. The heat-resilience work needs district-level data next.
