@@ -61,7 +61,7 @@ New source? Add a row here: `<agency>-<series>`, lowercase.
 - State/UT names are spelled the same way in every file, so files can be joined.
 - `All India` rows are national totals as published. Leave them out before adding states up.
 - `source_flag` gives the reason for a blank or a status (`provisional`, `estimated`, ...). `source_marks` keeps any other symbol the source printed next to a number.
-- Original downloads go in the folder's `raw/` subfolder (when under 25 MB); code that converts them goes in `scripts/`.
+- Original downloads go in the folder's `raw/` subfolder (when under 25 MB).
 
 ## Adding a dataset
 
@@ -69,5 +69,3 @@ New source? Add a row here: `<agency>-<series>`, lowercase.
 2. Convert every table in the release, not just the one you need, and name each file using the pattern above.
 3. Add a `README.md` (or a section in the existing one): what the data is, source with link and download date, one line per column.
 4. Commit with a message like `Add <dataset> (<source>, <period>)`.
-
-Using Claude Code? Its rules for this repo are in `CLAUDE.md`, so you can just ask it to `add this dataset: <link>`.

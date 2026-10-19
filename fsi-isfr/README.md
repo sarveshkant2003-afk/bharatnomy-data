@@ -14,7 +14,6 @@ with tree canopy density of at least 10%, whatever its ownership or legal status
 
 Forest cover by canopy density in every district, from the "District-wise Forest Cover" table (Table 10.x.3) of each
 state chapter in Volume II. 750 districts in 36 states/UTs, plus a `State total` row per state.
-Code: [`scripts/isfr_2023_district.py`](scripts/); checks: [`scripts/check_isfr_district.py`](scripts/).
 
 | Column | Meaning |
 |---|---|

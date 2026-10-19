@@ -10,7 +10,6 @@ state series cover 2015-16 to 2024-25. All areas are in thousand hectares.
 - **Link:** https://desagri.gov.in/document-report-category/land-use-statistics-at-a-glance/ (file: https://desagri.gov.in/wp-content/uploads/2026/06/LUS-Publication-2024-25.pdf)
 - **Original:** [`raw/moafw-lus_land-use-statistics-at-a-glance_2024-25.pdf`](raw/) (287 pages; tables on pages 105-274 of the printed numbering)
 - **Downloaded:** 19 Oct 2026
-- **Code:** [`scripts/lus_2024-25.py`](scripts/) reads the PDF and writes all ten CSVs; [`scripts/check_lus.py`](scripts/) runs the checks.
 
 ## Files
 
