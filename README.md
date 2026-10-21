@@ -22,6 +22,16 @@ One folder per table, named by the [naming rules](#folder-names) below. Each fol
 | [`AGR_net-sown-area_2004-05-to-2020-21_STATES_RBI`](AGR_net-sown-area_2004-05-to-2020-21_STATES_RBI/) | Net sown area by state (older years) | RBI Handbook of Statistics on Indian States |
 | [`ENV_forest-cover_2023_STATES_FSI_DIST`](ENV_forest-cover_2023_STATES_FSI_DIST/) | Forest cover by district | India State of Forest Report 2023 |
 | [`ENV_forest-tree-cover_2023_STATES_FSI`](ENV_forest-tree-cover_2023_STATES_FSI/) | Forest and tree cover by state | India State of Forest Report 2023 |
+| [`IND_asi-nic-1987-2-digit_1992-93-to-1997-98_STATES_MOSPI`](IND_asi-nic-1987-2-digit_1992-93-to-1997-98_STATES_MOSPI/) | Annual Survey of Industries by industry (NIC 1987 2-digit), by state | MoSPI ASI API |
+| [`IND_asi-nic-1987-3-digit_1992-93-to-1997-98_STATES_MOSPI`](IND_asi-nic-1987-3-digit_1992-93-to-1997-98_STATES_MOSPI/) | Annual Survey of Industries by industry (NIC 1987 3-digit), by state | MoSPI ASI API |
+| [`IND_asi-nic-1998-2-digit_1998-99-to-2003-04_STATES_MOSPI`](IND_asi-nic-1998-2-digit_1998-99-to-2003-04_STATES_MOSPI/) | Annual Survey of Industries by industry (NIC 1998 2-digit), by state | MoSPI ASI API |
+| [`IND_asi-nic-1998-3-digit_1998-99-to-2003-04_IN_MOSPI`](IND_asi-nic-1998-3-digit_1998-99-to-2003-04_IN_MOSPI/) | Annual Survey of Industries by industry (NIC 1998 3-digit), All India | MoSPI ASI API |
+| [`IND_asi-nic-2004-2-digit_2004-05-to-2007-08_STATES_MOSPI`](IND_asi-nic-2004-2-digit_2004-05-to-2007-08_STATES_MOSPI/) | Annual Survey of Industries by industry (NIC 2004 2-digit), by state | MoSPI ASI API |
+| [`IND_asi-nic-2004-3-digit_2004-05-to-2007-08_STATES_MOSPI`](IND_asi-nic-2004-3-digit_2004-05-to-2007-08_STATES_MOSPI/) | Annual Survey of Industries by industry (NIC 2004 3-digit), by state | MoSPI ASI API |
+| [`IND_asi-nic-2004-4-digit_2004-05-to-2007-08_IN_MOSPI`](IND_asi-nic-2004-4-digit_2004-05-to-2007-08_IN_MOSPI/) | Annual Survey of Industries by industry (NIC 2004 4-digit), All India | MoSPI ASI API |
+| [`IND_asi-nic-2008-2-digit_2008-09-to-2023-24_STATES_MOSPI`](IND_asi-nic-2008-2-digit_2008-09-to-2023-24_STATES_MOSPI/) | Annual Survey of Industries by industry (NIC 2008 2-digit), by state | MoSPI ASI API |
+| [`IND_asi-nic-2008-3-digit_2008-09-to-2023-24_STATES_MOSPI`](IND_asi-nic-2008-3-digit_2008-09-to-2023-24_STATES_MOSPI/) | Annual Survey of Industries by industry (NIC 2008 3-digit), by state | MoSPI ASI API |
+| [`IND_asi-nic-2008-4-digit_2008-09-to-2023-24_IN_MOSPI`](IND_asi-nic-2008-4-digit_2008-09-to-2023-24_IN_MOSPI/) | Annual Survey of Industries by industry (NIC 2008 4-digit), All India | MoSPI ASI API |
 | [`IND_factories_2004-05-to-2023-24_STATES_RBI`](IND_factories_2004-05-to-2023-24_STATES_RBI/) | Number of factories by state | RBI Handbook of Statistics on Indian States |
 | [`WAT_msw-generated-processed_2023-12_STATES_MOHUA`](WAT_msw-generated-processed_2023-12_STATES_MOHUA/) | Municipal solid waste generated and processed | MoHUA Swachhatam portal |
 
@@ -34,7 +44,7 @@ Original source files (PDFs, API downloads) are in [`_sources/`](_sources/), one
 | Land use, net sown area, fallow | `AGR_land-use-classification_*`; older state years in `AGR_net-sown-area_*_RBI` |
 | Irrigation | `AGR_*irrigated-area*`; older state years in `AGR_net-irrigated-area_*_RBI` |
 | Crop area | `AGR_area-under-crops_*`, `AGR_irrigated-area-by-crop_*` |
-| Factories, industry | `IND_*` |
+| Factories, industry (output, employment, wages, capital by industry) | `IND_asi-*` (1992-93 onwards); `IND_factories_*_RBI` |
 | Forest cover | `ENV_forest-*` |
 | Urban solid waste | `WAT_msw-*` |
 
@@ -62,6 +72,7 @@ Example: `AGR_area-under-crops_2015-16-to-2024-25_STATES_MOAFW`.
 | `FSI` | Forest Survey of India |
 | `MOAFW` | Ministry of Agriculture & Farmers' Welfare |
 | `MOHUA` | Ministry of Housing & Urban Affairs |
+| `MOSPI` | Ministry of Statistics and Programme Implementation |
 | `RBI` | Reserve Bank of India (republished tables; the original agency is in each README) |
 
 ## Conventions

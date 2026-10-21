@@ -11,7 +11,7 @@ __pycache__/
 tmp/
 
 # API download cache
-mospi-asi/raw/_chunks/
+_sources/mospi-asi/raw/_chunks/
 
 # kept locally, not in the repo
 CLAUDE.md
