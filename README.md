@@ -1,5 +1,7 @@
 # Bharatnomy Data Repository
 
+**[Search the data →](https://sarveshkant2003-afk.github.io/bharatnomy-data/)** by topic, state, year or source.
+
 Public datasets for Bharatnomy's research. One folder per table; each folder's `README.md` gives the source and explains every column.
 
 ## What's here
@@ -74,6 +76,10 @@ Example: `AGR_area-under-crops_2015-16-to-2024-25_STATES_MOAFW`.
 | `MOHUA` | Ministry of Housing & Urban Affairs |
 | `MOSPI` | Ministry of Statistics and Programme Implementation |
 | `RBI` | Reserve Bank of India (republished tables; the original agency is in each README) |
+
+## Search page
+
+[`index.html`](index.html) is the search page, published with GitHub Pages at the link above. It reads `catalog.js`, which `tools/build_catalog.py` builds from every folder's name, README and CSV. After adding or changing a dataset, run `python3 tools/build_catalog.py` and commit `catalog.js` with it.
 
 ## Conventions
 

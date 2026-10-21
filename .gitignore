@@ -16,3 +16,4 @@ _sources/mospi-asi/raw/_chunks/
 # kept locally, not in the repo
 CLAUDE.md
 *.py
+!tools/build_catalog.py

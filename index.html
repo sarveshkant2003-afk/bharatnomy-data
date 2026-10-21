@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bharatnomy Data Search</title>
+<meta name="description" content="Search Bharatnomy's public datasets by topic, place, year and source.">
+<style>
+:root {
+  --bg: #f7f7f5; --surface: #ffffff; --text: #1d1d1b; --muted: #5f6368; --border: #e2e2dd;
+  --accent: #0b6e4f; --accent-soft: #e3f2ec; --mark: #fff1a8; --chip: #eef0f2; --code: #f2f2ef;
+  --shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141514; --surface: #1d1f1e; --text: #ecebe6; --muted: #a3a6a2; --border: #333634;
+    --accent: #5fcf9f; --accent-soft: #1f3a2f; --mark: #5c4f0f; --chip: #2a2d2b; --code: #262927;
+    --shadow: none;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141514; --surface: #1d1f1e; --text: #ecebe6; --muted: #a3a6a2; --border: #333634;
+  --accent: #5fcf9f; --accent-soft: #1f3a2f; --mark: #5c4f0f; --chip: #2a2d2b; --code: #262927;
+  --shadow: none;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+a { color: var(--accent); }
+code, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .86em; }
+mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 1px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+header { background: var(--surface); border-bottom: 1px solid var(--border); }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 16px; }
+.top { padding-top: 22px; padding-bottom: 18px; }
+.brand { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+h1 { font-size: 21px; margin: 0; letter-spacing: -.01em; }
+.brand a { font-size: 13px; }
+.searchbox { position: relative; margin-top: 14px; }
+.searchbox input { width: 100%; font: inherit; font-size: 17px; padding: 13px 44px 13px 16px; border: 1px solid var(--border); border-radius: 10px; background: var(--bg); color: var(--text); }
+.searchbox input:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px var(--accent-soft); }
+.searchbox kbd { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); font: 12px ui-monospace, monospace; color: var(--muted); border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px; }
+.hints { margin-top: 10px; font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.hints button { font: inherit; font-size: 13px; background: var(--chip); color: var(--text); border: 0; border-radius: 999px; padding: 3px 10px; cursor: pointer; }
+.hints button:hover { background: var(--accent-soft); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.chips:empty { display: none; }
+.chip { display: inline-flex; align-items: center; gap: 6px; background: var(--accent-soft); color: var(--text); border-radius: 999px; padding: 3px 4px 3px 10px; font-size: 13px; }
+.chip b { font-weight: 600; }
+.chip button { border: 0; background: transparent; color: var(--muted); cursor: pointer; font-size: 15px; line-height: 1; padding: 0 6px; border-radius: 999px; }
+.chip button:hover { color: var(--text); }
+.chip.info { background: var(--chip); padding-right: 10px; }
+
+main { display: grid; grid-template-columns: 230px 1fr; gap: 28px; padding: 22px 0 60px; }
+aside h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 18px 0 6px; }
+aside h2:first-child { margin-top: 0; }
+.facet label { display: flex; align-items: center; gap: 8px; padding: 3px 0; font-size: 14px; cursor: pointer; }
+.facet label .n { margin-left: auto; color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+.facet label.zero { color: var(--muted); }
+.years { display: flex; gap: 6px; align-items: center; font-size: 13px; }
+.years input { width: 70px; font: inherit; padding: 5px 7px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); color: var(--text); }
+.clear { margin-top: 16px; font: inherit; font-size: 13px; background: none; border: 0; color: var(--accent); cursor: pointer; padding: 0; }
+.filter-toggle { display: none; }
+
+.status { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; margin-bottom: 12px; box-shadow: var(--shadow); }
+.card h3 { font-size: 17px; margin: 0 0 4px; line-height: 1.35; }
+.name { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
+.name code { background: var(--code); padding: 2px 6px; border-radius: 5px; word-break: break-all; }
+.copy { font: inherit; font-size: 12px; background: none; border: 1px solid var(--border); color: var(--muted); border-radius: 5px; padding: 1px 7px; cursor: pointer; }
+.copy:hover { color: var(--text); }
+.badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+.badge { font-size: 12px; background: var(--chip); border-radius: 5px; padding: 2px 7px; color: var(--text); white-space: nowrap; }
+.badge.cat { background: var(--accent-soft); }
+.desc { margin: 0 0 8px; }
+.meta { font-size: 13px; color: var(--muted); margin: 0 0 8px; }
+.matches { font-size: 13px; margin: 8px 0; padding: 8px 10px; background: var(--bg); border-radius: 7px; }
+.matches div { margin: 2px 0; }
+.links { display: flex; flex-wrap: wrap; gap: 14px; font-size: 14px; margin-top: 10px; }
+details { margin-top: 8px; font-size: 13px; }
+summary { cursor: pointer; color: var(--muted); }
+summary:hover { color: var(--text); }
+.cols { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 8px; }
+.cols code { background: var(--code); padding: 1px 6px; border-radius: 4px; }
+.cols code.hit { background: var(--mark); }
+.preview { overflow-x: auto; margin-top: 8px; border: 1px solid var(--border); border-radius: 6px; }
+.preview table { border-collapse: collapse; font-size: 12px; white-space: nowrap; }
+.preview th, .preview td { padding: 4px 8px; border-bottom: 1px solid var(--border); text-align: left; }
+.preview th { background: var(--bg); font-weight: 600; position: sticky; top: 0; }
+.preview tr:last-child td { border-bottom: 0; }
+.notes { margin: 6px 0 0; padding-left: 18px; }
+.empty { text-align: center; padding: 40px 16px; color: var(--muted); }
+.near { font-size: 13px; color: var(--muted); margin: 18px 0 10px; }
+footer { color: var(--muted); font-size: 13px; padding: 0 0 30px; }
+
+@media (max-width: 760px) {
+  main { grid-template-columns: 1fr; gap: 12px; }
+  aside { display: none; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px; }
+  aside.open { display: block; }
+  .filter-toggle { display: inline-block; font: inherit; font-size: 14px; background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 6px 12px; cursor: pointer; }
+  .searchbox kbd { display: none; }
+  .searchbox input { padding-right: 16px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap top">
+    <div class="brand">
+      <h1>Bharatnomy Data Search</h1>
+      <a href="https://github.com/sarveshkant2003-afk/bharatnomy-data">Repository on GitHub</a>
+    </div>
+    <div class="searchbox">
+      <label for="q" class="visually-hidden" style="position:absolute;left:-9999px">Search datasets</label>
+      <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search by topic, state, year or source, e.g. irrigation kerala 2018">
+      <kbd>/</kbd>
+    </div>
+    <div class="chips" id="chips" aria-live="polite"></div>
+    <div class="hints" id="hints">Try:
+      <button type="button">irrigation kerala 2018</button>
+      <button type="button">district forest</button>
+      <button type="button">factory wages</button>
+      <button type="button">solid waste</button>
+      <button type="button">crop area 1960</button>
+      <button type="button">RBI</button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <main>
+    <div>
+      <button type="button" class="filter-toggle" id="filterToggle" aria-expanded="false">Filters</button>
+      <aside id="filters" aria-label="Filters">
+        <h2>Category</h2><div class="facet" id="f-category"></div>
+        <h2>Geography</h2><div class="facet" id="f-geo"></div>
+        <h2>Source</h2><div class="facet" id="f-source"></div>
+        <h2>Years covered</h2>
+        <div class="years">
+          <input id="yFrom" type="number" inputmode="numeric" placeholder="from" aria-label="From year">
+          <span>to</span>
+          <input id="yTo" type="number" inputmode="numeric" placeholder="to" aria-label="To year">
+        </div>
+        <button type="button" class="clear" id="clearAll">Clear search and filters</button>
+      </aside>
+    </div>
+    <section aria-label="Results">
+      <p class="status" id="status" aria-live="polite"></p>
+      <div id="results"></div>
+    </section>
+  </main>
+  <footer>Built from each dataset's folder name, README and CSV by <code>tools/build_catalog.py</code>. After adding data, run <code>python3 tools/build_catalog.py</code> and commit <code>catalog.js</code>.</footer>
+</div>
+
+<script src="catalog.js"></script>
+<script>
+"use strict";
+const REPO = "sarveshkant2003-afk/bharatnomy-data", BRANCH = "main";
+const CATALOG = window.CATALOG || [];
+
+// ---- Reference lists (from the naming SOP) ----
+const CATEGORIES = {
+  AGR: "Agriculture", NAC: "National and State Accounts", PRC: "Prices and Inflation", IND: "Industry and Mining",
+  LAB: "Labour and Employment", CON: "Household Consumption", POP: "Population", HLT: "Health and Nutrition",
+  EDU: "Education", ENG: "Energy and Power", CLM: "Climate and Weather", ENV: "Environment and Forests",
+  WAT: "Water and Sanitation", HOU: "Housing", TRN: "Transport", COM: "Communication", FIN: "Banking and Finance",
+  PUB: "Public Finance", TRD: "Trade", TOU: "Tourism", SOC: "Social Welfare", GOV: "Governance and Elections", SDG: "SDG and Indices",
+};
+// Words that hint at a category: they boost that category's datasets but don't exclude others.
+const CATEGORY_WORDS = {
+  agriculture: "AGR", agricultural: "AGR", farm: "AGR", farming: "AGR", industry: "IND", industrial: "IND", mining: "IND",
+  manufacturing: "IND", labour: "LAB", labor: "LAB", population: "POP", demographic: "POP", health: "HLT", nutrition: "HLT",
+  education: "EDU", school: "EDU", energy: "ENG", climate: "CLM", weather: "CLM", environment: "ENV", sanitation: "WAT",
+  housing: "HOU", transport: "TRN", banking: "FIN", finance: "FIN", trade: "TRD", tourism: "TOU", welfare: "SOC",
+  election: "GOV", governance: "GOV", sdg: "SDG", price: "PRC", inflation: "PRC", consumption: "CON",
+};
+const SOURCES = {
+  MOAFW: "Ministry of Agriculture & Farmers' Welfare", FSI: "Forest Survey of India", MOHUA: "Ministry of Housing & Urban Affairs",
+  MOSPI: "Ministry of Statistics (MoSPI)", RBI: "Reserve Bank of India", IMD: "India Meteorological Department",
+  CENSUS: "Census of India", BNY: "Bharatnomy",
+};
+const STATES = {
+  AN: "Andaman & Nicobar Islands", AP: "Andhra Pradesh", AR: "Arunachal Pradesh", AS: "Assam", BR: "Bihar", CH: "Chandigarh",
+  CG: "Chhattisgarh", DH: "Dadra & Nagar Haveli and Daman & Diu", DL: "Delhi", GA: "Goa", GJ: "Gujarat", HR: "Haryana",
+  HP: "Himachal Pradesh", JK: "Jammu & Kashmir", JH: "Jharkhand", KA: "Karnataka", KL: "Kerala", LA: "Ladakh", LD: "Lakshadweep",
+  MP: "Madhya Pradesh", MH: "Maharashtra", MN: "Manipur", ML: "Meghalaya", MZ: "Mizoram", NL: "Nagaland", OD: "Odisha",
+  PY: "Puducherry", PB: "Punjab", RJ: "Rajasthan", SK: "Sikkim", TN: "Tamil Nadu", TS: "Telangana", TR: "Tripura",
+  UP: "Uttar Pradesh", UK: "Uttarakhand", WB: "West Bengal",
+};
+const STATE_ALIASES = {
+  "andaman": "AN", "andaman and nicobar": "AN", "nicobar": "AN", "a&n": "AN", "orissa": "OD", "pondicherry": "PY",
+  "uttaranchal": "UK", "jammu": "JK", "kashmir": "JK", "jammu and kashmir": "JK", "j&k": "JK", "new delhi": "DL", "nct of delhi": "DL",
+  "chattisgarh": "CG", "dadra": "DH", "daman": "DH", "diu": "DH", "telengana": "TS", "bengal": "WB",
+};
+// Synonyms: what people type -> words used in the data. Extend freely.
+const SYNONYMS = {
+  factory: ["factories"], plant: ["factories"], jobs: ["workers", "employed", "engaged"], job: ["workers", "employed"],
+  employment: ["workers", "employed", "engaged"], workers: ["employed", "engaged"], labour: ["workers", "mandays"],
+  salary: ["wages", "emoluments"], salaries: ["wages", "emoluments"], wage: ["wages", "emoluments"], pay: ["wages", "emoluments"],
+  gdp: ["value added", "output"], gva: ["gross value added"], income: ["net income"], profit: ["net profit"],
+  investment: ["invested capital", "capital formation"], electricity: ["electricity"], power: ["electricity"],
+  rain: ["rainfall"], rains: ["rainfall"], monsoon: ["rainfall"],
+  garbage: ["msw", "waste"], trash: ["msw", "waste"], waste: ["msw"], solid: ["msw"], municipal: ["msw"],
+  tree: ["forest"], trees: ["forest"], forests: ["forest"], woods: ["forest"], canopy: ["forest"], greenery: ["forest", "tree"],
+  crop: ["crops"], farming: ["crops", "sown"], agriculture: ["crops", "sown", "irrigated", "land"], cultivation: ["sown", "cultivated"],
+  farmland: ["sown", "agricultural land"], water: ["irrigated", "irrigation"], irrigation: ["irrigated"],
+  wells: ["tube wells", "wells"], groundwater: ["tube wells", "wells"], canal: ["canals"],
+  paddy: ["rice"], wheat: ["wheat"], pulses: ["pulses"], cereals: ["cereals"], grain: ["foodgrains"], grains: ["foodgrains"],
+  landuse: ["land use"], fallow: ["fallow"], pasture: ["pastures"], industry: ["nic", "factories", "asi"], industries: ["nic", "factories"],
+  manufacturing: ["nic", "factories", "manufacture"], asi: ["annual survey of industries"],
+  urban: ["msw", "city", "urban"], cities: ["city", "msw"], area: ["area"],
+};
+const STOP = new Set("a an and the of in on for by to with at from per data dataset datasets show me find all india wise about what which is are where list".split(" "));
+const LEVELS = { district: "DIST", districts: "DIST", "district-wise": "DIST", districtwise: "DIST", village: "VIL", villages: "VIL",
+  "sub-district": "SDT", subdistrict: "SDT", tehsil: "SDT", taluk: "SDT", block: "SDT", city: "CITY", town: "CITY" };
+const GEO_WORDS = { state: "STATES", states: "STATES", "state-wise": "STATES", statewise: "STATES",
+  national: "IN", "all-india": "IN", country: "IN", nationwide: "IN" };
+
+// ---- Text helpers ----
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+function stem(w) {
+  if (w.length > 4 && w.endsWith("ies")) return w.slice(0, -3) + "y";
+  if (w.length > 5 && /(ion|ing)$/.test(w)) return w.slice(0, -3);
+  if (w.length > 5 && w.endsWith("ed")) return w.slice(0, -2);
+  if (w.length > 4 && /(ss|x|ch|sh)es$/.test(w)) return w.slice(0, -2);
+  if (w.length > 3 && w.endsWith("s") && !w.endsWith("ss")) return w.slice(0, -1);
+  return w;
+}
+const words = s => String(s ?? "").toLowerCase().split(/[^a-z0-9]+/).filter(w => w.length > 1 && !/^\d+$/.test(w));
+const tokens = s => words(s).map(stem);
+function editDistance(a, b, max) {
+  if (Math.abs(a.length - b.length) > max) return max + 1;
+  let prev = Array.from({ length: b.length + 1 }, (_, i) => i);
+  for (let i = 1; i <= a.length; i++) {
+    const cur = [i]; let best = i;
+    for (let j = 1; j <= b.length; j++) {
+      cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+      best = Math.min(best, cur[j]);
+    }
+    if (best > max) return max + 1;
+    prev = cur;
+  }
+  return prev[b.length];
+}
+
+// ---- Index ----
+const GEO_LABEL = d => d.level === "DIST" ? "District" : d.level === "SDT" ? "Sub-district" : d.level === "VIL" ? "Village" : d.level === "CITY" ? "City"
+  : d.geo === "IN" ? "All India" : d.geo === "STATES" ? "State-wise" : d.geo === "MULTI" ? "Several states" : "Single state(s)";
+const VOCAB = new Map(); // token -> count
+CATALOG.forEach(d => {
+  d.catName = CATEGORIES[d.category] || d.category;
+  d.geoLabel = GEO_LABEL(d);
+  d.yearSet = new Set((d.years || []).map(y => parseInt(y, 10)).filter(Boolean));
+  d.stateSet = new Set(d.states || []);
+  const idx = new Map();
+  const add = (text, w) => tokens(text).forEach(t => { if ((idx.get(t) || 0) < w) idx.set(t, w); });
+  add(d.title + " " + d.subject, 5);
+  d.columns.forEach(c => add(c.name, 3));
+  add([d.description, d.agency, d.table, d.other_columns, d.catName, d.source, SOURCES[d.source] || ""].join(" "), 2);
+  d.columns.forEach(c => add(c.meaning, 2));
+  add(d.notes.join(" "), 1);
+  d.index = idx;
+  d.colTokens = d.columns.map(c => new Set(tokens(c.name + " " + c.meaning)));
+  idx.forEach((_, t) => VOCAB.set(t, (VOCAB.get(t) || 0) + 1));
+});
+const VOCAB_LIST = [...VOCAB.keys()];
+
+// Which vocabulary tokens does a query word match, and how strongly (1 exact, .8 prefix, .6 typo)?
+const matchCache = new Map();
+function vocabMatches(word) {
+  if (matchCache.has(word)) return matchCache.get(word);
+  const t = stem(word), m = new Map();
+  if (VOCAB.has(t)) m.set(t, 1);
+  if (t.length >= 3) VOCAB_LIST.forEach(v => { if (v !== t && v.startsWith(t)) m.set(v, Math.max(m.get(v) || 0, .8)); });
+  if (m.size === 0 && t.length >= 4) {
+    const max = t.length >= 8 ? 2 : 1;
+    VOCAB_LIST.forEach(v => { if (editDistance(t, v, max) <= max) m.set(v, .6); });
+  }
+  matchCache.set(word, m);
+  return m;
+}
+// A query term = the typed word plus its synonym phrases; each alternative is a list of words that must all match.
+function termAlternatives(word) {
+  const alts = [[word]];
+  (SYNONYMS[word] || SYNONYMS[stem(word)] || []).forEach(p => alts.push(words(p)));
+  return alts;
+}
+
+// ---- Query parsing ----
+const STATE_NAMES = Object.entries(STATES).map(([c, n]) => [n.toLowerCase().replace(/&/g, "and"), c])
+  .concat(Object.entries(STATES).map(([c, n]) => [n.toLowerCase(), c]))
+  .concat(Object.entries(STATE_ALIASES)).sort((a, b) => b[0].length - a[0].length);
+function parseQuery(raw) {
+  const f = { years: [], range: null, states: [], level: null, geo: null, sources: [], cats: [], boosts: [], terms: [], chips: [] };
+  let q = " " + raw + " ";
+  const take = (re, fn) => { q = q.replace(re, (...m) => { fn(...m); return " "; }); };
+  // year ranges: 2010-2015, 2010 to 2015
+  take(/(?<![\w-])((?:19|20)\d{2})\s*(?:-|to|–)\s*((?:19|20)\d{2})(?![\w-])/gi, (m, a, b) => {
+    f.range = [Math.min(+a, +b), Math.max(+a, +b)]; f.chips.push({ label: "Years", value: `${f.range[0]}–${f.range[1]}`, text: m.trim() });
+  });
+  // single years: 2018 or 2018-19 / FY2018-19
+  take(/(?<![\w-])(?:fy)?((?:19|20)\d{2})(?:-\d{2})?(?![\w-])/gi, (m, y) => { f.years.push(+y); f.chips.push({ label: "Year", value: m.trim(), text: m.trim() }); });
+  // state names (longest first), then upper-case state codes
+  let lower = q.toLowerCase();
+  STATE_NAMES.forEach(([name, code]) => {
+    const re = new RegExp("(^|[^a-z&])" + name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "(?![a-z])", "i");
+    let m;
+    while ((m = re.exec(lower))) {
+      const start = m.index + m[1].length, text = q.substr(start, name.length);
+      q = q.slice(0, start) + " ".repeat(name.length) + q.slice(start + name.length); lower = q.toLowerCase();
+      if (!f.states.includes(code)) { f.states.push(code); f.chips.push({ label: "State", value: STATES[code], text }); }
+    }
+  });
+  q = q.replace(/(?<![\w-])([A-Z]{2})(?![\w-])/g, (m, c) => {
+    if (!STATES[c]) return m;
+    if (!f.states.includes(c)) { f.states.push(c); f.chips.push({ label: "State", value: STATES[c], text: m }); }
+    return " ";
+  });
+  q.split(/\s+/).filter(Boolean).forEach(w => {
+    const lw = w.toLowerCase(), up = w.toUpperCase();
+    if (LEVELS[lw]) { f.level = LEVELS[lw]; f.chips.push({ label: "Level", value: { DIST: "District", SDT: "Sub-district", VIL: "Village", CITY: "City" }[f.level], text: w }); return; }
+    if (GEO_WORDS[lw]) { f.geo = GEO_WORDS[lw]; f.chips.push({ label: "Geography", value: f.geo === "IN" ? "All India" : "State-wise", text: w }); return; }
+    if (SOURCES[up] && lw.length >= 3 && CATALOG.some(d => d.source === up)) { f.sources.push(up); f.chips.push({ label: "Source", value: up, text: w }); return; }
+    if (CATEGORIES[w]) { f.cats.push(w); f.chips.push({ label: "Category", value: CATEGORIES[w], text: w }); return; }
+    if (STOP.has(lw)) return;
+    if (CATEGORY_WORDS[lw]) f.boosts.push(CATEGORY_WORDS[lw]);
+    words(lw).filter(t => !STOP.has(t)).forEach(t => f.terms.push(t)); // cropping_intensity -> cropping, intensity
+  });
+  return f;
+}
+
+// ---- Search ----
+function covers(d, y) { return d.yearSet.size ? d.yearSet.has(y) : (d.year_from <= y && y <= d.year_to); }
+function passesFilters(d, f, ui, skip) {
+  if (f.years.some(y => !covers(d, y))) return false;
+  if (f.range && (d.year_to < f.range[0] || d.year_from > f.range[1])) return false;
+  if (f.states.length && !f.states.every(c => d.stateSet.has(STATES[c]))) return false;
+  if (f.level && d.level !== f.level) return false;
+  if (f.geo === "IN" && d.geo !== "IN") return false;
+  if (f.geo === "STATES" && d.geo === "IN") return false;
+  if (f.sources.length && !f.sources.includes(d.source)) return false;
+  if (f.cats.length && !f.cats.includes(d.category)) return false;
+  if (skip !== "category" && ui.category.size && !ui.category.has(d.category)) return false;
+  if (skip !== "geo" && ui.geo.size && !ui.geo.has(d.geoLabel)) return false;
+  if (skip !== "source" && ui.source.size && !ui.source.has(d.source)) return false;
+  if (ui.from && d.year_to < ui.from) return false;
+  if (ui.to && d.year_from > ui.to) return false;
+  return true;
+}
+// Score one dataset. Returns { score, matchedAll, hits:Set(tokens) }.
+function scoreDataset(d, f) {
+  let score = 0, matchedTerms = 0; const hits = new Set();
+  f.terms.forEach(word => {
+    let best = 0, bestHits = [];
+    termAlternatives(word).forEach((alt, ai) => {
+      let s = 0; const h = [];
+      for (const w of alt) {
+        let ws = 0, wt = null;
+        vocabMatches(w).forEach((strength, tok) => { const v = (d.index.get(tok) || 0) * strength; if (v > ws) { ws = v; wt = tok; } });
+        if (!ws) { s = 0; break; }
+        s += ws / alt.length; h.push(wt);
+      }
+      if (ai > 0) s *= .85; // a synonym match counts a little less than the word itself
+      if (s > best) { best = s; bestHits = h; }
+    });
+    if (best) { matchedTerms++; score += best; bestHits.forEach(t => hits.add(t)); }
+  });
+  if (f.boosts.includes(d.category)) score += 3;
+  if (f.states.length && d.geo !== "IN") score += 1;
+  if (f.level && d.level === f.level) score += 2;
+  return { score, matchedAll: matchedTerms === f.terms.length, matched: matchedTerms, hits };
+}
+
+// ---- State (URL hash) ----
+const ui = { category: new Set(), geo: new Set(), source: new Set(), from: null, to: null };
+const $ = id => document.getElementById(id);
+const input = $("q");
+function readHash() {
+  const p = new URLSearchParams(location.hash.slice(1));
+  input.value = p.get("q") || "";
+  ["category", "geo", "source"].forEach(k => { ui[k] = new Set((p.get(k) || "").split(",").filter(Boolean)); });
+  ui.from = +p.get("from") || null; ui.to = +p.get("to") || null;
+  $("yFrom").value = ui.from || ""; $("yTo").value = ui.to || "";
+}
+function writeHash() {
+  const p = new URLSearchParams();
+  if (input.value.trim()) p.set("q", input.value.trim());
+  ["category", "geo", "source"].forEach(k => { if (ui[k].size) p.set(k, [...ui[k]].join(",")); });
+  if (ui.from) p.set("from", ui.from); if (ui.to) p.set("to", ui.to);
+  const h = p.toString();
+  history.replaceState(null, "", h ? "#" + h : location.pathname + location.search);
+}
+
+// ---- Rendering ----
+const gh = (path, kind = "blob") => `https://github.com/${REPO}/${kind}/${BRANCH}/${path.split("/").map(encodeURIComponent).join("/")}`;
+const raw = path => `https://raw.githubusercontent.com/${REPO}/${BRANCH}/${path.split("/").map(encodeURIComponent).join("/")}`;
+function hl(text, hits) {
+  if (!hits || !hits.size) return esc(text);
+  return String(text ?? "").split(/([A-Za-z0-9]+)/).map((part, i) => i % 2 && hits.has(stem(part.toLowerCase())) ? `<mark>${esc(part)}</mark>` : esc(part)).join("");
+}
+function periodLabel(d) {
+  if (d.year_from == null) return d.period;
+  const span = d.year_from === d.year_to ? `${d.year_from}` : `${d.year_from}–${d.year_to}`;
+  return d.period.replace(/-to-/, " to ") + (d.period.includes(String(d.year_from)) ? "" : ` (${span})`);
+}
+function card(d, hits) {
+  const hitCols = hits && hits.size ? d.columns.map((c, i) => ({ c, i })).filter(({ i }) => [...d.colTokens[i]].some(t => hits.has(t))) : [];
+  const hitIdx = new Set(hitCols.map(x => x.i));
+  const states = d.states.filter(s => s !== "All India");
+  const metaBits = [d.agency && `Source: ${esc(d.agency)}`, d.table && `via ${esc(d.table)}`].filter(Boolean).join(" · ");
+  const preview = d.preview.length ? `<details><summary>Preview first ${d.preview.length} rows</summary><div class="preview"><table>
+      <thead><tr>${d.columns.map(c => `<th>${esc(c.name)}</th>`).join("")}</tr></thead>
+      <tbody>${d.preview.map(r => `<tr>${r.map(v => `<td>${esc(v)}</td>`).join("")}</tr>`).join("")}</tbody></table></div></details>` : "";
+  return `<article class="card">
+    <h3>${hl(d.title, hits)}</h3>
+    <div class="name"><code>${esc(d.name)}</code><button type="button" class="copy" data-copy="${esc(d.name)}">Copy name</button></div>
+    <div class="badges">
+      <span class="badge cat" title="Category">${esc(d.category)} · ${esc(d.catName)}</span>
+      <span class="badge" title="Period">${esc(periodLabel(d))}</span>
+      <span class="badge" title="Geography">${esc(d.geoLabel)}${states.length && d.geo !== "IN" ? ` · ${states.length} states/UTs` : ""}</span>
+      <span class="badge" title="Source">${esc(d.source)}</span>
+      <span class="badge" title="Size">${d.rows.toLocaleString("en-IN")} rows × ${d.columns.length} columns</span>
+    </div>
+    ${d.description ? `<p class="desc">${hl(d.description, hits)}</p>` : ""}
+    ${metaBits ? `<p class="meta">${metaBits}</p>` : ""}
+    ${hitCols.length ? `<div class="matches"><b>Matching columns</b>${hitCols.slice(0, 8).map(({ c }) =>
+      `<div><code>${hl(c.name.replace(/_/g, " "), hits).replace(/ /g, "_")}</code>${c.meaning ? ` — ${hl(c.meaning, hits)}` : ""}</div>`).join("")}${hitCols.length > 8 ? `<div>…and ${hitCols.length - 8} more</div>` : ""}</div>` : ""}
+    <details><summary>All ${d.columns.length} columns</summary><div class="cols">${d.columns.map((c, i) =>
+      `<code class="${hitIdx.has(i) ? "hit" : ""}" title="${esc(c.meaning || d.other_columns || "")}">${esc(c.name)}</code>`).join("")}</div>
+      ${d.other_columns ? `<p class="meta" style="margin-top:6px">${esc(d.other_columns)}</p>` : ""}</details>
+    ${preview}
+    ${d.notes.length ? `<details><summary>Notes (${d.notes.length})</summary><ul class="notes">${d.notes.map(n => `<li>${hl(n.replace(/`/g, ""), hits)}</li>`).join("")}</ul></details>` : ""}
+    <div class="links">
+      <a href="${gh(`${d.name}/${d.file}`)}" target="_blank" rel="noopener">View data</a>
+      <a href="${raw(`${d.name}/${d.file}`)}" target="_blank" rel="noopener" download>Download CSV</a>
+      <a href="${gh(d.name, "tree")}" target="_blank" rel="noopener">README</a>
+      ${d.release ? `<a href="${gh(`_sources/${d.release}`, "tree")}" target="_blank" rel="noopener">Original files</a>` : ""}
+      ${d.link ? `<a href="${esc(d.link)}" target="_blank" rel="noopener">Publisher's page</a>` : ""}
+    </div>
+  </article>`;
+}
+function renderFacet(id, key, values, counts, labelFn) {
+  $(id).innerHTML = values.map(v => {
+    const n = counts.get(v) || 0, on = ui[key].has(v);
+    return `<label class="${n || on ? "" : "zero"}"><input type="checkbox" data-key="${key}" value="${esc(v)}" ${on ? "checked" : ""}>${esc(labelFn(v))}<span class="n">${n}</span></label>`;
+  }).join("");
+}
+function renderChips(f) {
+  const chips = f.chips.map((c, i) => `<span class="chip">${esc(c.label)}: <b>${esc(c.value)}</b><button type="button" data-chip="${i}" aria-label="Remove ${esc(c.label)} ${esc(c.value)}">×</button></span>`);
+  $("chips").innerHTML = chips.join("");
+  $("chips").querySelectorAll("button[data-chip]").forEach(b => b.onclick = () => {
+    const c = f.chips[+b.dataset.chip];
+    input.value = input.value.replace(c.text, " ").replace(/\s+/g, " ").trim(); run(); input.focus();
+  });
+}
+function run() {
+  const f = parseQuery(input.value);
+  renderChips(f);
+  const searching = f.terms.length > 0;
+  const scored = CATALOG.map(d => ({ d, ...(searching ? scoreDataset(d, f) : { score: 0, matchedAll: true, matched: 0, hits: new Set() }) }));
+  const ok = (x, skip) => passesFilters(x.d, f, ui, skip) && x.matchedAll && (!searching || x.score > 0);
+  const results = scored.filter(x => ok(x)).sort((a, b) => b.score - a.score || a.d.name.localeCompare(b.d.name));
+
+  // facet counts ignore their own facet so you can see what you'd get by ticking another box
+  const count = key => { const m = new Map(); scored.filter(x => ok(x, key)).forEach(x => { const v = key === "geo" ? x.d.geoLabel : x.d[key]; m.set(v, (m.get(v) || 0) + 1); }); return m; };
+  const uniq = fn => [...new Set(CATALOG.map(fn))].sort();
+  renderFacet("f-category", "category", uniq(d => d.category), count("category"), v => CATEGORIES[v] || v);
+  renderFacet("f-geo", "geo", uniq(d => d.geoLabel), count("geo"), v => v);
+  renderFacet("f-source", "source", uniq(d => d.source), count("source"), v => v);
+
+  const out = $("results");
+  if (results.length) {
+    $("status").textContent = searching || f.chips.length || ui.category.size || ui.geo.size || ui.source.size || ui.from || ui.to
+      ? `${results.length} of ${CATALOG.length} datasets match` : `All ${CATALOG.length} datasets`;
+    out.innerHTML = results.map(x => card(x.d, x.hits)).join("");
+  } else {
+    // nothing matches every word: show the closest datasets (some words or filters relaxed)
+    const near = scored.filter(x => x.score > 0 && passesFilters(x.d, { ...f, years: [], range: null, states: [] }, ui))
+      .sort((a, b) => b.matched - a.matched || b.score - a.score).slice(0, 5);
+    $("status").textContent = "No dataset matches all of that.";
+    out.innerHTML = `<div class="empty">Try fewer words, remove a filter, or check the spelling.</div>` +
+      (near.length ? `<p class="near">Closest datasets:</p>` + near.map(x => card(x.d, x.hits)).join("") : "");
+  }
+  out.querySelectorAll("button.copy").forEach(b => b.onclick = () => {
+    navigator.clipboard?.writeText(b.dataset.copy).then(() => { b.textContent = "Copied"; setTimeout(() => b.textContent = "Copy name", 1200); }, () => {});
+  });
+  writeHash();
+}
+
+// ---- Events ----
+let timer;
+input.addEventListener("input", () => { clearTimeout(timer); timer = setTimeout(run, 120); });
+$("filters").addEventListener("change", e => {
+  const t = e.target;
+  if (t.dataset.key) { t.checked ? ui[t.dataset.key].add(t.value) : ui[t.dataset.key].delete(t.value); }
+  if (t.id === "yFrom") ui.from = +t.value || null;
+  if (t.id === "yTo") ui.to = +t.value || null;
+  run();
+});
+$("clearAll").onclick = () => { input.value = ""; ui.category.clear(); ui.geo.clear(); ui.source.clear(); ui.from = ui.to = null; $("yFrom").value = $("yTo").value = ""; run(); input.focus(); };
+$("hints").querySelectorAll("button").forEach(b => b.onclick = () => { input.value = b.textContent; run(); input.focus(); });
+$("filterToggle").onclick = () => { const a = $("filters"), open = a.classList.toggle("open"); $("filterToggle").setAttribute("aria-expanded", open); };
+document.addEventListener("keydown", e => {
+  if (e.key === "/" && document.activeElement !== input && !/INPUT|TEXTAREA/.test(document.activeElement.tagName)) { e.preventDefault(); input.focus(); input.select(); }
+  if (e.key === "Escape" && document.activeElement === input) { input.value = ""; run(); }
+});
+window.addEventListener("hashchange", () => { readHash(); run(); });
+if (!CATALOG.length) $("results").innerHTML = `<div class="empty">catalog.js is missing or empty. Run <code>python3 tools/build_catalog.py</code>.</div>`;
+readHash(); run();
+</script>
+</body>
+</html>
