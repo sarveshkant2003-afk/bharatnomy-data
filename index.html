@@ -7,100 +7,108 @@
 <meta name="description" content="Search Bharatnomy's public datasets by topic, place, year and source.">
 <style>
 :root {
-  --bg: #f7f7f5; --surface: #ffffff; --text: #1d1d1b; --muted: #5f6368; --border: #e2e2dd;
-  --accent: #0b6e4f; --accent-soft: #e3f2ec; --mark: #fff1a8; --chip: #eef0f2; --code: #f2f2ef;
-  --shadow: 0 1px 2px rgba(0,0,0,.05);
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #141514; --surface: #1d1f1e; --text: #ecebe6; --muted: #a3a6a2; --border: #333634;
-    --accent: #5fcf9f; --accent-soft: #1f3a2f; --mark: #5c4f0f; --chip: #2a2d2b; --code: #262927;
-    --shadow: none;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #141514; --surface: #1d1f1e; --text: #ecebe6; --muted: #a3a6a2; --border: #333634;
-  --accent: #5fcf9f; --accent-soft: #1f3a2f; --mark: #5c4f0f; --chip: #2a2d2b; --code: #262927;
-  --shadow: none;
+  color-scheme: light;
+  --bg: #fbf8f1; --surface: #ffffff; --text: #241f19; --muted: #6e6658; --faint: #9a9182;
+  --border: #e9e2d3; --border-strong: #d9cfbb;
+  --accent: #1d6b52; --accent-hover: #15563f; --accent-soft: #e5f1eb;
+  --mark: #fde9a6; --chip: #f5efe2; --code: #f7f3ea;
+  --shadow: 0 1px 2px rgba(60,45,20,.05), 0 4px 16px rgba(60,45,20,.05);
 }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
-a { color: var(--accent); }
-code, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .86em; }
-mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 1px; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+code, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .85em; }
+mark { background: var(--mark); color: inherit; border-radius: 3px; padding: 0 2px; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-header { background: var(--surface); border-bottom: 1px solid var(--border); }
-.wrap { max-width: 1180px; margin: 0 auto; padding: 0 16px; }
-.top { padding-top: 22px; padding-bottom: 18px; }
-.brand { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-h1 { font-size: 21px; margin: 0; letter-spacing: -.01em; }
-.brand a { font-size: 13px; }
-.searchbox { position: relative; margin-top: 14px; }
-.searchbox input { width: 100%; font: inherit; font-size: 17px; padding: 13px 44px 13px 16px; border: 1px solid var(--border); border-radius: 10px; background: var(--bg); color: var(--text); }
-.searchbox input:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px var(--accent-soft); }
-.searchbox kbd { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); font: 12px ui-monospace, monospace; color: var(--muted); border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px; }
-.hints { margin-top: 10px; font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
-.hints button { font: inherit; font-size: 13px; background: var(--chip); color: var(--text); border: 0; border-radius: 999px; padding: 3px 10px; cursor: pointer; }
-.hints button:hover { background: var(--accent-soft); }
-.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+header { border-bottom: 1px solid var(--border); background: linear-gradient(180deg, #fffdf8 0%, var(--bg) 100%); }
+.wrap { max-width: 1180px; margin: 0 auto; padding-left: 16px; padding-right: 16px; }
+.top { padding-top: 34px; padding-bottom: 26px; }
+.brand { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+h1 { font-size: 26px; line-height: 1.2; margin: 0; letter-spacing: -.015em; font-weight: 700; }
+.tagline { margin: 4px 0 0; color: var(--muted); font-size: 15px; }
+.repo { font-size: 13px; color: var(--muted); border: 1px solid var(--border); background: var(--surface); border-radius: 999px; padding: 5px 12px; }
+.repo:hover { color: var(--accent); border-color: var(--border-strong); text-decoration: none; }
+.searchbox { position: relative; margin-top: 20px; }
+.searchbox svg { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--faint); pointer-events: none; }
+.searchbox input { width: 100%; font: inherit; font-size: 17px; padding: 15px 48px 15px 48px; border: 1px solid var(--border-strong); border-radius: 14px; background: var(--surface); color: var(--text); box-shadow: var(--shadow); }
+.searchbox input::placeholder { color: var(--faint); }
+.searchbox input:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 4px var(--accent-soft), var(--shadow); }
+.searchbox kbd { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); font: 12px ui-monospace, monospace; color: var(--faint); border: 1px solid var(--border); background: var(--bg); border-radius: 5px; padding: 1px 7px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
 .chips:empty { display: none; }
-.chip { display: inline-flex; align-items: center; gap: 6px; background: var(--accent-soft); color: var(--text); border-radius: 999px; padding: 3px 4px 3px 10px; font-size: 13px; }
-.chip b { font-weight: 600; }
-.chip button { border: 0; background: transparent; color: var(--muted); cursor: pointer; font-size: 15px; line-height: 1; padding: 0 6px; border-radius: 999px; }
-.chip button:hover { color: var(--text); }
-.chip.info { background: var(--chip); padding-right: 10px; }
+.chip { display: inline-flex; align-items: center; gap: 4px; background: var(--accent-soft); color: var(--accent-hover); border: 1px solid #cfe3d8; border-radius: 999px; padding: 3px 4px 3px 11px; font-size: 13px; }
+.chip b { font-weight: 600; color: var(--text); }
+.chip button { border: 0; background: transparent; color: var(--accent); cursor: pointer; font-size: 16px; line-height: 1; padding: 0 6px; border-radius: 999px; }
+.chip button:hover { background: #d3e8dc; }
 
-main { display: grid; grid-template-columns: 230px 1fr; gap: 28px; padding: 22px 0 60px; }
-aside h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 18px 0 6px; }
+main { display: grid; grid-template-columns: 240px 1fr; gap: 28px; padding: 26px 0 60px; align-items: start; }
+aside { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 18px; position: sticky; top: 16px; }
+aside h2 { font-size: 11.5px; text-transform: uppercase; letter-spacing: .08em; color: var(--faint); margin: 20px 0 8px; font-weight: 600; }
 aside h2:first-child { margin-top: 0; }
-.facet label { display: flex; align-items: center; gap: 8px; padding: 3px 0; font-size: 14px; cursor: pointer; }
-.facet label .n { margin-left: auto; color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
-.facet label.zero { color: var(--muted); }
-.years { display: flex; gap: 6px; align-items: center; font-size: 13px; }
-.years input { width: 70px; font: inherit; padding: 5px 7px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); color: var(--text); }
-.clear { margin-top: 16px; font: inherit; font-size: 13px; background: none; border: 0; color: var(--accent); cursor: pointer; padding: 0; }
+.facet label { display: flex; align-items: center; gap: 9px; padding: 4px 6px; margin: 0 -6px; font-size: 14px; cursor: pointer; border-radius: 7px; }
+.facet label:hover { background: var(--bg); }
+.facet input { accent-color: var(--accent); width: 15px; height: 15px; margin: 0; }
+.facet label .n { margin-left: auto; color: var(--faint); font-size: 12px; font-variant-numeric: tabular-nums; background: var(--chip); border-radius: 999px; padding: 0 7px; }
+.facet label.zero { color: var(--faint); }
+.years { display: flex; gap: 6px; align-items: center; font-size: 13px; color: var(--muted); }
+.years input { width: 100%; min-width: 0; font: inherit; padding: 6px 8px; border: 1px solid var(--border-strong); border-radius: 8px; background: var(--surface); color: var(--text); }
+.years input:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px var(--accent-soft); }
+.clear { margin-top: 18px; width: 100%; font: inherit; font-size: 13px; background: var(--bg); border: 1px solid var(--border); color: var(--muted); border-radius: 8px; padding: 7px; cursor: pointer; }
+.clear:hover { color: var(--accent); border-color: var(--border-strong); }
 .filter-toggle { display: none; }
 
-.status { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
-.card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; margin-bottom: 12px; box-shadow: var(--shadow); }
-.card h3 { font-size: 17px; margin: 0 0 4px; line-height: 1.35; }
-.name { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
-.name code { background: var(--code); padding: 2px 6px; border-radius: 5px; word-break: break-all; }
-.copy { font: inherit; font-size: 12px; background: none; border: 1px solid var(--border); color: var(--muted); border-radius: 5px; padding: 1px 7px; cursor: pointer; }
-.copy:hover { color: var(--text); }
-.badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
-.badge { font-size: 12px; background: var(--chip); border-radius: 5px; padding: 2px 7px; color: var(--text); white-space: nowrap; }
-.badge.cat { background: var(--accent-soft); }
+.status { color: var(--muted); font-size: 14px; margin: 2px 0 14px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; margin-bottom: 14px; box-shadow: var(--shadow); transition: border-color .15s; }
+.card:hover { border-color: var(--border-strong); }
+.card h3 { font-size: 18px; margin: 0 0 6px; line-height: 1.35; letter-spacing: -.005em; }
+.name { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+.name code { background: var(--code); color: var(--muted); border: 1px solid var(--border); padding: 2px 7px; border-radius: 6px; word-break: break-all; }
+.copy { font: inherit; font-size: 12px; background: none; border: 0; color: var(--faint); padding: 2px 4px; cursor: pointer; }
+.copy:hover { color: var(--accent); }
+.badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.badge { font-size: 12px; background: var(--chip); color: #4a4237; border-radius: 6px; padding: 3px 8px; white-space: nowrap; }
+.badge.cat { background: var(--accent-soft); color: var(--accent-hover); font-weight: 600; }
 .desc { margin: 0 0 8px; }
 .meta { font-size: 13px; color: var(--muted); margin: 0 0 8px; }
-.matches { font-size: 13px; margin: 8px 0; padding: 8px 10px; background: var(--bg); border-radius: 7px; }
-.matches div { margin: 2px 0; }
-.links { display: flex; flex-wrap: wrap; gap: 14px; font-size: 14px; margin-top: 10px; }
+.matches { font-size: 13px; margin: 12px 0; padding: 10px 12px; background: #fffbea; border: 1px solid #f3e6b5; border-radius: 9px; }
+.matches b { display: block; font-size: 11.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: 4px; }
+.matches div { margin: 3px 0; }
+.links { display: flex; flex-wrap: wrap; gap: 8px; font-size: 13.5px; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
+.links a { border: 1px solid var(--border-strong); border-radius: 8px; padding: 5px 11px; color: var(--text); background: var(--surface); }
+.links a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+.links a.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.links a.primary:hover { background: var(--accent-hover); color: #fff; }
 details { margin-top: 8px; font-size: 13px; }
-summary { cursor: pointer; color: var(--muted); }
-summary:hover { color: var(--text); }
+summary { cursor: pointer; color: var(--muted); width: fit-content; }
+summary:hover { color: var(--accent); }
 .cols { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 8px; }
-.cols code { background: var(--code); padding: 1px 6px; border-radius: 4px; }
-.cols code.hit { background: var(--mark); }
-.preview { overflow-x: auto; margin-top: 8px; border: 1px solid var(--border); border-radius: 6px; }
+.cols code { background: var(--code); border: 1px solid var(--border); padding: 1px 6px; border-radius: 5px; }
+.cols code.hit { background: var(--mark); border-color: #f0d77a; }
+.preview { overflow-x: auto; margin-top: 8px; border: 1px solid var(--border); border-radius: 8px; }
 .preview table { border-collapse: collapse; font-size: 12px; white-space: nowrap; }
-.preview th, .preview td { padding: 4px 8px; border-bottom: 1px solid var(--border); text-align: left; }
-.preview th { background: var(--bg); font-weight: 600; position: sticky; top: 0; }
+.preview th, .preview td { padding: 5px 10px; border-bottom: 1px solid var(--border); text-align: left; }
+.preview th { background: var(--code); font-weight: 600; color: var(--muted); }
 .preview tr:last-child td { border-bottom: 0; }
-.notes { margin: 6px 0 0; padding-left: 18px; }
-.empty { text-align: center; padding: 40px 16px; color: var(--muted); }
-.near { font-size: 13px; color: var(--muted); margin: 18px 0 10px; }
-footer { color: var(--muted); font-size: 13px; padding: 0 0 30px; }
+.notes { margin: 6px 0 0; padding-left: 18px; color: var(--muted); }
+.empty { text-align: center; padding: 44px 16px; color: var(--muted); background: var(--surface); border: 1px dashed var(--border-strong); border-radius: 14px; }
+.near { font-size: 13px; color: var(--muted); margin: 22px 0 10px; text-transform: uppercase; letter-spacing: .06em; }
+footer { color: var(--faint); font-size: 13px; padding: 0 0 34px; }
+footer code { color: var(--muted); }
 
 @media (max-width: 760px) {
-  main { grid-template-columns: 1fr; gap: 12px; }
-  aside { display: none; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px; }
+  .top { padding-top: 24px; padding-bottom: 20px; }
+  h1 { font-size: 22px; }
+  main { grid-template-columns: 1fr; gap: 12px; padding-top: 18px; }
+  aside { display: none; position: static; }
   aside.open { display: block; }
-  .filter-toggle { display: inline-block; font: inherit; font-size: 14px; background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 6px 12px; cursor: pointer; }
+  .filter-toggle { display: inline-block; font: inherit; font-size: 14px; background: var(--surface); color: var(--text); border: 1px solid var(--border-strong); border-radius: 9px; padding: 7px 14px; cursor: pointer; }
   .searchbox kbd { display: none; }
   .searchbox input { padding-right: 16px; }
+  .card { padding: 16px; }
 }
 </style>
 </head>
@@ -108,23 +116,19 @@ footer { color: var(--muted); font-size: 13px; padding: 0 0 30px; }
 <header>
   <div class="wrap top">
     <div class="brand">
-      <h1>Bharatnomy Data Search</h1>
-      <a href="https://github.com/sarveshkant2003-afk/bharatnomy-data">Repository on GitHub</a>
+      <div>
+        <h1>Bharatnomy Data</h1>
+        <p class="tagline" id="tagline">Search our public datasets by topic, state, year or source.</p>
+      </div>
+      <a class="repo" href="https://github.com/sarveshkant2003-afk/bharatnomy-data">View repository on GitHub ↗</a>
     </div>
     <div class="searchbox">
-      <label for="q" class="visually-hidden" style="position:absolute;left:-9999px">Search datasets</label>
-      <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search by topic, state, year or source, e.g. irrigation kerala 2018">
+      <label for="q" class="sr-only">Search datasets</label>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="e.g. irrigation kerala 2018, district forest, factory wages">
       <kbd>/</kbd>
     </div>
     <div class="chips" id="chips" aria-live="polite"></div>
-    <div class="hints" id="hints">Try:
-      <button type="button">irrigation kerala 2018</button>
-      <button type="button">district forest</button>
-      <button type="button">factory wages</button>
-      <button type="button">solid waste</button>
-      <button type="button">crop area 1960</button>
-      <button type="button">RBI</button>
-    </div>
   </div>
 </header>
 
@@ -135,7 +139,6 @@ footer { color: var(--muted); font-size: 13px; padding: 0 0 30px; }
       <aside id="filters" aria-label="Filters">
         <h2>Category</h2><div class="facet" id="f-category"></div>
         <h2>Geography</h2><div class="facet" id="f-geo"></div>
-        <h2>Source</h2><div class="facet" id="f-source"></div>
         <h2>Years covered</h2>
         <div class="years">
           <input id="yFrom" type="number" inputmode="numeric" placeholder="from" aria-label="From year">
@@ -343,7 +346,6 @@ function passesFilters(d, f, ui, skip) {
   if (f.cats.length && !f.cats.includes(d.category)) return false;
   if (skip !== "category" && ui.category.size && !ui.category.has(d.category)) return false;
   if (skip !== "geo" && ui.geo.size && !ui.geo.has(d.geoLabel)) return false;
-  if (skip !== "source" && ui.source.size && !ui.source.has(d.source)) return false;
   if (ui.from && d.year_to < ui.from) return false;
   if (ui.to && d.year_from > ui.to) return false;
   return true;
@@ -373,20 +375,20 @@ function scoreDataset(d, f) {
 }
 
 // ---- State (URL hash) ----
-const ui = { category: new Set(), geo: new Set(), source: new Set(), from: null, to: null };
+const ui = { category: new Set(), geo: new Set(), from: null, to: null };
 const $ = id => document.getElementById(id);
 const input = $("q");
 function readHash() {
   const p = new URLSearchParams(location.hash.slice(1));
   input.value = p.get("q") || "";
-  ["category", "geo", "source"].forEach(k => { ui[k] = new Set((p.get(k) || "").split(",").filter(Boolean)); });
+  ["category", "geo"].forEach(k => { ui[k] = new Set((p.get(k) || "").split(",").filter(Boolean)); });
   ui.from = +p.get("from") || null; ui.to = +p.get("to") || null;
   $("yFrom").value = ui.from || ""; $("yTo").value = ui.to || "";
 }
 function writeHash() {
   const p = new URLSearchParams();
   if (input.value.trim()) p.set("q", input.value.trim());
-  ["category", "geo", "source"].forEach(k => { if (ui[k].size) p.set(k, [...ui[k]].join(",")); });
+  ["category", "geo"].forEach(k => { if (ui[k].size) p.set(k, [...ui[k]].join(",")); });
   if (ui.from) p.set("from", ui.from); if (ui.to) p.set("to", ui.to);
   const h = p.toString();
   history.replaceState(null, "", h ? "#" + h : location.pathname + location.search);
@@ -432,7 +434,7 @@ function card(d, hits) {
     ${preview}
     ${d.notes.length ? `<details><summary>Notes (${d.notes.length})</summary><ul class="notes">${d.notes.map(n => `<li>${hl(n.replace(/`/g, ""), hits)}</li>`).join("")}</ul></details>` : ""}
     <div class="links">
-      <a href="${gh(`${d.name}/${d.file}`)}" target="_blank" rel="noopener">View data</a>
+      <a class="primary" href="${gh(`${d.name}/${d.file}`)}" target="_blank" rel="noopener">View data</a>
       <a href="${raw(`${d.name}/${d.file}`)}" target="_blank" rel="noopener" download>Download CSV</a>
       <a href="${gh(d.name, "tree")}" target="_blank" rel="noopener">README</a>
       ${d.release ? `<a href="${gh(`_sources/${d.release}`, "tree")}" target="_blank" rel="noopener">Original files</a>` : ""}
@@ -467,11 +469,10 @@ function run() {
   const uniq = fn => [...new Set(CATALOG.map(fn))].sort();
   renderFacet("f-category", "category", uniq(d => d.category), count("category"), v => CATEGORIES[v] || v);
   renderFacet("f-geo", "geo", uniq(d => d.geoLabel), count("geo"), v => v);
-  renderFacet("f-source", "source", uniq(d => d.source), count("source"), v => v);
 
   const out = $("results");
   if (results.length) {
-    $("status").textContent = searching || f.chips.length || ui.category.size || ui.geo.size || ui.source.size || ui.from || ui.to
+    $("status").textContent = searching || f.chips.length || ui.category.size || ui.geo.size || ui.from || ui.to
       ? `${results.length} of ${CATALOG.length} datasets match` : `All ${CATALOG.length} datasets`;
     out.innerHTML = results.map(x => card(x.d, x.hits)).join("");
   } else {
@@ -498,8 +499,7 @@ $("filters").addEventListener("change", e => {
   if (t.id === "yTo") ui.to = +t.value || null;
   run();
 });
-$("clearAll").onclick = () => { input.value = ""; ui.category.clear(); ui.geo.clear(); ui.source.clear(); ui.from = ui.to = null; $("yFrom").value = $("yTo").value = ""; run(); input.focus(); };
-$("hints").querySelectorAll("button").forEach(b => b.onclick = () => { input.value = b.textContent; run(); input.focus(); });
+$("clearAll").onclick = () => { input.value = ""; ui.category.clear(); ui.geo.clear(); ui.from = ui.to = null; $("yFrom").value = $("yTo").value = ""; run(); input.focus(); };
 $("filterToggle").onclick = () => { const a = $("filters"), open = a.classList.toggle("open"); $("filterToggle").setAttribute("aria-expanded", open); };
 document.addEventListener("keydown", e => {
   if (e.key === "/" && document.activeElement !== input && !/INPUT|TEXTAREA/.test(document.activeElement.tagName)) { e.preventDefault(); input.focus(); input.select(); }
@@ -507,6 +507,7 @@ document.addEventListener("keydown", e => {
 });
 window.addEventListener("hashchange", () => { readHash(); run(); });
 if (!CATALOG.length) $("results").innerHTML = `<div class="empty">catalog.js is missing or empty. Run <code>python3 tools/build_catalog.py</code>.</div>`;
+$("tagline").textContent = `Search ${CATALOG.length} public datasets by topic, state, year or source.`;
 readHash(); run();
 </script>
 </body>
