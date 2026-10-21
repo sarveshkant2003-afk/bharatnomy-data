@@ -79,7 +79,7 @@ Example: `AGR_area-under-crops_2015-16-to-2024-25_STATES_MOAFW`.
 
 ## Search page
 
-[`index.html`](index.html) is the search page, published with GitHub Pages at the link above. It reads `catalog.js`, which `tools/build_catalog.py` builds from every folder's name, README and CSV. After adding or changing a dataset, run `python3 tools/build_catalog.py` and commit `catalog.js` with it.
+[`index.html`](index.html) is the search page, published with GitHub Pages at the link above. It reads `catalog.js`, which `tools/build_catalog.py` builds from every folder's name, README and CSV. A GitHub Action (`.github/workflows/pages.yml`) rebuilds `catalog.js` and republishes the page on every push, so a new folder that follows the naming rules shows up in search a minute or two after it is pushed. To try the page locally, run `python3 tools/build_catalog.py` first.
 
 ## Conventions
 
