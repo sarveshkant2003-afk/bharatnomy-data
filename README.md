@@ -35,6 +35,8 @@ One folder per table, named by the [naming rules](#folder-names) below. Each fol
 | [`IND_asi-nic-2008-3-digit_2008-09-to-2023-24_STATES_MOSPI`](IND_asi-nic-2008-3-digit_2008-09-to-2023-24_STATES_MOSPI/) | Annual Survey of Industries by industry (NIC 2008 3-digit), by state | MoSPI ASI API |
 | [`IND_asi-nic-2008-4-digit_2008-09-to-2023-24_IN_MOSPI`](IND_asi-nic-2008-4-digit_2008-09-to-2023-24_IN_MOSPI/) | Annual Survey of Industries by industry (NIC 2008 4-digit), All India | MoSPI ASI API |
 | [`IND_factories_2004-05-to-2023-24_STATES_RBI`](IND_factories_2004-05-to-2023-24_STATES_RBI/) | Number of factories by state | RBI Handbook of Statistics on Indian States |
+| [`LAB_plfs-households-nagpur_2025_MH_MOSPI_DIST`](LAB_plfs-households-nagpur_2025_MH_MOSPI_DIST/) | PLFS household records, Nagpur district, 2025 | MoSPI PLFS unit-level data |
+| [`LAB_plfs-persons-nagpur_2025_MH_MOSPI_DIST`](LAB_plfs-persons-nagpur_2025_MH_MOSPI_DIST/) | PLFS person records (jobs, industry, contracts, earnings), Nagpur district, 2025 | MoSPI PLFS unit-level data |
 | [`WAT_msw-generated-processed_2023-12_STATES_MOHUA`](WAT_msw-generated-processed_2023-12_STATES_MOHUA/) | Municipal solid waste generated and processed | MoHUA Swachhatam portal |
 
 Original source files (PDFs, API downloads) are in [`_sources/`](_sources/), one folder per release.
@@ -47,6 +49,7 @@ Original source files (PDFs, API downloads) are in [`_sources/`](_sources/), one
 | Irrigation | `AGR_*irrigated-area*`; older state years in `AGR_net-irrigated-area_*_RBI` |
 | Crop area | `AGR_area-under-crops_*`, `AGR_irrigated-area-by-crop_*` |
 | Factories, industry (output, employment, wages, capital by industry) | `IND_asi-*` (1992-93 onwards); `IND_factories_*_RBI` |
+| Employment, occupations, job contracts, earnings (Nagpur unit-level survey records) | `LAB_plfs-*` |
 | Forest cover | `ENV_forest-*` |
 | Urban solid waste | `WAT_msw-*` |
 

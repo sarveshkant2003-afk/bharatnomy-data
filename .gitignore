@@ -12,6 +12,11 @@ tmp/
 
 # API download cache
 _sources/mospi-asi/raw/_chunks/
+_sources/mospi-plfs/raw/_chunks/
+
+# PLFS unit-level data: over 25 MB, link in the README
+_sources/mospi-plfs/raw/*.zip
+_sources/mospi-plfs/raw/unit-level-2025/
 
 # kept locally, not in the repo
 CLAUDE.md
