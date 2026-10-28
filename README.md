@@ -13,17 +13,22 @@ One folder per table, named by the [naming rules](#folder-names) below. Each fol
 | [`AGR_area-under-crops_1950-51-to-2024-25_IN_MOAFW`](AGR_area-under-crops_1950-51-to-2024-25_IN_MOAFW/) | Area under crops, All India | Land Use Statistics at a Glance 2024-25 |
 | [`AGR_area-under-crops_2015-16-to-2024-25_STATES_MOAFW`](AGR_area-under-crops_2015-16-to-2024-25_STATES_MOAFW/) | Area under crops by state | Land Use Statistics at a Glance 2024-25 |
 | [`AGR_gross-irrigated-area-by-source_2015-16-to-2024-25_STATES_MOAFW`](AGR_gross-irrigated-area-by-source_2015-16-to-2024-25_STATES_MOAFW/) | Gross irrigated area by source, by state | Land Use Statistics at a Glance 2024-25 |
-| [`AGR_irrigated-area_2015-16-to-2024-25_STATES_MOAFW`](AGR_irrigated-area_2015-16-to-2024-25_STATES_MOAFW/) | Net and gross irrigated area by state | Land Use Statistics at a Glance 2024-25 |
 | [`AGR_irrigated-area-by-crop_1950-51-to-2024-25_IN_MOAFW`](AGR_irrigated-area-by-crop_1950-51-to-2024-25_IN_MOAFW/) | Irrigated area by crop, All India | Land Use Statistics at a Glance 2024-25 |
 | [`AGR_irrigated-area-by-crop_2015-16-to-2024-25_STATES_MOAFW`](AGR_irrigated-area-by-crop_2015-16-to-2024-25_STATES_MOAFW/) | Irrigated area by crop, by state | Land Use Statistics at a Glance 2024-25 |
+| [`AGR_irrigated-area_2015-16-to-2024-25_STATES_MOAFW`](AGR_irrigated-area_2015-16-to-2024-25_STATES_MOAFW/) | Net and gross irrigated area by state | Land Use Statistics at a Glance 2024-25 |
 | [`AGR_land-use-classification_1950-51-to-2024-25_IN_MOAFW`](AGR_land-use-classification_1950-51-to-2024-25_IN_MOAFW/) | Land use classification, All India | Land Use Statistics at a Glance 2024-25 |
 | [`AGR_land-use-classification_2015-16-to-2024-25_STATES_MOAFW`](AGR_land-use-classification_2015-16-to-2024-25_STATES_MOAFW/) | Land use classification by state | Land Use Statistics at a Glance 2024-25 |
-| [`AGR_net-irrigated-area_2004-05-to-2020-21_STATES_RBI`](AGR_net-irrigated-area_2004-05-to-2020-21_STATES_RBI/) | Net irrigated area by state (older years) | RBI Handbook of Statistics on Indian States |
+| [`AGR_land-use-irrigation_1998-99-to-2024-25_MH_MOAFW_DIST`](AGR_land-use-irrigation_1998-99-to-2024-25_MH_MOAFW_DIST/) | Land use and irrigation by source, Maharashtra districts | DES Land Use Statistics portal (district data) |
 | [`AGR_net-irrigated-area-by-source_1950-51-to-2024-25_IN_MOAFW`](AGR_net-irrigated-area-by-source_1950-51-to-2024-25_IN_MOAFW/) | Net irrigated area by source, All India | Land Use Statistics at a Glance 2024-25 |
 | [`AGR_net-irrigated-area-by-source_2015-16-to-2024-25_STATES_MOAFW`](AGR_net-irrigated-area-by-source_2015-16-to-2024-25_STATES_MOAFW/) | Net irrigated area by source, by state | Land Use Statistics at a Glance 2024-25 |
+| [`AGR_net-irrigated-area_2004-05-to-2020-21_STATES_RBI`](AGR_net-irrigated-area_2004-05-to-2020-21_STATES_RBI/) | Net irrigated area by state (older years) | RBI Handbook of Statistics on Indian States |
 | [`AGR_net-sown-area_2004-05-to-2020-21_STATES_RBI`](AGR_net-sown-area_2004-05-to-2020-21_STATES_RBI/) | Net sown area by state (older years) | RBI Handbook of Statistics on Indian States |
+| [`CLM_heat-indicators-nagpur_1951-to-2025_MH_BNY_DIST`](CLM_heat-indicators-nagpur_1951-to-2025_MH_BNY_DIST/) | Heat wave days, warm nights, hottest days, rainfall departure, land surface temperature, Nagpur | Our calculation from IMD gridded data and NASA MODIS |
+| [`ENV_aqi-daily_2015-to-2026_STATES_CPCB_CITY`](ENV_aqi-daily_2015-to-2026_STATES_CPCB_CITY/) | Daily Air Quality Index by city | CPCB daily AQI bulletins |
 | [`ENV_forest-cover_2023_STATES_FSI_DIST`](ENV_forest-cover_2023_STATES_FSI_DIST/) | Forest cover by district | India State of Forest Report 2023 |
 | [`ENV_forest-tree-cover_2023_STATES_FSI`](ENV_forest-tree-cover_2023_STATES_FSI/) | Forest and tree cover by state | India State of Forest Report 2023 |
+| [`HLT_deaths-forces-of-nature_2017-to-2022_STATES_NCRB`](HLT_deaths-forces-of-nature_2017-to-2022_STATES_NCRB/) | Deaths from heat/sun stroke and other natural causes, by state | NCRB Accidental Deaths & Suicides in India |
+| [`HOU_slum-population_2011_STATES_ORGI_CITY`](HOU_slum-population_2011_STATES_ORGI_CITY/) | Slum population by town | Census 2011 slum PCA |
 | [`IND_asi-nic-1987-2-digit_1992-93-to-1997-98_STATES_MOSPI`](IND_asi-nic-1987-2-digit_1992-93-to-1997-98_STATES_MOSPI/) | Annual Survey of Industries by industry (NIC 1987 2-digit), by state | MoSPI ASI API |
 | [`IND_asi-nic-1987-3-digit_1992-93-to-1997-98_STATES_MOSPI`](IND_asi-nic-1987-3-digit_1992-93-to-1997-98_STATES_MOSPI/) | Annual Survey of Industries by industry (NIC 1987 3-digit), by state | MoSPI ASI API |
 | [`IND_asi-nic-1998-2-digit_1998-99-to-2003-04_STATES_MOSPI`](IND_asi-nic-1998-2-digit_1998-99-to-2003-04_STATES_MOSPI/) | Annual Survey of Industries by industry (NIC 1998 2-digit), by state | MoSPI ASI API |
@@ -35,7 +40,10 @@ One folder per table, named by the [naming rules](#folder-names) below. Each fol
 | [`IND_asi-nic-2008-3-digit_2008-09-to-2023-24_STATES_MOSPI`](IND_asi-nic-2008-3-digit_2008-09-to-2023-24_STATES_MOSPI/) | Annual Survey of Industries by industry (NIC 2008 3-digit), by state | MoSPI ASI API |
 | [`IND_asi-nic-2008-4-digit_2008-09-to-2023-24_IN_MOSPI`](IND_asi-nic-2008-4-digit_2008-09-to-2023-24_IN_MOSPI/) | Annual Survey of Industries by industry (NIC 2008 4-digit), All India | MoSPI ASI API |
 | [`IND_factories_2004-05-to-2023-24_STATES_RBI`](IND_factories_2004-05-to-2023-24_STATES_RBI/) | Number of factories by state | RBI Handbook of Statistics on Indian States |
+| [`POP_census-pca_2011_STATES_ORGI_DIST`](POP_census-pca_2011_STATES_ORGI_DIST/) | Population, literacy and workers by category, by district | Census 2011 Primary Census Abstract |
+| [`POP_single-year-age_2011_MH_ORGI_DIST`](POP_single-year-age_2011_MH_ORGI_DIST/) | Population by single year of age, Maharashtra districts (elderly share) | Census 2011 table C-13 |
 | [`WAT_msw-generated-processed_2023-12_STATES_MOHUA`](WAT_msw-generated-processed_2023-12_STATES_MOHUA/) | Municipal solid waste generated and processed | MoHUA Swachhatam portal |
+| [`WAT_tap-water-connections-rural_2026-10_STATES_MOJS_DIST`](WAT_tap-water-connections-rural_2026-10_STATES_MOJS_DIST/) | Rural households with tap water connections by district | Jal Jeevan Mission dashboard |
 
 Original source files (PDFs, API downloads) are in [`_sources/`](_sources/), one folder per release.
 
@@ -49,6 +57,13 @@ Original source files (PDFs, API downloads) are in [`_sources/`](_sources/), one
 | Factories, industry (output, employment, wages, capital by industry) | `IND_asi-*` (1992-93 onwards); `IND_factories_*_RBI` |
 | Forest cover | `ENV_forest-*` |
 | Urban solid waste | `WAT_msw-*` |
+| Heat: temperature, heat waves, warm nights, land surface temperature, rainfall departure | `CLM_heat-indicators-*` (Nagpur) |
+| Air quality (AQI) | `ENV_aqi-*` |
+| Heat stroke deaths, deaths from natural causes | `HLT_deaths-forces-of-nature_*` |
+| Population, age, elderly, workers by category (cultivators, agricultural labourers) | `POP_*` |
+| Slums | `HOU_slum-*` |
+| Tap water | `WAT_tap-water-*` |
+| District land use and irrigation | `AGR_land-use-irrigation_*_DIST` |
 
 ## Folder names
 
@@ -71,10 +86,15 @@ Example: `AGR_area-under-crops_2015-16-to-2024-25_STATES_MOAFW`.
 
 | Code | Meaning |
 |---|---|
+| `BNY` | Bharatnomy (our own calculation; the README names the data it is built from) |
+| `CPCB` | Central Pollution Control Board |
 | `FSI` | Forest Survey of India |
 | `MOAFW` | Ministry of Agriculture & Farmers' Welfare |
 | `MOHUA` | Ministry of Housing & Urban Affairs |
+| `MOJS` | Ministry of Jal Shakti |
 | `MOSPI` | Ministry of Statistics and Programme Implementation |
+| `NCRB` | National Crime Records Bureau |
+| `ORGI` | Office of the Registrar General & Census Commissioner, India |
 | `RBI` | Reserve Bank of India (republished tables; the original agency is in each README) |
 
 ## Search page
