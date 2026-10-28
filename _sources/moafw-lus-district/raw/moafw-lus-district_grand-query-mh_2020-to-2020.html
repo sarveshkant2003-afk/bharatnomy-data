@@ -1,0 +1,4270 @@
+<style>
+    #cstmContainer {
+        width: 100%;
+        height: 800px;
+        overflow: auto !important;
+        padding-left: 0;
+        border: 1px solid #dee2e6;
+    }
+
+    /* === HEADER ROW (sticky top) === */
+    .tbl_header {
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 50;
+        background: #cfe2ff !important;
+        /* light blue */
+        color: #000 !important;
+        font-weight: 600 !important;
+        border-bottom: 2px solid #dee2e6;
+    }
+
+    /* === STATE COLUMN === */
+    th.stickyCol1,
+    td.stickyCol1 {
+        position: sticky !important;
+        left: 0 !important;
+        min-width: 100px !important;
+        width: 100px !important;
+        background: #fff !important;
+        z-index: 8;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    thead th.stickyCol1 {
+        top: 0 !important;
+        background: #cfe2ff !important;
+        z-index: 58;
+    }
+
+    tbody td.stickyCol1 {
+        top: auto !important;
+    }
+
+    /* === DISTRICT COLUMN === */
+    th.stickyCol2,
+    td.stickyCol2 {
+        position: sticky !important;
+        left: 152px !important;
+        /* 180 + 150 */
+        min-width: 100px !important;
+        width: 100px !important;
+        background: #fff !important;
+        z-index: 8;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    thead th.stickyCol2 {
+        top: 0 !important;
+        background: #cfe2ff !important;
+        z-index: 58;
+    }
+
+    tbody td.stickyCol2 {
+        top: auto !important;
+    }
+
+    /* === YEAR COLUMN === */
+    th.stickyCol3,
+    td.stickyCol3 {
+        position: sticky !important;
+        left: 350px !important;
+        /* 180 + 150 */
+        min-width: 100px !important;
+        width: 100px !important;
+        background: #fff !important;
+        z-index: 8;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    thead th.stickyCol3 {
+        top: 0 !important;
+        background: #cfe2ff !important;
+        z-index: 58;
+    }
+
+    tbody td.stickyCol3 {
+        top: auto !important;
+    }
+
+    /* === TOTAL ROW (dark blue) === */
+    tbody tr .stickyCol4 {
+        position: sticky !important;
+        left: 0 !important;
+        width: 430px !important;
+        /* 180 + 150 + 100 */
+        min-width: 430px !important;
+        background: #0d6efd !important;
+        color: #fff !important;
+        font-weight: bold !important;
+        z-index: 25;
+    }
+
+
+    tbody tr .stickyCol7 {
+        position: sticky !important;
+        left: 0 !important;
+        width: 430px !important;
+        /* 180 + 150 + 100 */
+        min-width: 430px !important;
+        background: #4d4e50 !important;
+        color: #fff !important;
+        font-weight: bold !important;
+        z-index: 25;
+    }
+
+    /* === SUBTOTAL ROW (gray) === */
+
+    tbody tr .stickyCol5 {
+        position: sticky !important;
+        left: 0px !important;
+        /* 180 + 150 */
+        min-width: 100px !important;
+        width: 100px !important;
+        background: #e9ecef !important;
+        z-index: 8;
+        /* box-shadow: 2px 0 5px rgba(0,0,0,0.1); */
+    }
+
+    tbody tr.stickyCol5 {
+        top: auto !important;
+    }
+
+
+    /* === TOTAL VALUE CELLS === */
+    td.stickyCol6 {
+        position: sticky;
+        left: 430px;
+        /* col1 + col2 */
+        z-index: 8;
+        background: #248AFD !important;
+        min-width: 100px;
+        width: 100px;
+    }
+
+    /* === COLUMN SEPARATORS === */
+    .stickyCol1::after,
+    .stickyCol2::after,
+    .stickyCol3::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background: #dee2e6;
+        z-index: 1;
+    }
+
+    /* === RESET NON-STICKY CELLS === */
+    #lusReport1 td:not([class*="stickyCol"]),
+    #lusReport1 th:not([class*="stickyCol"]) {
+        position: relative;
+    }
+
+    .lusReport1 th {
+        vertical-align: middle !important;
+
+    }
+</style>
+<div class="row">
+    <div class="col-md-12">
+        <p class="card-description text-center filter-results">
+            <b>District Wise Grand Query Report for the Crop Year 2020-2021</b>
+        </p>
+        </p>
+    </div>
+</div>
+
+<div class="row">
+
+    <div id="cstmContainer" class="table-responsive mt-2">
+        <table border="2px" id="lusReport1" class="table table-hover table-bordered text-center">
+            <thead style="position: sticky;top: 0;z-index:9;">
+                
+                <tr class="cstmStyle1">
+                    <th rowspan="4" class="wrapWords_td tbl_header stickyCol1">State</th>
+                    <th rowspan="4" class="wrapWords_td tbl_header stickyCol2">District</th>
+                    <th rowspan="4" class="wrapWords_td tbl_header stickyCol3">Year</th>
+                                                                                <th colspan="1" rowspan="3" class="wrapWords_td tbl_header">
+                        Reporting Area for Land Use Statistics                    </th>
+                                                            <th colspan="11"  class="wrapWords_td tbl_header">
+                        Classification of reporting Area                    </th>
+                                                            <th colspan="1" rowspan="3" class="wrapWords_td tbl_header">
+                        Net Area Sown                    </th>
+                                                            <th colspan="1" rowspan="3" class="wrapWords_td tbl_header">
+                        Cropped Area                    </th>
+                                                            <th colspan="1" rowspan="3" class="wrapWords_td tbl_header">
+                        Area Sown More Than Once                    </th>
+                                                            <th colspan="9"  class="wrapWords_td tbl_header">
+                        Net Irrigated Area                    </th>
+                                                            <th colspan="9"  class="wrapWords_td tbl_header">
+                        Gross Irrigated Area                    </th>
+                                                        </tr>
+
+                                <tr class="cstmStyle1">
+                                                                                <th  rowspan="2" class="wrapWords_td tbl_header">
+                        Forests                    </th>
+                                                            <th colspan="3"  class="wrapWords_td tbl_header">
+                        Not available for Cultivation                    </th>
+                                                            <th colspan="4"  class="wrapWords_td tbl_header">
+                        Other Uncultivated Land Excluding Fallow Land                    </th>
+                                                            <th colspan="3"  class="wrapWords_td tbl_header">
+                        Fallow Land                    </th>
+                                                            <th colspan="3"  class="wrapWords_td tbl_header">
+                        Canal                    </th>
+                                                            <th  rowspan="2" class="wrapWords_td tbl_header">
+                        Tank                    </th>
+                                                            <th colspan="3"  class="wrapWords_td tbl_header">
+                        Well                    </th>
+                                                            <th  rowspan="2" class="wrapWords_td tbl_header">
+                        Other Source                    </th>
+                                                            <th  rowspan="2" class="wrapWords_td tbl_header">
+                        Total                    </th>
+                                                            <th colspan="3"  class="wrapWords_td tbl_header">
+                        Canal                    </th>
+                                                            <th  rowspan="2" class="wrapWords_td tbl_header">
+                        Tank                    </th>
+                                                            <th colspan="3"  class="wrapWords_td tbl_header">
+                        Well                    </th>
+                                                            <th  rowspan="2" class="wrapWords_td tbl_header">
+                        Other Source                    </th>
+                                                            <th  rowspan="2" class="wrapWords_td tbl_header">
+                        Total                    </th>
+                                        
+                                    </tr>
+                                
+                                <tr class="cstmStyle1">
+                                                            <th class="wrapWords_td tbl_header">Area under Non Agricultural Uses</th>
+                                        <th class="wrapWords_td tbl_header">Barren and Unculturable Land</th>
+                                        <th class="wrapWords_td tbl_header">Total</th>
+                                        <th class="wrapWords_td tbl_header">Permanent Pasture and other Grazing Land</th>
+                                        <th class="wrapWords_td tbl_header">Land under Misc. Tree Crops and Groves not included in Net Area Sown</th>
+                                        <th class="wrapWords_td tbl_header">Culturable waste Land</th>
+                                        <th class="wrapWords_td tbl_header">Total</th>
+                                        <th class="wrapWords_td tbl_header">Fallow Lands other than current Fallows</th>
+                                        <th class="wrapWords_td tbl_header">Current Fallow</th>
+                                        <th class="wrapWords_td tbl_header">Total</th>
+                                        <th class="wrapWords_td tbl_header">Government</th>
+                                        <th class="wrapWords_td tbl_header">Private</th>
+                                        <th class="wrapWords_td tbl_header">Total</th>
+                                        <th class="wrapWords_td tbl_header">Tubewell</th>
+                                        <th class="wrapWords_td tbl_header">Other Well</th>
+                                        <th class="wrapWords_td tbl_header">Total</th>
+                                        <th class="wrapWords_td tbl_header">Government</th>
+                                        <th class="wrapWords_td tbl_header">Private</th>
+                                        <th class="wrapWords_td tbl_header">Total</th>
+                                        <th class="wrapWords_td tbl_header">Tubewell</th>
+                                        <th class="wrapWords_td tbl_header">Other Well</th>
+                                        <th class="wrapWords_td tbl_header">Total</th>
+                                        
+                                    </tr>
+                
+                            </thead>
+
+            <tbody>
+                <tr></tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Ahilyanagar</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        1702000
+                    </td>
+                    
+                    <td class="text-right">
+                        168400
+                    </td>
+                    
+                    <td class="text-right">
+                        14000
+                    </td>
+                    
+                    <td class="text-right">
+                        131800
+                    </td>
+                    
+                    <td class="text-right">
+                        145800
+                    </td>
+                    
+                    <td class="text-right">
+                        36600
+                    </td>
+                    
+                    <td class="text-right">
+                        3300
+                    </td>
+                    
+                    <td class="text-right">
+                        21000
+                    </td>
+                    
+                    <td class="text-right">
+                        60900
+                    </td>
+                    
+                    <td class="text-right">
+                        121900
+                    </td>
+                    
+                    <td class="text-right">
+                        146800
+                    </td>
+                    
+                    <td class="text-right">
+                        268700
+                    </td>
+                    
+                    <td class="text-right">
+                        1058200
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Akola</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        543100
+                    </td>
+                    
+                    <td class="text-right">
+                        30100
+                    </td>
+                    
+                    <td class="text-right">
+                        37600
+                    </td>
+                    
+                    <td class="text-right">
+                        11100
+                    </td>
+                    
+                    <td class="text-right">
+                        48700
+                    </td>
+                    
+                    <td class="text-right">
+                        16600
+                    </td>
+                    
+                    <td class="text-right">
+                        1100
+                    </td>
+                    
+                    <td class="text-right">
+                        2900
+                    </td>
+                    
+                    <td class="text-right">
+                        20600
+                    </td>
+                    
+                    <td class="text-right">
+                        6200
+                    </td>
+                    
+                    <td class="text-right">
+                        10700
+                    </td>
+                    
+                    <td class="text-right">
+                        16900
+                    </td>
+                    
+                    <td class="text-right">
+                        426800
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Amravati</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        1221700
+                    </td>
+                    
+                    <td class="text-right">
+                        291900
+                    </td>
+                    
+                    <td class="text-right">
+                        44900
+                    </td>
+                    
+                    <td class="text-right">
+                        19400
+                    </td>
+                    
+                    <td class="text-right">
+                        64300
+                    </td>
+                    
+                    <td class="text-right">
+                        33200
+                    </td>
+                    
+                    <td class="text-right">
+                        6000
+                    </td>
+                    
+                    <td class="text-right">
+                        9200
+                    </td>
+                    
+                    <td class="text-right">
+                        48400
+                    </td>
+                    
+                    <td class="text-right">
+                        18200
+                    </td>
+                    
+                    <td class="text-right">
+                        33700
+                    </td>
+                    
+                    <td class="text-right">
+                        51900
+                    </td>
+                    
+                    <td class="text-right">
+                        765200
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Beed</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        1068600
+                    </td>
+                    
+                    <td class="text-right">
+                        22600
+                    </td>
+                    
+                    <td class="text-right">
+                        59800
+                    </td>
+                    
+                    <td class="text-right">
+                        34800
+                    </td>
+                    
+                    <td class="text-right">
+                        94600
+                    </td>
+                    
+                    <td class="text-right">
+                        28900
+                    </td>
+                    
+                    <td class="text-right">
+                        1400
+                    </td>
+                    
+                    <td class="text-right">
+                        37200
+                    </td>
+                    
+                    <td class="text-right">
+                        67500
+                    </td>
+                    
+                    <td class="text-right">
+                        45200
+                    </td>
+                    
+                    <td class="text-right">
+                        82000
+                    </td>
+                    
+                    <td class="text-right">
+                        127200
+                    </td>
+                    
+                    <td class="text-right">
+                        756700
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Bhandara</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        341900
+                    </td>
+                    
+                    <td class="text-right">
+                        61300
+                    </td>
+                    
+                    <td class="text-right">
+                        42000
+                    </td>
+                    
+                    <td class="text-right">
+                        5400
+                    </td>
+                    
+                    <td class="text-right">
+                        47400
+                    </td>
+                    
+                    <td class="text-right">
+                        38500
+                    </td>
+                    
+                    <td class="text-right">
+                        8300
+                    </td>
+                    
+                    <td class="text-right">
+                        11600
+                    </td>
+                    
+                    <td class="text-right">
+                        58400
+                    </td>
+                    
+                    <td class="text-right">
+                        900
+                    </td>
+                    
+                    <td class="text-right">
+                        4600
+                    </td>
+                    
+                    <td class="text-right">
+                        5500
+                    </td>
+                    
+                    <td class="text-right">
+                        169300
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Buldhana</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        967000
+                    </td>
+                    
+                    <td class="text-right">
+                        112500
+                    </td>
+                    
+                    <td class="text-right">
+                        63200
+                    </td>
+                    
+                    <td class="text-right">
+                        58500
+                    </td>
+                    
+                    <td class="text-right">
+                        121700
+                    </td>
+                    
+                    <td class="text-right">
+                        42300
+                    </td>
+                    
+                    <td class="text-right">
+                        700
+                    </td>
+                    
+                    <td class="text-right">
+                        27700
+                    </td>
+                    
+                    <td class="text-right">
+                        70700
+                    </td>
+                    
+                    <td class="text-right">
+                        30500
+                    </td>
+                    
+                    <td class="text-right">
+                        27100
+                    </td>
+                    
+                    <td class="text-right">
+                        57600
+                    </td>
+                    
+                    <td class="text-right">
+                        604500
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Chandrapur</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        1091700
+                    </td>
+                    
+                    <td class="text-right">
+                        390200
+                    </td>
+                    
+                    <td class="text-right">
+                        97700
+                    </td>
+                    
+                    <td class="text-right">
+                        24700
+                    </td>
+                    
+                    <td class="text-right">
+                        122400
+                    </td>
+                    
+                    <td class="text-right">
+                        4700
+                    </td>
+                    
+                    <td class="text-right">
+                        21100
+                    </td>
+                    
+                    <td class="text-right">
+                        33900
+                    </td>
+                    
+                    <td class="text-right">
+                        59700
+                    </td>
+                    
+                    <td class="text-right">
+                        11400
+                    </td>
+                    
+                    <td class="text-right">
+                        11100
+                    </td>
+                    
+                    <td class="text-right">
+                        22500
+                    </td>
+                    
+                    <td class="text-right">
+                        496900
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Chhatrapati Sambhajinagar</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        1007500
+                    </td>
+                    
+                    <td class="text-right">
+                        90300
+                    </td>
+                    
+                    <td class="text-right">
+                        60900
+                    </td>
+                    
+                    <td class="text-right">
+                        21600
+                    </td>
+                    
+                    <td class="text-right">
+                        82500
+                    </td>
+                    
+                    <td class="text-right">
+                        32500
+                    </td>
+                    
+                    <td class="text-right">
+                        7800
+                    </td>
+                    
+                    <td class="text-right">
+                        14600
+                    </td>
+                    
+                    <td class="text-right">
+                        54900
+                    </td>
+                    
+                    <td class="text-right">
+                        10300
+                    </td>
+                    
+                    <td class="text-right">
+                        52900
+                    </td>
+                    
+                    <td class="text-right">
+                        63200
+                    </td>
+                    
+                    <td class="text-right">
+                        716600
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Dharashiv</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        748300
+                    </td>
+                    
+                    <td class="text-right">
+                        4400
+                    </td>
+                    
+                    <td class="text-right">
+                        21600
+                    </td>
+                    
+                    <td class="text-right">
+                        7100
+                    </td>
+                    
+                    <td class="text-right">
+                        28700
+                    </td>
+                    
+                    <td class="text-right">
+                        24100
+                    </td>
+                    
+                    <td class="text-right">
+                        2200
+                    </td>
+                    
+                    <td class="text-right">
+                        49500
+                    </td>
+                    
+                    <td class="text-right">
+                        75800
+                    </td>
+                    
+                    <td class="text-right">
+                        126100
+                    </td>
+                    
+                    <td class="text-right">
+                        106500
+                    </td>
+                    
+                    <td class="text-right">
+                        232600
+                    </td>
+                    
+                    <td class="text-right">
+                        406800
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Dhule</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        732900
+                    </td>
+                    
+                    <td class="text-right">
+                        199000
+                    </td>
+                    
+                    <td class="text-right">
+                        24500
+                    </td>
+                    
+                    <td class="text-right">
+                        54600
+                    </td>
+                    
+                    <td class="text-right">
+                        79100
+                    </td>
+                    
+                    <td class="text-right">
+                        17800
+                    </td>
+                    
+                    <td class="text-right">
+                        1200
+                    </td>
+                    
+                    <td class="text-right">
+                        3200
+                    </td>
+                    
+                    <td class="text-right">
+                        22200
+                    </td>
+                    
+                    <td class="text-right">
+                        10500
+                    </td>
+                    
+                    <td class="text-right">
+                        13900
+                    </td>
+                    
+                    <td class="text-right">
+                        24400
+                    </td>
+                    
+                    <td class="text-right">
+                        408200
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Gadchiroli</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        1491600
+                    </td>
+                    
+                    <td class="text-right">
+                        1078400
+                    </td>
+                    
+                    <td class="text-right">
+                        72300
+                    </td>
+                    
+                    <td class="text-right">
+                        15300
+                    </td>
+                    
+                    <td class="text-right">
+                        87600
+                    </td>
+                    
+                    <td class="text-right">
+                        51400
+                    </td>
+                    
+                    <td class="text-right">
+                        4100
+                    </td>
+                    
+                    <td class="text-right">
+                        23100
+                    </td>
+                    
+                    <td class="text-right">
+                        78600
+                    </td>
+                    
+                    <td class="text-right">
+                        6500
+                    </td>
+                    
+                    <td class="text-right">
+                        45500
+                    </td>
+                    
+                    <td class="text-right">
+                        52000
+                    </td>
+                    
+                    <td class="text-right">
+                        195000
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Gondia</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        585900
+                    </td>
+                    
+                    <td class="text-right">
+                        207400
+                    </td>
+                    
+                    <td class="text-right">
+                        55600
+                    </td>
+                    
+                    <td class="text-right">
+                        13200
+                    </td>
+                    
+                    <td class="text-right">
+                        68800
+                    </td>
+                    
+                    <td class="text-right">
+                        96700
+                    </td>
+                    
+                    <td class="text-right">
+                        1600
+                    </td>
+                    
+                    <td class="text-right">
+                        15000
+                    </td>
+                    
+                    <td class="text-right">
+                        113300
+                    </td>
+                    
+                    <td class="text-right">
+                        3600
+                    </td>
+                    
+                    <td class="text-right">
+                        5400
+                    </td>
+                    
+                    <td class="text-right">
+                        9000
+                    </td>
+                    
+                    <td class="text-right">
+                        187400
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Hingoli</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        466100
+                    </td>
+                    
+                    <td class="text-right">
+                        22900
+                    </td>
+                    
+                    <td class="text-right">
+                        10200
+                    </td>
+                    
+                    <td class="text-right">
+                        6300
+                    </td>
+                    
+                    <td class="text-right">
+                        16500
+                    </td>
+                    
+                    <td class="text-right">
+                        15500
+                    </td>
+                    
+                    <td class="text-right">
+                        100
+                    </td>
+                    
+                    <td class="text-right">
+                        10400
+                    </td>
+                    
+                    <td class="text-right">
+                        26000
+                    </td>
+                    
+                    <td class="text-right">
+                        13100
+                    </td>
+                    
+                    <td class="text-right">
+                        40800
+                    </td>
+                    
+                    <td class="text-right">
+                        53900
+                    </td>
+                    
+                    <td class="text-right">
+                        346800
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Jalgaon</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        1163900
+                    </td>
+                    
+                    <td class="text-right">
+                        155900
+                    </td>
+                    
+                    <td class="text-right">
+                        16300
+                    </td>
+                    
+                    <td class="text-right">
+                        104700
+                    </td>
+                    
+                    <td class="text-right">
+                        121000
+                    </td>
+                    
+                    <td class="text-right">
+                        38800
+                    </td>
+                    
+                    <td class="text-right">
+                        2800
+                    </td>
+                    
+                    <td class="text-right">
+                        6300
+                    </td>
+                    
+                    <td class="text-right">
+                        47900
+                    </td>
+                    
+                    <td class="text-right">
+                        4900
+                    </td>
+                    
+                    <td class="text-right">
+                        9700
+                    </td>
+                    
+                    <td class="text-right">
+                        14600
+                    </td>
+                    
+                    <td class="text-right">
+                        824500
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Jalna</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        772600
+                    </td>
+                    
+                    <td class="text-right">
+                        4900
+                    </td>
+                    
+                    <td class="text-right">
+                        20300
+                    </td>
+                    
+                    <td class="text-right">
+                        7200
+                    </td>
+                    
+                    <td class="text-right">
+                        27500
+                    </td>
+                    
+                    <td class="text-right">
+                        27100
+                    </td>
+                    
+                    <td class="text-right">
+                        11500
+                    </td>
+                    
+                    <td class="text-right">
+                        18600
+                    </td>
+                    
+                    <td class="text-right">
+                        57200
+                    </td>
+                    
+                    <td class="text-right">
+                        22100
+                    </td>
+                    
+                    <td class="text-right">
+                        95900
+                    </td>
+                    
+                    <td class="text-right">
+                        118000
+                    </td>
+                    
+                    <td class="text-right">
+                        565000
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Kolhapur</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        776500
+                    </td>
+                    
+                    <td class="text-right">
+                        146900
+                    </td>
+                    
+                    <td class="text-right">
+                        38200
+                    </td>
+                    
+                    <td class="text-right">
+                        43500
+                    </td>
+                    
+                    <td class="text-right">
+                        81700
+                    </td>
+                    
+                    <td class="text-right">
+                        41100
+                    </td>
+                    
+                    <td class="text-right">
+                        6800
+                    </td>
+                    
+                    <td class="text-right">
+                        36700
+                    </td>
+                    
+                    <td class="text-right">
+                        84600
+                    </td>
+                    
+                    <td class="text-right">
+                        20400
+                    </td>
+                    
+                    <td class="text-right">
+                        9800
+                    </td>
+                    
+                    <td class="text-right">
+                        30200
+                    </td>
+                    
+                    <td class="text-right">
+                        433100
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Latur</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        715700
+                    </td>
+                    
+                    <td class="text-right">
+                        1800
+                    </td>
+                    
+                    <td class="text-right">
+                        26600
+                    </td>
+                    
+                    <td class="text-right">
+                        20000
+                    </td>
+                    
+                    <td class="text-right">
+                        46600
+                    </td>
+                    
+                    <td class="text-right">
+                        23100
+                    </td>
+                    
+                    <td class="text-right">
+                        23300
+                    </td>
+                    
+                    <td class="text-right">
+                        38300
+                    </td>
+                    
+                    <td class="text-right">
+                        84700
+                    </td>
+                    
+                    <td class="text-right">
+                        33100
+                    </td>
+                    
+                    <td class="text-right">
+                        36600
+                    </td>
+                    
+                    <td class="text-right">
+                        69700
+                    </td>
+                    
+                    <td class="text-right">
+                        512900
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Mumbai</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        200
+                    </td>
+                    
+                    <td class="text-right">
+                        200
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Mumbai suburban</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        38000
+                    </td>
+                    
+                    <td class="text-right">
+                        1500
+                    </td>
+                    
+                    <td class="text-right">
+                        28600
+                    </td>
+                    
+                    <td class="text-right">
+                        7300
+                    </td>
+                    
+                    <td class="text-right">
+                        35900
+                    </td>
+                    
+                    <td class="text-right">
+                        600
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        600
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Nagpur</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        986200
+                    </td>
+                    
+                    <td class="text-right">
+                        154100
+                    </td>
+                    
+                    <td class="text-right">
+                        99400
+                    </td>
+                    
+                    <td class="text-right">
+                        33800
+                    </td>
+                    
+                    <td class="text-right">
+                        133200
+                    </td>
+                    
+                    <td class="text-right">
+                        55400
+                    </td>
+                    
+                    <td class="text-right">
+                        7800
+                    </td>
+                    
+                    <td class="text-right">
+                        34500
+                    </td>
+                    
+                    <td class="text-right">
+                        97700
+                    </td>
+                    
+                    <td class="text-right">
+                        21700
+                    </td>
+                    
+                    <td class="text-right">
+                        21500
+                    </td>
+                    
+                    <td class="text-right">
+                        43200
+                    </td>
+                    
+                    <td class="text-right">
+                        558000
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Nanded</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        1033200
+                    </td>
+                    
+                    <td class="text-right">
+                        79300
+                    </td>
+                    
+                    <td class="text-right">
+                        51500
+                    </td>
+                    
+                    <td class="text-right">
+                        18600
+                    </td>
+                    
+                    <td class="text-right">
+                        70100
+                    </td>
+                    
+                    <td class="text-right">
+                        27300
+                    </td>
+                    
+                    <td class="text-right">
+                        7000
+                    </td>
+                    
+                    <td class="text-right">
+                        33900
+                    </td>
+                    
+                    <td class="text-right">
+                        68200
+                    </td>
+                    
+                    <td class="text-right">
+                        18800
+                    </td>
+                    
+                    <td class="text-right">
+                        81000
+                    </td>
+                    
+                    <td class="text-right">
+                        99800
+                    </td>
+                    
+                    <td class="text-right">
+                        715800
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Nandurbar</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        705100
+                    </td>
+                    
+                    <td class="text-right">
+                        373400
+                    </td>
+                    
+                    <td class="text-right">
+                        10500
+                    </td>
+                    
+                    <td class="text-right">
+                        33200
+                    </td>
+                    
+                    <td class="text-right">
+                        43700
+                    </td>
+                    
+                    <td class="text-right">
+                        32500
+                    </td>
+                    
+                    <td class="text-right">
+                        700
+                    </td>
+                    
+                    <td class="text-right">
+                        3000
+                    </td>
+                    
+                    <td class="text-right">
+                        36200
+                    </td>
+                    
+                    <td class="text-right">
+                        6600
+                    </td>
+                    
+                    <td class="text-right">
+                        1100
+                    </td>
+                    
+                    <td class="text-right">
+                        7700
+                    </td>
+                    
+                    <td class="text-right">
+                        244100
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Nashik</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        1563500
+                    </td>
+                    
+                    <td class="text-right">
+                        312800
+                    </td>
+                    
+                    <td class="text-right">
+                        44800
+                    </td>
+                    
+                    <td class="text-right">
+                        205100
+                    </td>
+                    
+                    <td class="text-right">
+                        249900
+                    </td>
+                    
+                    <td class="text-right">
+                        22600
+                    </td>
+                    
+                    <td class="text-right">
+                        2000
+                    </td>
+                    
+                    <td class="text-right">
+                        19800
+                    </td>
+                    
+                    <td class="text-right">
+                        44400
+                    </td>
+                    
+                    <td class="text-right">
+                        29000
+                    </td>
+                    
+                    <td class="text-right">
+                        104600
+                    </td>
+                    
+                    <td class="text-right">
+                        133600
+                    </td>
+                    
+                    <td class="text-right">
+                        822800
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Palghar</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        469600
+                    </td>
+                    
+                    <td class="text-right">
+                        194200
+                    </td>
+                    
+                    <td class="text-right">
+                        41100
+                    </td>
+                    
+                    <td class="text-right">
+                        18600
+                    </td>
+                    
+                    <td class="text-right">
+                        59700
+                    </td>
+                    
+                    <td class="text-right">
+                        39500
+                    </td>
+                    
+                    <td class="text-right">
+                        1500
+                    </td>
+                    
+                    <td class="text-right">
+                        18600
+                    </td>
+                    
+                    <td class="text-right">
+                        59600
+                    </td>
+                    
+                    <td class="text-right">
+                        7600
+                    </td>
+                    
+                    <td class="text-right">
+                        6300
+                    </td>
+                    
+                    <td class="text-right">
+                        13900
+                    </td>
+                    
+                    <td class="text-right">
+                        142200
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Parbhani</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        631100
+                    </td>
+                    
+                    <td class="text-right">
+                        6400
+                    </td>
+                    
+                    <td class="text-right">
+                        28800
+                    </td>
+                    
+                    <td class="text-right">
+                        8100
+                    </td>
+                    
+                    <td class="text-right">
+                        36900
+                    </td>
+                    
+                    <td class="text-right">
+                        13100
+                    </td>
+                    
+                    <td class="text-right">
+                        1300
+                    </td>
+                    
+                    <td class="text-right">
+                        23300
+                    </td>
+                    
+                    <td class="text-right">
+                        37700
+                    </td>
+                    
+                    <td class="text-right">
+                        25900
+                    </td>
+                    
+                    <td class="text-right">
+                        37600
+                    </td>
+                    
+                    <td class="text-right">
+                        63500
+                    </td>
+                    
+                    <td class="text-right">
+                        486600
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Pune</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        1562100
+                    </td>
+                    
+                    <td class="text-right">
+                        190200
+                    </td>
+                    
+                    <td class="text-right">
+                        326100
+                    </td>
+                    
+                    <td class="text-right">
+                        242800
+                    </td>
+                    
+                    <td class="text-right">
+                        568900
+                    </td>
+                    
+                    <td class="text-right">
+                        199800
+                    </td>
+                    
+                    <td class="text-right">
+                        16100
+                    </td>
+                    
+                    <td class="text-right">
+                        48200
+                    </td>
+                    
+                    <td class="text-right">
+                        264100
+                    </td>
+                    
+                    <td class="text-right">
+                        24900
+                    </td>
+                    
+                    <td class="text-right">
+                        59500
+                    </td>
+                    
+                    <td class="text-right">
+                        84400
+                    </td>
+                    
+                    <td class="text-right">
+                        454500
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Raigad</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        686700
+                    </td>
+                    
+                    <td class="text-right">
+                        156700
+                    </td>
+                    
+                    <td class="text-right">
+                        59000
+                    </td>
+                    
+                    <td class="text-right">
+                        146000
+                    </td>
+                    
+                    <td class="text-right">
+                        205000
+                    </td>
+                    
+                    <td class="text-right">
+                        42500
+                    </td>
+                    
+                    <td class="text-right">
+                        22900
+                    </td>
+                    
+                    <td class="text-right">
+                        38000
+                    </td>
+                    
+                    <td class="text-right">
+                        103400
+                    </td>
+                    
+                    <td class="text-right">
+                        45900
+                    </td>
+                    
+                    <td class="text-right">
+                        13800
+                    </td>
+                    
+                    <td class="text-right">
+                        59700
+                    </td>
+                    
+                    <td class="text-right">
+                        161900
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Ratnagiri</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        816300
+                    </td>
+                    
+                    <td class="text-right">
+                        5300
+                    </td>
+                    
+                    <td class="text-right">
+                        14500
+                    </td>
+                    
+                    <td class="text-right">
+                        224400
+                    </td>
+                    
+                    <td class="text-right">
+                        238900
+                    </td>
+                    
+                    <td class="text-right">
+                        13600
+                    </td>
+                    
+                    <td class="text-right">
+                        9900
+                    </td>
+                    
+                    <td class="text-right">
+                        130900
+                    </td>
+                    
+                    <td class="text-right">
+                        154400
+                    </td>
+                    
+                    <td class="text-right">
+                        136200
+                    </td>
+                    
+                    <td class="text-right">
+                        28100
+                    </td>
+                    
+                    <td class="text-right">
+                        164300
+                    </td>
+                    
+                    <td class="text-right">
+                        253400
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Sangli</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        861200
+                    </td>
+                    
+                    <td class="text-right">
+                        43400
+                    </td>
+                    
+                    <td class="text-right">
+                        50500
+                    </td>
+                    
+                    <td class="text-right">
+                        36700
+                    </td>
+                    
+                    <td class="text-right">
+                        87200
+                    </td>
+                    
+                    <td class="text-right">
+                        15300
+                    </td>
+                    
+                    <td class="text-right">
+                        16200
+                    </td>
+                    
+                    <td class="text-right">
+                        14300
+                    </td>
+                    
+                    <td class="text-right">
+                        45800
+                    </td>
+                    
+                    <td class="text-right">
+                        47500
+                    </td>
+                    
+                    <td class="text-right">
+                        38900
+                    </td>
+                    
+                    <td class="text-right">
+                        86400
+                    </td>
+                    
+                    <td class="text-right">
+                        598400
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Satara</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        1058100
+                    </td>
+                    
+                    <td class="text-right">
+                        147900
+                    </td>
+                    
+                    <td class="text-right">
+                        34000
+                    </td>
+                    
+                    <td class="text-right">
+                        123400
+                    </td>
+                    
+                    <td class="text-right">
+                        157400
+                    </td>
+                    
+                    <td class="text-right">
+                        74000
+                    </td>
+                    
+                    <td class="text-right">
+                        7900
+                    </td>
+                    
+                    <td class="text-right">
+                        41200
+                    </td>
+                    
+                    <td class="text-right">
+                        123100
+                    </td>
+                    
+                    <td class="text-right">
+                        68200
+                    </td>
+                    
+                    <td class="text-right">
+                        28600
+                    </td>
+                    
+                    <td class="text-right">
+                        96800
+                    </td>
+                    
+                    <td class="text-right">
+                        532900
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Sindhudurg</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        504000
+                    </td>
+                    
+                    <td class="text-right">
+                        33100
+                    </td>
+                    
+                    <td class="text-right">
+                        20500
+                    </td>
+                    
+                    <td class="text-right">
+                        99800
+                    </td>
+                    
+                    <td class="text-right">
+                        120300
+                    </td>
+                    
+                    <td class="text-right">
+                        2000
+                    </td>
+                    
+                    <td class="text-right">
+                        25400
+                    </td>
+                    
+                    <td class="text-right">
+                        66100
+                    </td>
+                    
+                    <td class="text-right">
+                        93500
+                    </td>
+                    
+                    <td class="text-right">
+                        102200
+                    </td>
+                    
+                    <td class="text-right">
+                        14400
+                    </td>
+                    
+                    <td class="text-right">
+                        116600
+                    </td>
+                    
+                    <td class="text-right">
+                        140500
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Solapur</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        1487700
+                    </td>
+                    
+                    <td class="text-right">
+                        36800
+                    </td>
+                    
+                    <td class="text-right">
+                        18400
+                    </td>
+                    
+                    <td class="text-right">
+                        92500
+                    </td>
+                    
+                    <td class="text-right">
+                        110900
+                    </td>
+                    
+                    <td class="text-right">
+                        74900
+                    </td>
+                    
+                    <td class="text-right">
+                        7000
+                    </td>
+                    
+                    <td class="text-right">
+                        37400
+                    </td>
+                    
+                    <td class="text-right">
+                        119300
+                    </td>
+                    
+                    <td class="text-right">
+                        129100
+                    </td>
+                    
+                    <td class="text-right">
+                        146200
+                    </td>
+                    
+                    <td class="text-right">
+                        275300
+                    </td>
+                    
+                    <td class="text-right">
+                        945400
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Thane</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        464000
+                    </td>
+                    
+                    <td class="text-right">
+                        146400
+                    </td>
+                    
+                    <td class="text-right">
+                        61000
+                    </td>
+                    
+                    <td class="text-right">
+                        20600
+                    </td>
+                    
+                    <td class="text-right">
+                        81600
+                    </td>
+                    
+                    <td class="text-right">
+                        21100
+                    </td>
+                    
+                    <td class="text-right">
+                        21500
+                    </td>
+                    
+                    <td class="text-right">
+                        15400
+                    </td>
+                    
+                    <td class="text-right">
+                        58000
+                    </td>
+                    
+                    <td class="text-right">
+                        10600
+                    </td>
+                    
+                    <td class="text-right">
+                        3100
+                    </td>
+                    
+                    <td class="text-right">
+                        13700
+                    </td>
+                    
+                    <td class="text-right">
+                        164300
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Wardha</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        629000
+                    </td>
+                    
+                    <td class="text-right">
+                        59500
+                    </td>
+                    
+                    <td class="text-right">
+                        37900
+                    </td>
+                    
+                    <td class="text-right">
+                        9600
+                    </td>
+                    
+                    <td class="text-right">
+                        47500
+                    </td>
+                    
+                    <td class="text-right">
+                        63000
+                    </td>
+                    
+                    <td class="text-right">
+                        9500
+                    </td>
+                    
+                    <td class="text-right">
+                        21100
+                    </td>
+                    
+                    <td class="text-right">
+                        93600
+                    </td>
+                    
+                    <td class="text-right">
+                        18800
+                    </td>
+                    
+                    <td class="text-right">
+                        61200
+                    </td>
+                    
+                    <td class="text-right">
+                        80000
+                    </td>
+                    
+                    <td class="text-right">
+                        348400
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Washim</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        513100
+                    </td>
+                    
+                    <td class="text-right">
+                        36300
+                    </td>
+                    
+                    <td class="text-right">
+                        28000
+                    </td>
+                    
+                    <td class="text-right">
+                        7400
+                    </td>
+                    
+                    <td class="text-right">
+                        35400
+                    </td>
+                    
+                    <td class="text-right">
+                        28600
+                    </td>
+                    
+                    <td class="text-right">
+                        600
+                    </td>
+                    
+                    <td class="text-right">
+                        6800
+                    </td>
+                    
+                    <td class="text-right">
+                        36000
+                    </td>
+                    
+                    <td class="text-right">
+                        10900
+                    </td>
+                    
+                    <td class="text-right">
+                        20200
+                    </td>
+                    
+                    <td class="text-right">
+                        31100
+                    </td>
+                    
+                    <td class="text-right">
+                        374300
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr>
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol1">
+                        <span class="text-danger">Maharashtra</span>
+                    </td>
+
+                    <td class="text-center text-dark fw-bold py-3 text-nowrap stickyCol2">
+                        <span class="text-dark"> Yavatmal</span>
+                    </td>
+
+                    
+                    <td class="text-left stickyCol3">
+                        2020-2021                    </td>
+                    
+                    <td class="text-right">
+                        1351800
+                    </td>
+                    
+                    <td class="text-right">
+                        240200
+                    </td>
+                    
+                    <td class="text-right">
+                        65500
+                    </td>
+                    
+                    <td class="text-right">
+                        44100
+                    </td>
+                    
+                    <td class="text-right">
+                        109600
+                    </td>
+                    
+                    <td class="text-right">
+                        70900
+                    </td>
+                    
+                    <td class="text-right">
+                        11600
+                    </td>
+                    
+                    <td class="text-right">
+                        22700
+                    </td>
+                    
+                    <td class="text-right">
+                        105200
+                    </td>
+                    
+                    <td class="text-right">
+                        24800
+                    </td>
+                    
+                    <td class="text-right">
+                        39300
+                    </td>
+                    
+                    <td class="text-right">
+                        64100
+                    </td>
+                    
+                    <td class="text-right">
+                        832700
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                    
+                    <td class="text-right">
+                        -
+                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                        <td class="text-right">
+                        -                    </td>
+                                    </tr>
+                                <tr class="text-center bg-secondary text-dark fw-bold py-3 text-nowrap">
+                    <td class="stickyCol7 bg-secondary fw-bold" colspan=2>
+                        <b> Total of Maharashtra</b>
+                    </td>
+                                        <td class="text-left bg-secondary fw-bold stickyCol3">
+                        2020-2021                    </td>
+                                        <td class="text-right">
+                        30757900                    </td>
+                                        <td class="text-right">
+                        5206600                    </td>
+                                        <td class="text-right">
+                        1725800                    </td>
+                                        <td class="text-right">
+                        1951200                    </td>
+                                        <td class="text-right">
+                        3677000                    </td>
+                                        <td class="text-right">
+                        1365600                    </td>
+                                        <td class="text-right">
+                        272200                    </td>
+                                        <td class="text-right">
+                        934400                    </td>
+                                        <td class="text-right">
+                        2572200                    </td>
+                                        <td class="text-right">
+                        1213600                    </td>
+                                        <td class="text-right">
+                        1438400                    </td>
+                                        <td class="text-right">
+                        2652000                    </td>
+                                        <td class="text-right">
+                        16650100                    </td>
+                                        <td class="text-right">
+                        24916635                    </td>
+                                        <td class="text-right">
+                        8266535                    </td>
+                                        <td class="text-right ">
+                        1036649                    </td>
+                                        <td class="text-right ">
+                        -                    </td>
+                                        <td class="text-right ">
+                        1036649                    </td>
+                                        <td class="text-right ">
+                        -                    </td>
+                                        <td class="text-right ">
+                        2077462                    </td>
+                                        <td class="text-right ">
+                        -                    </td>
+                                        <td class="text-right ">
+                        2077462                    </td>
+                                        <td class="text-right ">
+                        -                    </td>
+                                        <td class="text-right ">
+                        3114111                    </td>
+                                        <td class="text-right ">
+                        1797181                    </td>
+                                        <td class="text-right ">
+                        -                    </td>
+                                        <td class="text-right ">
+                        1797181                    </td>
+                                        <td class="text-right ">
+                        -                    </td>
+                                        <td class="text-right ">
+                        3601584                    </td>
+                                        <td class="text-right ">
+                        -                    </td>
+                                        <td class="text-right ">
+                        3601584                    </td>
+                                        <td class="text-right ">
+                        -                    </td>
+                                        <td class="text-right ">
+                        5398765                    </td>
+                                    </tr>
+                                                          </tbody>
+
+        </table>
+    </div>
+
+
+</div>
