@@ -16,4 +16,9 @@ _sources/mospi-asi/raw/_chunks/
 # kept locally, not in the repo
 CLAUDE.md
 *.py
+*.sh
 !tools/build_catalog.py
+
+# large raw downloads: links in each _sources README
+_sources/imd-gridded/raw/
+_sources/cpcb-aqi-bulletin/raw/
