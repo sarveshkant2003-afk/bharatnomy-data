@@ -39,3 +39,22 @@ Every state- and district-level dataset has `lgd_state_code` (and `lgd_district_
 ### Refreshing
 
 LGD changes as districts are created or renamed. To refresh: `python3 pipelines/lgd/fetch_lgd.py --fresh`, then `build_geography.py`, then `add_lgd_codes.py`.
+
+## `variables-draft.csv`: climate variable log (work in progress)
+
+One row per variable in the four climate variable sheets (air quality, heat and climate resilience, rainfall, wind; 150 rows), recording where each variable ended up. Filled in source by source; a blank `status` means the variable has not been worked on yet.
+
+| Column | Meaning |
+|---|---|
+| `sheet`, `sno` | Sheet the variable comes from and its serial number there (some variables appear in more than one sheet) |
+| `variable_name` | As written in the sheet |
+| `dataset` | Folder it ended up in |
+| `column` | Column(s) in that CSV, separated by `; ` |
+| `unit` | Unit of the values |
+| `geo_level` | Lowest level available (`IN`, `STATE`, `DIST`, `CITY`, ...) |
+| `frequency` | `annual`, `monthly`, `daily`, `one-off`, ... |
+| `earliest_period`, `latest_period` | Coverage |
+| `source_used` | Source the values come from |
+| `sources_tried` | All sources attempted, in order |
+| `status` | `found`, `partial` or `not found` |
+| `reason` | Why partial or not found |

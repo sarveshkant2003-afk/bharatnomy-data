@@ -24,6 +24,9 @@ One folder per table, named by the [naming rules](#folder-names) below. Each fol
 | [`AGR_net-irrigated-area_2004-05-to-2020-21_STATES_RBI`](AGR_net-irrigated-area_2004-05-to-2020-21_STATES_RBI/) | Net irrigated area by state (older years) | RBI Handbook of Statistics on Indian States |
 | [`AGR_net-sown-area_2004-05-to-2020-21_STATES_RBI`](AGR_net-sown-area_2004-05-to-2020-21_STATES_RBI/) | Net sown area by state (older years) | RBI Handbook of Statistics on Indian States |
 | [`CLM_heat-indicators-nagpur_1951-to-2025_MH_BNY_DIST`](CLM_heat-indicators-nagpur_1951-to-2025_MH_BNY_DIST/) | Heat wave days, warm nights, hottest days, rainfall departure, land surface temperature, Nagpur | Our calculation from IMD gridded data and NASA MODIS |
+| [`CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST`](CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST/) | Annual and seasonal rainfall, departures, heavy-rain days, dry spells, SPI, Maharashtra districts | Our calculation from IMD gridded rainfall |
+| [`CLM_rainfall-variability_1971-to-2020_MH_BNY_DIST`](CLM_rainfall-variability_1971-to-2020_MH_BNY_DIST/) | Year-to-year rainfall variability, Maharashtra districts | Our calculation from IMD gridded rainfall |
+| [`CLM_temperature-indices_1951-to-2024_MH_BNY_DIST`](CLM_temperature-indices_1951-to-2024_MH_BNY_DIST/) | Mean and extreme temperature, heat wave days, warm nights, Maharashtra districts | Our calculation from IMD gridded temperature |
 | [`ENV_aqi-daily_2015-to-2026_STATES_CPCB_CITY`](ENV_aqi-daily_2015-to-2026_STATES_CPCB_CITY/) | Daily Air Quality Index by city | CPCB daily AQI bulletins |
 | [`ENV_forest-cover_2023_STATES_FSI_DIST`](ENV_forest-cover_2023_STATES_FSI_DIST/) | Forest cover by district | India State of Forest Report 2023 |
 | [`ENV_forest-tree-cover_2023_STATES_FSI`](ENV_forest-tree-cover_2023_STATES_FSI/) | Forest and tree cover by state | India State of Forest Report 2023 |
@@ -60,7 +63,9 @@ Original source files (PDFs, API downloads) are in [`_sources/`](_sources/), one
 | Employment, occupations, job contracts, earnings (Nagpur unit-level survey records) | `LAB_plfs-*` |
 | Forest cover | `ENV_forest-*` |
 | Urban solid waste | `WAT_msw-*` |
-| Heat: temperature, heat waves, warm nights, land surface temperature, rainfall departure | `CLM_heat-indicators-*` (Nagpur) |
+| Heat: temperature, heat waves, warm nights, land surface temperature | `CLM_temperature-indices_*` (Maharashtra districts); `CLM_heat-indicators-*` (Nagpur, with LST) |
+| Rainfall: seasonal totals, departure, heavy rain, dry spells, drought index (SPI), variability | `CLM_rainfall-*` (Maharashtra districts) |
+| District and state codes (LGD, Census 2011), name variants | [`_reference/geography.csv`](_reference/) |
 | Air quality (AQI) | `ENV_aqi-*` |
 | Heat stroke deaths, deaths from natural causes | `HLT_deaths-forces-of-nature_*` |
 | Population, age, elderly, workers by category (cultivators, agricultural labourers) | `POP_*` |

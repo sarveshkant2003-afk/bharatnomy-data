@@ -3,6 +3,7 @@
 Original files used for:
 
 - [`CLM_heat-indicators-nagpur_1951-to-2025_MH_BNY_DIST/`](../../CLM_heat-indicators-nagpur_1951-to-2025_MH_BNY_DIST/)
+- [`CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST/`](../../CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST/), [`CLM_rainfall-variability_1971-to-2020_MH_BNY_DIST/`](../../CLM_rainfall-variability_1971-to-2020_MH_BNY_DIST/), [`CLM_temperature-indices_1951-to-2024_MH_BNY_DIST/`](../../CLM_temperature-indices_1951-to-2024_MH_BNY_DIST/) (script: [`pipelines/imd-gridded/build_district_indices.py`](../../pipelines/imd-gridded/build_district_indices.py))
 
 ## Source
 
