@@ -32,6 +32,7 @@ One folder per table, named by the [naming rules](#folder-names) below. Each fol
 | [`ENV_forest-cover_2023_STATES_FSI_DIST`](ENV_forest-cover_2023_STATES_FSI_DIST/) | Forest cover by district | India State of Forest Report 2023 |
 | [`ENV_forest-tree-cover_2023_STATES_FSI`](ENV_forest-tree-cover_2023_STATES_FSI/) | Forest and tree cover by state | India State of Forest Report 2023 |
 | [`HLT_deaths-forces-of-nature_2017-to-2022_STATES_NCRB`](HLT_deaths-forces-of-nature_2017-to-2022_STATES_NCRB/) | Deaths from heat/sun stroke and other natural causes, by state | NCRB Accidental Deaths & Suicides in India |
+| [`HOU_household-amenities-hh14_2011_MH_ORGI_SDT`](HOU_household-amenities-hh14_2011_MH_ORGI_SDT/) | Household amenities and assets (roof material, water, electricity, cooking fuel, latrine, assets), Maharashtra districts and tehsils | Census 2011 table HH-14 |
 | [`HOU_slum-population_2011_STATES_ORGI_CITY`](HOU_slum-population_2011_STATES_ORGI_CITY/) | Slum population by town | Census 2011 slum PCA |
 | [`IND_asi-nic-1987-2-digit_1992-93-to-1997-98_STATES_MOSPI`](IND_asi-nic-1987-2-digit_1992-93-to-1997-98_STATES_MOSPI/) | Annual Survey of Industries by industry (NIC 1987 2-digit), by state | MoSPI ASI API |
 | [`IND_asi-nic-1987-3-digit_1992-93-to-1997-98_STATES_MOSPI`](IND_asi-nic-1987-3-digit_1992-93-to-1997-98_STATES_MOSPI/) | Annual Survey of Industries by industry (NIC 1987 3-digit), by state | MoSPI ASI API |
@@ -71,6 +72,7 @@ Original source files (PDFs, API downloads) are in [`_sources/`](_sources/), one
 | Heat stroke deaths, deaths from natural causes | `HLT_deaths-forces-of-nature_*` |
 | Population, age, elderly, workers by category (cultivators, agricultural labourers) | `POP_*` |
 | Slums | `HOU_slum-*` |
+| Housing quality, roof material, drinking water, electricity, cooking fuel, latrines, household assets | `HOU_household-amenities-*` (Maharashtra, 2011) |
 | Tap water | `WAT_tap-water-*` |
 | District land use and irrigation | `AGR_land-use-irrigation_*_DIST` |
 
