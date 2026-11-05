@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bharatnomy Variable Map</title>
-<meta name="description" content="Mind map of the climate variables in Bharatnomy's variable sheets, by lens and sub-theme, with search and data status.">
+<meta name="description" content="Mind map of the climate variables in Bharatnomy's variable sheets, by lens, with search and data status.">
 <style>
 :root {
   color-scheme: light;
@@ -93,7 +93,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
     <a href="index.html">Dataset search</a>
   </div>
 </div>
-<svg id="map" role="img" aria-label="Mind map of lenses, sub-themes, datasets and variables"></svg>
+<svg id="map" role="img" aria-label="Mind map of lenses and their variables"></svg>
 <div class="panel" id="panel" role="dialog" aria-label="Variable details"></div>
 <div class="hint"><span class="lg"><i style="background:#1d8a5a;border-color:#1d8a5a"></i>Available</span><span class="lg"><i style="background:#d08a16;border-color:#d08a16"></i>Partly available</span><span class="lg"><i></i>Not available yet</span> · Click a branch to open it · drag to move · scroll to zoom</div>
 
@@ -105,7 +105,7 @@ const R = window.REGISTRY || { lenses: [], datasets: {}, variables: [] };
 const COLORS = { CAR: "#1d6b52", EPM: "#b5651d", MAC: "#3d5a99", EQM: "#8a3e7a", COM: "#6f7a12" };
 const RIGHT = new Set(["CAR", "EPM"]);          // lenses drawn to the right of the centre; the rest go left
 const LEVELS = { IN: "All India", STATE: "State", DIST: "District", SDT: "Sub-district", CITY: "City", VIL: "Village" };
-const ROW = { lens: 64, sub: 44, var: 30 };            // vertical space per node
+const ROW = { lens: 64, var: 30 };                       // vertical space per node
 const STATUS = { found: ["#1d8a5a", "Available"], partial: ["#d08a16", "Partly available"], "not found": ["#b9b0a0", "Not available"], "not yet tried": ["#b9b0a0", "Not collected yet"] };
 const GAP = 64;                                       // horizontal gap between columns
 const MIN_ZOOM_FIT = 0.75;                            // "fit" never shrinks text below this
@@ -115,32 +115,26 @@ const textW = (t, size, weight) => { ctx.font = `${weight || 400} ${size}px ${FO
 
 const lensOf = {}, subName = {};
 R.lenses.forEach(l => l.sub_themes.forEach(s => { lensOf[s.id] = l.id; subName[s.id] = s.name; }));
-const VARS = (R.sheet_variables || []).map(v => ({ ...v, _t: [v.name, v.definition, v.sheet_unit, subName[v.sub_theme_id], ...(v.data ? v.data.columns : [])].join(" ").toLowerCase() }));
+const VARS = (R.sheet_variables || []).map(v => ({ ...v, _t: [v.name, v.definition, v.sheet_unit, ...(v.data ? v.data.columns : [])].join(" ").toLowerCase() }));
 const hasData = v => v.status === "found" || v.status === "partial";
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const cut = (s, n) => s.length > n ? s.slice(0, n - 1) + "…" : s;
 const dsTitle = d => (R.datasets[d] || {}).title || d;
 
-const DEFAULT_OPEN = () => new Set(["root", ...R.lenses.map(l => "L:" + l.id)]);
+const DEFAULT_OPEN = () => new Set(["root", "L:" + (R.lenses[0] || {}).id]);   // first lens open; one lens at a time
 let query = "", open = DEFAULT_OPEN(), selected = null;
 const terms = () => query.toLowerCase().split(/\s+/).filter(Boolean);
 const matching = () => { const t = terms(); return t.length ? VARS.filter(v => t.every(w => v._t.includes(w))) : VARS; };
 
-// ---------- tree: root -> lens -> sub-theme -> sheet variable
+// ---------- tree: root -> lens -> sheet variable
 function buildTree(vars) {
   const searching = terms().length > 0;
   const root = { key: "root", kind: "root", name: "Bharatnomy", children: [] };
   for (const l of R.lenses) {
-    const lv = vars.filter(v => v.lens_id === l.id);
+    const lv = vars.filter(v => v.lens_id === l.id).sort((a, b) => hasData(b) - hasData(a) || a.name.localeCompare(b.name));
     if (searching && !lv.length) continue;
-    const lens = { key: "L:" + l.id, kind: "lens", lens: l.id, name: l.name, count: lv.length, have: lv.filter(hasData).length, children: [] };
-    for (const s of l.sub_themes) {
-      const sv = lv.filter(v => v.sub_theme_id === s.id).sort((a, b) => hasData(b) - hasData(a) || a.name.localeCompare(b.name));
-      if (searching && !sv.length) continue;
-      lens.children.push({ key: "S:" + s.id, kind: "sub", lens: l.id, name: s.name, count: sv.length, have: sv.filter(hasData).length,
-        children: sv.map(v => ({ key: "V:" + v.name, kind: "var", lens: l.id, name: v.name, v })) });
-    }
-    root.children.push(lens);
+    root.children.push({ key: "L:" + l.id, kind: "lens", lens: l.id, name: l.name, count: lv.length, have: lv.filter(hasData).length,
+      children: lv.map(v => ({ key: "V:" + v.name, kind: "var", lens: l.id, name: v.name, v })) });
   }
   return root;
 }
@@ -173,55 +167,78 @@ function nodeW(d) {
 }
 const nodeH = d => ({ root: 48, lens: 38, sub: 32, var: 24 }[d.kind]);
 
-// ---------- layout: two half-trees, columns placed by the widest label of the previous column
-function layoutSide(vis, ids, dir) {
-  const side = { ...vis, children: (vis.children || []).filter(c => ids.has(c.lens)) };
-  const h = d3.hierarchy(side, d => d.children);
-  d3.tree().nodeSize([1, 1]).separation((a, b) => ((ROW[a.data.kind] + ROW[b.data.kind]) / 2) * (a.parent === b.parent ? 1 : 1.15))(h);
-  const maxW = {};
-  h.each(d => { d.w = nodeW(d.data); maxW[d.depth] = Math.max(maxW[d.depth] || 0, d.w); });
-  const colX = [0];
-  for (let i = 1; i <= h.height; i++) colX[i] = colX[i - 1] + (i === 1 ? maxW[0] / 2 : maxW[i - 1]) + GAP;
-  h.each(d => { d.px = dir * colX[d.depth]; d.py = d.x; d.dir = dir; });
-  return h;
-}
-
+// ---------- layout: root in the centre, lenses stacked on each side, an open lens's variables in columns
+const ROWH = 27, COL_GAP = 40, LENS_X = 170, BLOCK_GAP = 80;
 const svg = d3.select("#map");
 const g = svg.append("g");
 const gLinks = g.append("g"), gNodes = g.append("g");
-const zoom = d3.zoom().scaleExtent([0.25, 2.5]).on("zoom", e => g.attr("transform", e.transform));
+const zoom = d3.zoom().scaleExtent([0.3, 2.5]).on("zoom", e => g.attr("transform", e.transform));
 svg.call(zoom).on("dblclick.zoom", null);
+
+function layout(tree) {
+  const maxRows = Math.max(10, Math.floor((window.innerHeight - 150) / ROWH));
+  const root = { data: tree, depth: 0, px: 0, py: 0, dir: 1 };
+  root.w = nodeW(tree);
+  const nodes = [root], links = [];
+  for (const dir of [1, -1]) {
+    const lenses = tree.children.filter(l => RIGHT.has(l.lens) === (dir > 0));
+    const slots = lenses.map(l => {
+      const o = { data: { ...l, _hasKids: l.children.length > 0 }, depth: 1, dir, w: 0, vars: [] };
+      o.w = nodeW(o.data);
+      const isOpen = open.has(l.key) && l.children.length;
+      if (isOpen) {
+        const n = l.children.length, cols = Math.ceil(n / maxRows), rows = Math.ceil(n / cols);
+        o.rows = rows; o.cols = [];
+        for (let c = 0; c < cols; c++) o.cols.push(l.children.slice(c * rows, (c + 1) * rows));
+        o.slot = Math.max(64, rows * ROWH + 40);
+      } else o.slot = 64;
+      return o;
+    });
+    let y = -slots.reduce((a, o) => a + o.slot, 0) / 2;
+    for (const o of slots) {
+      o.py = y + o.slot / 2; o.px = dir * LENS_X; y += o.slot;
+      nodes.push(o);
+      links.push({ key: "rl:" + o.data.key, lens: o.data.lens, w: 3.2, d: curve(dir * root.w / 2, 0, o.px, o.py) });
+      if (!o.cols) continue;
+      const top = o.py - (o.rows * ROWH) / 2, bar = top - 6;
+      let x = o.px + dir * (o.w + BLOCK_GAP);
+      const spines = [];
+      o.cols.forEach((col, c) => {
+        const vs = col.map((v, r) => ({ data: v, depth: 2, dir, px: x, py: top + ROWH / 2 + r * ROWH, w: nodeW(v) }));
+        vs.forEach(v => nodes.push(v));
+        const sx = x - dir * 12;
+        spines.push(sx);
+        links.push({ key: "sp:" + o.data.key + c, lens: o.data.lens, w: 1.6, d: `M${sx},${bar} V${vs[vs.length - 1].py}` });
+        vs.forEach(v => links.push({ key: "tk:" + v.data.key, lens: o.data.lens, w: 1.4, d: `M${sx},${v.py} H${v.px - dir * 5}` }));
+        x += dir * (Math.max(...vs.map(v => v.w)) + COL_GAP);
+      });
+      links.push({ key: "lb:" + o.data.key, lens: o.data.lens, w: 2.2,
+        d: curve(o.px + dir * o.w, o.py, spines[0], bar) + (spines.length > 1 ? ` H${spines[spines.length - 1]}` : "") });
+    }
+  }
+  return { nodes, links };
+}
+function curve(sx, sy, tx, ty) {
+  const mx = sx + (tx - sx) * 0.55;
+  return `M${sx},${sy} C${mx},${sy} ${sx + (tx - sx) * 0.45},${ty} ${tx},${ty}`;
+}
 
 let current = [];
 function render(view) {
   const vars = matching();
-  const vis = visible(buildTree(vars));
-  const ids = side => new Set(R.lenses.map(l => l.id).filter(id => RIGHT.has(id) === side));
-  const hr = layoutSide(vis, ids(true), 1), hl = layoutSide(vis, ids(false), -1);
-  const nodes = [], links = [];
-  [hr, hl].forEach((h, i) => h.descendants().forEach(d => { if (d.depth === 0) { if (i === 0) nodes.push(d); return; } nodes.push(d); links.push(d); }));
+  const { nodes, links } = layout(buildTree(vars));
   current = nodes;
-
-  const color = d => d.data.kind === "root" ? "#241f19" : COLORS[d.data.lens] || "#666";
-  const width = { 1: 3.2, 2: 2.4, 3: 1.5 };
-  const path = d => {
-    const p = d.parent;
-    const sx = p.depth === 0 ? d.dir * p.w / 2 : p.px + d.dir * p.w, sy = p.py, tx = d.px, ty = d.py;
-    const mx = sx + (tx - sx) * 0.55;
-    return `M${sx},${sy} C${mx},${sy} ${sx + (tx - sx) * 0.45},${ty} ${tx},${ty}`;
-  };
-  const t = svg.transition().duration(380);
-  gLinks.selectAll("path").data(links, d => d.data.key).join(
-    e => e.append("path").attr("class", "link").attr("stroke", color).attr("stroke-width", d => width[d.depth]).attr("d", path).attr("opacity", 0).call(s => s.transition(t).attr("opacity", 1)),
-    u => u.call(s => s.transition(t).attr("d", path)),
+  const t = svg.transition().duration(350);
+  gLinks.selectAll("path").data(links, d => d.key).join(
+    e => e.append("path").attr("class", "link").attr("fill", "none").attr("stroke", d => COLORS[d.lens]).attr("stroke-width", d => d.w)
+          .attr("d", d => d.d).attr("opacity", 0).call(s => s.transition(t).attr("opacity", 1)),
+    u => u.call(s => s.transition(t).attr("d", d => d.d)),
     x => x.remove());
-
   gNodes.selectAll("g.node").data(nodes, d => d.data.key).join(
     e => { const s = e.append("g").attr("transform", d => `translate(${d.px},${d.py})`).attr("opacity", 0).on("click", (ev, d) => onClick(d));
            s.call(drawNode); s.transition(t).attr("opacity", 1); return s; },
     u => { u.selectAll("*").remove(); u.call(drawNode); u.transition(t).attr("transform", d => `translate(${d.px},${d.py})`); return u; },
     x => x.remove());
-
   document.getElementById("count").textContent = terms().length
     ? `${vars.length} of ${VARS.length} sheet variables match`
     : `${VARS.length} sheet variables · ${VARS.filter(hasData).length} with data`;
@@ -273,18 +290,11 @@ function onClick(d) {
   const k = d.data.kind;
   if (k === "var") { selected = d.data.key; showPanel(d.data.v); render(); return; }
   if (k === "root" || !d.data._hasKids) return;
-  if (open.has(d.data.key)) { open.delete(d.data.key); [...open].forEach(x => { if (under(x, d.data.key)) open.delete(x); }); }
-  else open.add(d.data.key);
-  render();
-  const n = current.find(c => c.data.key === d.data.key);
-  if (n) panTo(n);
+  const wasOpen = open.has(d.data.key);
+  if (!terms().length) open = new Set(["root"]);          // one lens at a time (search keeps every match open)
+  wasOpen ? open.delete(d.data.key) : open.add(d.data.key);
+  render("fit");
 }
-function under(k, key) {
-  if (key.startsWith("L:")) { const l = key.slice(2); return (k.startsWith("S:") && lensOf[k.slice(2)] === l) || (k.startsWith("D:") && lensOf[k.split(":")[1]] === l); }
-  if (key.startsWith("S:")) return k.startsWith("D:" + key.slice(2) + ":");
-  return false;
-}
-
 function showPanel(v) {
   const lens = R.lenses.find(l => l.id === v.lens_id) || {};
   const [c, label] = STATUS[v.status] || STATUS["not yet tried"];
@@ -294,7 +304,7 @@ function showPanel(v) {
   const p = document.getElementById("panel");
   p.style.setProperty("--lens", COLORS[v.lens_id]);
   p.innerHTML = `<button class="close" aria-label="Close">×</button>
-    <div class="crumb">${esc(lens.name)} › ${esc(subName[v.sub_theme_id])}</div>
+    <div class="crumb">${esc(lens.name)}</div>
     <h2>${esc(v.name)}</h2>
     <p class="def">${esc(v.definition)}</p>
     <p class="status" style="--c:${c}"><span class="dot ${hasData(v) ? "on" : ""}"></span>${label}${v.reason ? `<span class="why">${esc(v.reason)}</span>` : ""}</p>
@@ -323,7 +333,7 @@ function showPanel(v) {
 function bounds(nodes) {
   let x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
   nodes.forEach(d => {
-    const a = d.data.kind === "root" ? d.px - d.w / 2 : d.dir > 0 ? d.px : d.px - d.w;
+    const a = d.data.kind === "root" ? d.px - d.w / 2 : d.dir > 0 ? d.px - 12 : d.px - d.w;
     x0 = Math.min(x0, a); x1 = Math.max(x1, a + d.w); y0 = Math.min(y0, d.py - 24); y1 = Math.max(y1, d.py + 24);
   });
   return { x0, x1, y0, y1 };
@@ -332,18 +342,12 @@ function fitView() {
   const W = window.innerWidth, H = window.innerHeight, top = 70;
   const b = bounds(current);
   let k = Math.min(1.15, (W - 40) / (b.x1 - b.x0), (H - top - 30) / (b.y1 - b.y0));
-  k = Math.max(k, MIN_ZOOM_FIT);
+  k = Math.max(k, 0.6);
   // if it does not fit at a readable size, keep the centre of the map in view
   const cx = (b.x1 - b.x0) * k > W ? 0 : (b.x0 + b.x1) / 2;
   const cy = (b.y1 - b.y0) * k > H - top ? 0 : (b.y0 + b.y1) / 2;
   svg.transition().duration(450).call(zoom.transform, d3.zoomIdentity.translate(W / 2 - k * cx, top + (H - top) / 2 - k * cy).scale(k));
 }
-function panTo(d) {
-  const tr = d3.zoomTransform(svg.node()), W = window.innerWidth, H = window.innerHeight;
-  const x = d.px + d.dir * Math.min(d.w + 200, W / (2 * tr.k)), y = d.py;
-  svg.transition().duration(450).call(zoom.transform, d3.zoomIdentity.translate(W / 2 - tr.k * x * 0.6 - tr.k * d.px * 0.4, (H + 40) / 2 - tr.k * y).scale(tr.k));
-}
-
 let timer;
 const q = document.getElementById("q");
 q.addEventListener("input", () => {
@@ -359,7 +363,7 @@ q.addEventListener("keydown", e => { if (e.key === "Escape") { q.value = ""; q.d
 document.getElementById("expand").onclick = () => { open = DEFAULT_OPEN(); render("fit"); };
 document.getElementById("collapse").onclick = () => { open = new Set(["root"]); render("fit"); };
 document.getElementById("fit").onclick = () => fitView();
-window.addEventListener("resize", () => fitView());
+window.addEventListener("resize", () => render("fit"));
 window.addEventListener("hashchange", () => { const v = decodeURIComponent((location.hash.match(/q=([^&]*)/) || [])[1] || ""); if (v !== query) { q.value = v; q.dispatchEvent(new Event("input")); } });
 
 const initial = decodeURIComponent((location.hash.match(/q=([^&]*)/) || [])[1] || "");
