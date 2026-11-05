@@ -27,7 +27,9 @@ One folder per table, named by the [naming rules](#folder-names) below. Each fol
 | [`CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST`](CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST/) | Annual and seasonal rainfall, departures, heavy-rain days, dry spells, SPI, Maharashtra districts | Our calculation from IMD gridded rainfall |
 | [`CLM_rainfall-variability_1971-to-2020_MH_BNY_DIST`](CLM_rainfall-variability_1971-to-2020_MH_BNY_DIST/) | Year-to-year rainfall variability, Maharashtra districts | Our calculation from IMD gridded rainfall |
 | [`CLM_temperature-indices_1951-to-2024_MH_BNY_DIST`](CLM_temperature-indices_1951-to-2024_MH_BNY_DIST/) | Mean and extreme temperature, heat wave days, warm nights, Maharashtra districts | Our calculation from IMD gridded temperature |
+| [`CLM_wind-humidity_1981-to-2025_MH_BNY_DIST`](CLM_wind-humidity_1981-to-2025_MH_BNY_DIST/) | Wind speed and direction, calm and strong-wind days, humidity, wet-bulb temperature, Maharashtra districts | Our calculation from NASA POWER |
 | [`ENV_aqi-daily_2015-to-2026_STATES_CPCB_CITY`](ENV_aqi-daily_2015-to-2026_STATES_CPCB_CITY/) | Daily Air Quality Index by city | CPCB daily AQI bulletins |
+| [`ENV_active-fires_2001-to-2025_STATES_BNY_DIST`](ENV_active-fires_2001-to-2025_STATES_BNY_DIST/) | Satellite fire detections (crop-residue and forest burning) by district, all India | Our count from NASA FIRMS MODIS |
 | [`ENV_aqi-days-by-category_2015-to-2026_STATES_BNY_CITY`](ENV_aqi-days-by-category_2015-to-2026_STATES_BNY_CITY/) | Days per year in each AQI category, very poor/severe days, stations reporting, by city | Our count from CPCB daily AQI bulletins |
 | [`ENV_forest-cover_2023_STATES_FSI_DIST`](ENV_forest-cover_2023_STATES_FSI_DIST/) | Forest cover by district | India State of Forest Report 2023 |
 | [`ENV_forest-tree-cover_2023_STATES_FSI`](ENV_forest-tree-cover_2023_STATES_FSI/) | Forest and tree cover by state | India State of Forest Report 2023 |
@@ -69,6 +71,8 @@ Original source files (PDFs, API downloads) are in [`_sources/`](_sources/), one
 | Rainfall: seasonal totals, departure, heavy rain, dry spells, drought index (SPI), variability | `CLM_rainfall-*` (Maharashtra districts) |
 | District and state codes (LGD, Census 2011), name variants | [`_reference/geography.csv`](_reference/) |
 | Air quality (AQI), very poor / severe air days | `ENV_aqi-*` |
+| Wind, humidity, wet-bulb temperature | `CLM_wind-humidity_*` (Maharashtra districts) |
+| Fires, crop-residue burning | `ENV_active-fires_*` (all districts) |
 | Heat stroke deaths, deaths from natural causes | `HLT_deaths-forces-of-nature_*` |
 | Population, age, elderly, workers by category (cultivators, agricultural labourers) | `POP_*` |
 | Slums | `HOU_slum-*` |

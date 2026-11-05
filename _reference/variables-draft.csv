@@ -6,21 +6,21 @@ air_quality,4,SO2,,,,,,,,,,,
 air_quality,5,Ozone (O3),,,,,,,,,,,
 air_quality,6,Carbon monoxide (CO),,,,,,,,,,,
 air_quality,7,Ammonia (NH3),,,,,,,,,,,
-air_quality,8,Air Quality Index (AQI),,,,,,,,,,,
+air_quality,8,Air Quality Index (AQI),ENV_aqi-daily_2015-to-2026_STATES_CPCB_CITY,aqi; air_quality,index (0-500),CITY,daily,2015-05-01,2026-10-27,CPCB National AQI bulletin,CPCB National AQI bulletin,found,
 air_quality,9,Days exceeding NAAQS,,,,,,,,,,,
-air_quality,10,Very poor / severe AQI days,,,,,,,,,,,
+air_quality,10,Very poor / severe AQI days,ENV_aqi-days-by-category_2015-to-2026_STATES_BNY_CITY,days_very_poor_or_severe; days_very_poor; days_severe,days per year,CITY,annual,2015,2026,"CPCB National AQI bulletin, counted by BNY",CPCB National AQI bulletin,found,
 air_quality,11,Aerosol optical depth (AOD),,,,,,,,,,,
-air_quality,12,Monitoring stations,,,,,,,,,,,
-air_quality,13,Crop residue burning,,,,,,,,,,,
+air_quality,12,Monitoring stations,ENV_aqi-days-by-category_2015-to-2026_STATES_BNY_CITY,stations_reporting_max,count,CITY,annual,2015,2026,"CPCB National AQI bulletin, counted by BNY",CPCB AQI bulletin; CAAQMS portal (captcha); NAMP not yet tried,partial,Continuous stations reporting to the bulletin only; manual NAMP stations not counted
+air_quality,13,Crop residue burning,ENV_active-fires_2001-to-2025_STATES_BNY_DIST,fire_detections; fire_detections_confidence_30_plus; fire_detections_oct_dec; fire_detections_mar_may,fire detections per year,DIST,annual,2001,2025,"NASA FIRMS MODIS active fires, counted per district by BNY",NASA FIRMS,partial,All vegetation fires; FIRMS does not separate cropland burning
 air_quality,14,Emissions by source,,,,,,,,,,,
 air_quality,15,Source apportionment,,,,,,,,,,,
-air_quality,16,Registered vehicles,,,,,,,,,,,
+air_quality,16,Registered vehicles,,,,,,,,,Vahan dashboard,not found,Vahan dashboard did not respond to scripts (timeout); needs a browser session
 air_quality,17,Polluting industries,,,,,,,,,,,
 air_quality,18,Thermal power plants,,,,,,,,,,,
 air_quality,19,Brick kilns,,,,,,,,,,,
-air_quality,20,Solid fuel use for cooking,,,,,,,,,,,
+air_quality,20,Solid fuel use for cooking,HOU_household-amenities-hh14_2011_MH_ORGI_SDT,cooking_fuel_fire_wood_pct; cooking_fuel_crop_residue_pct; cooking_fuel_cowdung_cake_pct; cooking_fuel_coal_lignite_charcoal_pct,% of households,SDT,one-off,2011,2011,Census 2011 HH-14,NFHS-5; Census 2011,partial,"Census 2011 only, Maharashtra; NFHS-5 site (rchiips.org) unreachable and data.gov.in needs login"
 air_quality,21,LPG coverage,,,,,,,,,,,
-air_quality,22,Waste burning & landfill fires,,,,,,,,,,,
+air_quality,22,Waste burning & landfill fires,,,,,,,,,NASA FIRMS,not found,FIRMS cannot tell waste or landfill fires from other fires; no CPCB/municipal incident table found yet
 air_quality,23,Ventilation / mixing height,,,,,,,,,,,
 air_quality,24,Visibility,,,,,,,,,,,
 air_quality,25,Deaths attributable to air pollution,,,,,,,,,,,
@@ -28,36 +28,36 @@ air_quality,26,Respiratory illness cases,,,,,,,,,,,
 air_quality,27,NCAP city action plan & funds,,,,,,,,,,,
 air_quality,28,Swachh Vayu Survekshan rank,,,,,,,,,,,
 air_quality,29,GRAP stages invoked,,,,,,,,,,,
-air_quality,30,Green cover,,,,,,,,,,,
+air_quality,30,Green cover,ENV_forest-cover_2023_STATES_FSI_DIST,forest_cover_pct_of_area; forest_cover_total_sq_km,% of area; sq km,DIST,one-off,2023,2023,FSI India State of Forest Report 2023,FSI ISFR,partial,Forest cover only; district tree cover and NDVI not yet added
 heat_climate_resilience,1,Maximum temperature,CLM_temperature-indices_1951-to-2024_MH_BNY_DIST,tmax_mean_c; tmax_highest_c; tmax_mean_mar_may_c; days_tmax_40c_or_more; days_tmax_45c_or_more; days_tmax_above_p90,°C; days,DIST,annual,1951,2024,"IMD Pune gridded temperature (1 deg), district average computed by BNY",IMD Pune gridded data,found,
 heat_climate_resilience,2,Minimum temperature,CLM_temperature-indices_1951-to-2024_MH_BNY_DIST,tmin_mean_c; tmin_highest_c; tmin_lowest_c; tmin_mean_mar_may_c; nights_tmin_above_p90,°C; days,DIST,annual,1951,2024,"IMD Pune gridded temperature (1 deg), district average computed by BNY",IMD Pune gridded data,found,
 heat_climate_resilience,3,Heatwave days,CLM_temperature-indices_1951-to-2024_MH_BNY_DIST,heatwave_days; severe_heatwave_days,days per year,DIST,annual,1951,2024,"IMD Pune gridded temperature (1 deg), district average computed by BNY",IMD Pune gridded data,partial,"1-degree grid smooths extremes, so counts are far below station-based counts (Nagpur ~1 day/yr); read as a trend. Station data (IMD Data Supply Portal) is paid"
 heat_climate_resilience,4,Warm nights,CLM_temperature-indices_1951-to-2024_MH_BNY_DIST,warm_nights,days per year,DIST,annual,1951,2024,"IMD Pune gridded temperature (1 deg), district average computed by BNY",IMD Pune gridded data,partial,"1-degree grid smooths extremes, so counts are far below station-based counts (Nagpur ~1 day/yr); read as a trend. Station data (IMD Data Supply Portal) is paid"
-heat_climate_resilience,5,Humidity / heat index,,,,,,,,,,,
-heat_climate_resilience,6,Land surface temperature,,,,,,,,,,,
+heat_climate_resilience,5,Humidity / heat index,CLM_wind-humidity_1981-to-2025_MH_BNY_DIST,relative_humidity_mean_pct; relative_humidity_mean_mar_may_pct; relative_humidity_mean_jun_sep_pct; wet_bulb_temp_highest_c; wet_bulb_temp_mean_mar_may_c,%; °C,DIST,annual,1981,2025,"NASA POWER daily (MERRA-2), district average computed by BNY",ERA5 (needs login); IMD (not free); NASA POWER,partial,Humidity and wet-bulb temperature; no heat index (needs hourly humidity at peak heat)
+heat_climate_resilience,6,Land surface temperature,CLM_heat-indicators-nagpur_1951-to-2025_MH_BNY_DIST,lst_day_mean_mar_may_c; lst_night_mean_mar_may_c; lst_day_highest_8day_c; lst_night_highest_8day_c,°C,CITY,annual,2002,2022,NASA MODIS MOD11A2 (ORNL web service),"MODIS (ORNL, no login)",partial,Nagpur city only; download incomplete
 heat_climate_resilience,7,Urban heat island intensity,,,,,,,,,,,
-heat_climate_resilience,8,Rainfall deviation,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,rainfall_annual_departure_pct; rainfall_mar_may_departure_pct; rainfall_jun_sep_departure_pct; rainfall_oct_dec_departure_pct,% (vs 1971-2020 average),DIST,annual,1951,2025,"IMD Pune gridded rainfall (0.25 deg), district average computed by BNY",IMD Pune gridded rainfall,found,
+heat_climate_resilience,8,Rainfall deviation,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,rainfall_annual_departure_pct; rainfall_mar_may_departure_pct; rainfall_jun_sep_departure_pct; rainfall_oct_dec_departure_pct,% (vs 1971-2020 average),DIST,annual,1951,2025,"IMD Pune gridded rainfall (0.25 deg), district average computed by BNY","IMD district rainfall statistics (current season only, no archive); IMD Pune gridded rainfall",found,
 heat_climate_resilience,9,Drought index,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,spi_annual; spi_jun_sep,index (unitless),DIST,annual,1951,2025,"IMD Pune gridded rainfall (0.25 deg), district average computed by BNY",IMD Pune gridded rainfall,partial,SPI computed by BNY from IMD gridded rainfall (annual and Jun-Sep). Source 1 (IMD drought monitoring) not yet tried; SPEI not computed (needs evapotranspiration)
 heat_climate_resilience,10,Projected warming,,,,,,,,,,,
 heat_climate_resilience,11,"Air quality (PM2.5, ozone)",,,,,,,,,,,
-heat_climate_resilience,12,Population & density,,,,,,,,,,,
+heat_climate_resilience,12,Population & density,POP_census-pca_2011_STATES_ORGI_DIST,population_persons; households,persons,DIST,one-off,2011,2011,Census 2011 Primary Census Abstract,Census of India 2011,partial,Population only; density needs area (not in this table)
 heat_climate_resilience,13,Urbanisation & built-up area,,,,,,,,,,,
 heat_climate_resilience,14,Outdoor workers,,,,,,,,,,,
-heat_climate_resilience,15,Agricultural workers,,,,,,,,,,,
+heat_climate_resilience,15,Agricultural workers,POP_census-pca_2011_STATES_ORGI_DIST,main_cultivators_persons; main_agricultural_labourers_persons; marginal_cultivators_persons; marginal_agricultural_labourers_persons; total_workers_persons,persons,DIST,one-off,2011,2011,Census 2011 Primary Census Abstract,Census of India 2011,found,
 heat_climate_resilience,16,Construction workers,,,,,,,,,,,
 heat_climate_resilience,17,Livestock population,,,,,,,,,,,
-heat_climate_resilience,18,Elderly population share,,,,,,,,,,,
-heat_climate_resilience,19,Children under 5 share,,,,,,,,,,,
-heat_climate_resilience,20,Slum population,,,,,,,,,,,
-heat_climate_resilience,21,Kutcha / tin / asbestos roofs,,,,,,,,,,,
-heat_climate_resilience,22,No drinking water within premises,,,,,,,,,,,
-heat_climate_resilience,23,Electricity access & supply hours,,,,,,,,,,,
-heat_climate_resilience,24,Cooling appliance ownership,,,,,,,,,,,
-heat_climate_resilience,25,Chronic disease prevalence,,,,,,,,,,,
+heat_climate_resilience,18,Elderly population share,POP_single-year-age_2011_MH_ORGI_DIST,age; persons_total,persons by single year of age,DIST,one-off,2011,2011,Census 2011 C-13,Census 2011 C-13,found,Maharashtra only
+heat_climate_resilience,19,Children under 5 share,POP_single-year-age_2011_MH_ORGI_DIST,age; persons_total,persons by single year of age,DIST,one-off,2011,2011,Census 2011 C-13,Census 2011 C-13,found,Maharashtra only
+heat_climate_resilience,20,Slum population,HOU_slum-population_2011_STATES_ORGI_CITY,population_persons,persons,CITY,one-off,2011,2011,Census 2011 Slum PCA,Census 2011 Slum PCA,found,
+heat_climate_resilience,21,Kutcha / tin / asbestos roofs,HOU_household-amenities-hh14_2011_MH_ORGI_SDT,roof_grass_thatch_bamboo_wood_mud_etc_pct; roof_plastic_polythene_pct; roof_g_i_metal_asbestos_sheets_pct,% of households,SDT,one-off,2011,2011,Census 2011 HH-14,Census 2011 Houselisting tables,found,Maharashtra only so far
+heat_climate_resilience,22,No drinking water within premises,HOU_household-amenities-hh14_2011_MH_ORGI_SDT,drinking_water_location_within_premises_pct; drinking_water_location_near_premises_pct; drinking_water_location_away_pct,% of households,SDT,one-off,2011,2011,Census 2011 HH-14,Census 2011 Houselisting tables,found,Maharashtra only so far
+heat_climate_resilience,23,Electricity access & supply hours,HOU_household-amenities-hh14_2011_MH_ORGI_SDT,lighting_electricity_pct,% of households,SDT,one-off,2011,2011,Census 2011 HH-14,Census 2011 Houselisting tables,partial,Connection share only; supply hours not found
+heat_climate_resilience,24,Cooling appliance ownership,,,,,,,,,NFHS-5,not found,NFHS-5 site (rchiips.org) unreachable and data.gov.in needs login; Census 2011 has no fan/cooler/AC question
+heat_climate_resilience,25,Chronic disease prevalence,,,,,,,,,NFHS-5,not found,NFHS-5 site (rchiips.org) unreachable and data.gov.in needs login
 heat_climate_resilience,26,Multidimensional poverty,,,,,,,,,,,
-heat_climate_resilience,27,Literacy rate,,,,,,,,,,,
+heat_climate_resilience,27,Literacy rate,POP_census-pca_2011_STATES_ORGI_DIST,literates_persons; population_age_0_6_persons; population_persons,persons,DIST,one-off,2011,2011,Census 2011 Primary Census Abstract,Census of India 2011,found,
 heat_climate_resilience,28,Persons with disability,,,,,,,,,,,
-heat_climate_resilience,29,Green / tree cover,,,,,,,,,,,
+heat_climate_resilience,29,Green / tree cover,ENV_forest-cover_2023_STATES_FSI_DIST,forest_cover_pct_of_area; forest_cover_total_sq_km,% of area; sq km,DIST,one-off,2023,2023,FSI India State of Forest Report 2023,FSI ISFR,partial,Forest cover only; district tree cover and NDVI not yet added
 heat_climate_resilience,30,Water bodies,,,,,,,,,,,
 heat_climate_resilience,31,Health infrastructure,,,,,,,,,,,
 heat_climate_resilience,32,Health workforce,,,,,,,,,,,
@@ -66,24 +66,24 @@ heat_climate_resilience,34,Early warning coverage,,,,,,,,,,,
 heat_climate_resilience,35,Cooling centres / water kiosks,,,,,,,,,,,
 heat_climate_resilience,36,108 ambulance heat calls,,,,,,,,,,,
 heat_climate_resilience,37,Per capita income,,,,,,,,,,,
-heat_climate_resilience,38,Health insurance coverage,,,,,,,,,,,
+heat_climate_resilience,38,Health insurance coverage,,,,,,,,,NFHS-5,not found,NFHS-5 site (rchiips.org) unreachable and data.gov.in needs login
 heat_climate_resilience,39,Social protection,,,,,,,,,,,
-heat_climate_resilience,40,Heatstroke cases & deaths,,,,,,,,,,,
+heat_climate_resilience,40,Heatstroke cases & deaths,HLT_deaths-forces-of-nature_2017-to-2022_STATES_NCRB,deaths_total,deaths,STATE,annual,2017,2022,NCRB ADSI,NCRB ADSI,partial,"Use rows with cause = Heat/Sun Stroke. Deaths only, state level; NCDC case surveillance not tried"
 heat_climate_resilience,41,All-cause mortality,,,,,,,,,,,
 heat_climate_resilience,42,Cause-specific mortality,,,,,,,,,,,
 heat_climate_resilience,43,Peak electricity demand,,,,,,,,,,,
 heat_climate_resilience,44,Labour productivity loss,,,,,,,,,,,
 heat_climate_resilience,45,Crop yield,,,,,,,,,,,
-heat_climate_resilience,46,Agri vs non-agri land,,,,,,,,,,,
-heat_climate_resilience,47,Irrigated vs rain-fed area,,,,,,,,,,,
+heat_climate_resilience,46,Agri vs non-agri land,AGR_land-use-irrigation_1998-99-to-2024-25_MH_MOAFW_DIST,net_area_sown_ha; forests_ha; area_non_agricultural_uses_ha; barren_unculturable_land_ha; reporting_area_ha,ha,DIST,annual,1998-99,2024-25,MoA&FW Land Use Statistics (district),Land Use Statistics (MoA&FW),found,Maharashtra only
+heat_climate_resilience,47,Irrigated vs rain-fed area,AGR_land-use-irrigation_1998-99-to-2024-25_MH_MOAFW_DIST,net_irrigated_area_total_ha; net_area_sown_ha,ha,DIST,annual,1998-99,2024-25,MoA&FW Land Use Statistics (district),Land Use Statistics (MoA&FW),found,Maharashtra only
 heat_climate_resilience,48,Industries,,,,,,,,,,,
-heat_climate_resilience,49,Solid waste management,,,,,,,,,,,
+heat_climate_resilience,49,Solid waste management,WAT_msw-generated-processed_2023-12_STATES_MOHUA,waste_generated_tpd; waste_processed_tpd,tonnes per day,STATE,one-off,2023-12,2023-12,MoHUA Swachhatam portal,MoHUA,partial,"State level, no collection share"
 heat_climate_resilience,50,Night-time lights,,,,,,,,,,,
 rainfall,1,Annual rainfall,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,rainfall_annual_mm,mm,DIST,annual,1951,2025,"IMD Pune gridded rainfall (0.25 deg), district average computed by BNY",IMD Pune gridded rainfall,found,
 rainfall,2,Southwest monsoon rainfall,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,rainfall_jun_sep_mm,mm,DIST,annual,1951,2025,"IMD Pune gridded rainfall (0.25 deg), district average computed by BNY",IMD Pune gridded rainfall,found,
 rainfall,3,Northeast monsoon rainfall,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,rainfall_oct_dec_mm,mm,DIST,annual,1951,2025,"IMD Pune gridded rainfall (0.25 deg), district average computed by BNY",IMD Pune gridded rainfall,found,
 rainfall,4,Pre-monsoon rainfall,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,rainfall_mar_may_mm,mm,DIST,annual,1951,2025,"IMD Pune gridded rainfall (0.25 deg), district average computed by BNY",IMD Pune gridded rainfall,found,
-rainfall,5,Rainfall deviation,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,rainfall_annual_departure_pct; rainfall_mar_may_departure_pct; rainfall_jun_sep_departure_pct; rainfall_oct_dec_departure_pct,% (vs 1971-2020 average),DIST,annual,1951,2025,"IMD Pune gridded rainfall (0.25 deg), district average computed by BNY",IMD Pune gridded rainfall,partial,"Computed from source 2 (IMD gridded). Source 1 (IMD district rainfall statistics, published departures) not yet tried"
+rainfall,5,Rainfall deviation,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,rainfall_annual_departure_pct; rainfall_mar_may_departure_pct; rainfall_jun_sep_departure_pct; rainfall_oct_dec_departure_pct,% (vs 1971-2020 average),DIST,annual,1951,2025,"IMD Pune gridded rainfall (0.25 deg), district average computed by BNY","IMD district rainfall statistics (current season only, no archive); IMD Pune gridded rainfall",found,
 rainfall,6,Rainy days,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,rainy_days_2_5mm,days per year,DIST,annual,1951,2025,"IMD Pune gridded rainfall (0.25 deg), district average computed by BNY",IMD Pune gridded rainfall,found,
 rainfall,7,Heavy rainfall days,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,heavy_rain_days_64_5mm,days per year,DIST,annual,1951,2025,"IMD Pune gridded rainfall (0.25 deg), district average computed by BNY",IMD Pune gridded rainfall,found,
 rainfall,8,Very / extremely heavy rainfall days,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,very_heavy_rain_days_115_6mm; extremely_heavy_rain_days_204_5mm,days per year,DIST,annual,1951,2025,"IMD Pune gridded rainfall (0.25 deg), district average computed by BNY",IMD Pune gridded rainfall,found,
@@ -91,7 +91,7 @@ rainfall,9,Maximum 1-day rainfall,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,
 rainfall,10,Maximum 5-day rainfall,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,rx5day_mm,mm,DIST,annual,1951,2025,"IMD Pune gridded rainfall (0.25 deg), district average computed by BNY",IMD Pune gridded rainfall,found,
 rainfall,11,Hourly rainfall intensity,,,,,,,,,,,
 rainfall,12,Consecutive dry days,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,consecutive_dry_days,days,DIST,annual,1951,2025,"IMD Pune gridded rainfall (0.25 deg), district average computed by BNY",IMD Pune gridded rainfall,found,
-rainfall,13,Monsoon dry spells,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,monsoon_dry_spells_7day; monsoon_longest_dry_spell_days,count; days,DIST,annual,1951,2025,"IMD Pune gridded rainfall (0.25 deg), district average computed by BNY",IMD Pune gridded rainfall,partial,"Computed from source 2 (IMD gridded) with our definition (7+ days under 2.5 mm, Jun-Sep). Source 1 (IMD) not yet tried"
+rainfall,13,Monsoon dry spells,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,monsoon_dry_spells_7day; monsoon_longest_dry_spell_days,count; days,DIST,annual,1951,2025,"IMD Pune gridded rainfall (0.25 deg), district average computed by BNY",IMD Pune gridded rainfall,partial,"Computed from IMD gridded rain with our definition (7+ days under 2.5 mm, Jun-Sep); IMD publishes no district dry-spell table"
 rainfall,14,Monsoon onset & withdrawal,,,,,,,,,,,
 rainfall,15,Rainfall variability,CLM_rainfall-variability_1971-to-2020_MH_BNY_DIST,rainfall_annual_cv_pct; rainfall_jun_sep_cv_pct,%,DIST,one-off (1971-2020),1971,2020,"IMD Pune gridded rainfall (0.25 deg), district average computed by BNY",IMD Pune gridded rainfall,found,
 rainfall,16,Drought index,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,spi_annual; spi_jun_sep,index (unitless),DIST,annual,1951,2025,"IMD Pune gridded rainfall (0.25 deg), district average computed by BNY",IMD Pune gridded rainfall,partial,SPI computed by BNY from IMD gridded rainfall (annual and Jun-Sep). Source 1 (IMD drought monitoring) not yet tried; SPEI not computed (needs evapotranspiration)
@@ -107,27 +107,27 @@ rainfall,25,Flood-inundated area,,,,,,,,,,,
 rainfall,26,Flood-prone area,,,,,,,,,,,
 rainfall,27,Landslide events,,,,,,,,,,,
 rainfall,28,Cyclones,,,,,,,,,,,
-rainfall,29,Lightning strikes & deaths,,,,,,,,,,,
-rainfall,30,Deaths due to floods & heavy rain,,,,,,,,,,,
+rainfall,29,Lightning strikes & deaths,HLT_deaths-forces-of-nature_2017-to-2022_STATES_NCRB,deaths_total,deaths,STATE,annual,2017,2022,NCRB ADSI,NCRB ADSI,partial,Use rows with cause = Lightning. Deaths only; strike counts not found
+rainfall,30,Deaths due to floods & heavy rain,HLT_deaths-forces-of-nature_2017-to-2022_STATES_NCRB,deaths_total,deaths,STATE,annual,2017,2022,NCRB ADSI,NCRB ADSI,found,"Use rows with cause = Flood, Torrential Rain."
 rainfall,31,Houses & crop area damaged,,,,,,,,,,,
 rainfall,32,Crop insurance claims,,,,,,,,,,,
 rainfall,33,Population in flood-prone areas,,,,,,,,,,,
-rainfall,34,Kutcha houses,,,,,,,,,,,
+rainfall,34,Kutcha houses,HOU_household-amenities-hh14_2011_MH_ORGI_SDT,house_structure_total_temporary_pct; house_structure_semi_permanent_pct; wall_mud_unburnt_brick_pct,% of households,SDT,one-off,2011,2011,Census 2011 HH-14,Census 2011 Houselisting tables,found,Maharashtra only so far
 rainfall,35,Impervious / built-up surface,,,,,,,,,,,
 rainfall,36,Urban waterlogging hotspots,,,,,,,,,,,
 rainfall,37,Storm water drainage,,,,,,,,,,,
 rainfall,38,Water bodies,,,,,,,,,,,
 rainfall,39,Rainwater harvesting structures,,,,,,,,,,,
-rainfall,40,Irrigated vs rain-fed area,,,,,,,,,,,
-rainfall,41,Forest / green cover,,,,,,,,,,,
+rainfall,40,Irrigated vs rain-fed area,AGR_land-use-irrigation_1998-99-to-2024-25_MH_MOAFW_DIST,net_irrigated_area_total_ha; net_area_sown_ha,ha,DIST,annual,1998-99,2024-25,MoA&FW Land Use Statistics (district),Land Use Statistics (MoA&FW),found,Maharashtra only
+rainfall,41,Forest / green cover,ENV_forest-cover_2023_STATES_FSI_DIST,forest_cover_pct_of_area; forest_cover_total_sq_km,% of area; sq km,DIST,one-off,2023,2023,FSI India State of Forest Report 2023,FSI ISFR,partial,Forest cover only; district tree cover and NDVI not yet added
 rainfall,42,Flood forecasting coverage,,,,,,,,,,,
 rainfall,43,Heavy rainfall warnings,,,,,,,,,,,
-wind,1,Mean wind speed,,,,,,,,,,,
-wind,2,Maximum wind speed / gusts,,,,,,,,,,,
-wind,3,Wind direction,,,,,,,,,,,
-wind,4,Calm days,,,,,,,,,,,
-wind,5,Extreme wind days,,,,,,,,,,,
-wind,6,Wind speed at hub height,,,,,,,,,,,
+wind,1,Mean wind speed,CLM_wind-humidity_1981-to-2025_MH_BNY_DIST,wind_speed_10m_mean_ms,m/s,DIST,annual,1981,2025,"NASA POWER daily (MERRA-2), district average computed by BNY",IMD (station data not free); ERA5 (needs login); NASA POWER,found,
+wind,2,Maximum wind speed / gusts,CLM_wind-humidity_1981-to-2025_MH_BNY_DIST,wind_speed_10m_max_highest_ms,m/s,DIST,annual,1981,2025,"NASA POWER daily (MERRA-2), district average computed by BNY",IMD (station data not free); ERA5 (needs login); NASA POWER; NOAA ISD not tried,partial,"Highest hourly model wind, not measured gusts"
+wind,3,Wind direction,CLM_wind-humidity_1981-to-2025_MH_BNY_DIST,wind_direction_prevailing; wind_direction_prevailing_days,compass sector; days,DIST,annual,1981,2025,"NASA POWER daily (MERRA-2), district average computed by BNY",IMD (station data not free); ERA5 (needs login); NASA POWER,found,
+wind,4,Calm days,CLM_wind-humidity_1981-to-2025_MH_BNY_DIST,calm_days_below_1ms,days per year,DIST,annual,1981,2025,"NASA POWER daily (MERRA-2), district average computed by BNY",IMD (station data not free); ERA5 (needs login); NASA POWER,partial,Threshold (daily mean below 1 m/s) is our definition; model data
+wind,5,Extreme wind days,CLM_wind-humidity_1981-to-2025_MH_BNY_DIST,strong_wind_days_10_8ms,days per year,DIST,annual,1981,2025,"NASA POWER daily (MERRA-2), district average computed by BNY",IMD (station data not free); ERA5 (needs login); NASA POWER,partial,Threshold (Beaufort 6) is our definition; model data misses squalls
+wind,6,Wind speed at hub height,CLM_wind-humidity_1981-to-2025_MH_BNY_DIST,wind_speed_50m_mean_ms,m/s,DIST,annual,1981,2025,"NASA POWER daily (MERRA-2), district average computed by BNY",NIWE and Global Wind Atlas not yet tried; NASA POWER,partial,50 m only (POWER has no 100-120 m)
 wind,7,Wind power density,,,,,,,,,,,
 wind,8,Installed wind capacity,,,,,,,,,,,
 wind,9,Basic wind speed zone,,,,,,,,,,,
@@ -139,13 +139,13 @@ wind,14,Dust storm days,,,,,,,,,,,
 wind,15,Ventilation coefficient,,,,,,,,,,,
 wind,16,Coastal population,,,,,,,,,,,
 wind,17,Fisherfolk population,,,,,,,,,,,
-wind,18,Kutcha houses,,,,,,,,,,,
+wind,18,Kutcha houses,HOU_household-amenities-hh14_2011_MH_ORGI_SDT,house_structure_total_temporary_pct; house_structure_semi_permanent_pct; wall_mud_unburnt_brick_pct,% of households,SDT,one-off,2011,2011,Census 2011 HH-14,Census 2011 Houselisting tables,found,Maharashtra only so far
 wind,19,Housing vulnerable to wind,,,,,,,,,,,
 wind,20,Mangrove cover,,,,,,,,,,,
-wind,21,Shelterbelts / tree cover,,,,,,,,,,,
+wind,21,Shelterbelts / tree cover,ENV_forest-cover_2023_STATES_FSI_DIST,forest_cover_pct_of_area; forest_cover_total_sq_km,% of area; sq km,DIST,one-off,2023,2023,FSI India State of Forest Report 2023,FSI ISFR,partial,Forest cover only; district tree cover and NDVI not yet added
 wind,22,Cyclone shelters,,,,,,,,,,,
 wind,23,Cyclone & wind warnings,,,,,,,,,,,
-wind,24,Deaths due to cyclones & storms,,,,,,,,,,,
+wind,24,Deaths due to cyclones & storms,HLT_deaths-forces-of-nature_2017-to-2022_STATES_NCRB,deaths_total,deaths,STATE,annual,2017,2022,NCRB ADSI,NCRB ADSI,found,"Use rows with cause = Cyclone, Tornado."
 wind,25,Houses & crops damaged,,,,,,,,,,,
 wind,26,Power outages after storms,,,,,,,,,,,
 wind,27,Trees uprooted,,,,,,,,,,,

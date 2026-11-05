@@ -32,3 +32,9 @@ _sources/cpcb-aqi-bulletin/raw/
 !pipelines/
 !pipelines/**/*.py
 !pipelines/**/*.sh
+
+# NASA POWER daily downloads (about 60 MB): steps in _sources/nasa-power/README.md
+_sources/nasa-power/raw/
+
+# NASA FIRMS fire detections (about 150 MB): steps in _sources/nasa-firms/README.md
+_sources/nasa-firms/raw/
