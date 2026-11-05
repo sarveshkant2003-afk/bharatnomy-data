@@ -5,6 +5,7 @@ Original files for this release. The cleaned data is in one folder per table:
 - [`POP_census-pca_2011_STATES_ORGI_DIST/`](../../POP_census-pca_2011_STATES_ORGI_DIST/)
 - [`POP_single-year-age_2011_MH_ORGI_DIST/`](../../POP_single-year-age_2011_MH_ORGI_DIST/)
 - [`HOU_slum-population_2011_STATES_ORGI_CITY/`](../../HOU_slum-population_2011_STATES_ORGI_CITY/)
+- [`_reference/geography.csv`](../../_reference/geography.csv): `orgi-census2011_basic-population-subdistrict-town_2011.xlsx` (catalog 42559, Basic Population Figures of India/State/District/Sub-District/Town, downloaded 5 Nov 2026) gives the Census 2011 code and name of every state, district and sub-district
 
 ## Source
 

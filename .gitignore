@@ -27,3 +27,8 @@ CLAUDE.md
 # large raw downloads: links in each _sources README
 _sources/imd-gridded/raw/
 _sources/cpcb-aqi-bulletin/raw/
+
+# pipeline scripts are committed (they regenerate the CSVs from raw/)
+!pipelines/
+!pipelines/**/*.py
+!pipelines/**/*.sh
