@@ -58,3 +58,44 @@ One row per variable in the four climate variable sheets (air quality, heat and 
 | `sources_tried` | All sources attempted, in order |
 | `status` | `found`, `partial` or `not found` |
 | `reason` | Why partial or not found |
+
+## `lenses.csv`: lenses and sub-themes
+
+Bharatnomy's five lenses and the sub-themes variables are grouped under. Edited by hand; every variable in `variables.csv` must use a lens and sub-theme listed here.
+
+| Column | Meaning |
+|---|---|
+| `lens_id`, `lens_name` | Lens: `CAR` Climate adaptation & resilience, `EPM` Energy policy & markets, `MAC` Macroeconomic health, `EQM` Equity markets, `COM` Commodity markets |
+| `sub_theme_id`, `sub_theme_name` | Sub-theme within the lens (e.g. `CAR-HEAT` Heat & temperature) |
+
+To add a sub-theme, add a row here, then use its id in `variables.csv` (or in the rules of the build script).
+
+## `variables.csv` (and `variables.xlsx`): every variable in the repo
+
+One row per value column of every dataset: 1,379 variables on 5 Nov 2026. Key columns (places, codes, years, flags) are not variables and are left out. `variables.xlsx` is the same table as a plain spreadsheet.
+
+| Column | Meaning |
+|---|---|
+| `variable_id` | `<dataset folder>:<column>`, unique |
+| `name` | Plain description: the meaning given in the dataset README's Columns table, or the column name in words |
+| `lens_id`, `sub_theme_id` | Where the variable sits (from `lenses.csv`) |
+| `dataset`, `column` | Folder and CSV column holding the values |
+| `unit` | Unit of the values (`count` where the column counts people, days, factories etc.; PLFS survey fields are codes explained in that dataset's README) |
+| `geo_level` | Lowest level: `IN`, `STATE`, `DIST`, `SDT` (sub-district), `CITY` |
+| `frequency` | `annual`, `monthly`, `daily` or `one-off` |
+| `earliest_period`, `latest_period` | First and last period in the CSV (calendar year, agricultural/financial year, month or date, as the dataset writes it) |
+| `type` | `derived` = computed by Bharatnomy (`BNY` datasets); `raw` = as published by the source |
+
+**Built by** [`pipelines/reference/build_variables.py`](../pipelines/reference/build_variables.py): it reads every dataset folder, takes names from the READMEs, and assigns sub-themes by rules (dataset, then column pattern) listed at the top of the script. Re-run it after adding a dataset, then run `python3 tools/build_catalog.py`.
+
+Which sheet variables (the four climate variable sheets) map to which dataset columns, and which are still missing, is in `variables-draft.csv` above.
+
+## `registry.json` and the variable explorer
+
+`python3 tools/build_catalog.py` (and the GitHub Actions on every push and pull request) checks `lenses.csv` and `variables.csv` and writes [`registry.json`](../registry.json) (lenses with their sub-themes, the datasets used, and every variable). It **stops with an error, writing nothing**, if a variable:
+
+- points to a dataset folder that does not exist, or a column that is not in that folder's CSV;
+- uses a lens or sub-theme that is not in `lenses.csv`, or a sub-theme of another lens;
+- has an empty field, a duplicate `variable_id`, or a `type` other than `raw` / `derived`.
+
+The same data is written to `registry.js` for [`variables.html`](../variables.html), the variable explorer on the search site: browse by lens and sub-theme, filter by geography, frequency and type, and search by name or column.

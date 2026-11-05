@@ -1,4 +1,5 @@
-# Rebuilds catalog.js from the dataset folders and publishes the search page (index.html) on every push to main.
+# Rebuilds catalog.js and registry.json (failing on registry errors) and publishes the search page (index.html)
+# and the variable explorer (variables.html) on every push to main.
 name: Publish search page
 
 on:
@@ -23,7 +24,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - name: Build catalog.js
+      - name: Build catalog.js and registry.json (fails on registry errors)
         run: python3 tools/build_catalog.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

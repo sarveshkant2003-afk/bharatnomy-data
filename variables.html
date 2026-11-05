@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bharatnomy Variables</title>
+<meta name="description" content="Browse every variable in Bharatnomy's datasets by lens and sub-theme.">
+<style>
+:root {
+  color-scheme: light;
+  --bg: #fbf8f1; --surface: #ffffff; --text: #241f19; --muted: #6e6658; --faint: #9a9182;
+  --border: #e9e2d3; --border-strong: #d9cfbb;
+  --accent: #1d6b52; --accent-hover: #15563f; --accent-soft: #e5f1eb;
+  --mark: #fde9a6; --chip: #f5efe2; --code: #f7f3ea;
+  --shadow: 0 1px 2px rgba(60,45,20,.05), 0 4px 16px rgba(60,45,20,.05);
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .82em; }
+mark { background: var(--mark); color: inherit; border-radius: 3px; padding: 0 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+header { border-bottom: 1px solid var(--border); background: linear-gradient(180deg, #fffdf8 0%, var(--bg) 100%); }
+.wrap { max-width: 1240px; margin: 0 auto; padding-left: 16px; padding-right: 16px; }
+.top { padding-top: 30px; padding-bottom: 22px; }
+.brand { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+h1 { font-size: 26px; line-height: 1.2; margin: 0; letter-spacing: -.015em; }
+.tagline { margin: 4px 0 0; color: var(--muted); }
+.navlinks { display: flex; gap: 8px; flex-wrap: wrap; }
+.navlinks a { font-size: 13px; color: var(--muted); border: 1px solid var(--border); background: var(--surface); border-radius: 999px; padding: 5px 12px; }
+.navlinks a:hover { color: var(--accent); border-color: var(--border-strong); text-decoration: none; }
+.search { margin-top: 18px; }
+.search input { width: 100%; font: inherit; font-size: 16px; padding: 13px 16px; border: 1px solid var(--border-strong); border-radius: 12px; background: var(--surface); color: var(--text); box-shadow: var(--shadow); }
+.search input:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 4px var(--accent-soft), var(--shadow); }
+.lenses { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+.lens { font: inherit; font-size: 14px; border: 1px solid var(--border-strong); background: var(--surface); color: var(--text); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+.lens .n { color: var(--faint); font-size: 12px; margin-left: 4px; }
+.lens[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.lens[aria-pressed="true"] .n { color: #cfe3d8; }
+main { display: grid; grid-template-columns: 250px 1fr; gap: 24px; padding: 22px 0 60px; align-items: start; }
+aside { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 16px; position: sticky; top: 14px; max-height: calc(100vh - 28px); overflow: auto; }
+aside h2 { font-size: 11.5px; text-transform: uppercase; letter-spacing: .08em; color: var(--faint); margin: 18px 0 6px; font-weight: 600; }
+aside h2:first-child { margin-top: 0; }
+.facet label { display: flex; align-items: center; gap: 8px; padding: 3px 6px; margin: 0 -6px; font-size: 14px; cursor: pointer; border-radius: 7px; }
+.facet label:hover { background: var(--bg); }
+.facet input { accent-color: var(--accent); margin: 0; }
+.facet .n { margin-left: auto; color: var(--faint); font-size: 12px; font-variant-numeric: tabular-nums; background: var(--chip); border-radius: 999px; padding: 0 7px; }
+.facet label.zero { color: var(--faint); }
+.clear { margin-top: 16px; width: 100%; font: inherit; font-size: 13px; background: var(--bg); border: 1px solid var(--border); color: var(--muted); border-radius: 8px; padding: 7px; cursor: pointer; }
+.clear:hover { color: var(--accent); border-color: var(--border-strong); }
+.status { color: var(--muted); font-size: 14px; margin: 0 0 12px; display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.group { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; margin-bottom: 14px; box-shadow: var(--shadow); overflow: hidden; }
+.group > .gh { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 13px 18px; border-bottom: 1px solid var(--border); background: #fffdf8; }
+.gh h3 { margin: 0; font-size: 16px; }
+.gh .lensname { color: var(--faint); font-size: 12.5px; }
+.gh .n { color: var(--muted); font-size: 13px; white-space: nowrap; }
+.tbl { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+th, td { text-align: left; padding: 8px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { font-size: 11.5px; text-transform: uppercase; letter-spacing: .05em; color: var(--faint); font-weight: 600; background: var(--surface); }
+tr:last-child td { border-bottom: 0; }
+td.vname { min-width: 240px; }
+td.vname code { display: block; color: var(--faint); margin-top: 2px; word-break: break-all; }
+td.nowrap { white-space: nowrap; }
+.tag { font-size: 11.5px; border-radius: 5px; padding: 2px 7px; background: var(--chip); color: #4a4237; white-space: nowrap; }
+.tag.derived { background: #fdf0d9; color: #7a5410; }
+.tag.raw { background: var(--accent-soft); color: var(--accent-hover); }
+.ds { font-size: 12.5px; color: var(--muted); }
+.more { display: block; width: 100%; font: inherit; font-size: 13px; padding: 9px; border: 0; border-top: 1px solid var(--border); background: var(--bg); color: var(--accent); cursor: pointer; }
+.more:hover { background: var(--accent-soft); }
+.empty { text-align: center; padding: 44px 16px; color: var(--muted); background: var(--surface); border: 1px dashed var(--border-strong); border-radius: 14px; }
+footer { color: var(--faint); font-size: 13px; padding: 0 0 34px; }
+.filter-toggle { display: none; }
+@media (max-width: 800px) {
+  main { grid-template-columns: 1fr; gap: 12px; }
+  aside { display: none; position: static; max-height: none; }
+  aside.open { display: block; }
+  .filter-toggle { display: inline-block; font: inherit; font-size: 14px; background: var(--surface); color: var(--text); border: 1px solid var(--border-strong); border-radius: 9px; padding: 6px 13px; cursor: pointer; }
+  th:nth-child(3), td:nth-child(3), th:nth-child(5), td:nth-child(5) { display: none; }
+  td.vname { min-width: 0; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap top">
+    <div class="brand">
+      <div>
+        <h1>Bharatnomy Variables</h1>
+        <p class="tagline">Every variable in our datasets, organised by lens and sub-theme.</p>
+      </div>
+      <nav class="navlinks">
+        <a href="index.html">Dataset search</a>
+        <a href="registry.json">registry.json</a>
+        <a href="https://github.com/sarveshkant2003-afk/bharatnomy-data/blob/main/_reference/README.md">How this is built</a>
+      </nav>
+    </div>
+    <div class="search"><input id="q" type="search" placeholder="Search variables, e.g. heat wave, rainfall, cooking fuel, Nagpur…" autocomplete="off" aria-label="Search variables"></div>
+    <div class="lenses" id="lenses" role="group" aria-label="Lens"></div>
+  </div>
+</header>
+<div class="wrap">
+  <main>
+    <aside id="filters" aria-label="Filters"></aside>
+    <section>
+      <div class="status"><span id="count"></span><button class="filter-toggle" id="ftoggle" aria-controls="filters" aria-expanded="false">Filters</button></div>
+      <div id="results"></div>
+    </section>
+  </main>
+  <footer>Built from <code>_reference/lenses.csv</code> and <code>_reference/variables.csv</code> by <code>tools/build_catalog.py</code>. <span id="stamp"></span></footer>
+</div>
+<script src="registry.js"></script>
+<script>
+const REPO = "sarveshkant2003-afk/bharatnomy-data", BRANCH = "main";
+const R = window.REGISTRY || { lenses: [], datasets: {}, variables: [] };
+const LEVELS = { IN: "All India", STATE: "State", DIST: "District", SDT: "Sub-district", CITY: "City", VIL: "Village" };
+const FACETS = [
+  ["geo_level", "Geography", v => LEVELS[v] || v],
+  ["frequency", "Frequency", v => v],
+  ["type", "Type", v => v === "derived" ? "Derived (our calculation)" : "Raw (as published)"],
+];
+const subName = {}, subLens = {}, lensName = {};
+R.lenses.forEach(l => { lensName[l.id] = l.name; l.sub_themes.forEach(s => { subName[s.id] = s.name; subLens[s.id] = l.id; }); });
+const V = R.variables.map(v => ({ ...v, _text: [v.name, v.column, v.dataset, v.unit, subName[v.sub_theme_id], lensName[v.lens_id], (R.datasets[v.dataset] || {}).title].join(" ").toLowerCase() }));
+
+const state = { q: "", lens: "", sub: new Set(), f: Object.fromEntries(FACETS.map(f => [f[0], new Set()])), open: {} };
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const terms = () => state.q.toLowerCase().split(/\s+/).filter(Boolean);
+function hl(s) {
+  let out = esc(s);
+  terms().forEach(t => { const re = new RegExp("(" + t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "ig"); out = out.replace(re, "<mark>$1</mark>"); });
+  return out;
+}
+function matches(v, skip) {
+  if (state.lens && v.lens_id !== state.lens) return false;
+  if (skip !== "sub" && state.sub.size && !state.sub.has(v.sub_theme_id)) return false;
+  for (const [k] of FACETS) if (skip !== k && state.f[k].size && !state.f[k].has(v[k])) return false;
+  return terms().every(t => v._text.includes(t));
+}
+function period(v) {
+  if (!v.earliest_period) return "";
+  return v.earliest_period === v.latest_period ? v.earliest_period : `${v.earliest_period} – ${v.latest_period}`;
+}
+function dsLink(name) { return `https://github.com/${REPO}/tree/${BRANCH}/${encodeURIComponent(name)}`; }
+
+function renderLenses() {
+  const base = V.filter(v => { const l = state.lens; state.lens = ""; const ok = matches(v); state.lens = l; return ok; });
+  const all = base.length;
+  const by = {}; base.forEach(v => by[v.lens_id] = (by[v.lens_id] || 0) + 1);
+  document.getElementById("lenses").innerHTML =
+    `<button class="lens" data-l="" aria-pressed="${!state.lens}">All lenses<span class="n">${all}</span></button>` +
+    R.lenses.map(l => `<button class="lens" data-l="${l.id}" aria-pressed="${state.lens === l.id}">${esc(l.name)}<span class="n">${by[l.id] || 0}</span></button>`).join("");
+}
+function facetBox(title, key, values, label) {
+  const counts = {}; V.forEach(v => { if (matches(v, key)) counts[v[key === "sub" ? "sub_theme_id" : key]] = (counts[v[key === "sub" ? "sub_theme_id" : key]] || 0) + 1; });
+  const sel = key === "sub" ? state.sub : state.f[key];
+  return `<h2>${title}</h2><div class="facet">` + values.map(val => {
+    const n = counts[val] || 0;
+    return `<label class="${n ? "" : "zero"}"><input type="checkbox" data-k="${key}" value="${esc(val)}" ${sel.has(val) ? "checked" : ""}>${esc(label(val))}<span class="n">${n}</span></label>`;
+  }).join("") + "</div>";
+}
+function renderFilters() {
+  const subs = R.lenses.filter(l => !state.lens || l.id === state.lens).flatMap(l => l.sub_themes.map(s => s.id));
+  let html = facetBox("Sub-theme", "sub", subs, id => subName[id]);
+  FACETS.forEach(([k, t, lab]) => { const vals = [...new Set(V.map(v => v[k]))].sort(); html += facetBox(t, k, vals, lab); });
+  html += `<button class="clear" id="clear">Clear filters</button>`;
+  document.getElementById("filters").innerHTML = html;
+}
+function renderResults() {
+  const hits = V.filter(v => matches(v));
+  document.getElementById("count").textContent = `${hits.length.toLocaleString()} of ${V.length.toLocaleString()} variables`;
+  if (!hits.length) { document.getElementById("results").innerHTML = `<div class="empty">No variables match. Try fewer words or clear a filter.</div>`; return; }
+  const groups = {};
+  hits.forEach(v => (groups[v.sub_theme_id] = groups[v.sub_theme_id] || []).push(v));
+  const order = R.lenses.flatMap(l => l.sub_themes.map(s => s.id)).filter(id => groups[id]);
+  document.getElementById("results").innerHTML = order.map(id => {
+    const rows = groups[id], limit = state.open[id] ? rows.length : 25;
+    return `<div class="group"><div class="gh"><div><h3>${esc(subName[id])}</h3><span class="lensname">${esc(lensName[subLens[id]])}</span></div><span class="n">${rows.length} variable${rows.length > 1 ? "s" : ""}</span></div>
+      <div class="tbl"><table><thead><tr><th>Variable</th><th>Unit</th><th>Geography</th><th>Period</th><th>Frequency</th><th>Type</th><th>Dataset</th></tr></thead><tbody>` +
+      rows.slice(0, limit).map(v => {
+        const d = R.datasets[v.dataset] || {};
+        return `<tr><td class="vname">${hl(v.name)}<code>${hl(v.column)}</code></td><td>${esc(v.unit)}</td><td class="nowrap">${esc(LEVELS[v.geo_level] || v.geo_level)}</td>
+          <td class="nowrap">${esc(period(v))}</td><td>${esc(v.frequency)}</td><td><span class="tag ${v.type}">${v.type}</span></td>
+          <td class="ds"><a href="${dsLink(v.dataset)}" title="${esc(v.dataset)}">${hl(d.title || v.dataset)}</a></td></tr>`;
+      }).join("") + `</tbody></table></div>` +
+      (rows.length > limit ? `<button class="more" data-open="${id}">Show all ${rows.length}</button>` : "") + `</div>`;
+  }).join("");
+}
+function render() { renderLenses(); renderFilters(); renderResults(); writeHash(); }
+function writeHash() {
+  const p = new URLSearchParams();
+  if (state.q) p.set("q", state.q);
+  if (state.lens) p.set("lens", state.lens);
+  if (state.sub.size) p.set("sub", [...state.sub].join(","));
+  FACETS.forEach(([k]) => { if (state.f[k].size) p.set(k, [...state.f[k]].join(",")); });
+  history.replaceState(null, "", p.toString() ? "#" + p : location.pathname);
+}
+function readHash() {
+  const p = new URLSearchParams(location.hash.slice(1));
+  state.q = p.get("q") || ""; state.lens = p.get("lens") || "";
+  state.sub = new Set((p.get("sub") || "").split(",").filter(Boolean));
+  FACETS.forEach(([k]) => state.f[k] = new Set((p.get(k) || "").split(",").filter(Boolean)));
+  document.getElementById("q").value = state.q;
+}
+document.getElementById("q").addEventListener("input", e => { state.q = e.target.value.trim(); render(); });
+document.getElementById("lenses").addEventListener("click", e => {
+  const b = e.target.closest(".lens"); if (!b) return;
+  state.lens = b.dataset.l; state.sub = new Set([...state.sub].filter(s => !state.lens || subLens[s] === state.lens)); render();
+});
+document.getElementById("filters").addEventListener("change", e => {
+  const k = e.target.dataset.k; if (!k) return;
+  const set = k === "sub" ? state.sub : state.f[k];
+  e.target.checked ? set.add(e.target.value) : set.delete(e.target.value); render();
+});
+document.getElementById("filters").addEventListener("click", e => {
+  if (e.target.id !== "clear") return;
+  state.sub.clear(); FACETS.forEach(([k]) => state.f[k].clear()); render();
+});
+document.getElementById("results").addEventListener("click", e => {
+  const b = e.target.closest(".more"); if (!b) return; state.open[b.dataset.open] = true; renderResults();
+});
+document.getElementById("ftoggle").addEventListener("click", e => {
+  const a = document.getElementById("filters"); a.classList.toggle("open"); e.target.setAttribute("aria-expanded", a.classList.contains("open"));
+});
+document.getElementById("stamp").textContent = `${V.length.toLocaleString()} variables · ${Object.keys(R.datasets).length} datasets · ${R.lenses.length} lenses.`;
+readHash(); render();
+</script>
+</body>
+</html>
