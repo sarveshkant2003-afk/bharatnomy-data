@@ -34,24 +34,23 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 
 #map { position: fixed; inset: 0; width: 100%; height: 100%; cursor: grab; }
 #map:active { cursor: grabbing; }
-.link { fill: none; stroke-width: 1.6; stroke-opacity: .55; }
+.link { fill: none; stroke-opacity: .6; }
 .node { cursor: pointer; }
-.node text { font-size: 13px; fill: var(--text); paint-order: stroke; stroke: var(--bg); stroke-width: 4px; stroke-linejoin: round; }
-.node .n { fill: var(--faint); font-size: 11.5px; }
-.node.var text { font-size: 12.5px; }
-.node.var .unit { fill: var(--faint); font-size: 11px; }
-.node.hit text.label { font-weight: 600; }
-.node.hit rect.hl { fill: var(--mark); }
-.node.sel text.label { fill: var(--accent); font-weight: 700; }
-.node.empty text { fill: var(--faint); font-style: italic; }
-.node:hover text.label { text-decoration: underline; }
-.pill text { font-weight: 650; fill: #fff; stroke: none; font-size: 14px; }
-.root text { font-weight: 750; font-size: 17px; fill: #fff; stroke: none; }
+.node.var text { fill: var(--text); }
+.node.var text .unit { fill: var(--faint); font-size: 12px; }
+.node.var rect.hl { fill: var(--mark); opacity: .55; }
+.node.var:hover text .label { text-decoration: underline; }
+.node.sel text .label { fill: var(--accent); font-weight: 700; }
+.node.empty text { opacity: .55; }
+.node.sub:hover rect:first-child, .node.ds:hover rect:first-child { stroke-width: 2.5; }
+.node.lens:hover rect:first-child { filter: brightness(1.08); }
+#map { background-image: radial-gradient(#e7dfcd 1px, transparent 1px); background-size: 22px 22px; }
 
 .panel { position: fixed; right: 16px; top: 70px; z-index: 6; width: 360px; max-width: calc(100vw - 32px); max-height: calc(100vh - 90px); overflow: auto; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; box-shadow: var(--shadow); padding: 16px 18px; display: none; }
 .panel.open { display: block; }
 .panel h2 { font-size: 16px; margin: 0 26px 4px 0; line-height: 1.35; }
-.panel .crumb { font-size: 12px; color: var(--faint); margin-bottom: 10px; }
+.panel { border-top: 4px solid var(--lens, var(--accent)); }
+.panel .crumb { font-size: 12px; color: var(--lens, var(--faint)); font-weight: 600; margin-bottom: 6px; }
 .panel dl { display: grid; grid-template-columns: 110px 1fr; gap: 5px 10px; margin: 10px 0; font-size: 13px; }
 .panel dt { color: var(--faint); }
 .panel dd { margin: 0; word-break: break-word; }
@@ -81,7 +80,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
   </label>
   <span class="count" id="count"></span>
   <div class="tools">
-    <button id="expand" type="button">Open sub-themes</button>
+    <button id="expand" type="button">Reset</button>
     <button id="collapse" type="button">Close all</button>
     <button id="fit" type="button">Fit to screen</button>
     <a href="index.html">Dataset search</a>
@@ -92,30 +91,34 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 <div class="hint">Click a branch to open it · drag to move · scroll to zoom</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
-<script src="registry.js?v=1"></script>
+<script src="registry.js?v=2"></script>
 <script>
 const REPO = "sarveshkant2003-afk/bharatnomy-data", BRANCH = "main";
 const R = window.REGISTRY || { lenses: [], datasets: {}, variables: [] };
-const COLORS = { CAR: "#1d6b52", EPM: "#b5651d", MAC: "#3d5a99", EQM: "#8a3e7a", COM: "#7a7a1d" };
-const RIGHT = new Set(["CAR", "EPM"]);           // lenses drawn to the right of the centre; the rest go left
+const COLORS = { CAR: "#1d6b52", EPM: "#b5651d", MAC: "#3d5a99", EQM: "#8a3e7a", COM: "#6f7a12" };
+const RIGHT = new Set(["CAR", "EPM"]);          // lenses drawn to the right of the centre; the rest go left
 const LEVELS = { IN: "All India", STATE: "State", DIST: "District", SDT: "Sub-district", CITY: "City", VIL: "Village" };
-const DY = 30, DX = [0, 110, 350, 330, 390];    // row height; gap from the parent column, by depth (lens, sub-theme, dataset, variable)
-const SEARCH_OPEN_ALL = 150;                    // with this many matches or fewer, search opens every branch down to variables
+const ROW = { lens: 64, sub: 44, ds: 40, var: 30 };   // vertical space per node
+const GAP = 64;                                       // horizontal gap between columns
+const MIN_ZOOM_FIT = 0.75;                            // "fit" never shrinks text below this
+const SEARCH_OPEN_ALL = 150;                          // with this many matches or fewer, search opens down to variables
+const FONT = getComputedStyle(document.body).fontFamily;
+const ctx = document.createElement("canvas").getContext("2d");
+const textW = (t, size, weight) => { ctx.font = `${weight || 400} ${size}px ${FONT}`; return ctx.measureText(t).width; };
 
 const lensOf = {}, subName = {};
 R.lenses.forEach(l => l.sub_themes.forEach(s => { lensOf[s.id] = l.id; subName[s.id] = s.name; }));
 const VARS = R.variables.map(v => ({ ...v, _t: [v.name, v.column, v.unit, subName[v.sub_theme_id]].join(" ").toLowerCase() }));
-
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const cut = (s, n) => s.length > n ? s.slice(0, n - 1) + "…" : s;
 const dsTitle = d => (R.datasets[d] || {}).title || d;
 
-let query = "", open = new Set(["root"]), selected = null;
+const DEFAULT_OPEN = () => new Set(["root", ...R.lenses.map(l => "L:" + l.id)]);
+let query = "", open = DEFAULT_OPEN(), selected = null;
+const terms = () => query.toLowerCase().split(/\s+/).filter(Boolean);
+const matching = () => { const t = terms(); return t.length ? VARS.filter(v => t.every(w => v._t.includes(w))) : VARS; };
 
-function terms() { return query.toLowerCase().split(/\s+/).filter(Boolean); }
-function matching() { const t = terms(); return t.length ? VARS.filter(v => t.every(w => v._t.includes(w))) : VARS; }
-
-// Tree: root -> lens -> sub-theme -> dataset -> variable
+// ---------- tree: root -> lens -> sub-theme -> dataset -> variable
 function buildTree(vars) {
   const searching = terms().length > 0;
   const root = { key: "root", kind: "root", name: "Bharatnomy", children: [] };
@@ -138,152 +141,157 @@ function buildTree(vars) {
   }
   return root;
 }
-
-function setOpenForSearch(tree, n) {
+function openForSearch(tree, n) {
   open = new Set(["root"]);
-  const depth = n <= SEARCH_OPEN_ALL ? 3 : n <= 1200 ? 2 : 1;   // how deep to open: datasets (3) show variables
+  const depth = n <= SEARCH_OPEN_ALL ? 3 : n <= 1000 ? 2 : 1;
   (function walk(node, d) { if (d <= depth && node.children && node.children.length) { open.add(node.key); node.children.forEach(c => walk(c, d + 1)); } })(tree, 0);
 }
-
-// Keep only the open part of the tree
 function visible(node) {
-  const n = { ...node };
-  n._hasKids = !!(node.children && node.children.length);
+  const n = { ...node, _hasKids: !!(node.children && node.children.length) };
   n.children = open.has(node.key) && node.children ? node.children.map(visible) : null;
   return n;
+}
+
+// ---------- labels and their sizes
+function label(d) {
+  const k = d.kind;
+  if (k === "root") return "Bharatnomy";
+  if (k === "lens") return d.name;
+  if (k === "sub") return cut(d.name, 40);
+  if (k === "ds") return cut(d.name, 52);
+  return cut(d.name, 70);
+}
+const SIZE = { root: [19, 750], lens: [16, 650], sub: [14.5, 600], ds: [13.5, 500], var: [13.5, 400] };
+function nodeW(d) {
+  const [sz, wt] = SIZE[d.kind];
+  if (d.kind === "root") return textW(label(d), sz, wt) + 44;
+  if (d.kind === "var") return 16 + textW(label(d), sz, wt) + (d.v.unit ? textW("  " + d.v.unit, 12) : 0);
+  const count = d.kind === "lens" ? String(d.count) : (d.count ? String(d.count) : "none yet");
+  return 18 + textW(label(d), sz, wt) + 10 + textW(count, 12, 600) + 14 + (d._hasKids ? 22 : 0) + 4;
+}
+const nodeH = d => ({ root: 48, lens: 38, sub: 32, ds: 30, var: 22 }[d.kind]);
+
+// ---------- layout: two half-trees, columns placed by the widest label of the previous column
+function layoutSide(vis, ids, dir) {
+  const side = { ...vis, children: (vis.children || []).filter(c => ids.has(c.lens)) };
+  const h = d3.hierarchy(side, d => d.children);
+  d3.tree().nodeSize([1, 1]).separation((a, b) => ((ROW[a.data.kind] + ROW[b.data.kind]) / 2) * (a.parent === b.parent ? 1 : 1.15))(h);
+  const maxW = {};
+  h.each(d => { d.w = nodeW(d.data); maxW[d.depth] = Math.max(maxW[d.depth] || 0, d.w); });
+  const colX = [0];
+  for (let i = 1; i <= h.height; i++) colX[i] = colX[i - 1] + (i === 1 ? maxW[0] / 2 : maxW[i - 1]) + GAP;
+  h.each(d => { d.px = dir * colX[d.depth]; d.py = d.x; d.dir = dir; });
+  return h;
 }
 
 const svg = d3.select("#map");
 const g = svg.append("g");
 const gLinks = g.append("g"), gNodes = g.append("g");
-const zoom = d3.zoom().scaleExtent([0.15, 2.5]).on("zoom", e => g.attr("transform", e.transform));
+const zoom = d3.zoom().scaleExtent([0.25, 2.5]).on("zoom", e => g.attr("transform", e.transform));
 svg.call(zoom).on("dblclick.zoom", null);
 
-function layoutSide(rootData, lensIds, dir) {
-  const side = { ...rootData, children: (rootData.children || []).filter(c => lensIds.has(c.lens)) };
-  const h = d3.hierarchy(side, d => d.children);
-  d3.tree().nodeSize([DY, 1]).separation((a, b) => (a.parent === b.parent ? 1 : 1.25))(h);
-  h.each(d => { let x = 0; for (let i = 1; i <= d.depth; i++) x += DX[Math.min(i, DX.length - 1)]; d.px = dir * x; d.py = d.x; d.dir = dir; });
-  return h;
-}
-
-let lastTree = null;
-function render(fit) {
+let current = [];
+function render(view) {
   const vars = matching();
-  const tree = buildTree(vars);
-  lastTree = tree;
-  const vis = visible(tree);
-  const rightIds = new Set(R.lenses.map(l => l.id).filter(id => RIGHT.has(id)));
-  const leftIds = new Set(R.lenses.map(l => l.id).filter(id => !RIGHT.has(id)));
-  const hr = layoutSide(vis, rightIds, 1), hl = layoutSide(vis, leftIds, -1);
+  const vis = visible(buildTree(vars));
+  const ids = side => new Set(R.lenses.map(l => l.id).filter(id => RIGHT.has(id) === side));
+  const hr = layoutSide(vis, ids(true), 1), hl = layoutSide(vis, ids(false), -1);
   const nodes = [], links = [];
-  [hr, hl].forEach((h, i) => h.descendants().forEach(d => { if (d.depth === 0 && i === 1) return; nodes.push(d); if (d.parent) links.push(d); }));
+  [hr, hl].forEach((h, i) => h.descendants().forEach(d => { if (d.depth === 0) { if (i === 0) nodes.push(d); return; } nodes.push(d); links.push(d); }));
+  current = nodes;
 
-  const t = svg.transition().duration(350);
   const color = d => d.data.kind === "root" ? "#241f19" : COLORS[d.data.lens] || "#666";
-  const curve = d => {
-    const s = d.parent.depth === 0 ? { x: 0, y: 0 } : { x: d.parent.px + d.dir * labelWidth(d.parent), y: d.parent.py };
-    const sx = d.parent.depth === 0 ? d.dir * 60 : s.x, tx = d.px - d.dir * 6;
-    const mx = (sx + tx) / 2;
-    return `M${sx},${s.y} C${mx},${s.y} ${mx},${d.py} ${tx},${d.py}`;
+  const width = { 1: 3.2, 2: 2.4, 3: 1.8, 4: 1.3 };
+  const path = d => {
+    const p = d.parent;
+    const sx = p.depth === 0 ? d.dir * p.w / 2 : p.px + d.dir * p.w, sy = p.py, tx = d.px, ty = d.py;
+    const mx = sx + (tx - sx) * 0.55;
+    return `M${sx},${sy} C${mx},${sy} ${sx + (tx - sx) * 0.45},${ty} ${tx},${ty}`;
   };
+  const t = svg.transition().duration(380);
   gLinks.selectAll("path").data(links, d => d.data.key).join(
-    enter => enter.append("path").attr("class", "link").attr("stroke", color).attr("d", curve).attr("opacity", 0).call(e => e.transition(t).attr("opacity", 1)),
-    update => update.call(u => u.transition(t).attr("d", curve).attr("stroke", color)),
-    exit => exit.remove());
+    e => e.append("path").attr("class", "link").attr("stroke", color).attr("stroke-width", d => width[d.depth]).attr("d", path).attr("opacity", 0).call(s => s.transition(t).attr("opacity", 1)),
+    u => u.call(s => s.transition(t).attr("d", path)),
+    x => x.remove());
 
-  const tq = terms();
-  const node = gNodes.selectAll("g.node").data(nodes, d => d.data.key).join(
-    enter => {
-      const e = enter.append("g").attr("transform", d => `translate(${d.px},${d.py})`).attr("opacity", 0);
-      e.call(drawNode);
-      e.on("click", (ev, d) => onClick(d));
-      e.transition(t).attr("opacity", 1);
-      return e;
-    },
-    update => { update.selectAll("*").remove(); update.call(drawNode); update.transition(t).attr("transform", d => `translate(${d.px},${d.py})`); return update; },
-    exit => exit.remove());
+  gNodes.selectAll("g.node").data(nodes, d => d.data.key).join(
+    e => { const s = e.append("g").attr("transform", d => `translate(${d.px},${d.py})`).attr("opacity", 0).on("click", (ev, d) => onClick(d));
+           s.call(drawNode); s.transition(t).attr("opacity", 1); return s; },
+    u => { u.selectAll("*").remove(); u.call(drawNode); u.transition(t).attr("transform", d => `translate(${d.px},${d.py})`); return u; },
+    x => x.remove());
 
-  document.getElementById("count").textContent = tq.length
+  document.getElementById("count").textContent = terms().length
     ? `${vars.length.toLocaleString()} of ${VARS.length.toLocaleString()} variables match`
     : `${VARS.length.toLocaleString()} variables · ${R.lenses.length} lenses`;
-  if (fit) fitView(nodes);
-}
-
-// Width of a node's label (measured with the page font), so pills fit their text and links start after it
-const FONT = getComputedStyle(document.body).fontFamily;
-const ctx = document.createElement("canvas").getContext("2d");
-function textW(text, size, weight) { ctx.font = `${weight || 400} ${size}px ${FONT}`; return ctx.measureText(text).width; }
-function lensText(d) { return `${cut(d.data.name, 34)}  ${d.data.count}`; }
-function labelWidth(d) {
-  const k = d.data.kind;
-  if (k === "root") return 60;
-  if (k === "lens") return textW(lensText(d), 14, 650) + 30;
-  if (k === "sub" || k === "ds") return 10 + textW(cut(d.data.name, k === "ds" ? 44 : 36), 13) + textW(`  ${d.data.count || "none yet"}`, 11.5) + 8;
-  return 0;
+  if (view === "fit") fitView();
 }
 
 function drawNode(sel) {
-  sel.attr("class", d => {
-    const c = ["node", d.data.kind];
-    if (d.data.kind === "var" && terms().length) c.push("hit");
-    if (d.data.kind === "var" && selected === d.data.key) c.push("sel");
-    if (d.data.kind === "sub" && !d.data.count) c.push("empty");
-    return c.join(" ");
-  });
   sel.each(function (d) {
     const s = d3.select(this), k = d.data.kind, dir = d.dir || 1, col = k === "root" ? "#241f19" : COLORS[d.data.lens];
-    if (k === "root") {
-      s.classed("root", true);
-      s.append("rect").attr("x", -60).attr("y", -20).attr("width", 120).attr("height", 40).attr("rx", 20).attr("fill", col);
-      s.append("text").attr("text-anchor", "middle").attr("dy", "0.35em").text("Bharatnomy");
+    const w = d.w, h = nodeH(d.data), x0 = k === "root" ? -w / 2 : dir > 0 ? 0 : -w;
+    const isOpen = open.has(d.data.key), kids = d.data._hasKids;
+    s.attr("class", ["node", k, k === "var" && selected === d.data.key ? "sel" : "", k === "sub" && !d.data.count ? "empty" : ""].join(" "));
+    const [sz, wt] = SIZE[k];
+    if (k === "var") {
+      const hit = terms().length > 0;
+      if (hit) s.append("rect").attr("class", "hl").attr("x", x0 + 10).attr("y", -h / 2).attr("width", w - 10).attr("height", h).attr("rx", 5);
+      s.append("circle").attr("cx", dir > 0 ? 4 : -4).attr("r", 3.5).attr("fill", col);
+      const tx = s.append("text").attr("x", dir > 0 ? 14 : -14).attr("dy", "0.35em").attr("text-anchor", dir > 0 ? "start" : "end").attr("font-size", sz);
+      tx.append("tspan").attr("class", "label").text(label(d.data));
+      if (d.data.v.unit) tx.append("tspan").attr("class", "unit").text("  " + d.data.v.unit);
+      s.append("title").text(`${d.data.name}\n${d.data.v.column}`);
       return;
     }
-    if (k === "lens") {
-      const w = labelWidth(d);
-      s.classed("pill", true);
-      s.append("rect").attr("x", dir > 0 ? 0 : -w).attr("y", -15).attr("width", w).attr("height", 30).attr("rx", 15).attr("fill", col);
-      s.append("text").attr("class", "label").attr("x", dir > 0 ? 15 : -15).attr("dy", "0.35em").attr("text-anchor", dir > 0 ? "start" : "end")
-        .text(lensText(d));
-      return;
+    const filled = k === "root" || k === "lens";
+    s.append("rect").attr("x", x0).attr("y", -h / 2).attr("width", w).attr("height", h).attr("rx", h / 2)
+      .attr("fill", filled ? col : d3.color(col).copy({ opacity: k === "sub" ? 0.13 : 0.07 }))
+      .attr("stroke", filled ? "none" : col).attr("stroke-opacity", k === "sub" ? 0.75 : 0.45).attr("stroke-width", 1.5);
+    if (k === "root") { s.append("text").attr("text-anchor", "middle").attr("dy", "0.35em").attr("font-size", sz).attr("font-weight", wt).attr("fill", "#fff").text("Bharatnomy"); return; }
+    // text and count, laid out from the outer edge of the pill
+    const count = k === "lens" ? String(d.data.count) : (d.data.count ? String(d.data.count) : "none yet");
+    const lw = textW(label(d.data), sz, wt), cw = textW(count, 12, 600);
+    const toggle = kids ? 22 : 0;
+    let x = x0 + 18;
+    s.append("text").attr("x", x).attr("dy", "0.35em").attr("font-size", sz).attr("font-weight", wt).attr("fill", filled ? "#fff" : "#241f19").text(label(d.data));
+    x += lw + 10;
+    s.append("rect").attr("x", x - 5).attr("y", -9).attr("width", cw + 10).attr("height", 18).attr("rx", 9)
+      .attr("fill", filled ? "rgba(255,255,255,.25)" : d3.color(col).copy({ opacity: 0.16 }));
+    s.append("text").attr("x", x).attr("dy", "0.35em").attr("font-size", 12).attr("font-weight", 600).attr("fill", filled ? "#fff" : col).text(count);
+    if (kids) {
+      const cx = x + cw + 14 + 8;
+      s.append("circle").attr("cx", cx).attr("r", 8).attr("fill", filled ? "rgba(255,255,255,.25)" : "#fff").attr("stroke", filled ? "none" : col).attr("stroke-width", 1.2);
+      s.append("text").attr("x", cx).attr("dy", "0.33em").attr("text-anchor", "middle").attr("font-size", 13).attr("font-weight", 700)
+        .attr("fill", filled ? "#fff" : col).text(isOpen ? "–" : "+");
     }
-    const kids = d.data._hasKids, isOpen = open.has(d.data.key);
-    s.append("circle").attr("r", k === "var" ? 3.5 : 5.5).attr("fill", kids && !isOpen ? col : "#fff").attr("stroke", col).attr("stroke-width", 2);
-    const anchor = dir > 0 ? "start" : "end", x = dir > 0 ? 10 : -10;
-    const label = k === "var" ? cut(d.data.name, 58) : cut(d.data.name, k === "ds" ? 44 : 36);
-    const txt = s.append("text").attr("class", "label").attr("x", x).attr("dy", "0.35em").attr("text-anchor", anchor);
-    txt.append("tspan").text(label);
-    if (k !== "var") txt.append("tspan").attr("class", "n").text(`  ${d.data.count || "none yet"}`);
-    if (k === "var" && d.data.v.unit) txt.append("tspan").attr("class", "unit").text(`  ${d.data.v.unit}`);
-    s.append("title").text(k === "var" ? `${d.data.name}\n${d.data.v.column}` : d.data.name);
+    s.append("title").text(d.data.name + (kids ? (isOpen ? " (click to close)" : " (click to open)") : ""));
   });
 }
 
 function onClick(d) {
   const k = d.data.kind;
-  if (k === "var") { selected = d.data.key; showPanel(d.data.v); render(false); return; }
-  if (k === "root") return;
-  if (!d.data._hasKids) return;
-  open.has(d.data.key) ? closeBranch(d.data.key) : open.add(d.data.key);
-  render(false);
-  centerOn(d);
+  if (k === "var") { selected = d.data.key; showPanel(d.data.v); render(); return; }
+  if (k === "root" || !d.data._hasKids) return;
+  if (open.has(d.data.key)) { open.delete(d.data.key); [...open].forEach(x => { if (under(x, d.data.key)) open.delete(x); }); }
+  else open.add(d.data.key);
+  render();
+  const n = current.find(c => c.data.key === d.data.key);
+  if (n) panTo(n);
 }
-function closeBranch(key) { open.delete(key); [...open].forEach(k => { if (isDescendantKey(k, key)) open.delete(k); }); }
-function isDescendantKey(k, key) {
-  // keys encode the path: L:<lens>, S:<sub>, D:<sub>:<dataset>, V:<id>; close everything under a lens or sub-theme
-  if (key.startsWith("L:")) { const lens = key.slice(2); return (k.startsWith("S:") && lensOf[k.slice(2)] === lens) || (k.startsWith("D:") && lensOf[k.split(":")[1]] === lens); }
+function under(k, key) {
+  if (key.startsWith("L:")) { const l = key.slice(2); return (k.startsWith("S:") && lensOf[k.slice(2)] === l) || (k.startsWith("D:") && lensOf[k.split(":")[1]] === l); }
   if (key.startsWith("S:")) return k.startsWith("D:" + key.slice(2) + ":");
   return false;
 }
 
 function showPanel(v) {
-  const ds = R.datasets[v.dataset] || {};
-  const lens = R.lenses.find(l => l.id === v.lens_id) || {};
-  const p = document.getElementById("panel");
+  const ds = R.datasets[v.dataset] || {}, lens = R.lenses.find(l => l.id === v.lens_id) || {};
   const period = v.earliest_period ? (v.earliest_period === v.latest_period ? v.earliest_period : `${v.earliest_period} to ${v.latest_period}`) : "";
+  const p = document.getElementById("panel");
+  p.style.setProperty("--lens", COLORS[v.lens_id]);
   p.innerHTML = `<button class="close" aria-label="Close">×</button>
-    <h2>${esc(v.name)}</h2>
     <div class="crumb">${esc(lens.name)} › ${esc(subName[v.sub_theme_id])}</div>
+    <h2>${esc(v.name)}</h2>
     <dl>
       <dt>Column</dt><dd><code>${esc(v.column)}</code></dd>
       <dt>Unit</dt><dd>${esc(v.unit)}</dd>
@@ -299,43 +307,55 @@ function showPanel(v) {
       <a href="index.html#q=${encodeURIComponent(v.column)}">In dataset search</a>
     </div>`;
   p.classList.add("open");
-  p.querySelector(".close").onclick = () => { p.classList.remove("open"); selected = null; render(false); };
+  p.querySelector(".close").onclick = () => { p.classList.remove("open"); selected = null; render(); };
 }
 
-function fitView(nodes) {
-  const w = window.innerWidth, h = window.innerHeight;
-  const xs = nodes.map(d => d.px), ys = nodes.map(d => d.py);
-  const minX = Math.min(...xs) - 470, maxX = Math.max(...xs) + 470, minY = Math.min(...ys) - 40, maxY = Math.max(...ys) + 40;
-  const k = Math.max(0.15, Math.min(1.1, w / (maxX - minX), (h - 80) / (maxY - minY)));
-  const tx = w / 2 - k * (minX + maxX) / 2, ty = 40 + (h - 40) / 2 - k * (minY + maxY) / 2;
-  svg.transition().duration(450).call(zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(k));
+// ---------- view
+function bounds(nodes) {
+  let x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
+  nodes.forEach(d => {
+    const a = d.data.kind === "root" ? d.px - d.w / 2 : d.dir > 0 ? d.px : d.px - d.w;
+    x0 = Math.min(x0, a); x1 = Math.max(x1, a + d.w); y0 = Math.min(y0, d.py - 24); y1 = Math.max(y1, d.py + 24);
+  });
+  return { x0, x1, y0, y1 };
 }
-function centerOn(d) {
-  const tr = d3.zoomTransform(svg.node());
-  const x = window.innerWidth / 2 - tr.k * (d.px + d.dir * 150), y = window.innerHeight / 2 - tr.k * d.py;
-  svg.transition().duration(450).call(zoom.transform, d3.zoomIdentity.translate(x, y).scale(tr.k));
+function fitView() {
+  const W = window.innerWidth, H = window.innerHeight, top = 70;
+  const b = bounds(current);
+  let k = Math.min(1.15, (W - 40) / (b.x1 - b.x0), (H - top - 30) / (b.y1 - b.y0));
+  k = Math.max(k, MIN_ZOOM_FIT);
+  // if it does not fit at a readable size, keep the centre of the map in view
+  const cx = (b.x1 - b.x0) * k > W ? 0 : (b.x0 + b.x1) / 2;
+  const cy = (b.y1 - b.y0) * k > H - top ? 0 : (b.y0 + b.y1) / 2;
+  svg.transition().duration(450).call(zoom.transform, d3.zoomIdentity.translate(W / 2 - k * cx, top + (H - top) / 2 - k * cy).scale(k));
+}
+function panTo(d) {
+  const tr = d3.zoomTransform(svg.node()), W = window.innerWidth, H = window.innerHeight;
+  const x = d.px + d.dir * Math.min(d.w + 200, W / (2 * tr.k)), y = d.py;
+  svg.transition().duration(450).call(zoom.transform, d3.zoomIdentity.translate(W / 2 - tr.k * x * 0.6 - tr.k * d.px * 0.4, (H + 40) / 2 - tr.k * y).scale(tr.k));
 }
 
 let timer;
-document.getElementById("q").addEventListener("input", e => {
+const q = document.getElementById("q");
+q.addEventListener("input", () => {
   clearTimeout(timer);
   timer = setTimeout(() => {
-    query = e.target.value.trim();
+    query = q.value.trim();
     history.replaceState(null, "", query ? "#q=" + encodeURIComponent(query) : location.pathname);
-    if (query) { const n = matching().length; setOpenForSearch(buildTree(matching()), n); }
-    else open = new Set(["root"]);
-    render(true);
+    if (query) openForSearch(buildTree(matching()), matching().length); else open = DEFAULT_OPEN();
+    render("fit");
   }, 180);
 });
-document.getElementById("q").addEventListener("keydown", e => { if (e.key === "Escape") { e.target.value = ""; e.target.dispatchEvent(new Event("input")); } });
-document.getElementById("expand").onclick = () => { open = new Set(["root", ...R.lenses.map(l => "L:" + l.id)]); render(true); };
-document.getElementById("collapse").onclick = () => { open = new Set(["root"]); render(true); };
-document.getElementById("fit").onclick = () => render(true);
-window.addEventListener("resize", () => render(true));
+q.addEventListener("keydown", e => { if (e.key === "Escape") { q.value = ""; q.dispatchEvent(new Event("input")); } });
+document.getElementById("expand").onclick = () => { open = DEFAULT_OPEN(); render("fit"); };
+document.getElementById("collapse").onclick = () => { open = new Set(["root"]); render("fit"); };
+document.getElementById("fit").onclick = () => fitView();
+window.addEventListener("resize", () => fitView());
+window.addEventListener("hashchange", () => { const v = decodeURIComponent((location.hash.match(/q=([^&]*)/) || [])[1] || ""); if (v !== query) { q.value = v; q.dispatchEvent(new Event("input")); } });
 
 const initial = decodeURIComponent((location.hash.match(/q=([^&]*)/) || [])[1] || "");
-if (initial) { document.getElementById("q").value = initial; query = initial; setOpenForSearch(buildTree(matching()), matching().length); }
-render(true);
+if (initial) { q.value = initial; query = initial; openForSearch(buildTree(matching()), matching().length); }
+render("fit");
 </script>
 </body>
 </html>
