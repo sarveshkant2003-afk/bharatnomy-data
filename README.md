@@ -28,6 +28,7 @@ One folder per table, named by the [naming rules](#folder-names) below. Each fol
 | [`CLM_rainfall-variability_1971-to-2020_MH_BNY_DIST`](CLM_rainfall-variability_1971-to-2020_MH_BNY_DIST/) | Year-to-year rainfall variability, Maharashtra districts | Our calculation from IMD gridded rainfall |
 | [`CLM_temperature-indices_1951-to-2024_MH_BNY_DIST`](CLM_temperature-indices_1951-to-2024_MH_BNY_DIST/) | Mean and extreme temperature, heat wave days, warm nights, Maharashtra districts | Our calculation from IMD gridded temperature |
 | [`ENV_aqi-daily_2015-to-2026_STATES_CPCB_CITY`](ENV_aqi-daily_2015-to-2026_STATES_CPCB_CITY/) | Daily Air Quality Index by city | CPCB daily AQI bulletins |
+| [`ENV_aqi-days-by-category_2015-to-2026_STATES_BNY_CITY`](ENV_aqi-days-by-category_2015-to-2026_STATES_BNY_CITY/) | Days per year in each AQI category, very poor/severe days, stations reporting, by city | Our count from CPCB daily AQI bulletins |
 | [`ENV_forest-cover_2023_STATES_FSI_DIST`](ENV_forest-cover_2023_STATES_FSI_DIST/) | Forest cover by district | India State of Forest Report 2023 |
 | [`ENV_forest-tree-cover_2023_STATES_FSI`](ENV_forest-tree-cover_2023_STATES_FSI/) | Forest and tree cover by state | India State of Forest Report 2023 |
 | [`HLT_deaths-forces-of-nature_2017-to-2022_STATES_NCRB`](HLT_deaths-forces-of-nature_2017-to-2022_STATES_NCRB/) | Deaths from heat/sun stroke and other natural causes, by state | NCRB Accidental Deaths & Suicides in India |
@@ -66,7 +67,7 @@ Original source files (PDFs, API downloads) are in [`_sources/`](_sources/), one
 | Heat: temperature, heat waves, warm nights, land surface temperature | `CLM_temperature-indices_*` (Maharashtra districts); `CLM_heat-indicators-*` (Nagpur, with LST) |
 | Rainfall: seasonal totals, departure, heavy rain, dry spells, drought index (SPI), variability | `CLM_rainfall-*` (Maharashtra districts) |
 | District and state codes (LGD, Census 2011), name variants | [`_reference/geography.csv`](_reference/) |
-| Air quality (AQI) | `ENV_aqi-*` |
+| Air quality (AQI), very poor / severe air days | `ENV_aqi-*` |
 | Heat stroke deaths, deaths from natural causes | `HLT_deaths-forces-of-nature_*` |
 | Population, age, elderly, workers by category (cultivators, agricultural labourers) | `POP_*` |
 | Slums | `HOU_slum-*` |

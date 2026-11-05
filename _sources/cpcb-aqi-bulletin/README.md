@@ -3,6 +3,7 @@
 Original files for this release. The cleaned data is in:
 
 - [`ENV_aqi-daily_2015-to-2026_STATES_CPCB_CITY/`](../../ENV_aqi-daily_2015-to-2026_STATES_CPCB_CITY/)
+- [`ENV_aqi-days-by-category_2015-to-2026_STATES_BNY_CITY/`](../../ENV_aqi-days-by-category_2015-to-2026_STATES_BNY_CITY/) (yearly counts built from the daily table by [`pipelines/cpcb-aqi/build_aqi_days.py`](../../pipelines/cpcb-aqi/build_aqi_days.py))
 
 ## Source
 
