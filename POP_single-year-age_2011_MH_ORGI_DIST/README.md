@@ -16,6 +16,8 @@ Census 2011 population of each age from 0 to 99, 100+ and "age not stated", by s
 |---|---|
 | `state_ut` | Maharashtra |
 | `district` | District as spelled by the Census. `State total` = Maharashtra's published total |
+| `lgd_state_code` | State/UT code in the Local Government Directory (LGD), from [`_reference/geography.csv`](../_reference/geography.csv). Blank for All India and for old units LGD no longer lists |
+| `lgd_district_code` | District code in the Local Government Directory (LGD), from [`_reference/geography.csv`](../_reference/geography.csv). Blank for totals and names that could not be matched |
 | `district_census_code` | Census 2011 district code (Nagpur = 505) |
 | `age` | `All ages`, `0` ... `99`, `100+`, `Age not stated` |
 | `persons_total`, `males_total`, `females_total` | Population, rural + urban |
@@ -25,3 +27,4 @@ Census 2011 population of each age from 0 to 99, 100+ and "age not stated", by s
 
 - Only Maharashtra is here; other states' C-13 tables are separate files on the same portal (catalog "C-13 ... <state> - 2011").
 - `All ages` rows are the published totals; leave them out before adding ages up.
+- `lgd_state_code` and `lgd_district_code` added on 5 Nov 2026 from the LGD directory (see [`_reference/README.md`](../_reference/README.md)). LGD codes identify today's state or district; for years before a split (Telangana 2014, Ladakh 2019, new districts) the same code covers a larger area than it does now.

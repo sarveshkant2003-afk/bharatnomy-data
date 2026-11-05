@@ -1,0 +1,6394 @@
+{
+ "1": [
+  {
+   "sscode": "",
+   "census2011Code": "014",
+   "census2001Code": "06",
+   "districtCode": 1,
+   "districtNameEnglish": "Anantnag",
+   "districtNameLocal": "ANANTNAG                                          "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "009",
+   "census2001Code": null,
+   "districtCode": 623,
+   "districtNameEnglish": "Bandipora",
+   "districtNameLocal": "BANDIPORA                                         "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "008",
+   "census2001Code": "02",
+   "districtCode": 3,
+   "districtNameEnglish": "Baramulla",
+   "districtNameLocal": "BARAMULLA                                         "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "002",
+   "census2001Code": "04",
+   "districtCode": 2,
+   "districtNameEnglish": "Budgam",
+   "districtNameLocal": ""
+  },
+  {
+   "sscode": "",
+   "census2011Code": "016",
+   "census2001Code": "09",
+   "districtCode": 4,
+   "districtNameEnglish": "Doda",
+   "districtNameLocal": "DODA                                              "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "011",
+   "census2001Code": null,
+   "districtCode": 626,
+   "districtNameEnglish": "Ganderbal",
+   "districtNameLocal": "GANDERBAL                                         "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "021",
+   "census2001Code": "13",
+   "districtCode": 5,
+   "districtNameEnglish": "Jammu",
+   "districtNameLocal": "JAMMU                                             "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "007",
+   "census2001Code": "14",
+   "districtCode": 7,
+   "districtNameEnglish": "Kathua",
+   "districtNameLocal": "KATHUA                                            "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "018",
+   "census2001Code": "09",
+   "districtCode": 620,
+   "districtNameEnglish": "Kishtwar",
+   "districtNameLocal": ""
+  },
+  {
+   "sscode": "",
+   "census2011Code": "015",
+   "census2001Code": null,
+   "districtCode": 622,
+   "districtNameEnglish": "Kulgam",
+   "districtNameLocal": "KULGAM                                            "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "001",
+   "census2001Code": "01",
+   "districtCode": 8,
+   "districtNameEnglish": "Kupwara",
+   "districtNameLocal": "KUPWARA                                           "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "005",
+   "census2001Code": "11",
+   "districtCode": 10,
+   "districtNameEnglish": "Poonch",
+   "districtNameLocal": "POONCH                                            "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "012",
+   "census2001Code": "05",
+   "districtCode": 11,
+   "districtNameEnglish": "Pulwama",
+   "districtNameLocal": "PULWAMA                                           "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "006",
+   "census2001Code": "12",
+   "districtCode": 12,
+   "districtNameEnglish": "Rajouri",
+   "districtNameLocal": "RAJOURI"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "017",
+   "census2001Code": "09",
+   "districtCode": 621,
+   "districtNameEnglish": "Ramban",
+   "districtNameLocal": "RAMBAN                                            "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "020",
+   "census2001Code": null,
+   "districtCode": 627,
+   "districtNameEnglish": "Reasi",
+   "districtNameLocal": "REASI                                             "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "022",
+   "census2001Code": null,
+   "districtCode": 624,
+   "districtNameEnglish": "Samba",
+   "districtNameLocal": "SAMBA                                             "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "013",
+   "census2001Code": null,
+   "districtCode": 625,
+   "districtNameEnglish": "Shopian",
+   "districtNameLocal": "SHOPIAN                                           "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "010",
+   "census2001Code": "03",
+   "districtCode": 13,
+   "districtNameEnglish": "Srinagar",
+   "districtNameLocal": "SRINAGAR                                          "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "019",
+   "census2001Code": "10",
+   "districtCode": 14,
+   "districtNameEnglish": "Udhampur",
+   "districtNameLocal": "UDHAMPUR                                          "
+  }
+ ],
+ "2": [
+  {
+   "sscode": "",
+   "districtCode": 15,
+   "districtNameEnglish": "Bilaspur",
+   "districtNameLocal": "BILASPUR                                          ",
+   "census2011Code": "030",
+   "census2001Code": "08"
+  },
+  {
+   "sscode": "",
+   "districtCode": 16,
+   "districtNameEnglish": "Chamba",
+   "districtNameLocal": "CHAMBA                                            ",
+   "census2011Code": "023",
+   "census2001Code": "01"
+  },
+  {
+   "sscode": "",
+   "districtCode": 17,
+   "districtNameEnglish": "Hamirpur",
+   "districtNameLocal": "HAMIRPUR                                          ",
+   "census2011Code": "028",
+   "census2001Code": "06"
+  },
+  {
+   "sscode": "",
+   "districtCode": 18,
+   "districtNameEnglish": "Kangra",
+   "districtNameLocal": "KANGRA                                            ",
+   "census2011Code": "024",
+   "census2001Code": "02"
+  },
+  {
+   "sscode": "",
+   "districtCode": 19,
+   "districtNameEnglish": "Kinnaur",
+   "districtNameLocal": "KINNAUR                                           ",
+   "census2011Code": "034",
+   "census2001Code": "12"
+  },
+  {
+   "sscode": "",
+   "districtCode": 20,
+   "districtNameEnglish": "Kullu",
+   "districtNameLocal": "KULLU                                             ",
+   "census2011Code": "026",
+   "census2001Code": "04"
+  },
+  {
+   "sscode": "",
+   "districtCode": 21,
+   "districtNameEnglish": "Lahaul And Spiti",
+   "districtNameLocal": "Lahaul and Spiti",
+   "census2011Code": "025",
+   "census2001Code": "03"
+  },
+  {
+   "sscode": "",
+   "districtCode": 22,
+   "districtNameEnglish": "Mandi",
+   "districtNameLocal": "MANDI                                             ",
+   "census2011Code": "027",
+   "census2001Code": "05"
+  },
+  {
+   "sscode": "",
+   "districtCode": 23,
+   "districtNameEnglish": "Shimla",
+   "districtNameLocal": "SHIMLA                                            ",
+   "census2011Code": "033",
+   "census2001Code": "11"
+  },
+  {
+   "sscode": "",
+   "districtCode": 24,
+   "districtNameEnglish": "Sirmaur",
+   "districtNameLocal": "SIRMAUR                                           ",
+   "census2011Code": "032",
+   "census2001Code": "10"
+  },
+  {
+   "sscode": "",
+   "districtCode": 25,
+   "districtNameEnglish": "Solan",
+   "districtNameLocal": "SOLAN                                             ",
+   "census2011Code": "031",
+   "census2001Code": "09"
+  },
+  {
+   "sscode": "",
+   "districtCode": 26,
+   "districtNameEnglish": "Una",
+   "districtNameLocal": "UNA                                               ",
+   "census2011Code": "029",
+   "census2001Code": "07"
+  }
+ ],
+ "3": [
+  {
+   "sscode": "",
+   "census2011Code": "049",
+   "census2001Code": "02",
+   "districtCode": 27,
+   "districtNameEnglish": "Amritsar",
+   "districtNameLocal": "AMRITSAR                                          "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "054",
+   "census2001Code": null,
+   "districtCode": 605,
+   "districtNameEnglish": "Barnala",
+   "districtNameLocal": "                                                  "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "046",
+   "census2001Code": "14",
+   "districtCode": 28,
+   "districtNameEnglish": "Bathinda",
+   "districtNameLocal": "BATHINDA                                          "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "045",
+   "census2001Code": "13",
+   "districtCode": 29,
+   "districtNameEnglish": "Faridkot",
+   "districtNameLocal": "FARIDKOT                                          "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "040",
+   "census2001Code": "08",
+   "districtCode": 30,
+   "districtNameEnglish": "Fatehgarh Sahib",
+   "districtNameLocal": "FATEHGARH SAHIB                                   "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 651,
+   "districtNameEnglish": "Fazilka",
+   "districtNameLocal": ""
+  },
+  {
+   "sscode": "",
+   "census2011Code": "043",
+   "census2001Code": "11",
+   "districtCode": 31,
+   "districtNameEnglish": "Ferozepur",
+   "districtNameLocal": "FEROZEPUR"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "035",
+   "census2001Code": "01",
+   "districtCode": 32,
+   "districtNameEnglish": "Gurdaspur",
+   "districtNameLocal": "GURDASPUR                                         "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "038",
+   "census2001Code": "05",
+   "districtCode": 33,
+   "districtNameEnglish": "Hoshiarpur",
+   "districtNameLocal": "HOSHIARPUR                                        "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "037",
+   "census2001Code": "04",
+   "districtCode": 34,
+   "districtNameEnglish": "Jalandhar",
+   "districtNameLocal": "JALANDHAR                                         "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "036",
+   "census2001Code": "03",
+   "districtCode": 35,
+   "districtNameEnglish": "Kapurthala",
+   "districtNameLocal": "KAPURTHALA                                        "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "041",
+   "census2001Code": "09",
+   "districtCode": 36,
+   "districtNameEnglish": "Ludhiana",
+   "districtNameLocal": "ਲੂਿਧਆਣਾ"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "000",
+   "census2001Code": "  ",
+   "districtCode": 737,
+   "districtNameEnglish": "Malerkotla",
+   "districtNameLocal": ""
+  },
+  {
+   "sscode": "",
+   "census2011Code": "047",
+   "census2001Code": "15",
+   "districtCode": 37,
+   "districtNameEnglish": "Mansa",
+   "districtNameLocal": "ਮਾਨਸਾ"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "042",
+   "census2001Code": "10",
+   "districtCode": 38,
+   "districtNameEnglish": "Moga",
+   "districtNameLocal": "MOGA                                              "
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 662,
+   "districtNameEnglish": "Pathankot",
+   "districtNameLocal": "PATHANKOT"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "048",
+   "census2001Code": "17",
+   "districtCode": 41,
+   "districtNameEnglish": "Patiala",
+   "districtNameLocal": "PATIALA                                           "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "051",
+   "census2001Code": "07",
+   "districtCode": 42,
+   "districtNameEnglish": "Rupnagar",
+   "districtNameLocal": "ਰੂਪਨਗਰ"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "053",
+   "census2001Code": "16",
+   "districtCode": 43,
+   "districtNameEnglish": "Sangrur",
+   "districtNameLocal": "SANGRUR                                           "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "052",
+   "census2001Code": null,
+   "districtCode": 608,
+   "districtNameEnglish": "S.A.S Nagar",
+   "districtNameLocal": "                                                  "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "039",
+   "census2001Code": "06",
+   "districtCode": 40,
+   "districtNameEnglish": "Shahid Bhagat Singh Nagar",
+   "districtNameLocal": "Shahid Bhagat Singh Nagar"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "044",
+   "census2001Code": "12",
+   "districtCode": 39,
+   "districtNameEnglish": "Sri Muktsar Sahib",
+   "districtNameLocal": "ਸ੍ਰੀ ਮੁਕਤਸਰ ਸਾਹਿਬ"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "050",
+   "census2001Code": null,
+   "districtCode": 609,
+   "districtNameEnglish": "Tarn Taran",
+   "districtNameLocal": "tarn taran "
+  }
+ ],
+ "4": [
+  {
+   "sscode": "",
+   "districtCode": 44,
+   "districtNameEnglish": "Chandigarh",
+   "districtNameLocal": "CHANDIGARH                                        ",
+   "census2011Code": "055",
+   "census2001Code": "01"
+  }
+ ],
+ "5": [
+  {
+   "sscode": "",
+   "districtCode": 45,
+   "districtNameEnglish": "Almora",
+   "districtNameLocal": "ALMORA                                            ",
+   "census2011Code": "064",
+   "census2001Code": "09"
+  },
+  {
+   "sscode": "",
+   "districtCode": 46,
+   "districtNameEnglish": "Bageshwar",
+   "districtNameLocal": "BAGESHWAR                                         ",
+   "census2011Code": "063",
+   "census2001Code": "08"
+  },
+  {
+   "sscode": "",
+   "districtCode": 47,
+   "districtNameEnglish": "Chamoli",
+   "districtNameLocal": "CHAMOLI                                           ",
+   "census2011Code": "057",
+   "census2001Code": "02"
+  },
+  {
+   "sscode": "",
+   "districtCode": 48,
+   "districtNameEnglish": "Champawat",
+   "districtNameLocal": "CHAMPAWAT                                         ",
+   "census2011Code": "065",
+   "census2001Code": "10"
+  },
+  {
+   "sscode": "",
+   "districtCode": 49,
+   "districtNameEnglish": "Dehradun",
+   "districtNameLocal": "DEHRADUN                                          ",
+   "census2011Code": "060",
+   "census2001Code": "05"
+  },
+  {
+   "sscode": "",
+   "districtCode": 50,
+   "districtNameEnglish": "Haridwar",
+   "districtNameLocal": "HARIDWAR                                          ",
+   "census2011Code": "068",
+   "census2001Code": "13"
+  },
+  {
+   "sscode": "",
+   "districtCode": 51,
+   "districtNameEnglish": "Nainital",
+   "districtNameLocal": "NAINITAL                                          ",
+   "census2011Code": "066",
+   "census2001Code": "11"
+  },
+  {
+   "sscode": "",
+   "districtCode": 52,
+   "districtNameEnglish": "Pauri Garhwal",
+   "districtNameLocal": "PAURI GARHWAL                                     ",
+   "census2011Code": "061",
+   "census2001Code": "06"
+  },
+  {
+   "sscode": "",
+   "districtCode": 53,
+   "districtNameEnglish": "Pithoragarh",
+   "districtNameLocal": "PITHORAGARH                                       ",
+   "census2011Code": "062",
+   "census2001Code": "07"
+  },
+  {
+   "sscode": "",
+   "districtCode": 54,
+   "districtNameEnglish": "Rudraprayag",
+   "districtNameLocal": "रूद्रप्रयाग",
+   "census2011Code": "058",
+   "census2001Code": "03"
+  },
+  {
+   "sscode": "",
+   "districtCode": 55,
+   "districtNameEnglish": "Tehri Garhwal",
+   "districtNameLocal": "TEHRI GARHWAL                                     ",
+   "census2011Code": "059",
+   "census2001Code": "04"
+  },
+  {
+   "sscode": "",
+   "districtCode": 56,
+   "districtNameEnglish": "Udham Singh Nagar",
+   "districtNameLocal": "UDHAM SINGH NAGAR",
+   "census2011Code": "067",
+   "census2001Code": "12"
+  },
+  {
+   "sscode": "",
+   "districtCode": 57,
+   "districtNameEnglish": "Uttarkashi",
+   "districtNameLocal": "UTTAR KASHI                                       ",
+   "census2011Code": "056",
+   "census2001Code": "01"
+  }
+ ],
+ "6": [
+  {
+   "sscode": "",
+   "census2011Code": "070",
+   "census2001Code": "02",
+   "districtCode": 58,
+   "districtNameEnglish": "Ambala",
+   "districtNameLocal": "AMBALA                                            "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "081",
+   "census2001Code": "13",
+   "districtCode": 59,
+   "districtNameEnglish": "Bhiwani",
+   "districtNameLocal": "BHIWANI                                           "
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 701,
+   "districtNameEnglish": "Charkhi Dadri",
+   "districtNameLocal": "CHARKHI DADRI"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "088",
+   "census2001Code": "19",
+   "districtCode": 60,
+   "districtNameEnglish": "Faridabad",
+   "districtNameLocal": "FARIDABAD                                         "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "078",
+   "census2001Code": "10",
+   "districtCode": 61,
+   "districtNameEnglish": "Fatehabad",
+   "districtNameLocal": "FATEHABAD                                         "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "086",
+   "census2001Code": "18",
+   "districtCode": 62,
+   "districtNameEnglish": "Gurugram",
+   "districtNameLocal": "GURUGRAM"
+  },
+  {
+   "sscode": "",
+   "census2011Code": null,
+   "census2001Code": null,
+   "districtCode": 792,
+   "districtNameEnglish": "Hansi",
+   "districtNameLocal": "हांसी"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "080",
+   "census2001Code": "12",
+   "districtCode": 63,
+   "districtNameEnglish": "Hisar",
+   "districtNameLocal": "HISAR                                             "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "083",
+   "census2001Code": "15",
+   "districtCode": 64,
+   "districtNameEnglish": "Jhajjar",
+   "districtNameLocal": "JHAJJAR                                           "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "077",
+   "census2001Code": "09",
+   "districtCode": 65,
+   "districtNameEnglish": "Jind",
+   "districtNameLocal": "JIND                                              "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "073",
+   "census2001Code": "05",
+   "districtCode": 66,
+   "districtNameEnglish": "Kaithal",
+   "districtNameLocal": "KAITHAL                                           "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "074",
+   "census2001Code": "06",
+   "districtCode": 67,
+   "districtNameEnglish": "Karnal",
+   "districtNameLocal": "KARNAL                                            "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "072",
+   "census2001Code": "04",
+   "districtCode": 68,
+   "districtNameEnglish": "Kurukshetra",
+   "districtNameLocal": "KURUKSHETRA                                       "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "084",
+   "census2001Code": "16",
+   "districtCode": 69,
+   "districtNameEnglish": "Mahendragarh",
+   "districtNameLocal": "MAHENDRAGARH                                      "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "087",
+   "census2001Code": null,
+   "districtCode": 604,
+   "districtNameEnglish": "Nuh",
+   "districtNameLocal": "नूँह"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "089",
+   "census2001Code": null,
+   "districtCode": 619,
+   "districtNameEnglish": "Palwal",
+   "districtNameLocal": ""
+  },
+  {
+   "sscode": "",
+   "census2011Code": "069",
+   "census2001Code": "01",
+   "districtCode": 70,
+   "districtNameEnglish": "Panchkula",
+   "districtNameLocal": "PANCHKULA                                         "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "075",
+   "census2001Code": "07",
+   "districtCode": 71,
+   "districtNameEnglish": "Panipat",
+   "districtNameLocal": "PANIPAT                                           "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "085",
+   "census2001Code": "17",
+   "districtCode": 72,
+   "districtNameEnglish": "Rewari",
+   "districtNameLocal": "REWARI                                            "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "082",
+   "census2001Code": "14",
+   "districtCode": 73,
+   "districtNameEnglish": "Rohtak",
+   "districtNameLocal": "ROHTAK                                            "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "079",
+   "census2001Code": "11",
+   "districtCode": 74,
+   "districtNameEnglish": "Sirsa",
+   "districtNameLocal": "SIRSA                                             "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "076",
+   "census2001Code": "08",
+   "districtCode": 75,
+   "districtNameEnglish": "Sonipat",
+   "districtNameLocal": "SONIPAT                                           "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "071",
+   "census2001Code": "03",
+   "districtCode": 76,
+   "districtNameEnglish": "Yamunanagar",
+   "districtNameLocal": "YAMUNANAGAR                                       "
+  }
+ ],
+ "7": [
+  {
+   "sscode": "",
+   "districtCode": 77,
+   "districtNameEnglish": "Central",
+   "districtNameLocal": "CENTRAL                                           ",
+   "census2011Code": "095",
+   "census2001Code": "06"
+  },
+  {
+   "sscode": null,
+   "districtCode": 796,
+   "districtNameEnglish": "Central North",
+   "districtNameLocal": "Central North",
+   "census2011Code": null,
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 78,
+   "districtNameEnglish": "East",
+   "districtNameLocal": "EAST                                              ",
+   "census2011Code": "093",
+   "census2001Code": "04"
+  },
+  {
+   "sscode": "",
+   "districtCode": 79,
+   "districtNameEnglish": "New Delhi",
+   "districtNameLocal": "NEW DELHI                                         ",
+   "census2011Code": "094",
+   "census2001Code": "05"
+  },
+  {
+   "sscode": "",
+   "districtCode": 80,
+   "districtNameEnglish": "North",
+   "districtNameLocal": "NORTH                                             ",
+   "census2011Code": "091",
+   "census2001Code": "02"
+  },
+  {
+   "sscode": "",
+   "districtCode": 81,
+   "districtNameEnglish": "North East",
+   "districtNameLocal": "NORTH EAST                                        ",
+   "census2011Code": "092",
+   "census2001Code": "03"
+  },
+  {
+   "sscode": "",
+   "districtCode": 82,
+   "districtNameEnglish": "North West",
+   "districtNameLocal": "NORTH WEST                                        ",
+   "census2011Code": "090",
+   "census2001Code": "01"
+  },
+  {
+   "sscode": null,
+   "districtCode": 795,
+   "districtNameEnglish": "Old Delhi",
+   "districtNameLocal": "Old Delhi",
+   "census2011Code": null,
+   "census2001Code": null
+  },
+  {
+   "sscode": null,
+   "districtCode": 794,
+   "districtNameEnglish": "Outer North",
+   "districtNameLocal": "Outer North",
+   "census2011Code": null,
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 83,
+   "districtNameEnglish": "South",
+   "districtNameLocal": "SOUTH                                             ",
+   "census2011Code": "098",
+   "census2001Code": "09"
+  },
+  {
+   "sscode": null,
+   "districtCode": 670,
+   "districtNameEnglish": "South East",
+   "districtNameLocal": "SOUTH EAST",
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 84,
+   "districtNameEnglish": "South West",
+   "districtNameLocal": "SOUTH WEST                                        ",
+   "census2011Code": "097",
+   "census2001Code": "08"
+  },
+  {
+   "sscode": "",
+   "districtCode": 85,
+   "districtNameEnglish": "West",
+   "districtNameLocal": "WEST                                              ",
+   "census2011Code": "096",
+   "census2001Code": "07"
+  }
+ ],
+ "8": [
+  {
+   "sscode": "",
+   "districtCode": 86,
+   "districtNameEnglish": "Ajmer",
+   "districtNameLocal": "AJMER                                             ",
+   "census2011Code": "119",
+   "census2001Code": "21"
+  },
+  {
+   "sscode": "",
+   "districtCode": 87,
+   "districtNameEnglish": "Alwar",
+   "districtNameLocal": "ALWAR                                             ",
+   "census2011Code": "104",
+   "census2001Code": "06"
+  },
+  {
+   "sscode": null,
+   "districtCode": 775,
+   "districtNameEnglish": "Balotra",
+   "districtNameLocal": "बालोतरा",
+   "census2011Code": null,
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 88,
+   "districtNameEnglish": "Banswara",
+   "districtNameLocal": "BANSWARA                                          ",
+   "census2011Code": "125",
+   "census2001Code": "28"
+  },
+  {
+   "sscode": "8",
+   "districtCode": 89,
+   "districtNameEnglish": "Baran",
+   "districtNameLocal": "BARAN",
+   "census2011Code": "128",
+   "census2001Code": "31"
+  },
+  {
+   "sscode": "",
+   "districtCode": 90,
+   "districtNameEnglish": "Barmer",
+   "districtNameLocal": "BARMER                                            ",
+   "census2011Code": "115",
+   "census2001Code": "17"
+  },
+  {
+   "sscode": null,
+   "districtCode": 774,
+   "districtNameEnglish": "Beawar",
+   "districtNameLocal": "ब्‍यावर",
+   "census2011Code": null,
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 91,
+   "districtNameEnglish": "Bharatpur",
+   "districtNameLocal": "BHARATPUR                                         ",
+   "census2011Code": "105",
+   "census2001Code": "07"
+  },
+  {
+   "sscode": "",
+   "districtCode": 92,
+   "districtNameEnglish": "Bhilwara",
+   "districtNameLocal": "BHILWARA                                          ",
+   "census2011Code": "122",
+   "census2001Code": "24"
+  },
+  {
+   "sscode": "",
+   "districtCode": 93,
+   "districtNameEnglish": "Bikaner",
+   "districtNameLocal": "BIKANER                                           ",
+   "census2011Code": "101",
+   "census2001Code": "03"
+  },
+  {
+   "sscode": "",
+   "districtCode": 94,
+   "districtNameEnglish": "Bundi",
+   "districtNameLocal": "BUNDI                                             ",
+   "census2011Code": "121",
+   "census2001Code": "23"
+  },
+  {
+   "sscode": "",
+   "districtCode": 95,
+   "districtNameEnglish": "Chittorgarh",
+   "districtNameLocal": "CHITTORGARH                                       ",
+   "census2011Code": "126",
+   "census2001Code": "29"
+  },
+  {
+   "sscode": "",
+   "districtCode": 96,
+   "districtNameEnglish": "Churu",
+   "districtNameLocal": "CHURU                                             ",
+   "census2011Code": "102",
+   "census2001Code": "04"
+  },
+  {
+   "sscode": "",
+   "districtCode": 97,
+   "districtNameEnglish": "Dausa",
+   "districtNameLocal": "DAUSA                                             ",
+   "census2011Code": "109",
+   "census2001Code": "11"
+  },
+  {
+   "sscode": null,
+   "districtCode": 767,
+   "districtNameEnglish": "Deeg",
+   "districtNameLocal": "डीग",
+   "census2011Code": null,
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 98,
+   "districtNameEnglish": "Dholpur",
+   "districtNameLocal": "DHOLPUR                                           ",
+   "census2011Code": "106",
+   "census2001Code": "08"
+  },
+  {
+   "sscode": null,
+   "districtCode": 768,
+   "districtNameEnglish": "Didwana-Kuchaman",
+   "districtNameLocal": "डीडवाना-कुचामन",
+   "census2011Code": null,
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 99,
+   "districtNameEnglish": "Dungarpur",
+   "districtNameLocal": "DUNGARPUR                                         ",
+   "census2011Code": "124",
+   "census2001Code": "27"
+  },
+  {
+   "sscode": "",
+   "districtCode": 100,
+   "districtNameEnglish": "Ganganagar",
+   "districtNameLocal": "GANGANAGAR                                        ",
+   "census2011Code": "099",
+   "census2001Code": "01"
+  },
+  {
+   "sscode": "",
+   "districtCode": 101,
+   "districtNameEnglish": "Hanumangarh",
+   "districtNameLocal": "HANUMANGARH                                       ",
+   "census2011Code": "100",
+   "census2001Code": "02"
+  },
+  {
+   "sscode": "",
+   "districtCode": 102,
+   "districtNameEnglish": "Jaipur",
+   "districtNameLocal": "JAIPUR                                            ",
+   "census2011Code": "110",
+   "census2001Code": "12"
+  },
+  {
+   "sscode": "",
+   "districtCode": 103,
+   "districtNameEnglish": "Jaisalmer",
+   "districtNameLocal": "JAISALMER                                         ",
+   "census2011Code": "114",
+   "census2001Code": "16"
+  },
+  {
+   "sscode": "",
+   "districtCode": 104,
+   "districtNameEnglish": "Jalore",
+   "districtNameLocal": "JALORE                                            ",
+   "census2011Code": "116",
+   "census2001Code": "18"
+  },
+  {
+   "sscode": "",
+   "districtCode": 105,
+   "districtNameEnglish": "Jhalawar",
+   "districtNameLocal": "JHALAWAR                                          ",
+   "census2011Code": "129",
+   "census2001Code": "32"
+  },
+  {
+   "sscode": "",
+   "districtCode": 106,
+   "districtNameEnglish": "Jhunjhunu",
+   "districtNameLocal": "JHUNJHUNU                                         ",
+   "census2011Code": "103",
+   "census2001Code": "05"
+  },
+  {
+   "sscode": "",
+   "districtCode": 107,
+   "districtNameEnglish": "Jodhpur",
+   "districtNameLocal": "JODHPUR                                           ",
+   "census2011Code": "113",
+   "census2001Code": "15"
+  },
+  {
+   "sscode": "",
+   "districtCode": 108,
+   "districtNameEnglish": "Karauli",
+   "districtNameLocal": "KARAULI                                           ",
+   "census2011Code": "107",
+   "census2001Code": "09"
+  },
+  {
+   "sscode": null,
+   "districtCode": 770,
+   "districtNameEnglish": "Khairthal-Tijara",
+   "districtNameLocal": "खैरथल-तिजारा",
+   "census2011Code": null,
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 109,
+   "districtNameEnglish": "Kota",
+   "districtNameLocal": "KOTA                                              ",
+   "census2011Code": "127",
+   "census2001Code": "30"
+  },
+  {
+   "sscode": null,
+   "districtCode": 782,
+   "districtNameEnglish": "Kotputli-Behror",
+   "districtNameLocal": "कोटपूतली-बहरोड",
+   "census2011Code": null,
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 110,
+   "districtNameEnglish": "Nagaur",
+   "districtNameLocal": "NAGAUR                                            ",
+   "census2011Code": "112",
+   "census2001Code": "14"
+  },
+  {
+   "sscode": "",
+   "districtCode": 111,
+   "districtNameEnglish": "Pali",
+   "districtNameLocal": "PALI                                              ",
+   "census2011Code": "118",
+   "census2001Code": "20"
+  },
+  {
+   "sscode": null,
+   "districtCode": 772,
+   "districtNameEnglish": "Phalodi",
+   "districtNameLocal": "फलाैदी",
+   "census2011Code": null,
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 629,
+   "districtNameEnglish": "Pratapgarh",
+   "districtNameLocal": "PRATAPGARH",
+   "census2011Code": "131",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 112,
+   "districtNameEnglish": "Rajsamand",
+   "districtNameLocal": "RAJSAMAND                                         ",
+   "census2011Code": "123",
+   "census2001Code": "25"
+  },
+  {
+   "sscode": null,
+   "districtCode": 777,
+   "districtNameEnglish": "Salumbar",
+   "districtNameLocal": "सलूम्‍बर",
+   "census2011Code": null,
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 113,
+   "districtNameEnglish": "Sawai Madhopur",
+   "districtNameLocal": "SAWAI MADHOPUR                                    ",
+   "census2011Code": "108",
+   "census2001Code": "10"
+  },
+  {
+   "sscode": "",
+   "districtCode": 114,
+   "districtNameEnglish": "Sikar",
+   "districtNameLocal": "SIKAR                                             ",
+   "census2011Code": "111",
+   "census2001Code": "13"
+  },
+  {
+   "sscode": "",
+   "districtCode": 115,
+   "districtNameEnglish": "Sirohi",
+   "districtNameLocal": "SIROHI                                            ",
+   "census2011Code": "117",
+   "census2001Code": "19"
+  },
+  {
+   "sscode": "",
+   "districtCode": 116,
+   "districtNameEnglish": "Tonk",
+   "districtNameLocal": "TONK                                              ",
+   "census2011Code": "120",
+   "census2001Code": "22"
+  },
+  {
+   "sscode": "",
+   "districtCode": 117,
+   "districtNameEnglish": "Udaipur",
+   "districtNameLocal": "UDAIPUR                                           ",
+   "census2011Code": "130",
+   "census2001Code": "26"
+  }
+ ],
+ "9": [
+  {
+   "sscode": "",
+   "census2011Code": "146",
+   "census2001Code": "15",
+   "districtCode": 118,
+   "districtNameEnglish": "Agra",
+   "districtNameLocal": "AGRA                                              "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "143",
+   "census2001Code": "12",
+   "districtCode": 119,
+   "districtNameEnglish": "Aligarh",
+   "districtNameLocal": "ALIGARH                                           "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "178",
+   "census2001Code": "48",
+   "districtCode": 121,
+   "districtNameEnglish": "Ambedkar Nagar",
+   "districtNameLocal": "AMBEDKAR NAGAR                                    "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 640,
+   "districtNameEnglish": "Amethi",
+   "districtNameLocal": "Amethi"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "137",
+   "census2001Code": "06",
+   "districtCode": 154,
+   "districtNameEnglish": "Amroha",
+   "districtNameLocal": "AMROHA"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "162",
+   "census2001Code": "32",
+   "districtCode": 122,
+   "districtNameEnglish": "Auraiya",
+   "districtNameLocal": "AURAIYA                                           "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "177",
+   "census2001Code": "47",
+   "districtCode": 140,
+   "districtNameEnglish": "Ayodhya",
+   "districtNameLocal": "AYODHYA"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "191",
+   "census2001Code": "61",
+   "districtCode": 123,
+   "districtNameEnglish": "Azamgarh",
+   "districtNameLocal": "AZAMGARH                                          "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "139",
+   "census2001Code": "08",
+   "districtCode": 124,
+   "districtNameEnglish": "Baghpat",
+   "districtNameLocal": "BAGHPAT                                           "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "180",
+   "census2001Code": "50",
+   "districtCode": 125,
+   "districtNameEnglish": "Bahraich",
+   "districtNameLocal": "BAHRAICH                                          "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "193",
+   "census2001Code": "63",
+   "districtCode": 126,
+   "districtNameEnglish": "Ballia",
+   "districtNameLocal": "BALLIA                                            "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "182",
+   "census2001Code": "52",
+   "districtCode": 127,
+   "districtNameEnglish": "Balrampur",
+   "districtNameLocal": "BALRAMPUR                                         "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "170",
+   "census2001Code": "40",
+   "districtCode": 128,
+   "districtNameEnglish": "Banda",
+   "districtNameLocal": "BANDA                                             "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "176",
+   "census2001Code": "46",
+   "districtCode": 129,
+   "districtNameEnglish": "Bara Banki",
+   "districtNameLocal": "BARA BANKI"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "150",
+   "census2001Code": "20",
+   "districtCode": 130,
+   "districtNameEnglish": "Bareilly",
+   "districtNameLocal": "BAREILLY                                          "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "185",
+   "census2001Code": "55",
+   "districtCode": 131,
+   "districtNameEnglish": "Basti",
+   "districtNameLocal": "BASTI                                             "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "198",
+   "census2001Code": "68",
+   "districtCode": 179,
+   "districtNameEnglish": "Bhadohi",
+   "districtNameLocal": "BHADOHI"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "134",
+   "census2001Code": "03",
+   "districtCode": 132,
+   "districtNameEnglish": "Bijnor",
+   "districtNameLocal": "BIJNOR                                            "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "149",
+   "census2001Code": "19",
+   "districtCode": 133,
+   "districtNameEnglish": "Budaun",
+   "districtNameLocal": "BUDAUN                                            "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "142",
+   "census2001Code": "11",
+   "districtCode": 134,
+   "districtNameEnglish": "Bulandshahr",
+   "districtNameLocal": "BULANDSHAHR                                       "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "196",
+   "census2001Code": "66",
+   "districtCode": 135,
+   "districtNameEnglish": "Chandauli",
+   "districtNameLocal": "CHANDAULI                                         "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "171",
+   "census2001Code": "41",
+   "districtCode": 136,
+   "districtNameEnglish": "Chitrakoot",
+   "districtNameLocal": "CHITRAKOOT                                        "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "190",
+   "census2001Code": "60",
+   "districtCode": 137,
+   "districtNameEnglish": "Deoria",
+   "districtNameLocal": "DEORIA                                            "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "201",
+   "census2001Code": "17",
+   "districtCode": 138,
+   "districtNameEnglish": "Etah",
+   "districtNameLocal": "ETAH                                              "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "161",
+   "census2001Code": "31",
+   "districtCode": 139,
+   "districtNameEnglish": "Etawah",
+   "districtNameLocal": "ETAWAH                                            "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "159",
+   "census2001Code": "29",
+   "districtCode": 141,
+   "districtNameEnglish": "Farrukhabad",
+   "districtNameLocal": "FARRUKHABAD                                       "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "172",
+   "census2001Code": "42",
+   "districtCode": 142,
+   "districtNameEnglish": "Fatehpur",
+   "districtNameLocal": "FATEHPUR                                          "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "147",
+   "census2001Code": "16",
+   "districtCode": 143,
+   "districtNameEnglish": "Firozabad",
+   "districtNameLocal": "FIROZABAD                                         "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "141",
+   "census2001Code": "10",
+   "districtCode": 144,
+   "districtNameEnglish": "Gautam Buddha Nagar",
+   "districtNameLocal": "GAUTAM BUDDHA NAGAR                               "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "140",
+   "census2001Code": "09",
+   "districtCode": 145,
+   "districtNameEnglish": "Ghaziabad",
+   "districtNameLocal": "GHAZIABAD                                         "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "195",
+   "census2001Code": "65",
+   "districtCode": 146,
+   "districtNameEnglish": "Ghazipur",
+   "districtNameLocal": "GHAZIPUR                                          "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "183",
+   "census2001Code": "53",
+   "districtCode": 147,
+   "districtNameEnglish": "Gonda",
+   "districtNameLocal": "GONDA                                             "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "188",
+   "census2001Code": "58",
+   "districtCode": 148,
+   "districtNameEnglish": "Gorakhpur",
+   "districtNameLocal": "GORAKHPUR                                         "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "168",
+   "census2001Code": "38",
+   "districtCode": 149,
+   "districtNameEnglish": "Hamirpur",
+   "districtNameLocal": "HAMIRPUR                                          "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 661,
+   "districtNameEnglish": "Hapur",
+   "districtNameLocal": "HAPUR"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "155",
+   "census2001Code": "25",
+   "districtCode": 150,
+   "districtNameEnglish": "Hardoi",
+   "districtNameLocal": "HARDOI                                            "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "144",
+   "census2001Code": "13",
+   "districtCode": 163,
+   "districtNameEnglish": "Hathras",
+   "districtNameLocal": "HATHRAS"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "165",
+   "census2001Code": "35",
+   "districtCode": 151,
+   "districtNameEnglish": "Jalaun",
+   "districtNameLocal": "JALAUN                                            "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "194",
+   "census2001Code": "64",
+   "districtCode": 152,
+   "districtNameEnglish": "Jaunpur",
+   "districtNameLocal": "JAUNPUR                                           "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "166",
+   "census2001Code": "36",
+   "districtCode": 153,
+   "districtNameEnglish": "Jhansi",
+   "districtNameLocal": "JHANSI                                            "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "160",
+   "census2001Code": "30",
+   "districtCode": 155,
+   "districtNameEnglish": "Kannauj",
+   "districtNameLocal": "KANNAUJ                                           "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "163",
+   "census2001Code": "33",
+   "districtCode": 156,
+   "districtNameEnglish": "Kanpur Dehat",
+   "districtNameLocal": "KANPUR DEHAT                                      "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "164",
+   "census2001Code": "34",
+   "districtCode": 157,
+   "districtNameEnglish": "Kanpur Nagar",
+   "districtNameLocal": "KANPUR NAGAR                                      "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "202",
+   "census2001Code": null,
+   "districtCode": 633,
+   "districtNameEnglish": "Kasganj",
+   "districtNameLocal": "Kasganj"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "174",
+   "census2001Code": "44",
+   "districtCode": 158,
+   "districtNameEnglish": "Kaushambi",
+   "districtNameLocal": "KAUSHAMBI                                         "
+  },
+  {
+   "sscode": "9",
+   "census2011Code": "153",
+   "census2001Code": "23",
+   "districtCode": 159,
+   "districtNameEnglish": "Kheri",
+   "districtNameLocal": "KHERI"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "189",
+   "census2001Code": "59",
+   "districtCode": 160,
+   "districtNameEnglish": "Kushinagar",
+   "districtNameLocal": "KUSHINAGAR"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "167",
+   "census2001Code": "37",
+   "districtCode": 161,
+   "districtNameEnglish": "Lalitpur",
+   "districtNameLocal": "LALITPUR                                          "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "157",
+   "census2001Code": "27",
+   "districtCode": 162,
+   "districtNameEnglish": "Lucknow",
+   "districtNameLocal": "LUCKNOW                                           "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "169",
+   "census2001Code": "39",
+   "districtCode": 165,
+   "districtNameEnglish": "Mahoba",
+   "districtNameLocal": "MAHOBA                                            "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "187",
+   "census2001Code": "57",
+   "districtCode": 164,
+   "districtNameEnglish": "Mahrajganj",
+   "districtNameLocal": "MAHRAJGANJ"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "148",
+   "census2001Code": "18",
+   "districtCode": 166,
+   "districtNameEnglish": "Mainpuri",
+   "districtNameLocal": "MAINPURI                                          "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "145",
+   "census2001Code": "14",
+   "districtCode": 167,
+   "districtNameEnglish": "Mathura",
+   "districtNameLocal": "MATHURA                                           "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "192",
+   "census2001Code": "62",
+   "districtCode": 168,
+   "districtNameEnglish": "Mau",
+   "districtNameLocal": "MAU                                               "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "138",
+   "census2001Code": "07",
+   "districtCode": 169,
+   "districtNameEnglish": "Meerut",
+   "districtNameLocal": "MEERUT                                            "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "199",
+   "census2001Code": "69",
+   "districtCode": 170,
+   "districtNameEnglish": "Mirzapur",
+   "districtNameLocal": "मिर्ज़ापुर"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "135",
+   "census2001Code": "04",
+   "districtCode": 171,
+   "districtNameEnglish": "Moradabad",
+   "districtNameLocal": "MORADABAD                                         "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "133",
+   "census2001Code": "02",
+   "districtCode": 172,
+   "districtNameEnglish": "Muzaffarnagar",
+   "districtNameLocal": "MUZAFFARNAGAR                                     "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "151",
+   "census2001Code": "21",
+   "districtCode": 173,
+   "districtNameEnglish": "Pilibhit",
+   "districtNameLocal": "PILIBHIT                                          "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "173",
+   "census2001Code": "43",
+   "districtCode": 174,
+   "districtNameEnglish": "Pratapgarh",
+   "districtNameLocal": "PRATAPGARH                                        "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "175",
+   "census2001Code": "45",
+   "districtCode": 120,
+   "districtNameEnglish": "Prayagraj",
+   "districtNameLocal": "PRAYAGRAJ"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "158",
+   "census2001Code": "28",
+   "districtCode": 175,
+   "districtNameEnglish": "Rae Bareli",
+   "districtNameLocal": "RAE BARELI                                        "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "136",
+   "census2001Code": "05",
+   "districtCode": 176,
+   "districtNameEnglish": "Rampur",
+   "districtNameLocal": "RAMPUR                                            "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "132",
+   "census2001Code": "01",
+   "districtCode": 177,
+   "districtNameEnglish": "Saharanpur",
+   "districtNameLocal": "SAHARANPUR                                        "
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 659,
+   "districtNameEnglish": "Sambhal",
+   "districtNameLocal": "SAMBHAL"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "186",
+   "census2001Code": "56",
+   "districtCode": 178,
+   "districtNameEnglish": "Sant Kabir Nagar",
+   "districtNameLocal": "SANT KABIR NAGAR"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "152",
+   "census2001Code": "22",
+   "districtCode": 180,
+   "districtNameEnglish": "Shahjahanpur",
+   "districtNameLocal": "SHAHJAHANPUR                                      "
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 660,
+   "districtNameEnglish": "Shamli",
+   "districtNameLocal": "SHAMLI"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "181",
+   "census2001Code": "51",
+   "districtCode": 181,
+   "districtNameEnglish": "Shrawasti",
+   "districtNameLocal": "SHRAWASTI"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "184",
+   "census2001Code": "54",
+   "districtCode": 182,
+   "districtNameEnglish": "Siddharthnagar",
+   "districtNameLocal": "SIDDHARTHNAGAR"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "154",
+   "census2001Code": "24",
+   "districtCode": 183,
+   "districtNameEnglish": "Sitapur",
+   "districtNameLocal": "SITAPUR                                           "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "200",
+   "census2001Code": "70",
+   "districtCode": 184,
+   "districtNameEnglish": "Sonbhadra",
+   "districtNameLocal": "SONBHADRA                                         "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "179",
+   "census2001Code": "49",
+   "districtCode": 185,
+   "districtNameEnglish": "Sultanpur",
+   "districtNameLocal": "SULTANPUR                                         "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "156",
+   "census2001Code": "26",
+   "districtCode": 186,
+   "districtNameEnglish": "Unnao",
+   "districtNameLocal": "UNNAO                                             "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "197",
+   "census2001Code": "67",
+   "districtCode": 187,
+   "districtNameEnglish": "Varanasi",
+   "districtNameLocal": "VARANASI                                          "
+  }
+ ],
+ "10": [
+  {
+   "sscode": "7",
+   "districtCode": 188,
+   "districtNameEnglish": "Araria",
+   "districtNameLocal": "अररिया",
+   "census2011Code": "209",
+   "census2001Code": "07"
+  },
+  {
+   "sscode": "38",
+   "districtCode": 611,
+   "districtNameEnglish": "Arwal",
+   "districtNameLocal": "अरवल",
+   "census2011Code": "240",
+   "census2001Code": "33"
+  },
+  {
+   "sscode": "34",
+   "districtCode": 189,
+   "districtNameEnglish": "Aurangabad",
+   "districtNameLocal": "औरंगाबाद",
+   "census2011Code": "235",
+   "census2001Code": "34"
+  },
+  {
+   "sscode": "23",
+   "districtCode": 190,
+   "districtNameEnglish": "Banka",
+   "districtNameLocal": "बांका",
+   "census2011Code": "225",
+   "census2001Code": "23"
+  },
+  {
+   "sscode": "20",
+   "districtCode": 191,
+   "districtNameEnglish": "Begusarai",
+   "districtNameLocal": "बेगूसराय",
+   "census2011Code": "222",
+   "census2001Code": "20"
+  },
+  {
+   "sscode": "22",
+   "districtCode": 192,
+   "districtNameEnglish": "Bhagalpur",
+   "districtNameLocal": "भागलपुर",
+   "census2011Code": "224",
+   "census2001Code": "22"
+  },
+  {
+   "sscode": "29",
+   "districtCode": 193,
+   "districtNameEnglish": "Bhojpur",
+   "districtNameLocal": "भोजपुर",
+   "census2011Code": "231",
+   "census2001Code": "29"
+  },
+  {
+   "sscode": "30",
+   "districtCode": 194,
+   "districtNameEnglish": "Buxar",
+   "districtNameLocal": "बक्सर",
+   "census2011Code": "232",
+   "census2001Code": "30"
+  },
+  {
+   "sscode": "13",
+   "districtCode": 195,
+   "districtNameEnglish": "Darbhanga",
+   "districtNameLocal": "दरभंगा",
+   "census2011Code": "215",
+   "census2001Code": "13"
+  },
+  {
+   "sscode": "35",
+   "districtCode": 196,
+   "districtNameEnglish": "Gaya",
+   "districtNameLocal": "गया",
+   "census2011Code": "236",
+   "census2001Code": "35"
+  },
+  {
+   "sscode": "15",
+   "districtCode": 197,
+   "districtNameEnglish": "Gopalganj",
+   "districtNameLocal": "गोपालगंज",
+   "census2011Code": "217",
+   "census2001Code": "15"
+  },
+  {
+   "sscode": "37",
+   "districtCode": 198,
+   "districtNameEnglish": "Jamui",
+   "districtNameLocal": "जमुई",
+   "census2011Code": "238",
+   "census2001Code": "37"
+  },
+  {
+   "sscode": "33",
+   "districtCode": 199,
+   "districtNameEnglish": "Jehanabad",
+   "districtNameLocal": "जहानाबाद",
+   "census2011Code": "239",
+   "census2001Code": "33"
+  },
+  {
+   "sscode": "31",
+   "districtCode": 200,
+   "districtNameEnglish": "Kaimur (Bhabua)",
+   "districtNameLocal": "कैमूर ( भभुआ )",
+   "census2011Code": "233",
+   "census2001Code": "31"
+  },
+  {
+   "sscode": "10",
+   "districtCode": 201,
+   "districtNameEnglish": "Katihar",
+   "districtNameLocal": "कटिहार",
+   "census2011Code": "212",
+   "census2001Code": "10"
+  },
+  {
+   "sscode": "21",
+   "districtCode": 202,
+   "districtNameEnglish": "Khagaria",
+   "districtNameLocal": "खगड़िया",
+   "census2011Code": "223",
+   "census2001Code": "21"
+  },
+  {
+   "sscode": "8",
+   "districtCode": 203,
+   "districtNameEnglish": "Kishanganj",
+   "districtNameLocal": "किशनगंज",
+   "census2011Code": "210",
+   "census2001Code": "08"
+  },
+  {
+   "sscode": "25",
+   "districtCode": 204,
+   "districtNameEnglish": "Lakhisarai",
+   "districtNameLocal": "लखीसराय",
+   "census2011Code": "227",
+   "census2001Code": "25"
+  },
+  {
+   "sscode": "11",
+   "districtCode": 205,
+   "districtNameEnglish": "Madhepura",
+   "districtNameLocal": "मधेपुरा",
+   "census2011Code": "213",
+   "census2001Code": "11"
+  },
+  {
+   "sscode": "5",
+   "districtCode": 206,
+   "districtNameEnglish": "Madhubani",
+   "districtNameLocal": "मधुबनी",
+   "census2011Code": "207",
+   "census2001Code": "05"
+  },
+  {
+   "sscode": "24",
+   "districtCode": 207,
+   "districtNameEnglish": "Munger",
+   "districtNameLocal": "मुंगेर",
+   "census2011Code": "226",
+   "census2001Code": "24"
+  },
+  {
+   "sscode": "14",
+   "districtCode": 208,
+   "districtNameEnglish": "Muzaffarpur",
+   "districtNameLocal": "मुजफ्फरपुर",
+   "census2011Code": "216",
+   "census2001Code": "14"
+  },
+  {
+   "sscode": "27",
+   "districtCode": 209,
+   "districtNameEnglish": "Nalanda",
+   "districtNameLocal": "नालंदा",
+   "census2011Code": "229",
+   "census2001Code": "27"
+  },
+  {
+   "sscode": "36",
+   "districtCode": 210,
+   "districtNameEnglish": "Nawada",
+   "districtNameLocal": "नवादा",
+   "census2011Code": "237",
+   "census2001Code": "36"
+  },
+  {
+   "sscode": "1",
+   "districtCode": 211,
+   "districtNameEnglish": "Pashchim Champaran",
+   "districtNameLocal": "पश्चिम चम्पारण",
+   "census2011Code": "203",
+   "census2001Code": "01"
+  },
+  {
+   "sscode": "28",
+   "districtCode": 212,
+   "districtNameEnglish": "Patna",
+   "districtNameLocal": "पटना",
+   "census2011Code": "230",
+   "census2001Code": "28"
+  },
+  {
+   "sscode": "2",
+   "districtCode": 213,
+   "districtNameEnglish": "Purbi Champaran",
+   "districtNameLocal": "पूर्वी चंपारण",
+   "census2011Code": "204",
+   "census2001Code": "02"
+  },
+  {
+   "sscode": "9",
+   "districtCode": 214,
+   "districtNameEnglish": "Purnia",
+   "districtNameLocal": "पूर्णिया",
+   "census2011Code": "211",
+   "census2001Code": "09"
+  },
+  {
+   "sscode": "32",
+   "districtCode": 215,
+   "districtNameEnglish": "Rohtas",
+   "districtNameLocal": "रोहतास",
+   "census2011Code": "234",
+   "census2001Code": "32"
+  },
+  {
+   "sscode": "12",
+   "districtCode": 216,
+   "districtNameEnglish": "Saharsa",
+   "districtNameLocal": "सहरसा",
+   "census2011Code": "214",
+   "census2001Code": "12"
+  },
+  {
+   "sscode": "19",
+   "districtCode": 217,
+   "districtNameEnglish": "Samastipur",
+   "districtNameLocal": "समस्तीपुर",
+   "census2011Code": "221",
+   "census2001Code": "19"
+  },
+  {
+   "sscode": "17",
+   "districtCode": 218,
+   "districtNameEnglish": "Saran",
+   "districtNameLocal": "सारण",
+   "census2011Code": "219",
+   "census2001Code": "17"
+  },
+  {
+   "sscode": "26",
+   "districtCode": 219,
+   "districtNameEnglish": "Sheikhpura",
+   "districtNameLocal": "शेखपुरा",
+   "census2011Code": "228",
+   "census2001Code": "26"
+  },
+  {
+   "sscode": "3",
+   "districtCode": 220,
+   "districtNameEnglish": "Sheohar",
+   "districtNameLocal": "शिवहर",
+   "census2011Code": "205",
+   "census2001Code": "03"
+  },
+  {
+   "sscode": "4",
+   "districtCode": 221,
+   "districtNameEnglish": "Sitamarhi",
+   "districtNameLocal": "सीतामढी",
+   "census2011Code": "206",
+   "census2001Code": "04"
+  },
+  {
+   "sscode": "16",
+   "districtCode": 222,
+   "districtNameEnglish": "Siwan",
+   "districtNameLocal": "सिवान",
+   "census2011Code": "218",
+   "census2001Code": "16"
+  },
+  {
+   "sscode": "6",
+   "districtCode": 223,
+   "districtNameEnglish": "Supaul",
+   "districtNameLocal": "सुपौल",
+   "census2011Code": "208",
+   "census2001Code": "06"
+  },
+  {
+   "sscode": "18",
+   "districtCode": 224,
+   "districtNameEnglish": "Vaishali",
+   "districtNameLocal": "वैशाली",
+   "census2011Code": "220",
+   "census2001Code": "18"
+  }
+ ],
+ "11": [
+  {
+   "sscode": "",
+   "census2011Code": "244",
+   "census2001Code": "04",
+   "districtCode": 225,
+   "districtNameEnglish": "Gangtok",
+   "districtNameLocal": "Gangtok"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "242",
+   "census2001Code": "02",
+   "districtCode": 228,
+   "districtNameEnglish": "Gyalshing",
+   "districtNameLocal": "Gyalshing"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "241",
+   "census2001Code": "01",
+   "districtCode": 226,
+   "districtNameEnglish": "Mangan",
+   "districtNameLocal": "Mangan"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "243",
+   "census2001Code": "03",
+   "districtCode": 227,
+   "districtNameEnglish": "Namchi",
+   "districtNameLocal": "Namchi"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 741,
+   "districtNameEnglish": "Pakyong",
+   "districtNameLocal": "Pakyong"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 742,
+   "districtNameEnglish": "Soreng",
+   "districtNameLocal": "Soreng"
+  }
+ ],
+ "12": [
+  {
+   "sscode": "",
+   "districtCode": 628,
+   "districtNameEnglish": "Anjaw",
+   "districtNameLocal": "                                                  ",
+   "census2011Code": "260",
+   "census2001Code": null
+  },
+  {
+   "sscode": null,
+   "districtCode": 787,
+   "districtNameEnglish": "Bichom",
+   "districtNameLocal": "Bichom",
+   "census2011Code": null,
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 229,
+   "districtNameEnglish": "Changlang",
+   "districtNameLocal": "CHANGLANG                                         ",
+   "census2011Code": "253",
+   "census2001Code": "12"
+  },
+  {
+   "sscode": "",
+   "districtCode": 230,
+   "districtNameEnglish": "Dibang Valley",
+   "districtNameLocal": "DIBANG VALLEY                                     ",
+   "census2011Code": "257",
+   "census2001Code": "10"
+  },
+  {
+   "sscode": "",
+   "districtCode": 231,
+   "districtNameEnglish": "East Kameng",
+   "districtNameLocal": "EAST KAMENG                                       ",
+   "census2011Code": "247",
+   "census2001Code": "03"
+  },
+  {
+   "sscode": "",
+   "districtCode": 232,
+   "districtNameEnglish": "East Siang",
+   "districtNameLocal": "EAST SIANG                                        ",
+   "census2011Code": "251",
+   "census2001Code": "08"
+  },
+  {
+   "sscode": "",
+   "districtCode": 718,
+   "districtNameEnglish": "Kamle",
+   "districtNameLocal": "KAMLE",
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": null,
+   "districtCode": 786,
+   "districtNameEnglish": "Keyi Panyor",
+   "districtNameLocal": "Keyi Panyor",
+   "census2011Code": null,
+   "census2001Code": null
+  },
+  {
+   "sscode": null,
+   "districtCode": 677,
+   "districtNameEnglish": "Kra Daadi",
+   "districtNameLocal": "KRA DAADI",
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 233,
+   "districtNameEnglish": "Kurung Kumey",
+   "districtNameLocal": "KURUNG KUMEY                                      ",
+   "census2011Code": "256",
+   "census2001Code": "14"
+  },
+  {
+   "sscode": null,
+   "districtCode": 724,
+   "districtNameEnglish": "Leparada",
+   "districtNameLocal": "LEPARADA",
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 234,
+   "districtNameEnglish": "Lohit",
+   "districtNameLocal": "LOHIT                                             ",
+   "census2011Code": "259",
+   "census2001Code": "11"
+  },
+  {
+   "sscode": null,
+   "districtCode": 666,
+   "districtNameEnglish": "Longding",
+   "districtNameLocal": "LONGDING",
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 235,
+   "districtNameEnglish": "Lower Dibang Valley",
+   "districtNameLocal": "LOWER DIBANG VALLEY                               ",
+   "census2011Code": "258",
+   "census2001Code": "15"
+  },
+  {
+   "sscode": null,
+   "districtCode": 719,
+   "districtNameEnglish": "Lower Siang",
+   "districtNameLocal": "LOWER SIANG",
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 236,
+   "districtNameEnglish": "Lower Subansiri",
+   "districtNameLocal": "LOWER SUBANSIRI                                   ",
+   "census2011Code": "255",
+   "census2001Code": "05"
+  },
+  {
+   "sscode": null,
+   "districtCode": 678,
+   "districtNameEnglish": "Namsai",
+   "districtNameLocal": null,
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 723,
+   "districtNameEnglish": "Pakke Kessang",
+   "districtNameLocal": "PAKKE KESSANG",
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 237,
+   "districtNameEnglish": "Papum Pare",
+   "districtNameLocal": "PAPUM PARE                                        ",
+   "census2011Code": "248",
+   "census2001Code": "04"
+  },
+  {
+   "sscode": null,
+   "districtCode": 725,
+   "districtNameEnglish": "Shi Yomi",
+   "districtNameLocal": "SHI YOMI",
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": null,
+   "districtCode": 679,
+   "districtNameEnglish": "Siang",
+   "districtNameLocal": null,
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 238,
+   "districtNameEnglish": "Tawang",
+   "districtNameLocal": "TAWANG                                            ",
+   "census2011Code": "245",
+   "census2001Code": "01"
+  },
+  {
+   "sscode": "",
+   "districtCode": 239,
+   "districtNameEnglish": "Tirap",
+   "districtNameLocal": "TIRAP                                             ",
+   "census2011Code": "254",
+   "census2001Code": "13"
+  },
+  {
+   "sscode": "",
+   "districtCode": 240,
+   "districtNameEnglish": "Upper Siang",
+   "districtNameLocal": "UPPER SIANG                                       ",
+   "census2011Code": "252",
+   "census2001Code": "09"
+  },
+  {
+   "sscode": "",
+   "districtCode": 241,
+   "districtNameEnglish": "Upper Subansiri",
+   "districtNameLocal": "UPPER SUBANSIRI                                   ",
+   "census2011Code": "249",
+   "census2001Code": "06"
+  },
+  {
+   "sscode": "",
+   "districtCode": 242,
+   "districtNameEnglish": "West Kameng",
+   "districtNameLocal": "WEST KAMENG                                       ",
+   "census2011Code": "246",
+   "census2001Code": "02"
+  },
+  {
+   "sscode": "",
+   "districtCode": 243,
+   "districtNameEnglish": "West Siang",
+   "districtNameLocal": "WEST SIANG                                        ",
+   "census2011Code": "250",
+   "census2001Code": "07"
+  }
+ ],
+ "13": [
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 758,
+   "districtNameEnglish": "Chumoukedima",
+   "districtNameLocal": "Chumoukedima"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "265",
+   "census2001Code": "06",
+   "districtCode": 244,
+   "districtNameEnglish": "Dimapur",
+   "districtNameLocal": "DIMAPUR                                           "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "269",
+   "census2001Code": "02",
+   "districtCode": 614,
+   "districtNameEnglish": "Kiphire",
+   "districtNameLocal": ""
+  },
+  {
+   "sscode": "",
+   "census2011Code": "270",
+   "census2001Code": "07",
+   "districtCode": 245,
+   "districtNameEnglish": "Kohima",
+   "districtNameLocal": "KOHIMA                                            "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "268",
+   "census2001Code": "02",
+   "districtCode": 615,
+   "districtNameEnglish": "Longleng",
+   "districtNameLocal": ""
+  },
+  {
+   "sscode": null,
+   "census2011Code": null,
+   "census2001Code": null,
+   "districtCode": 788,
+   "districtNameEnglish": "Meluri",
+   "districtNameLocal": "Meluri"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "262",
+   "census2001Code": "03",
+   "districtCode": 246,
+   "districtNameEnglish": "Mokokchung",
+   "districtNameLocal": "MOKOKCHUNG                                        "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "261",
+   "census2001Code": "01",
+   "districtCode": 247,
+   "districtNameEnglish": "Mon",
+   "districtNameLocal": "MON                                               "
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 764,
+   "districtNameEnglish": "Niuland",
+   "districtNameLocal": "Niuland"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 736,
+   "districtNameEnglish": "Noklak",
+   "districtNameLocal": "Noklak"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "271",
+   "census2001Code": "07",
+   "districtCode": 613,
+   "districtNameEnglish": "Peren",
+   "districtNameLocal": ""
+  },
+  {
+   "sscode": "",
+   "census2011Code": "266",
+   "census2001Code": "08",
+   "districtCode": 248,
+   "districtNameEnglish": "Phek",
+   "districtNameLocal": "PHEK                                              "
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 765,
+   "districtNameEnglish": "Shamator",
+   "districtNameLocal": "Shamator"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 757,
+   "districtNameEnglish": "Tseminyu",
+   "districtNameLocal": "Tseminyu"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "267",
+   "census2001Code": "02",
+   "districtCode": 249,
+   "districtNameEnglish": "Tuensang",
+   "districtNameLocal": "TUENSANG                                          "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "264",
+   "census2001Code": "05",
+   "districtCode": 250,
+   "districtNameEnglish": "Wokha",
+   "districtNameLocal": "WOKHA                                             "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "263",
+   "census2001Code": "04",
+   "districtCode": 251,
+   "districtNameEnglish": "Zunheboto",
+   "districtNameLocal": "ZUNHEBOTO                                         "
+  }
+ ],
+ "14": [
+  {
+   "sscode": "",
+   "districtCode": 252,
+   "districtNameEnglish": "Bishnupur",
+   "districtNameLocal": "BISHNUPUR                                         ",
+   "census2011Code": "275",
+   "census2001Code": "04"
+  },
+  {
+   "sscode": "",
+   "districtCode": 253,
+   "districtNameEnglish": "Chandel",
+   "districtNameLocal": "CHANDEL                                           ",
+   "census2011Code": "280",
+   "census2001Code": "09"
+  },
+  {
+   "sscode": "",
+   "districtCode": 254,
+   "districtNameEnglish": "Churachandpur",
+   "districtNameLocal": "CHURACHANDPUR                                     ",
+   "census2011Code": "274",
+   "census2001Code": "03"
+  },
+  {
+   "sscode": "",
+   "districtCode": 255,
+   "districtNameEnglish": "Imphal East",
+   "districtNameLocal": "IMPHAL EAST                                       ",
+   "census2011Code": "278",
+   "census2001Code": "07"
+  },
+  {
+   "sscode": "",
+   "districtCode": 256,
+   "districtNameEnglish": "Imphal West",
+   "districtNameLocal": "IMPHAL WEST                                       ",
+   "census2011Code": "277",
+   "census2001Code": "06"
+  },
+  {
+   "sscode": null,
+   "districtCode": 713,
+   "districtNameEnglish": "Jiribam",
+   "districtNameLocal": null,
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": null,
+   "districtCode": 711,
+   "districtNameEnglish": "Kakching",
+   "districtNameLocal": null,
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": null,
+   "districtCode": 717,
+   "districtNameEnglish": "Kamjong",
+   "districtNameLocal": null,
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": null,
+   "districtCode": 712,
+   "districtNameEnglish": "Kangpokpi",
+   "districtNameLocal": null,
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": null,
+   "districtCode": 714,
+   "districtNameEnglish": "Noney",
+   "districtNameLocal": "NONEY",
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": null,
+   "districtCode": 715,
+   "districtNameEnglish": "Pherzawl",
+   "districtNameLocal": null,
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 257,
+   "districtNameEnglish": "Senapati",
+   "districtNameLocal": "SENAPATI                                          ",
+   "census2011Code": "272",
+   "census2001Code": "01"
+  },
+  {
+   "sscode": "",
+   "districtCode": 258,
+   "districtNameEnglish": "Tamenglong",
+   "districtNameLocal": "TAMENGLONG                                        ",
+   "census2011Code": "273",
+   "census2001Code": "02"
+  },
+  {
+   "sscode": null,
+   "districtCode": 716,
+   "districtNameEnglish": "Tengnoupal",
+   "districtNameLocal": "TENGNOUPAL",
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 259,
+   "districtNameEnglish": "Thoubal",
+   "districtNameLocal": "THOUBAL                                           ",
+   "census2011Code": "276",
+   "census2001Code": "05"
+  },
+  {
+   "sscode": "",
+   "districtCode": 260,
+   "districtNameEnglish": "Ukhrul",
+   "districtNameLocal": "UKHRUL                                            ",
+   "census2011Code": "279",
+   "census2001Code": "08"
+  }
+ ],
+ "15": [
+  {
+   "sscode": "",
+   "census2011Code": "283",
+   "census2001Code": "03",
+   "districtCode": 261,
+   "districtNameEnglish": "Aizawl",
+   "districtNameLocal": "AIZAWL                                            "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "284",
+   "census2001Code": "04",
+   "districtCode": 262,
+   "districtNameEnglish": "Champhai",
+   "districtNameLocal": "CHAMPHAI                                          "
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 726,
+   "districtNameEnglish": "Hnahthial",
+   "districtNameLocal": null
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 728,
+   "districtNameEnglish": "Khawzawl",
+   "districtNameLocal": "KHAWZAWL"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "282",
+   "census2001Code": "02",
+   "districtCode": 263,
+   "districtNameEnglish": "Kolasib",
+   "districtNameLocal": "KOLASIB                                           "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "287",
+   "census2001Code": "07",
+   "districtCode": 264,
+   "districtNameEnglish": "Lawngtlai",
+   "districtNameLocal": "LAWNGTLAI                                         "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "286",
+   "census2001Code": "06",
+   "districtCode": 265,
+   "districtNameEnglish": "Lunglei",
+   "districtNameLocal": "LUNGLEI                                           "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "281",
+   "census2001Code": "01",
+   "districtCode": 266,
+   "districtNameEnglish": "Mamit",
+   "districtNameLocal": "MAMIT                                             "
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 727,
+   "districtNameEnglish": "Saitual",
+   "districtNameLocal": "SAITUAL"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "285",
+   "census2001Code": "05",
+   "districtCode": 268,
+   "districtNameEnglish": "Serchhip",
+   "districtNameLocal": "SERCHHIP                                          "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "288",
+   "census2001Code": "08",
+   "districtCode": 267,
+   "districtNameEnglish": "Siaha",
+   "districtNameLocal": "Siaha"
+  }
+ ],
+ "16": [
+  {
+   "sscode": "",
+   "districtCode": 269,
+   "districtNameEnglish": "Dhalai",
+   "districtNameLocal": "ধলাই",
+   "census2011Code": "291",
+   "census2001Code": "03"
+  },
+  {
+   "sscode": "",
+   "districtCode": 654,
+   "districtNameEnglish": "Gomati",
+   "districtNameLocal": "গোমতি",
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 652,
+   "districtNameEnglish": "Khowai",
+   "districtNameLocal": "খোয়াই",
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 270,
+   "districtNameEnglish": "North Tripura",
+   "districtNameLocal": "উত্তর ত্রিপুরা",
+   "census2011Code": "292",
+   "census2001Code": "04"
+  },
+  {
+   "sscode": "",
+   "districtCode": 653,
+   "districtNameEnglish": "Sepahijala",
+   "districtNameLocal": "সিপাহিজলা",
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 271,
+   "districtNameEnglish": "South Tripura",
+   "districtNameLocal": "দক্ষিন ত্রিপুরা",
+   "census2011Code": "290",
+   "census2001Code": "02"
+  },
+  {
+   "sscode": "",
+   "districtCode": 655,
+   "districtNameEnglish": "Unakoti",
+   "districtNameLocal": "ঊনকোটি",
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 272,
+   "districtNameEnglish": "West Tripura",
+   "districtNameLocal": "পশ্চিম ত্রিপুরা",
+   "census2011Code": "289",
+   "census2001Code": "01"
+  }
+ ],
+ "17": [
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 740,
+   "districtNameEnglish": "Eastern West Khasi Hills",
+   "districtNameLocal": null
+  },
+  {
+   "sscode": "",
+   "census2011Code": "294",
+   "census2001Code": "02",
+   "districtCode": 273,
+   "districtNameEnglish": "East Garo Hills",
+   "districtNameLocal": "EAST GARO HILLS                                   "
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 657,
+   "districtNameEnglish": "East Jaintia Hills",
+   "districtNameLocal": "EAST JAINTIA HILLS"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "298",
+   "census2001Code": "06",
+   "districtCode": 274,
+   "districtNameEnglish": "East Khasi Hills",
+   "districtNameLocal": "EAST KHASI HILLS                                  "
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 656,
+   "districtNameEnglish": "North Garo Hills",
+   "districtNameLocal": "NORTH GARO HILLS"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "297",
+   "census2001Code": "05",
+   "districtCode": 276,
+   "districtNameEnglish": "Ri Bhoi",
+   "districtNameLocal": "RI BHOI                                           "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "295",
+   "census2001Code": "03",
+   "districtCode": 277,
+   "districtNameEnglish": "South Garo Hills",
+   "districtNameLocal": "SOUTH GARO HILLS                                  "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 663,
+   "districtNameEnglish": "South West Garo Hills",
+   "districtNameLocal": "SOUTH WEST GARO HILLS"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 658,
+   "districtNameEnglish": "South West Khasi Hills",
+   "districtNameLocal": "SOUTH WEST KHASI HILLS"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "293",
+   "census2001Code": "01",
+   "districtCode": 278,
+   "districtNameEnglish": "West Garo Hills",
+   "districtNameLocal": "WEST GARO HILLS                                   "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "299",
+   "census2001Code": "07",
+   "districtCode": 275,
+   "districtNameEnglish": "West Jaintia Hills",
+   "districtNameLocal": "WEST JAINTIA HILLS"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "296",
+   "census2001Code": "04",
+   "districtCode": 279,
+   "districtNameEnglish": "West Khasi Hills",
+   "districtNameLocal": "WEST KHASI HILLS                                  "
+  }
+ ],
+ "18": [
+  {
+   "sscode": null,
+   "districtCode": 739,
+   "districtNameEnglish": "Bajali",
+   "districtNameLocal": null,
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 616,
+   "districtNameEnglish": "Baksa",
+   "districtNameLocal": "",
+   "census2011Code": "324",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 280,
+   "districtNameEnglish": "Barpeta",
+   "districtNameLocal": "BARPETA                                           ",
+   "census2011Code": "303",
+   "census2001Code": "05"
+  },
+  {
+   "sscode": null,
+   "districtCode": 705,
+   "districtNameEnglish": "Biswanath",
+   "districtNameLocal": null,
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 281,
+   "districtNameEnglish": "Bongaigaon",
+   "districtNameLocal": "BONGAIGAON                                        ",
+   "census2011Code": "319",
+   "census2001Code": "04"
+  },
+  {
+   "sscode": "",
+   "districtCode": 282,
+   "districtNameEnglish": "Cachar",
+   "districtNameLocal": "CACHAR                                            ",
+   "census2011Code": "316",
+   "census2001Code": "21"
+  },
+  {
+   "sscode": null,
+   "districtCode": 708,
+   "districtNameEnglish": "Charaideo",
+   "districtNameLocal": null,
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 612,
+   "districtNameEnglish": "Chirang",
+   "districtNameLocal": "                                                  ",
+   "census2011Code": "320",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 283,
+   "districtNameEnglish": "Darrang",
+   "districtNameLocal": "DARRANG                                           ",
+   "census2011Code": "325",
+   "census2001Code": "08"
+  },
+  {
+   "sscode": "",
+   "districtCode": 284,
+   "districtNameEnglish": "Dhemaji",
+   "districtNameLocal": "DHEMAJI                                           ",
+   "census2011Code": "308",
+   "census2001Code": "13"
+  },
+  {
+   "sscode": "",
+   "districtCode": 285,
+   "districtNameEnglish": "Dhubri",
+   "districtNameLocal": "DHUBURI                                           ",
+   "census2011Code": "301",
+   "census2001Code": "02"
+  },
+  {
+   "sscode": "",
+   "districtCode": 286,
+   "districtNameEnglish": "Dibrugarh",
+   "districtNameLocal": "DIBRUGARH                                         ",
+   "census2011Code": "310",
+   "census2001Code": "15"
+  },
+  {
+   "sscode": "",
+   "districtCode": 299,
+   "districtNameEnglish": "Dima Hasao",
+   "districtNameLocal": "DIMA HASAO",
+   "census2011Code": "315",
+   "census2001Code": "20"
+  },
+  {
+   "sscode": "",
+   "districtCode": 287,
+   "districtNameEnglish": "Goalpara",
+   "districtNameLocal": "GOALPARA                                          ",
+   "census2011Code": "302",
+   "census2001Code": "03"
+  },
+  {
+   "sscode": "",
+   "districtCode": 288,
+   "districtNameEnglish": "Golaghat",
+   "districtNameLocal": "GOLAGHAT                                          ",
+   "census2011Code": "313",
+   "census2001Code": "18"
+  },
+  {
+   "sscode": "",
+   "districtCode": 289,
+   "districtNameEnglish": "Hailakandi",
+   "districtNameLocal": "HAILAKANDI                                        ",
+   "census2011Code": "318",
+   "census2001Code": "23"
+  },
+  {
+   "sscode": null,
+   "districtCode": 709,
+   "districtNameEnglish": "Hojai",
+   "districtNameLocal": null,
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 290,
+   "districtNameEnglish": "Jorhat",
+   "districtNameLocal": "JORHAT                                            ",
+   "census2011Code": "312",
+   "census2001Code": "17"
+  },
+  {
+   "sscode": "",
+   "districtCode": 291,
+   "districtNameEnglish": "Kamrup",
+   "districtNameLocal": "KAMRUP                                            ",
+   "census2011Code": "321",
+   "census2001Code": "06"
+  },
+  {
+   "sscode": "",
+   "districtCode": 618,
+   "districtNameEnglish": "Kamrup Metro",
+   "districtNameLocal": "KAMRUP MOHANAGAR                                  ",
+   "census2011Code": "322",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 292,
+   "districtNameEnglish": "Karbi Anglong",
+   "districtNameLocal": "KARBI ANGLONG                                     ",
+   "census2011Code": "314",
+   "census2001Code": "19"
+  },
+  {
+   "sscode": "",
+   "districtCode": 294,
+   "districtNameEnglish": "Kokrajhar",
+   "districtNameLocal": "KOKRAJHAR                                         ",
+   "census2011Code": "300",
+   "census2001Code": "01"
+  },
+  {
+   "sscode": "",
+   "districtCode": 295,
+   "districtNameEnglish": "Lakhimpur",
+   "districtNameLocal": "LAKHIMPUR                                         ",
+   "census2011Code": "307",
+   "census2001Code": "12"
+  },
+  {
+   "sscode": null,
+   "districtCode": 706,
+   "districtNameEnglish": "Majuli",
+   "districtNameLocal": null,
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 296,
+   "districtNameEnglish": "Marigaon",
+   "districtNameLocal": "MARIGAON                                          ",
+   "census2011Code": "304",
+   "census2001Code": "09"
+  },
+  {
+   "sscode": "",
+   "districtCode": 297,
+   "districtNameEnglish": "Nagaon",
+   "districtNameLocal": "NAGAON                                            ",
+   "census2011Code": "305",
+   "census2001Code": "10"
+  },
+  {
+   "sscode": "",
+   "districtCode": 298,
+   "districtNameEnglish": "Nalbari",
+   "districtNameLocal": "NALBARI                                           ",
+   "census2011Code": "323",
+   "census2001Code": "07"
+  },
+  {
+   "sscode": "",
+   "districtCode": 300,
+   "districtNameEnglish": "Sivasagar",
+   "districtNameLocal": "SIVASAGAR                                         ",
+   "census2011Code": "311",
+   "census2001Code": "16"
+  },
+  {
+   "sscode": "",
+   "districtCode": 301,
+   "districtNameEnglish": "Sonitpur",
+   "districtNameLocal": "SONITPUR                                          ",
+   "census2011Code": "306",
+   "census2001Code": "11"
+  },
+  {
+   "sscode": null,
+   "districtCode": 707,
+   "districtNameEnglish": "South Salmara Mancachar",
+   "districtNameLocal": null,
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 293,
+   "districtNameEnglish": "Sribhumi",
+   "districtNameLocal": "শ্ৰীভূমি",
+   "census2011Code": "317",
+   "census2001Code": "22"
+  },
+  {
+   "sscode": null,
+   "districtCode": 756,
+   "districtNameEnglish": "Tamulpur",
+   "districtNameLocal": null,
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 302,
+   "districtNameEnglish": "Tinsukia",
+   "districtNameLocal": "TINSUKIA                                          ",
+   "census2011Code": "309",
+   "census2001Code": "14"
+  },
+  {
+   "sscode": "",
+   "districtCode": 617,
+   "districtNameEnglish": "Udalguri",
+   "districtNameLocal": "",
+   "census2011Code": "326",
+   "census2001Code": null
+  },
+  {
+   "sscode": null,
+   "districtCode": 710,
+   "districtNameEnglish": "West Karbi Anglong",
+   "districtNameLocal": null,
+   "census2011Code": "000",
+   "census2001Code": null
+  }
+ ],
+ "19": [
+  {
+   "sscode": "",
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 664,
+   "districtNameEnglish": "Alipurduar",
+   "districtNameLocal": null
+  },
+  {
+   "sscode": "",
+   "census2011Code": "339",
+   "census2001Code": "13",
+   "districtCode": 305,
+   "districtNameEnglish": "Bankura",
+   "districtNameLocal": "BANKURA                                           "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "334",
+   "census2001Code": "08",
+   "districtCode": 307,
+   "districtNameEnglish": "Birbhum",
+   "districtNameLocal": "BIRBHUM                                           "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "329",
+   "census2001Code": "03",
+   "districtCode": 308,
+   "districtNameEnglish": "Cooch Behar",
+   "districtNameLocal": "COOCH BEHAR"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "331",
+   "census2001Code": "05",
+   "districtCode": 310,
+   "districtNameEnglish": "Dakshin Dinajpur",
+   "districtNameLocal": "DAKSHIN DINAJPUR"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "327",
+   "census2001Code": "01",
+   "districtCode": 309,
+   "districtNameEnglish": "Darjeeling",
+   "districtNameLocal": "DARJEELING                                        "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "338",
+   "census2001Code": "12",
+   "districtCode": 312,
+   "districtNameEnglish": "Hooghly",
+   "districtNameLocal": "HOOGHLY                                           "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "341",
+   "census2001Code": "16",
+   "districtCode": 313,
+   "districtNameEnglish": "Howrah",
+   "districtNameLocal": "HOWRAH                                            "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "328",
+   "census2001Code": "02",
+   "districtCode": 314,
+   "districtNameEnglish": "Jalpaiguri",
+   "districtNameLocal": "JALPAIGURI                                        "
+  },
+  {
+   "sscode": "22",
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 703,
+   "districtNameEnglish": "Jhargram",
+   "districtNameLocal": "Jhargram"
+  },
+  {
+   "sscode": "20",
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 702,
+   "districtNameEnglish": "Kalimpong",
+   "districtNameLocal": "KALIMPONG"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "342",
+   "census2001Code": "17",
+   "districtCode": 315,
+   "districtNameEnglish": "Kolkata",
+   "districtNameLocal": "KOLKATA                                           "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "332",
+   "census2001Code": "06",
+   "districtCode": 316,
+   "districtNameEnglish": "Malda",
+   "districtNameLocal": "MALDA"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "333",
+   "census2001Code": "07",
+   "districtCode": 319,
+   "districtNameEnglish": "Murshidabad",
+   "districtNameLocal": "MURSHIDABAD                                       "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "336",
+   "census2001Code": "10",
+   "districtCode": 320,
+   "districtNameEnglish": "Nadia",
+   "districtNameLocal": "NADIA                                             "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "337",
+   "census2001Code": "11",
+   "districtCode": 303,
+   "districtNameEnglish": "North 24 Parganas",
+   "districtNameLocal": "NORTH TWENTY FOUR PARGANAS"
+  },
+  {
+   "sscode": "23",
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 704,
+   "districtNameEnglish": "Paschim Bardhaman",
+   "districtNameLocal": "PASCHIM BARDHAMAN"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "344",
+   "census2001Code": "15",
+   "districtCode": 318,
+   "districtNameEnglish": "Paschim Medinipur",
+   "districtNameLocal": "PASCHIM MEDINIPUR"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "335",
+   "census2001Code": "09",
+   "districtCode": 306,
+   "districtNameEnglish": "Purba Bardhaman",
+   "districtNameLocal": "PURBA BARDHAMAN"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "345",
+   "census2001Code": "15",
+   "districtCode": 317,
+   "districtNameEnglish": "Purba Medinipur",
+   "districtNameLocal": "PURBA MEDINIPUR"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "340",
+   "census2001Code": "14",
+   "districtCode": 321,
+   "districtNameEnglish": "Purulia",
+   "districtNameLocal": "PURULIA                                           "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "343",
+   "census2001Code": "18",
+   "districtCode": 304,
+   "districtNameEnglish": "South 24 Parganas",
+   "districtNameLocal": "SOUTH 24 Parganas"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "330",
+   "census2001Code": "04",
+   "districtCode": 311,
+   "districtNameEnglish": "Uttar Dinajpur",
+   "districtNameLocal": "UTTAR DINAJPUR"
+  }
+ ],
+ "20": [
+  {
+   "sscode": "",
+   "districtCode": 322,
+   "districtNameEnglish": "Bokaro",
+   "districtNameLocal": "बोकारो",
+   "census2011Code": "355",
+   "census2001Code": "13"
+  },
+  {
+   "sscode": "",
+   "districtCode": 323,
+   "districtNameEnglish": "Chatra",
+   "districtNameLocal": "चतरा",
+   "census2011Code": "347",
+   "census2001Code": "03"
+  },
+  {
+   "sscode": "",
+   "districtCode": 324,
+   "districtNameEnglish": "Deoghar",
+   "districtNameLocal": "देवघर",
+   "census2011Code": "350",
+   "census2001Code": "07"
+  },
+  {
+   "sscode": "",
+   "districtCode": 325,
+   "districtNameEnglish": "Dhanbad",
+   "districtNameLocal": "धनबाद",
+   "census2011Code": "354",
+   "census2001Code": "12"
+  },
+  {
+   "sscode": "",
+   "districtCode": 326,
+   "districtNameEnglish": "Dumka",
+   "districtNameLocal": "दुमका",
+   "census2011Code": "362",
+   "census2001Code": "11"
+  },
+  {
+   "sscode": "",
+   "districtCode": 327,
+   "districtNameEnglish": "East Singhbum",
+   "districtNameLocal": "पूर्वी सिंघभूम",
+   "census2011Code": "357",
+   "census2001Code": "18"
+  },
+  {
+   "sscode": "",
+   "districtCode": 328,
+   "districtNameEnglish": "Garhwa",
+   "districtNameLocal": "गढ़वा",
+   "census2011Code": "346",
+   "census2001Code": "01"
+  },
+  {
+   "sscode": "",
+   "districtCode": 329,
+   "districtNameEnglish": "Giridih",
+   "districtNameLocal": "गिरिडीह",
+   "census2011Code": "349",
+   "census2001Code": "06"
+  },
+  {
+   "sscode": "",
+   "districtCode": 330,
+   "districtNameEnglish": "Godda",
+   "districtNameLocal": "गोड्डा",
+   "census2011Code": "351",
+   "census2001Code": "08"
+  },
+  {
+   "sscode": "",
+   "districtCode": 331,
+   "districtNameEnglish": "Gumla",
+   "districtNameLocal": "गुमला",
+   "census2011Code": "366",
+   "census2001Code": "16"
+  },
+  {
+   "sscode": "",
+   "districtCode": 332,
+   "districtNameEnglish": "Hazaribagh",
+   "districtNameLocal": "हज़ारीबाग",
+   "census2011Code": "360",
+   "census2001Code": "04"
+  },
+  {
+   "sscode": "",
+   "districtCode": 333,
+   "districtNameEnglish": "Jamtara",
+   "districtNameLocal": "जामताड़ा",
+   "census2011Code": "363",
+   "census2001Code": "20"
+  },
+  {
+   "sscode": "",
+   "districtCode": 606,
+   "districtNameEnglish": "Khunti",
+   "districtNameLocal": "खूंटी",
+   "census2011Code": "365",
+   "census2001Code": "14"
+  },
+  {
+   "sscode": "",
+   "districtCode": 334,
+   "districtNameEnglish": "Koderma",
+   "districtNameLocal": "कोडरमा",
+   "census2011Code": "348",
+   "census2001Code": "05"
+  },
+  {
+   "sscode": "",
+   "districtCode": 335,
+   "districtNameEnglish": "Latehar",
+   "districtNameLocal": "लातेहार",
+   "census2011Code": "359",
+   "census2001Code": "02"
+  },
+  {
+   "sscode": "",
+   "districtCode": 336,
+   "districtNameEnglish": "Lohardaga",
+   "districtNameLocal": "लोहरदगा",
+   "census2011Code": "356",
+   "census2001Code": "15"
+  },
+  {
+   "sscode": "",
+   "districtCode": 337,
+   "districtNameEnglish": "Pakur",
+   "districtNameLocal": "पाकुर",
+   "census2011Code": "353",
+   "census2001Code": "10"
+  },
+  {
+   "sscode": "",
+   "districtCode": 338,
+   "districtNameEnglish": "Palamu",
+   "districtNameLocal": "पलामू",
+   "census2011Code": "358",
+   "census2001Code": "02"
+  },
+  {
+   "sscode": "",
+   "districtCode": 607,
+   "districtNameEnglish": "Ramgarh",
+   "districtNameLocal": "रामगढ़",
+   "census2011Code": "361",
+   "census2001Code": "04"
+  },
+  {
+   "sscode": "",
+   "districtCode": 339,
+   "districtNameEnglish": "Ranchi",
+   "districtNameLocal": "रांची",
+   "census2011Code": "364",
+   "census2001Code": "14"
+  },
+  {
+   "sscode": "",
+   "districtCode": 340,
+   "districtNameEnglish": "Sahebganj",
+   "districtNameLocal": "साहेबगंज",
+   "census2011Code": "352",
+   "census2001Code": "09"
+  },
+  {
+   "sscode": "",
+   "districtCode": 341,
+   "districtNameEnglish": "Saraikela Kharsawan",
+   "districtNameLocal": "सरायकेला खरसावां",
+   "census2011Code": "369",
+   "census2001Code": "17"
+  },
+  {
+   "sscode": "",
+   "districtCode": 342,
+   "districtNameEnglish": "Simdega",
+   "districtNameLocal": "सिमडेगा",
+   "census2011Code": "367",
+   "census2001Code": "21"
+  },
+  {
+   "sscode": "",
+   "districtCode": 343,
+   "districtNameEnglish": "West Singhbhum",
+   "districtNameLocal": "पश्चिमी सिंघभूम",
+   "census2011Code": "368",
+   "census2001Code": "17"
+  }
+ ],
+ "21": [
+  {
+   "sscode": "",
+   "districtCode": 344,
+   "districtNameEnglish": "Anugola",
+   "districtNameLocal": "ଅନୁଗୋଳ",
+   "census2011Code": "384",
+   "census2001Code": "15"
+  },
+  {
+   "sscode": "",
+   "districtCode": 345,
+   "districtNameEnglish": "Balangir",
+   "districtNameLocal": "BALANGIR                                          ",
+   "census2011Code": "393",
+   "census2001Code": "24"
+  },
+  {
+   "sscode": "",
+   "districtCode": 346,
+   "districtNameEnglish": "Baleshwar",
+   "districtNameLocal": "ବାଲେଶ୍ୱର",
+   "census2011Code": "377",
+   "census2001Code": "08"
+  },
+  {
+   "sscode": "",
+   "districtCode": 347,
+   "districtNameEnglish": "Baragada",
+   "districtNameLocal": "ବରଗଡ଼ ",
+   "census2011Code": "370",
+   "census2001Code": "01"
+  },
+  {
+   "sscode": "",
+   "districtCode": 348,
+   "districtNameEnglish": "Bhadrak",
+   "districtNameLocal": "BHADRAK                                           ",
+   "census2011Code": "378",
+   "census2001Code": "09"
+  },
+  {
+   "sscode": "",
+   "districtCode": 349,
+   "districtNameEnglish": "Boudh",
+   "districtNameLocal": "BOUDH                                             ",
+   "census2011Code": "391",
+   "census2001Code": "22"
+  },
+  {
+   "sscode": "",
+   "districtCode": 351,
+   "districtNameEnglish": "Debagada",
+   "districtNameLocal": "ଦେବଗଡ଼ ",
+   "census2011Code": "373",
+   "census2001Code": "04"
+  },
+  {
+   "sscode": "",
+   "districtCode": 352,
+   "districtNameEnglish": "Dhenkanal",
+   "districtNameLocal": "DHENKANAL                                         ",
+   "census2011Code": "383",
+   "census2001Code": "14"
+  },
+  {
+   "sscode": "",
+   "districtCode": 353,
+   "districtNameEnglish": "Gajapati",
+   "districtNameLocal": "GAJAPATI                                          ",
+   "census2011Code": "389",
+   "census2001Code": "20"
+  },
+  {
+   "sscode": "",
+   "districtCode": 354,
+   "districtNameEnglish": "Ganjam",
+   "districtNameLocal": "GANJAM                                            ",
+   "census2011Code": "388",
+   "census2001Code": "19"
+  },
+  {
+   "sscode": "",
+   "districtCode": 355,
+   "districtNameEnglish": "Jagatsinghapur",
+   "districtNameLocal": "JAGATSINGHAPUR                                    ",
+   "census2011Code": "380",
+   "census2001Code": "11"
+  },
+  {
+   "sscode": "",
+   "districtCode": 356,
+   "districtNameEnglish": "Jajpur",
+   "districtNameLocal": "ଯାଜପୁର",
+   "census2011Code": "382",
+   "census2001Code": "13"
+  },
+  {
+   "sscode": "",
+   "districtCode": 357,
+   "districtNameEnglish": "Jharsuguda",
+   "districtNameLocal": "JHARSUGUDA                                        ",
+   "census2011Code": "371",
+   "census2001Code": "02"
+  },
+  {
+   "sscode": "",
+   "districtCode": 358,
+   "districtNameEnglish": "Kalahandi",
+   "districtNameLocal": "KALAHANDI                                         ",
+   "census2011Code": "395",
+   "census2001Code": "26"
+  },
+  {
+   "sscode": "",
+   "districtCode": 359,
+   "districtNameEnglish": "Kandhamala",
+   "districtNameLocal": "କନ୍ଧମାଳ",
+   "census2011Code": "390",
+   "census2001Code": "21"
+  },
+  {
+   "sscode": "",
+   "districtCode": 350,
+   "districtNameEnglish": "Kataka",
+   "districtNameLocal": "କଟକ",
+   "census2011Code": "381",
+   "census2001Code": "12"
+  },
+  {
+   "sscode": "",
+   "districtCode": 360,
+   "districtNameEnglish": "Kendrapada",
+   "districtNameLocal": "କେନ୍ଦ୍ରାପଡ଼ା",
+   "census2011Code": "379",
+   "census2001Code": "10"
+  },
+  {
+   "sscode": "",
+   "districtCode": 361,
+   "districtNameEnglish": "Kendujhar",
+   "districtNameLocal": "କେନ୍ଦୁଝର",
+   "census2011Code": "375",
+   "census2001Code": "06"
+  },
+  {
+   "sscode": "",
+   "districtCode": 362,
+   "districtNameEnglish": "Khordha",
+   "districtNameLocal": "KHORDHA                                           ",
+   "census2011Code": "386",
+   "census2001Code": "17"
+  },
+  {
+   "sscode": "",
+   "districtCode": 363,
+   "districtNameEnglish": "Koraput",
+   "districtNameLocal": "KORAPUT                                           ",
+   "census2011Code": "398",
+   "census2001Code": "29"
+  },
+  {
+   "sscode": "",
+   "districtCode": 364,
+   "districtNameEnglish": "Malkangiri",
+   "districtNameLocal": "MALKANGIRI                                        ",
+   "census2011Code": "399",
+   "census2001Code": "30"
+  },
+  {
+   "sscode": "",
+   "districtCode": 365,
+   "districtNameEnglish": "Mayurbhanj",
+   "districtNameLocal": "MAYURBHANJ                                        ",
+   "census2011Code": "376",
+   "census2001Code": "07"
+  },
+  {
+   "sscode": "",
+   "districtCode": 366,
+   "districtNameEnglish": "Nabarangpur",
+   "districtNameLocal": "NABARANGPUR                                       ",
+   "census2011Code": "397",
+   "census2001Code": "28"
+  },
+  {
+   "sscode": "",
+   "districtCode": 367,
+   "districtNameEnglish": "Nayagada",
+   "districtNameLocal": "ନୟାଗଡ଼",
+   "census2011Code": "385",
+   "census2001Code": "16"
+  },
+  {
+   "sscode": "",
+   "districtCode": 368,
+   "districtNameEnglish": "Nuapada",
+   "districtNameLocal": "NUAPADA                                           ",
+   "census2011Code": "394",
+   "census2001Code": "25"
+  },
+  {
+   "sscode": "",
+   "districtCode": 369,
+   "districtNameEnglish": "Puri",
+   "districtNameLocal": "PURI                                              ",
+   "census2011Code": "387",
+   "census2001Code": "18"
+  },
+  {
+   "sscode": "",
+   "districtCode": 370,
+   "districtNameEnglish": "Rayagada",
+   "districtNameLocal": "RAYAGADA                                          ",
+   "census2011Code": "396",
+   "census2001Code": "27"
+  },
+  {
+   "sscode": "",
+   "districtCode": 371,
+   "districtNameEnglish": "Sambalpur",
+   "districtNameLocal": "SAMBALPUR                                         ",
+   "census2011Code": "372",
+   "census2001Code": "03"
+  },
+  {
+   "sscode": "",
+   "districtCode": 372,
+   "districtNameEnglish": "Subarnapur",
+   "districtNameLocal": "ସୁବର୍ଣ୍ଣପୁର",
+   "census2011Code": "392",
+   "census2001Code": "23"
+  },
+  {
+   "sscode": "",
+   "districtCode": 373,
+   "districtNameEnglish": "Sundaragada",
+   "districtNameLocal": "ସୁନ୍ଦରଗଡ଼",
+   "census2011Code": "374",
+   "census2001Code": "05"
+  }
+ ],
+ "22": [
+  {
+   "sscode": "",
+   "districtCode": 646,
+   "districtNameEnglish": "Balod",
+   "districtNameLocal": "बालोद",
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 644,
+   "districtNameEnglish": "Balodabazar-Bhatapara",
+   "districtNameLocal": "बलौदाबाजार-भाटापारा",
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 649,
+   "districtNameEnglish": "Balrampur-Ramanujganj",
+   "districtNameLocal": "बलरामपुर-रामानुजगंज",
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 374,
+   "districtNameEnglish": "Bastar",
+   "districtNameLocal": "बस्तर",
+   "census2011Code": "414",
+   "census2001Code": "15"
+  },
+  {
+   "sscode": "",
+   "districtCode": 650,
+   "districtNameEnglish": "Bemetara",
+   "districtNameLocal": "बेमेतरा",
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 636,
+   "districtNameEnglish": "Bijapur",
+   "districtNameLocal": "बीजापुर",
+   "census2011Code": "417",
+   "census2001Code": "16"
+  },
+  {
+   "sscode": "",
+   "districtCode": 375,
+   "districtNameEnglish": "Bilaspur",
+   "districtNameLocal": "बिलासपुर",
+   "census2011Code": "406",
+   "census2001Code": "07"
+  },
+  {
+   "sscode": "",
+   "districtCode": 376,
+   "districtNameEnglish": "Dakshin Bastar Dantewada",
+   "districtNameLocal": "दक्षिण बस्तर दंतेवाड़ा",
+   "census2011Code": "416",
+   "census2001Code": "16"
+  },
+  {
+   "sscode": "",
+   "districtCode": 377,
+   "districtNameEnglish": "Dhamtari",
+   "districtNameLocal": "धमतरी",
+   "census2011Code": "412",
+   "census2001Code": "13"
+  },
+  {
+   "sscode": "",
+   "districtCode": 378,
+   "districtNameEnglish": "Durg",
+   "districtNameLocal": "दुर्ग",
+   "census2011Code": "409",
+   "census2001Code": "10"
+  },
+  {
+   "sscode": "",
+   "districtCode": 645,
+   "districtNameEnglish": "Gariyaband",
+   "districtNameLocal": "गरियाबंद",
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": null,
+   "districtCode": 734,
+   "districtNameEnglish": "Gaurela-Pendra-Marwahi",
+   "districtNameLocal": "गौरेला-पेंड्रा-मरवाही",
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 379,
+   "districtNameEnglish": "Janjgir-Champa",
+   "districtNameLocal": "जांजगीर - चाम्पा",
+   "census2011Code": "405",
+   "census2001Code": "06"
+  },
+  {
+   "sscode": "",
+   "districtCode": 380,
+   "districtNameEnglish": "Jashpur",
+   "districtNameLocal": "जशपुर",
+   "census2011Code": "402",
+   "census2001Code": "03"
+  },
+  {
+   "sscode": "",
+   "districtCode": 382,
+   "districtNameEnglish": "Kabeerdham",
+   "districtNameLocal": "कबीरधाम",
+   "census2011Code": "407",
+   "census2001Code": "08"
+  },
+  {
+   "sscode": null,
+   "districtCode": 759,
+   "districtNameEnglish": "Khairagarh-Chhuikhadan-Gandai",
+   "districtNameLocal": "खैरागढ़-छुईखदान-गंडई",
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 643,
+   "districtNameEnglish": "Kondagaon",
+   "districtNameLocal": "कोंडागांव",
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 383,
+   "districtNameEnglish": "Korba",
+   "districtNameLocal": "कोरबा",
+   "census2011Code": "404",
+   "census2001Code": "05"
+  },
+  {
+   "sscode": "",
+   "districtCode": 384,
+   "districtNameEnglish": "Korea",
+   "districtNameLocal": "कोरिया",
+   "census2011Code": "400",
+   "census2001Code": "01"
+  },
+  {
+   "sscode": "",
+   "districtCode": 385,
+   "districtNameEnglish": "Mahasamund",
+   "districtNameLocal": "महासमुंद",
+   "census2011Code": "411",
+   "census2001Code": "12"
+  },
+  {
+   "sscode": null,
+   "districtCode": 760,
+   "districtNameEnglish": "Manendragarh-Chirmiri-Bharatpur(M C B)",
+   "districtNameLocal": "मनेन्द्रगढ़-चिरमिरी-भरतपुर(ऍम.सी.बी.)",
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": null,
+   "districtCode": 761,
+   "districtNameEnglish": "Mohla-Manpur-Ambagarh Chouki",
+   "districtNameLocal": "मोहला-मानपुर-अम्बागढ़ चौकी",
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 647,
+   "districtNameEnglish": "Mungeli",
+   "districtNameLocal": "मुंगेली",
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 637,
+   "districtNameEnglish": "Narayanpur",
+   "districtNameLocal": "नारायणपुर",
+   "census2011Code": "415",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 386,
+   "districtNameEnglish": "Raigarh",
+   "districtNameLocal": "रायगढ़",
+   "census2011Code": "403",
+   "census2001Code": "04"
+  },
+  {
+   "sscode": "",
+   "districtCode": 387,
+   "districtNameEnglish": "Raipur",
+   "districtNameLocal": "रायपुर",
+   "census2011Code": "410",
+   "census2001Code": "11"
+  },
+  {
+   "sscode": "",
+   "districtCode": 388,
+   "districtNameEnglish": "Rajnandgaon",
+   "districtNameLocal": "राजनंदगांव",
+   "census2011Code": "408",
+   "census2001Code": "09"
+  },
+  {
+   "sscode": null,
+   "districtCode": 762,
+   "districtNameEnglish": "Sakti",
+   "districtNameLocal": "सक्ती",
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": null,
+   "districtCode": 763,
+   "districtNameEnglish": "Sarangarh-Bilaigarh",
+   "districtNameLocal": "सारंगढ़-बिलाईगढ़",
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 642,
+   "districtNameEnglish": "Sukma",
+   "districtNameLocal": "सुकमा",
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 648,
+   "districtNameEnglish": "Surajpur",
+   "districtNameLocal": "सूरजपुर",
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 389,
+   "districtNameEnglish": "Surguja",
+   "districtNameLocal": "सरगुजा",
+   "census2011Code": "401",
+   "census2001Code": "02"
+  },
+  {
+   "sscode": "",
+   "districtCode": 381,
+   "districtNameEnglish": "Uttar Bastar Kanker",
+   "districtNameLocal": "उत्तर बस्तर कांकेर",
+   "census2011Code": "413",
+   "census2001Code": "14"
+  }
+ ],
+ "23": [
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 667,
+   "districtNameEnglish": "Agar-Malwa",
+   "districtNameLocal": "आगर-मालवा"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "465",
+   "census2001Code": "24",
+   "districtCode": 639,
+   "districtNameEnglish": "Alirajpur",
+   "districtNameLocal": "अलीराजपुर"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "461",
+   "census2001Code": "16",
+   "districtCode": 390,
+   "districtNameEnglish": "Anuppur",
+   "districtNameLocal": "अनूपपुर"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "459",
+   "census2001Code": "46",
+   "districtCode": 391,
+   "districtNameEnglish": "Ashoknagar",
+   "districtNameLocal": "अशोकनगर"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "457",
+   "census2001Code": "45",
+   "districtCode": 392,
+   "districtNameEnglish": "Balaghat",
+   "districtNameLocal": "बालाघाट"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "441",
+   "census2001Code": "28",
+   "districtCode": 393,
+   "districtNameEnglish": "Barwani",
+   "districtNameLocal": "बड़वानी"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "447",
+   "census2001Code": "35",
+   "districtCode": 394,
+   "districtNameEnglish": "Betul",
+   "districtNameLocal": "बैतूल"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "420",
+   "census2001Code": "03",
+   "districtCode": 395,
+   "districtNameEnglish": "Bhind",
+   "districtNameLocal": "भिण्ड"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "444",
+   "census2001Code": "32",
+   "districtCode": 396,
+   "districtNameEnglish": "Bhopal",
+   "districtNameLocal": "भोपाल"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "467",
+   "census2001Code": "29",
+   "districtCode": 397,
+   "districtNameEnglish": "Burhanpur",
+   "districtNameLocal": "बुरहानपुर"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "425",
+   "census2001Code": "09",
+   "districtCode": 398,
+   "districtNameEnglish": "Chhatarpur",
+   "districtNameLocal": "छ्तरपुर"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "455",
+   "census2001Code": "43",
+   "districtCode": 399,
+   "districtNameEnglish": "Chhindwara",
+   "districtNameLocal": "छिन्दवाड़ा"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "428",
+   "census2001Code": "12",
+   "districtCode": 400,
+   "districtNameEnglish": "Damoh",
+   "districtNameLocal": "दमोह"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "422",
+   "census2001Code": "05",
+   "districtCode": 401,
+   "districtNameEnglish": "Datia",
+   "districtNameLocal": "दतिया"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "437",
+   "census2001Code": "23",
+   "districtCode": 402,
+   "districtNameEnglish": "Dewas",
+   "districtNameLocal": "देवास"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "438",
+   "census2001Code": "25",
+   "districtCode": 403,
+   "districtNameEnglish": "Dhar",
+   "districtNameLocal": "धार"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "453",
+   "census2001Code": "41",
+   "districtCode": 404,
+   "districtNameEnglish": "Dindori",
+   "districtNameLocal": "डिंडोरी"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "458",
+   "census2001Code": "07",
+   "districtCode": 406,
+   "districtNameEnglish": "Guna",
+   "districtNameLocal": "गुना"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "421",
+   "census2001Code": "04",
+   "districtCode": 407,
+   "districtNameEnglish": "Gwalior",
+   "districtNameLocal": "ग्वालियर"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "448",
+   "census2001Code": "36",
+   "districtCode": 408,
+   "districtNameEnglish": "Harda",
+   "districtNameLocal": "हरदा"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "439",
+   "census2001Code": "26",
+   "districtCode": 410,
+   "districtNameEnglish": "Indore",
+   "districtNameLocal": "इन्दौर"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "451",
+   "census2001Code": "39",
+   "districtCode": 411,
+   "districtNameEnglish": "Jabalpur",
+   "districtNameLocal": "जबलपुर"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "464",
+   "census2001Code": "24",
+   "districtCode": 412,
+   "districtNameEnglish": "Jhabua",
+   "districtNameLocal": "झाबुआ"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "450",
+   "census2001Code": "38",
+   "districtCode": 413,
+   "districtNameEnglish": "Katni",
+   "districtNameLocal": "कटनी"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "466",
+   "census2001Code": "29",
+   "districtCode": 405,
+   "districtNameEnglish": "Khandwa (East Nimar)",
+   "districtNameLocal": "खण्डवा (पूर्व निमाड़)"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "440",
+   "census2001Code": "27",
+   "districtCode": 414,
+   "districtNameEnglish": "Khargone (West Nimar)",
+   "districtNameLocal": "खरगोन (पश्चिम निमाड़)"
+  },
+  {
+   "sscode": null,
+   "census2011Code": null,
+   "census2001Code": null,
+   "districtCode": 784,
+   "districtNameEnglish": "Maihar",
+   "districtNameLocal": "मैहर"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "454",
+   "census2001Code": "42",
+   "districtCode": 415,
+   "districtNameEnglish": "Mandla",
+   "districtNameLocal": "मंडला"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "433",
+   "census2001Code": "19",
+   "districtCode": 416,
+   "districtNameEnglish": "Mandsaur",
+   "districtNameLocal": "मन्दसौर"
+  },
+  {
+   "sscode": null,
+   "census2011Code": null,
+   "census2001Code": null,
+   "districtCode": 766,
+   "districtNameEnglish": "MAUGANJ",
+   "districtNameLocal": "मऊगंज"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "419",
+   "census2001Code": "02",
+   "districtCode": 417,
+   "districtNameEnglish": "Morena",
+   "districtNameLocal": "मुरैना"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "449",
+   "census2001Code": "37",
+   "districtCode": 409,
+   "districtNameEnglish": "Narmadapuram",
+   "districtNameLocal": "नर्मदापुरम"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "452",
+   "census2001Code": "40",
+   "districtCode": 418,
+   "districtNameEnglish": "Narsimhapur",
+   "districtNameLocal": "नरसिंहपुर"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "432",
+   "census2001Code": "18",
+   "districtCode": 419,
+   "districtNameEnglish": "Neemuch",
+   "districtNameLocal": "नीमच"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 722,
+   "districtNameEnglish": "Niwari",
+   "districtNameLocal": "निवारी"
+  },
+  {
+   "sscode": null,
+   "census2011Code": null,
+   "census2001Code": null,
+   "districtCode": 785,
+   "districtNameEnglish": "Pandhurna",
+   "districtNameLocal": "पांढुर्णा"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "426",
+   "census2001Code": "10",
+   "districtCode": 420,
+   "districtNameEnglish": "Panna",
+   "districtNameLocal": "पन्ना"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "446",
+   "census2001Code": "34",
+   "districtCode": 421,
+   "districtNameEnglish": "Raisen",
+   "districtNameLocal": "रायसेन"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "442",
+   "census2001Code": "30",
+   "districtCode": 422,
+   "districtNameEnglish": "Rajgarh",
+   "districtNameLocal": "राजगढ़"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "434",
+   "census2001Code": "20",
+   "districtCode": 423,
+   "districtNameEnglish": "Ratlam",
+   "districtNameLocal": "रतलाम"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "430",
+   "census2001Code": "14",
+   "districtCode": 424,
+   "districtNameEnglish": "Rewa",
+   "districtNameLocal": "रीवा"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "427",
+   "census2001Code": "11",
+   "districtCode": 425,
+   "districtNameEnglish": "Sagar",
+   "districtNameLocal": "सागर"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "429",
+   "census2001Code": "13",
+   "districtCode": 426,
+   "districtNameEnglish": "Satna",
+   "districtNameLocal": "सतना"
+  },
+  {
+   "sscode": "23",
+   "census2011Code": "445",
+   "census2001Code": "33",
+   "districtCode": 427,
+   "districtNameEnglish": "Sehore",
+   "districtNameLocal": "सीहोर"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "456",
+   "census2001Code": "44",
+   "districtCode": 428,
+   "districtNameEnglish": "Seoni",
+   "districtNameLocal": "सिवनी"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "460",
+   "census2001Code": "16",
+   "districtCode": 429,
+   "districtNameEnglish": "Shahdol",
+   "districtNameLocal": "शहडोल"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "436",
+   "census2001Code": "22",
+   "districtCode": 430,
+   "districtNameEnglish": "Shajapur",
+   "districtNameLocal": "शाजापुर"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "418",
+   "census2001Code": "01",
+   "districtCode": 431,
+   "districtNameEnglish": "Sheopur",
+   "districtNameLocal": "श्योपुर"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "423",
+   "census2001Code": "06",
+   "districtCode": 432,
+   "districtNameEnglish": "Shivpuri",
+   "districtNameLocal": "शिवपुरी"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "462",
+   "census2001Code": "17",
+   "districtCode": 433,
+   "districtNameEnglish": "Sidhi",
+   "districtNameLocal": "सीधी"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "463",
+   "census2001Code": null,
+   "districtCode": 638,
+   "districtNameEnglish": "Singrauli",
+   "districtNameLocal": "सिंगरौली"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "424",
+   "census2001Code": "08",
+   "districtCode": 434,
+   "districtNameEnglish": "Tikamgarh",
+   "districtNameLocal": "टीकमगढ़"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "435",
+   "census2001Code": "21",
+   "districtCode": 435,
+   "districtNameEnglish": "Ujjain",
+   "districtNameLocal": "उज्जैन"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "431",
+   "census2001Code": "15",
+   "districtCode": 436,
+   "districtNameEnglish": "Umaria",
+   "districtNameLocal": "उमरिया"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "443",
+   "census2001Code": "31",
+   "districtCode": 437,
+   "districtNameEnglish": "Vidisha",
+   "districtNameLocal": "विदिशा"
+  }
+ ],
+ "24": [
+  {
+   "sscode": "24",
+   "census2011Code": "474",
+   "census2001Code": "07",
+   "districtCode": 438,
+   "districtNameEnglish": "Ahmedabad",
+   "districtNameLocal": "AHMEDABAD"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "480",
+   "census2001Code": "13",
+   "districtCode": 439,
+   "districtNameEnglish": "Amreli",
+   "districtNameLocal": "AMRELI                                            "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "482",
+   "census2001Code": "15",
+   "districtCode": 440,
+   "districtNameEnglish": "Anand",
+   "districtNameLocal": "ANAND                                             "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 672,
+   "districtNameEnglish": "Arvalli",
+   "districtNameLocal": null
+  },
+  {
+   "sscode": "",
+   "census2011Code": "469",
+   "census2001Code": "02",
+   "districtCode": 441,
+   "districtNameEnglish": "Banas Kantha",
+   "districtNameLocal": "BANAS KANTHA                                      "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "488",
+   "census2001Code": "21",
+   "districtCode": 442,
+   "districtNameEnglish": "Bharuch",
+   "districtNameLocal": "BHARUCH                                           "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "481",
+   "census2001Code": "14",
+   "districtCode": 443,
+   "districtNameEnglish": "Bhavnagar",
+   "districtNameLocal": "BHAVNAGAR                                         "
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 676,
+   "districtNameEnglish": "Botad",
+   "districtNameLocal": "BOTAD"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 668,
+   "districtNameEnglish": "Chhotaudepur",
+   "districtNameLocal": "CHHOTAUDEPUR"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "485",
+   "census2001Code": "18",
+   "districtCode": 445,
+   "districtNameEnglish": "Dahod",
+   "districtNameLocal": "DAHOD"
+  },
+  {
+   "sscode": "24",
+   "census2011Code": "489",
+   "census2001Code": "23",
+   "districtCode": 444,
+   "districtNameEnglish": "Dangs",
+   "districtNameLocal": "DANGS"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 674,
+   "districtNameEnglish": "Devbhumi Dwarka",
+   "districtNameLocal": "DEVBHUMI DWARKA"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "473",
+   "census2001Code": "06",
+   "districtCode": 446,
+   "districtNameEnglish": "Gandhinagar",
+   "districtNameLocal": "GANDHINAGAR                                       "
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 675,
+   "districtNameEnglish": "Gir Somnath",
+   "districtNameLocal": "GIR SOMNATH"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "477",
+   "census2001Code": "10",
+   "districtCode": 447,
+   "districtNameEnglish": "Jamnagar",
+   "districtNameLocal": "JAMNAGAR                                          "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "479",
+   "census2001Code": "12",
+   "districtCode": 448,
+   "districtNameEnglish": "Junagadh",
+   "districtNameLocal": "JUNAGADH                                          "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "468",
+   "census2001Code": "01",
+   "districtCode": 449,
+   "districtNameEnglish": "Kachchh",
+   "districtNameLocal": "KACHCHH                                           "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "483",
+   "census2001Code": "16",
+   "districtCode": 450,
+   "districtNameEnglish": "Kheda",
+   "districtNameLocal": "KHEDA                                             "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "471",
+   "census2001Code": "04",
+   "districtCode": 451,
+   "districtNameEnglish": "Mahesana",
+   "districtNameLocal": "MAHESANA                                          "
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 669,
+   "districtNameEnglish": "Mahisagar",
+   "districtNameLocal": "મહિસાગર "
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 673,
+   "districtNameEnglish": "Morbi",
+   "districtNameLocal": "MORBI"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "487",
+   "census2001Code": "20",
+   "districtCode": 452,
+   "districtNameEnglish": "Narmada",
+   "districtNameLocal": "NARMADA                                           "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "490",
+   "census2001Code": "24",
+   "districtCode": 453,
+   "districtNameEnglish": "Navsari",
+   "districtNameLocal": "NAVSARI                                           "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "484",
+   "census2001Code": "17",
+   "districtCode": 454,
+   "districtNameEnglish": "Panch Mahals",
+   "districtNameLocal": "PANCH MAHALS                                      "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "470",
+   "census2001Code": "03",
+   "districtCode": 455,
+   "districtNameEnglish": "Patan",
+   "districtNameLocal": "PATAN                                             "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "478",
+   "census2001Code": "11",
+   "districtCode": 456,
+   "districtNameEnglish": "Porbandar",
+   "districtNameLocal": "PORBANDAR                                         "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "476",
+   "census2001Code": "09",
+   "districtCode": 457,
+   "districtNameEnglish": "Rajkot",
+   "districtNameLocal": "RAJKOT                                            "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "472",
+   "census2001Code": "05",
+   "districtCode": 458,
+   "districtNameEnglish": "Sabar Kantha",
+   "districtNameLocal": "SABAR KANTHA                                      "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "492",
+   "census2001Code": "22",
+   "districtCode": 459,
+   "districtNameEnglish": "Surat",
+   "districtNameLocal": "SURAT                                             "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "475",
+   "census2001Code": "08",
+   "districtCode": 460,
+   "districtNameEnglish": "Surendranagar",
+   "districtNameLocal": "SURENDRANAGAR                                     "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "493",
+   "census2001Code": null,
+   "districtCode": 641,
+   "districtNameEnglish": "Tapi",
+   "districtNameLocal": "                                                  "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "486",
+   "census2001Code": "19",
+   "districtCode": 461,
+   "districtNameEnglish": "Vadodara",
+   "districtNameLocal": "VADODARA                                          "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "491",
+   "census2001Code": "25",
+   "districtCode": 462,
+   "districtNameEnglish": "Valsad",
+   "districtNameLocal": "VALSAD                                            "
+  },
+  {
+   "sscode": "24",
+   "census2011Code": null,
+   "census2001Code": null,
+   "districtCode": 789,
+   "districtNameEnglish": "Vav-Tharad",
+   "districtNameLocal": "વાવ થરાદ"
+  }
+ ],
+ "27": [
+  {
+   "sscode": "",
+   "districtCode": 466,
+   "districtNameEnglish": "Ahilyanagar",
+   "districtNameLocal": "अहिल्यानगर",
+   "census2011Code": "522",
+   "census2001Code": "26"
+  },
+  {
+   "sscode": "",
+   "districtCode": 467,
+   "districtNameEnglish": "Akola",
+   "districtNameLocal": "अकोला",
+   "census2011Code": "501",
+   "census2001Code": "05"
+  },
+  {
+   "sscode": "",
+   "districtCode": 468,
+   "districtNameEnglish": "Amravati",
+   "districtNameLocal": "अमरावती",
+   "census2011Code": "503",
+   "census2001Code": "07"
+  },
+  {
+   "sscode": "",
+   "districtCode": 470,
+   "districtNameEnglish": "Beed",
+   "districtNameLocal": "बीड",
+   "census2011Code": "523",
+   "census2001Code": "27"
+  },
+  {
+   "sscode": "",
+   "districtCode": 471,
+   "districtNameEnglish": "Bhandara",
+   "districtNameLocal": "भंडारा",
+   "census2011Code": "506",
+   "census2001Code": "10"
+  },
+  {
+   "sscode": "27",
+   "districtCode": 472,
+   "districtNameEnglish": "Buldhana",
+   "districtNameLocal": "बुलढाणा",
+   "census2011Code": "500",
+   "census2001Code": "04"
+  },
+  {
+   "sscode": "",
+   "districtCode": 473,
+   "districtNameEnglish": "Chandrapur",
+   "districtNameLocal": "चंद्रपूर",
+   "census2011Code": "509",
+   "census2001Code": "13"
+  },
+  {
+   "sscode": "",
+   "districtCode": 469,
+   "districtNameEnglish": "Chhatrapati Sambhajinagar",
+   "districtNameLocal": "छत्रपती संभाजीनगर",
+   "census2011Code": "515",
+   "census2001Code": "19"
+  },
+  {
+   "sscode": "",
+   "districtCode": 488,
+   "districtNameEnglish": "Dharashiv",
+   "districtNameLocal": "धाराशिव",
+   "census2011Code": "525",
+   "census2001Code": "29"
+  },
+  {
+   "sscode": "",
+   "districtCode": 474,
+   "districtNameEnglish": "Dhule",
+   "districtNameLocal": "धुळे",
+   "census2011Code": "498",
+   "census2001Code": "02"
+  },
+  {
+   "sscode": "",
+   "districtCode": 475,
+   "districtNameEnglish": "Gadchiroli",
+   "districtNameLocal": "गडचिरोली",
+   "census2011Code": "508",
+   "census2001Code": "12"
+  },
+  {
+   "sscode": "",
+   "districtCode": 476,
+   "districtNameEnglish": "Gondia",
+   "districtNameLocal": "गोंदीया",
+   "census2011Code": "507",
+   "census2001Code": "11"
+  },
+  {
+   "sscode": "",
+   "districtCode": 477,
+   "districtNameEnglish": "Hingoli",
+   "districtNameLocal": "हिंगोली",
+   "census2011Code": "512",
+   "census2001Code": "16"
+  },
+  {
+   "sscode": "",
+   "districtCode": 478,
+   "districtNameEnglish": "Jalgaon",
+   "districtNameLocal": "जळगाव",
+   "census2011Code": "499",
+   "census2001Code": "03"
+  },
+  {
+   "sscode": "",
+   "districtCode": 479,
+   "districtNameEnglish": "Jalna",
+   "districtNameLocal": "जालना",
+   "census2011Code": "514",
+   "census2001Code": "18"
+  },
+  {
+   "sscode": "",
+   "districtCode": 480,
+   "districtNameEnglish": "Kolhapur",
+   "districtNameLocal": "कोल्हापूर",
+   "census2011Code": "530",
+   "census2001Code": "34"
+  },
+  {
+   "sscode": "",
+   "districtCode": 481,
+   "districtNameEnglish": "Latur",
+   "districtNameLocal": "लातूर",
+   "census2011Code": "524",
+   "census2001Code": "28"
+  },
+  {
+   "sscode": "",
+   "districtCode": 482,
+   "districtNameEnglish": "Mumbai",
+   "districtNameLocal": "मुंबई",
+   "census2011Code": "519",
+   "census2001Code": "23"
+  },
+  {
+   "sscode": "",
+   "districtCode": 483,
+   "districtNameEnglish": "Mumbai Suburban",
+   "districtNameLocal": "मुंबई उपनगर",
+   "census2011Code": "518",
+   "census2001Code": "22"
+  },
+  {
+   "sscode": "",
+   "districtCode": 484,
+   "districtNameEnglish": "Nagpur",
+   "districtNameLocal": "नागपूर",
+   "census2011Code": "505",
+   "census2001Code": "09"
+  },
+  {
+   "sscode": "",
+   "districtCode": 485,
+   "districtNameEnglish": "Nanded",
+   "districtNameLocal": "नांदेड",
+   "census2011Code": "511",
+   "census2001Code": "15"
+  },
+  {
+   "sscode": "",
+   "districtCode": 486,
+   "districtNameEnglish": "Nandurbar",
+   "districtNameLocal": "नंदूरबार",
+   "census2011Code": "497",
+   "census2001Code": "01"
+  },
+  {
+   "sscode": "",
+   "districtCode": 487,
+   "districtNameEnglish": "Nashik",
+   "districtNameLocal": "नाशिक",
+   "census2011Code": "516",
+   "census2001Code": "20"
+  },
+  {
+   "sscode": null,
+   "districtCode": 665,
+   "districtNameEnglish": "Palghar",
+   "districtNameLocal": "पालघर ",
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 489,
+   "districtNameEnglish": "Parbhani",
+   "districtNameLocal": "परभणी",
+   "census2011Code": "513",
+   "census2001Code": "17"
+  },
+  {
+   "sscode": "",
+   "districtCode": 490,
+   "districtNameEnglish": "Pune",
+   "districtNameLocal": "पुणे",
+   "census2011Code": "521",
+   "census2001Code": "25"
+  },
+  {
+   "sscode": "",
+   "districtCode": 491,
+   "districtNameEnglish": "Raigad",
+   "districtNameLocal": "रायगड",
+   "census2011Code": "520",
+   "census2001Code": "24"
+  },
+  {
+   "sscode": "",
+   "districtCode": 492,
+   "districtNameEnglish": "Ratnagiri",
+   "districtNameLocal": "रत्नागिरी",
+   "census2011Code": "528",
+   "census2001Code": "32"
+  },
+  {
+   "sscode": "",
+   "districtCode": 493,
+   "districtNameEnglish": "Sangli",
+   "districtNameLocal": "सांगली",
+   "census2011Code": "531",
+   "census2001Code": "35"
+  },
+  {
+   "sscode": "",
+   "districtCode": 494,
+   "districtNameEnglish": "Satara",
+   "districtNameLocal": "सातारा",
+   "census2011Code": "527",
+   "census2001Code": "31"
+  },
+  {
+   "sscode": "",
+   "districtCode": 495,
+   "districtNameEnglish": "Sindhudurg",
+   "districtNameLocal": "सिंधुदुर्ग",
+   "census2011Code": "529",
+   "census2001Code": "33"
+  },
+  {
+   "sscode": "",
+   "districtCode": 496,
+   "districtNameEnglish": "Solapur",
+   "districtNameLocal": "सोलापूर",
+   "census2011Code": "526",
+   "census2001Code": "30"
+  },
+  {
+   "sscode": "",
+   "districtCode": 497,
+   "districtNameEnglish": "Thane",
+   "districtNameLocal": "ठाणे",
+   "census2011Code": "517",
+   "census2001Code": "21"
+  },
+  {
+   "sscode": "",
+   "districtCode": 498,
+   "districtNameEnglish": "Wardha",
+   "districtNameLocal": "वर्धा",
+   "census2011Code": "504",
+   "census2001Code": "08"
+  },
+  {
+   "sscode": "",
+   "districtCode": 499,
+   "districtNameEnglish": "Washim",
+   "districtNameLocal": "वाशिम",
+   "census2011Code": "502",
+   "census2001Code": "06"
+  },
+  {
+   "sscode": "",
+   "districtCode": 500,
+   "districtNameEnglish": "Yavatmal",
+   "districtNameLocal": "यवतमाळ",
+   "census2011Code": "510",
+   "census2001Code": "14"
+  }
+ ],
+ "28": [
+  {
+   "sscode": "",
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 745,
+   "districtNameEnglish": "Alluri Sitharama Raju",
+   "districtNameLocal": "Alluri Sitharama Raju"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 744,
+   "districtNameEnglish": "Anakapalli",
+   "districtNameLocal": "Anakapalli"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "553",
+   "census2001Code": "22",
+   "districtCode": 502,
+   "districtNameEnglish": "Ananthapuramu",
+   "districtNameLocal": "అనంతపురము"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 753,
+   "districtNameEnglish": "Annamayya",
+   "districtNameLocal": "Annamayya"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 750,
+   "districtNameEnglish": "Bapatla",
+   "districtNameLocal": "Bapatla"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "554",
+   "census2001Code": "23",
+   "districtCode": 503,
+   "districtNameEnglish": "Chittoor",
+   "districtNameLocal": "CHITTOOR                                          "
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 747,
+   "districtNameEnglish": "Dr. B.R. Ambedkar Konaseema",
+   "districtNameLocal": "డా బి ఆర్  అంబేడ్కర్ కోనసీమ"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "545",
+   "census2001Code": "14",
+   "districtCode": 505,
+   "districtNameEnglish": "East Godavari",
+   "districtNameLocal": "EAST GODAVARI                                     "
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 748,
+   "districtNameEnglish": "Eluru",
+   "districtNameLocal": "Eluru"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "548",
+   "census2001Code": "17",
+   "districtCode": 506,
+   "districtNameEnglish": "Guntur",
+   "districtNameLocal": "GUNTUR                                            "
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 746,
+   "districtNameEnglish": "Kakinada",
+   "districtNameLocal": "Kakinada"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "547",
+   "census2001Code": "16",
+   "districtCode": 510,
+   "districtNameEnglish": "Krishna",
+   "districtNameLocal": "KRISHNA                                           "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "552",
+   "census2001Code": "21",
+   "districtCode": 511,
+   "districtNameEnglish": "Kurnool",
+   "districtNameLocal": "KURNOOL                                           "
+  },
+  {
+   "sscode": null,
+   "census2011Code": null,
+   "census2001Code": null,
+   "districtCode": 790,
+   "districtNameEnglish": "Markapuram",
+   "districtNameLocal": "Markapuram"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 755,
+   "districtNameEnglish": "Nandyal",
+   "districtNameLocal": "Nandyal"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 749,
+   "districtNameEnglish": "Ntr",
+   "districtNameLocal": "NTR"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 751,
+   "districtNameEnglish": "Palnadu",
+   "districtNameLocal": "Palnadu"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 743,
+   "districtNameEnglish": "Parvathipuram Manyam",
+   "districtNameLocal": "Parvathipuram Manyam"
+  },
+  {
+   "sscode": null,
+   "census2011Code": null,
+   "census2001Code": null,
+   "districtCode": 791,
+   "districtNameEnglish": "Polavaram",
+   "districtNameLocal": "Polavaram"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "549",
+   "census2001Code": "18",
+   "districtCode": 517,
+   "districtNameEnglish": "Prakasam",
+   "districtNameLocal": "PRAKASAM                                          "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "542",
+   "census2001Code": "11",
+   "districtCode": 519,
+   "districtNameEnglish": "Srikakulam",
+   "districtNameLocal": "SRIKAKULAM                                        "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "550",
+   "census2001Code": "19",
+   "districtCode": 515,
+   "districtNameEnglish": "Sri Potti Sriramulu Nellore",
+   "districtNameLocal": "శ్రీ పొట్టి శ్రీరాములు నెల్లూరు"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 754,
+   "districtNameEnglish": "Sri Sathya Sai",
+   "districtNameLocal": "Sri Sathya Sai"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 752,
+   "districtNameEnglish": "Tirupati",
+   "districtNameLocal": "Tirupati"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "544",
+   "census2001Code": "13",
+   "districtCode": 520,
+   "districtNameEnglish": "Visakhapatnam",
+   "districtNameLocal": "విశాఖపట్నం"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "543",
+   "census2001Code": "12",
+   "districtCode": 521,
+   "districtNameEnglish": "Vizianagaram",
+   "districtNameLocal": "VIZIANAGARAM                                      "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "546",
+   "census2001Code": "15",
+   "districtCode": 523,
+   "districtNameEnglish": "West Godavari",
+   "districtNameLocal": "పశ్చిమగోదావరి                                     "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "551",
+   "census2001Code": "20",
+   "districtCode": 504,
+   "districtNameEnglish": "Y.S.R. Kadapa",
+   "districtNameLocal": "వై.ఎస్.ఆర్. కడప"
+  }
+ ],
+ "29": [
+  {
+   "sscode": "",
+   "districtCode": 524,
+   "districtNameEnglish": "Bagalkote",
+   "districtNameLocal": "ಬಾಗಲಕೋಟೆ",
+   "census2011Code": "556",
+   "census2001Code": "02"
+  },
+  {
+   "sscode": "",
+   "districtCode": 528,
+   "districtNameEnglish": "Ballari",
+   "districtNameLocal": "ಬಳ್ಳಾರಿ",
+   "census2011Code": "565",
+   "census2001Code": "12"
+  },
+  {
+   "sscode": "",
+   "districtCode": 527,
+   "districtNameEnglish": "Belagavi",
+   "districtNameLocal": "ಬೆಳಗಾವಿ",
+   "census2011Code": "555",
+   "census2001Code": "01"
+  },
+  {
+   "sscode": "",
+   "districtCode": 526,
+   "districtNameEnglish": "Bengaluru Rural",
+   "districtNameLocal": "ಬೆಂಗಳೂರು ಗ್ರಾಮಾಂತರ",
+   "census2011Code": "583",
+   "census2001Code": "21"
+  },
+  {
+   "sscode": "",
+   "districtCode": 631,
+   "districtNameEnglish": "Bengaluru South",
+   "districtNameLocal": "ಬೆಂಗಳೂರು ದಕ್ಷಿಣ",
+   "census2011Code": "584",
+   "census2001Code": "21"
+  },
+  {
+   "sscode": "",
+   "districtCode": 525,
+   "districtNameEnglish": "Bengaluru Urban",
+   "districtNameLocal": "ಬೆಂಗಳೂರು",
+   "census2011Code": "572",
+   "census2001Code": "20"
+  },
+  {
+   "sscode": "",
+   "districtCode": 529,
+   "districtNameEnglish": "Bidar",
+   "districtNameLocal": "ಬೀದರ್‌",
+   "census2011Code": "558",
+   "census2001Code": "05"
+  },
+  {
+   "sscode": "",
+   "districtCode": 531,
+   "districtNameEnglish": "Chamarajanagar",
+   "districtNameLocal": "ಚಾಮರಾಜನಗರ",
+   "census2011Code": "578",
+   "census2001Code": "27"
+  },
+  {
+   "sscode": "",
+   "districtCode": 630,
+   "districtNameEnglish": "Chikkaballapura",
+   "districtNameLocal": "ಚಿಕ್ಕಬಳ್ಳಾಪುರ",
+   "census2011Code": "582",
+   "census2001Code": "19"
+  },
+  {
+   "sscode": "",
+   "districtCode": 532,
+   "districtNameEnglish": "Chikkamagaluru",
+   "districtNameLocal": "ಚಿಕ್ಕಮಗಳೂರು",
+   "census2011Code": "570",
+   "census2001Code": "17"
+  },
+  {
+   "sscode": "",
+   "districtCode": 533,
+   "districtNameEnglish": "Chitradurga",
+   "districtNameLocal": "ಚಿತ್ರದುರ್ಗ",
+   "census2011Code": "566",
+   "census2001Code": "13"
+  },
+  {
+   "sscode": "",
+   "districtCode": 534,
+   "districtNameEnglish": "Dakshina Kannada",
+   "districtNameLocal": "ದಕ್ಷಿಣ ಕನ್ನಡ",
+   "census2011Code": "575",
+   "census2001Code": "24"
+  },
+  {
+   "sscode": "",
+   "districtCode": 535,
+   "districtNameEnglish": "Davanagere",
+   "districtNameLocal": "ದಾವಣಗೆರೆ",
+   "census2011Code": "567",
+   "census2001Code": "14"
+  },
+  {
+   "sscode": "",
+   "districtCode": 536,
+   "districtNameEnglish": "Dharwad",
+   "districtNameLocal": "ಧಾರವಾಡ",
+   "census2011Code": "562",
+   "census2001Code": "09"
+  },
+  {
+   "sscode": "",
+   "districtCode": 537,
+   "districtNameEnglish": "Gadag",
+   "districtNameLocal": "ಗದಗ",
+   "census2011Code": "561",
+   "census2001Code": "08"
+  },
+  {
+   "sscode": "",
+   "districtCode": 539,
+   "districtNameEnglish": "Hassan",
+   "districtNameLocal": "ಹಾಸನ",
+   "census2011Code": "574",
+   "census2001Code": "23"
+  },
+  {
+   "sscode": "",
+   "districtCode": 540,
+   "districtNameEnglish": "Haveri",
+   "districtNameLocal": "ಹಾವೇರಿ",
+   "census2011Code": "564",
+   "census2001Code": "11"
+  },
+  {
+   "sscode": "",
+   "districtCode": 538,
+   "districtNameEnglish": "Kalaburagi",
+   "districtNameLocal": "ಕಲಬುರಗಿ",
+   "census2011Code": "579",
+   "census2001Code": "04"
+  },
+  {
+   "sscode": "",
+   "districtCode": 541,
+   "districtNameEnglish": "Kodagu",
+   "districtNameLocal": "ಕೊಡಗು",
+   "census2011Code": "576",
+   "census2001Code": "25"
+  },
+  {
+   "sscode": "",
+   "districtCode": 542,
+   "districtNameEnglish": "Kolar",
+   "districtNameLocal": "ಕೋಲಾರ",
+   "census2011Code": "581",
+   "census2001Code": "19"
+  },
+  {
+   "sscode": "",
+   "districtCode": 543,
+   "districtNameEnglish": "Koppal",
+   "districtNameLocal": "ಕೊಪ್ಪಳ",
+   "census2011Code": "560",
+   "census2001Code": "07"
+  },
+  {
+   "sscode": "",
+   "districtCode": 544,
+   "districtNameEnglish": "Mandya",
+   "districtNameLocal": "ಮಂಡ್ಯ",
+   "census2011Code": "573",
+   "census2001Code": "22"
+  },
+  {
+   "sscode": "",
+   "districtCode": 545,
+   "districtNameEnglish": "Mysuru",
+   "districtNameLocal": "ಮೈಸೂರು",
+   "census2011Code": "577",
+   "census2001Code": "26"
+  },
+  {
+   "sscode": "",
+   "districtCode": 546,
+   "districtNameEnglish": "Raichur",
+   "districtNameLocal": "ರಾಯಚೂರು",
+   "census2011Code": "559",
+   "census2001Code": "06"
+  },
+  {
+   "sscode": "",
+   "districtCode": 547,
+   "districtNameEnglish": "Shivamogga",
+   "districtNameLocal": "ಶಿವಮೊಗ್ಗ",
+   "census2011Code": "568",
+   "census2001Code": "15"
+  },
+  {
+   "sscode": "",
+   "districtCode": 548,
+   "districtNameEnglish": "Tumakuru",
+   "districtNameLocal": "ತುಮಕೂರು",
+   "census2011Code": "571",
+   "census2001Code": "18"
+  },
+  {
+   "sscode": "",
+   "districtCode": 549,
+   "districtNameEnglish": "Udupi",
+   "districtNameLocal": "ಉಡುಪಿ",
+   "census2011Code": "569",
+   "census2001Code": "16"
+  },
+  {
+   "sscode": "",
+   "districtCode": 550,
+   "districtNameEnglish": "Uttara Kannada",
+   "districtNameLocal": "ಉತ್ತರ ಕನ್ನಡ",
+   "census2011Code": "563",
+   "census2001Code": "10"
+  },
+  {
+   "sscode": null,
+   "districtCode": 738,
+   "districtNameEnglish": "Vijayanagara",
+   "districtNameLocal": "vijayangara",
+   "census2011Code": "000",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 530,
+   "districtNameEnglish": "Vijayapura",
+   "districtNameLocal": "ವಿಜಯಾಪುರ",
+   "census2011Code": "557",
+   "census2001Code": "03"
+  },
+  {
+   "sscode": "",
+   "districtCode": 635,
+   "districtNameEnglish": "Yadgir",
+   "districtNameLocal": "ಯಾದಗಿರಿ",
+   "census2011Code": "580",
+   "census2001Code": "04"
+  }
+ ],
+ "30": [
+  {
+   "sscode": null,
+   "census2011Code": null,
+   "census2001Code": null,
+   "districtCode": 793,
+   "districtNameEnglish": "Kushavati",
+   "districtNameLocal": "Kushavati"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "585",
+   "census2001Code": "01",
+   "districtCode": 551,
+   "districtNameEnglish": "North Goa",
+   "districtNameLocal": "NORTH GOA                                         "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "586",
+   "census2001Code": "02",
+   "districtCode": 552,
+   "districtNameEnglish": "South Goa",
+   "districtNameLocal": "SOUTH GOA                                         "
+  }
+ ],
+ "31": [
+  {
+   "sscode": "",
+   "census2011Code": "587",
+   "census2001Code": "01",
+   "districtCode": 553,
+   "districtNameEnglish": "Lakshadweep District",
+   "districtNameLocal": "LAKSHADWEEP DISTRICT                              "
+  }
+ ],
+ "32": [
+  {
+   "sscode": "11",
+   "districtCode": 554,
+   "districtNameEnglish": "Alappuzha",
+   "districtNameLocal": "ആലപ്പുഴ",
+   "census2011Code": "598",
+   "census2001Code": "11"
+  },
+  {
+   "sscode": "08",
+   "districtCode": 555,
+   "districtNameEnglish": "Ernakulam",
+   "districtNameLocal": "എറണാകുളം",
+   "census2011Code": "595",
+   "census2001Code": "08"
+  },
+  {
+   "sscode": "09",
+   "districtCode": 556,
+   "districtNameEnglish": "Idukki",
+   "districtNameLocal": "ഇടുക്കി",
+   "census2011Code": "596",
+   "census2001Code": "09"
+  },
+  {
+   "sscode": "02",
+   "districtCode": 557,
+   "districtNameEnglish": "Kannur",
+   "districtNameLocal": "കണ്ണൂര്‍",
+   "census2011Code": "589",
+   "census2001Code": "02"
+  },
+  {
+   "sscode": "01",
+   "districtCode": 558,
+   "districtNameEnglish": "Kasaragod",
+   "districtNameLocal": "കാസര്‍കോഡ്",
+   "census2011Code": "588",
+   "census2001Code": "01"
+  },
+  {
+   "sscode": "13",
+   "districtCode": 559,
+   "districtNameEnglish": "Kollam",
+   "districtNameLocal": "കൊല്ലം",
+   "census2011Code": "600",
+   "census2001Code": "13"
+  },
+  {
+   "sscode": "10",
+   "districtCode": 560,
+   "districtNameEnglish": "Kottayam",
+   "districtNameLocal": "കോട്ടയം",
+   "census2011Code": "597",
+   "census2001Code": "10"
+  },
+  {
+   "sscode": "04",
+   "districtCode": 561,
+   "districtNameEnglish": "Kozhikode",
+   "districtNameLocal": "കോഴിക്കോട്",
+   "census2011Code": "591",
+   "census2001Code": "04"
+  },
+  {
+   "sscode": "05",
+   "districtCode": 562,
+   "districtNameEnglish": "Malappuram",
+   "districtNameLocal": "മലപ്പുറം",
+   "census2011Code": "592",
+   "census2001Code": "05"
+  },
+  {
+   "sscode": "06",
+   "districtCode": 563,
+   "districtNameEnglish": "Palakkad",
+   "districtNameLocal": "പാലക്കാട്",
+   "census2011Code": "593",
+   "census2001Code": "06"
+  },
+  {
+   "sscode": "12",
+   "districtCode": 564,
+   "districtNameEnglish": "Pathanamthitta",
+   "districtNameLocal": "പത്തനംതിട്ട",
+   "census2011Code": "599",
+   "census2001Code": "12"
+  },
+  {
+   "sscode": "14",
+   "districtCode": 565,
+   "districtNameEnglish": "Thiruvananthapuram",
+   "districtNameLocal": "തിരുവനന്തപുരം",
+   "census2011Code": "601",
+   "census2001Code": "14"
+  },
+  {
+   "sscode": "07",
+   "districtCode": 566,
+   "districtNameEnglish": "Thrissur",
+   "districtNameLocal": "തൃശ്ശൂര്‍",
+   "census2011Code": "594",
+   "census2001Code": "07"
+  },
+  {
+   "sscode": "03",
+   "districtCode": 567,
+   "districtNameEnglish": "Wayanad",
+   "districtNameLocal": "വയനാട്",
+   "census2011Code": "590",
+   "census2001Code": "03"
+  }
+ ],
+ "33": [
+  {
+   "sscode": "17",
+   "census2011Code": "616",
+   "census2001Code": "17",
+   "districtCode": 610,
+   "districtNameEnglish": "Ariyalur",
+   "districtNameLocal": "அரியலூர்"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 730,
+   "districtNameEnglish": "Chengalpattu",
+   "districtNameLocal": "செங்கல்பட்டு"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "603",
+   "census2001Code": "02",
+   "districtCode": 568,
+   "districtNameEnglish": "Chennai",
+   "districtNameLocal": "CHENNAI                                           "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "632",
+   "census2001Code": "12",
+   "districtCode": 569,
+   "districtNameEnglish": "Coimbatore",
+   "districtNameLocal": "COIMBATORE                                        "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "617",
+   "census2001Code": "18",
+   "districtCode": 570,
+   "districtNameEnglish": "Cuddalore",
+   "districtNameLocal": "CUDDALORE                                         "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "630",
+   "census2001Code": "05",
+   "districtCode": 571,
+   "districtNameEnglish": "Dharmapuri",
+   "districtNameLocal": "DHARMAPURI                                        "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "612",
+   "census2001Code": "13",
+   "districtCode": 572,
+   "districtNameEnglish": "Dindigul",
+   "districtNameLocal": "DINDIGUL                                          "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "610",
+   "census2001Code": "10",
+   "districtCode": 573,
+   "districtNameEnglish": "Erode",
+   "districtNameLocal": "ERODE                                             "
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 729,
+   "districtNameEnglish": "Kallakurichi",
+   "districtNameLocal": "கள்ளக்குறிச்சி"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "604",
+   "census2001Code": "03",
+   "districtCode": 574,
+   "districtNameEnglish": "Kancheepuram",
+   "districtNameLocal": "KANCHIPURAM                                       "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "629",
+   "census2001Code": "30",
+   "districtCode": 575,
+   "districtNameEnglish": "Kanniyakumari",
+   "districtNameLocal": "KANNIYAKUMARI                                     "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "613",
+   "census2001Code": "14",
+   "districtCode": 576,
+   "districtNameEnglish": "Karur",
+   "districtNameLocal": "KARUR                                             "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "631",
+   "census2001Code": "05",
+   "districtCode": 577,
+   "districtNameEnglish": "Krishnagiri",
+   "districtNameLocal": "KRISHNAGIRI                                       "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "623",
+   "census2001Code": "24",
+   "districtCode": 578,
+   "districtNameEnglish": "Madurai",
+   "districtNameLocal": "MADURAI                                           "
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 735,
+   "districtNameEnglish": "Mayiladuthurai",
+   "districtNameLocal": null
+  },
+  {
+   "sscode": "",
+   "census2011Code": "618",
+   "census2001Code": "19",
+   "districtCode": 579,
+   "districtNameEnglish": "Nagapattinam",
+   "districtNameLocal": "NAGAPATTINAM                                      "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "609",
+   "census2001Code": "09",
+   "districtCode": 580,
+   "districtNameEnglish": "Namakkal",
+   "districtNameLocal": "NAMAKKAL                                          "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "615",
+   "census2001Code": "16",
+   "districtCode": 581,
+   "districtNameEnglish": "Perambalur",
+   "districtNameLocal": "PERAMBALUR                                        "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "621",
+   "census2001Code": "22",
+   "districtCode": 582,
+   "districtNameEnglish": "Pudukkottai",
+   "districtNameLocal": "PUDUKKOTTAI                                       "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "626",
+   "census2001Code": "27",
+   "districtCode": 583,
+   "districtNameEnglish": "Ramanathapuram",
+   "districtNameLocal": "RAMANATHAPURAM                                    "
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 731,
+   "districtNameEnglish": "Ranipet",
+   "districtNameLocal": "ராணிப்பேட்டை"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "608",
+   "census2001Code": "08",
+   "districtCode": 584,
+   "districtNameEnglish": "Salem",
+   "districtNameLocal": "SALEM                                             "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "622",
+   "census2001Code": "23",
+   "districtCode": 585,
+   "districtNameEnglish": "Sivaganga",
+   "districtNameLocal": "SIVAGANGA                                         "
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 733,
+   "districtNameEnglish": "Tenkasi",
+   "districtNameLocal": "தென்காசி"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "620",
+   "census2001Code": "21",
+   "districtCode": 586,
+   "districtNameEnglish": "Thanjavur",
+   "districtNameLocal": "THANJAVUR                                         "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "624",
+   "census2001Code": "25",
+   "districtCode": 588,
+   "districtNameEnglish": "Theni",
+   "districtNameLocal": "THENI                                             "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "611",
+   "census2001Code": "11",
+   "districtCode": 587,
+   "districtNameEnglish": "The Nilgiris",
+   "districtNameLocal": "THE NILGIRIS                                      "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "602",
+   "census2001Code": "01",
+   "districtCode": 589,
+   "districtNameEnglish": "Thiruvallur",
+   "districtNameLocal": "THIRUVALLUR                                       "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "619",
+   "census2001Code": "20",
+   "districtCode": 590,
+   "districtNameEnglish": "Thiruvarur",
+   "districtNameLocal": "THIRUVARUR                                        "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "627",
+   "census2001Code": "28",
+   "districtCode": 594,
+   "districtNameEnglish": "Thoothukkudi",
+   "districtNameLocal": "Thoothukkudi"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "614",
+   "census2001Code": "15",
+   "districtCode": 591,
+   "districtNameEnglish": "Tiruchirappalli",
+   "districtNameLocal": "TIRUCHIRAPPALLI                                   "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "628",
+   "census2001Code": "29",
+   "districtCode": 592,
+   "districtNameEnglish": "Tirunelveli",
+   "districtNameLocal": "TIRUNELVELI                                       "
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 732,
+   "districtNameEnglish": "Tirupathur",
+   "districtNameLocal": "திருப்பத்தூர்"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "633",
+   "census2001Code": null,
+   "districtCode": 634,
+   "districtNameEnglish": "Tiruppur",
+   "districtNameLocal": "TIRUPPUR                                          "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "606",
+   "census2001Code": "06",
+   "districtCode": 593,
+   "districtNameEnglish": "Tiruvannamalai",
+   "districtNameLocal": "TIRUVANNAMALAI                                    "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "605",
+   "census2001Code": "04",
+   "districtCode": 595,
+   "districtNameEnglish": "Vellore",
+   "districtNameLocal": "VELLORE                                           "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "607",
+   "census2001Code": "07",
+   "districtCode": 596,
+   "districtNameEnglish": "Viluppuram",
+   "districtNameLocal": "VILLUPURAM                                        "
+  },
+  {
+   "sscode": "",
+   "census2011Code": "625",
+   "census2001Code": "26",
+   "districtCode": 597,
+   "districtNameEnglish": "Virudhunagar",
+   "districtNameLocal": "VIRUDHUNAGAR                                      "
+  }
+ ],
+ "34": [
+  {
+   "sscode": "",
+   "districtCode": 598,
+   "districtNameEnglish": "Karaikal",
+   "districtNameLocal": "காரைக்கால்",
+   "census2011Code": "637",
+   "census2001Code": "04"
+  },
+  {
+   "sscode": "",
+   "districtCode": 600,
+   "districtNameEnglish": "Puducherry",
+   "districtNameLocal": "புதுச்சேரி",
+   "census2011Code": "635",
+   "census2001Code": "02"
+  }
+ ],
+ "35": [
+  {
+   "sscode": "",
+   "districtCode": 603,
+   "districtNameEnglish": "Nicobars",
+   "districtNameLocal": "NICOBARS                                          ",
+   "census2011Code": "638",
+   "census2001Code": "02"
+  },
+  {
+   "sscode": "",
+   "districtCode": 632,
+   "districtNameEnglish": "North And Middle Andaman",
+   "districtNameLocal": "NORTH AND MIDDLE ANDAMAN                          ",
+   "census2011Code": "639",
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 602,
+   "districtNameEnglish": "South Andamans",
+   "districtNameLocal": "SOUTH ANDAMANS                                    ",
+   "census2011Code": "640",
+   "census2001Code": "01"
+  }
+ ],
+ "36": [
+  {
+   "sscode": "",
+   "census2011Code": "532",
+   "census2001Code": "01",
+   "districtCode": 501,
+   "districtNameEnglish": "Adilabad",
+   "districtNameLocal": "ఆదిలాబాద్"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 690,
+   "districtNameEnglish": "Bhadradri Kothagudem",
+   "districtNameLocal": "భద్రాద్రి కొత్తగూడెం"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 686,
+   "districtNameEnglish": "Hanumakonda",
+   "districtNameLocal": "హనుమకొండ"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "536",
+   "census2001Code": "05",
+   "districtCode": 507,
+   "districtNameEnglish": "Hyderabad",
+   "districtNameLocal": "హైదరాబాద్"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 681,
+   "districtNameEnglish": "Jagitial",
+   "districtNameLocal": "జగిత్యాల"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 689,
+   "districtNameEnglish": "Jangoan",
+   "districtNameLocal": "జనగాం"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 687,
+   "districtNameEnglish": "Jayashankar Bhupalapally",
+   "districtNameLocal": "జయశంకర్ భూపాలపల్లి"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 695,
+   "districtNameEnglish": "Jogulamba Gadwal",
+   "districtNameLocal": "జోగులాంబ గద్వాల"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 685,
+   "districtNameEnglish": "Kamareddy",
+   "districtNameLocal": "కామారెడ్డి"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "534",
+   "census2001Code": "03",
+   "districtCode": 508,
+   "districtNameEnglish": "Karimnagar",
+   "districtNameLocal": "కరీంనగర్"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "541",
+   "census2001Code": "10",
+   "districtCode": 509,
+   "districtNameEnglish": "Khammam",
+   "districtNameLocal": "ఖమ్మం"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 699,
+   "districtNameEnglish": "Kumuram Bheem Asifabad",
+   "districtNameLocal": "కుమురం భీమ్ ఆసిఫాబాద్"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 688,
+   "districtNameEnglish": "Mahabubabad",
+   "districtNameLocal": "మహబుబాబాద్"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "538",
+   "census2001Code": "07",
+   "districtCode": 512,
+   "districtNameEnglish": "Mahabubnagar",
+   "districtNameLocal": "మహబూబ్ నగర్"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 684,
+   "districtNameEnglish": "Mancherial",
+   "districtNameLocal": "మంచిర్యాల్"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "535",
+   "census2001Code": "04",
+   "districtCode": 513,
+   "districtNameEnglish": "Medak",
+   "districtNameLocal": "మెదక్"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 700,
+   "districtNameEnglish": "Medchal Malkajgiri",
+   "districtNameLocal": "మేడ్చల్ మల్కాజిగిరి"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 720,
+   "districtNameEnglish": "Mulugu",
+   "districtNameLocal": "ములుగు"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 694,
+   "districtNameEnglish": "Nagarkurnool",
+   "districtNameLocal": "నాగర్ కర్నూల్"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "539",
+   "census2001Code": "08",
+   "districtCode": 514,
+   "districtNameEnglish": "Nalgonda",
+   "districtNameLocal": "నల్గొండ"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 721,
+   "districtNameEnglish": "Narayanpet",
+   "districtNameLocal": "నారాయణ్ పేట్"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 680,
+   "districtNameEnglish": "Nirmal",
+   "districtNameLocal": "నిర్మల్"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "533",
+   "census2001Code": "02",
+   "districtCode": 516,
+   "districtNameEnglish": "Nizamabad",
+   "districtNameLocal": "నిజామాబాదు"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 682,
+   "districtNameEnglish": "Peddapalli",
+   "districtNameLocal": "పెద్దపల్లి"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 683,
+   "districtNameEnglish": "Rajanna Sircilla",
+   "districtNameLocal": "రాజన్న సిరిసిల్ల"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "537",
+   "census2001Code": "06",
+   "districtCode": 518,
+   "districtNameEnglish": "Ranga Reddy",
+   "districtNameLocal": "రంగా రెడ్డి"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 691,
+   "districtNameEnglish": "Sangareddy",
+   "districtNameLocal": "సంగారెడ్డి"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 692,
+   "districtNameEnglish": "Siddipet",
+   "districtNameLocal": "సిద్దిపేట"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 696,
+   "districtNameEnglish": "Suryapet",
+   "districtNameLocal": "సూర్యాపేట"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 698,
+   "districtNameEnglish": "Vikarabad",
+   "districtNameLocal": "వికారాబాద్"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 693,
+   "districtNameEnglish": "Wanaparthy",
+   "districtNameLocal": "వనపర్తి"
+  },
+  {
+   "sscode": "",
+   "census2011Code": "540",
+   "census2001Code": "09",
+   "districtCode": 522,
+   "districtNameEnglish": "Warangal",
+   "districtNameLocal": "వరంగల్"
+  },
+  {
+   "sscode": null,
+   "census2011Code": "000",
+   "census2001Code": null,
+   "districtCode": 697,
+   "districtNameEnglish": "Yadadri Bhuvanagiri",
+   "districtNameLocal": "యదాద్రి భువనగిరి"
+  }
+ ],
+ "37": [
+  {
+   "sscode": null,
+   "districtCode": 798,
+   "districtNameEnglish": "Changthang",
+   "districtNameLocal": "Changthang",
+   "census2011Code": null,
+   "census2001Code": null
+  },
+  {
+   "sscode": null,
+   "districtCode": 801,
+   "districtNameEnglish": "Drass",
+   "districtNameLocal": "Drass",
+   "census2011Code": null,
+   "census2001Code": null
+  },
+  {
+   "sscode": "",
+   "districtCode": 6,
+   "districtNameEnglish": "Kargil",
+   "districtNameLocal": "KARGIL                                            ",
+   "census2011Code": "004",
+   "census2001Code": "08"
+  },
+  {
+   "sscode": "",
+   "districtCode": 9,
+   "districtNameEnglish": "Leh Ladakh",
+   "districtNameLocal": "LEH LADAKH                                        ",
+   "census2011Code": "003",
+   "census2001Code": "07"
+  },
+  {
+   "sscode": null,
+   "districtCode": 799,
+   "districtNameEnglish": "Nubra",
+   "districtNameLocal": "Nubra",
+   "census2011Code": null,
+   "census2001Code": null
+  },
+  {
+   "sscode": null,
+   "districtCode": 802,
+   "districtNameEnglish": "Sankoo",
+   "districtNameLocal": "Sankoo",
+   "census2011Code": null,
+   "census2001Code": null
+  },
+  {
+   "sscode": null,
+   "districtCode": 797,
+   "districtNameEnglish": "Sham",
+   "districtNameLocal": "Sham",
+   "census2011Code": null,
+   "census2001Code": null
+  },
+  {
+   "sscode": null,
+   "districtCode": 800,
+   "districtNameEnglish": "Zanskar",
+   "districtNameLocal": "Zanskar",
+   "census2011Code": null,
+   "census2001Code": null
+  }
+ ],
+ "38": [
+  {
+   "sscode": "",
+   "districtCode": 465,
+   "districtNameEnglish": "Dadra And Nagar Haveli",
+   "districtNameLocal": "DADRA AND NAGAR HAVELI",
+   "census2011Code": "496",
+   "census2001Code": "01"
+  },
+  {
+   "sscode": "",
+   "districtCode": 463,
+   "districtNameEnglish": "Daman",
+   "districtNameLocal": "DAMAN",
+   "census2011Code": "495",
+   "census2001Code": "02"
+  },
+  {
+   "sscode": "",
+   "districtCode": 464,
+   "districtNameEnglish": "Diu",
+   "districtNameLocal": "DIU",
+   "census2011Code": "494",
+   "census2001Code": "01"
+  }
+ ]
+}

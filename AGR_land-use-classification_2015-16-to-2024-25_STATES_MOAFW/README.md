@@ -15,6 +15,7 @@ From the Ministry of Agriculture's annual land use publication. Areas in thousan
 
 | Column | Meaning |
 |---|---|
+| `lgd_state_code` | State/UT code in the Local Government Directory (LGD), from [`_reference/geography.csv`](../_reference/geography.csv). Blank for All India and for old units LGD no longer lists |
 | `geographical_area_000_ha` | Total geographical area |
 | `reporting_area_000_ha` | Area with land-use records |
 | `forests_000_ha` | Land classed as forest |
@@ -32,3 +33,4 @@ From the Ministry of Agriculture's annual land use publication. Areas in thousan
 
 - Blank cells are blank in the publication; they are not zeros.
 - Columns 12-21 are blank for Goa 2024-25, Gujarat, Haryana, Himachal Pradesh, Jharkhand, Karnataka and Kerala (a page is missing from the source); these rows are marked `columns_12_to_21:page_missing_in_publication`.
+- `lgd_state_code` added on 5 Nov 2026 from the LGD directory (see [`_reference/README.md`](../_reference/README.md)). LGD codes identify today's state or district; for years before a split (Telangana 2014, Ladakh 2019, new districts) the same code covers a larger area than it does now.

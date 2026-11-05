@@ -1,0 +1,22 @@
+lens_id,lens_name,sub_theme_id,sub_theme_name
+CAR,Climate adaptation & resilience,CAR-HEAT,Heat & temperature
+CAR,Climate adaptation & resilience,CAR-RAIN,"Rainfall, floods & drought"
+CAR,Climate adaptation & resilience,CAR-WIND,Wind & storms
+CAR,Climate adaptation & resilience,CAR-AIR,Air quality
+CAR,Climate adaptation & resilience,CAR-HOUSING,Housing & living conditions
+CAR,Climate adaptation & resilience,CAR-EXPOSURE,Population exposure & vulnerability
+CAR,Climate adaptation & resilience,CAR-HEALTH,Health impacts & services
+CAR,Climate adaptation & resilience,CAR-MORTALITY,Disaster deaths & damage
+CAR,Climate adaptation & resilience,CAR-LAND,"Land, forest & green cover"
+CAR,Climate adaptation & resilience,CAR-WATER,Water & sanitation
+CAR,Climate adaptation & resilience,CAR-GOV,Preparedness & governance
+EPM,Energy policy & markets,EPM-DEMAND,Power demand & supply
+EPM,Energy policy & markets,EPM-RENEW,Renewable energy
+EPM,Energy policy & markets,EPM-ACCESS,Household energy access
+MAC,Macroeconomic health,MAC-INDUSTRY,Industry & output
+MAC,Macroeconomic health,MAC-LABOUR,Employment & labour
+MAC,Macroeconomic health,MAC-AGRI,Agriculture & land use
+MAC,Macroeconomic health,MAC-WELFARE,"Income, poverty & welfare"
+EQM,Equity markets,EQM-SECTOR,Sector exposure to climate risk
+COM,Commodity markets,COM-CROPS,Crop production & area
+COM,Commodity markets,COM-WEATHER,Weather risk to crops

@@ -27,3 +27,14 @@ CLAUDE.md
 # large raw downloads: links in each _sources README
 _sources/imd-gridded/raw/
 _sources/cpcb-aqi-bulletin/raw/
+
+# pipeline scripts are committed (they regenerate the CSVs from raw/)
+!pipelines/
+!pipelines/**/*.py
+!pipelines/**/*.sh
+
+# NASA POWER daily downloads (about 60 MB): steps in _sources/nasa-power/README.md
+_sources/nasa-power/raw/
+
+# NASA FIRMS fire detections (about 150 MB): steps in _sources/nasa-firms/README.md
+_sources/nasa-firms/raw/

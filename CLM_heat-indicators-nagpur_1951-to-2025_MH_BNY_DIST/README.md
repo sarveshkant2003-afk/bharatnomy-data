@@ -24,6 +24,8 @@ One row per year for Nagpur: hottest day and night, heat wave days, warm nights,
 | Column | Meaning |
 |---|---|
 | `state_ut`, `district` | Maharashtra, Nagpur |
+| `lgd_state_code` | State/UT code in the Local Government Directory (LGD), from [`_reference/geography.csv`](../_reference/geography.csv). Blank for All India and for old units LGD no longer lists |
+| `lgd_district_code` | District code in the Local Government Directory (LGD), from [`_reference/geography.csv`](../_reference/geography.csv). Blank for totals and names that could not be matched |
 | `year` | Calendar year |
 | `tmax_highest_c`, `tmin_highest_c` | Highest daily maximum / minimum temperature of the year, C |
 | `tmax_mean_mar_may_c`, `tmin_mean_mar_may_c` | Mean daily max / min temperature, March-May, C |
@@ -44,3 +46,4 @@ One row per year for Nagpur: hottest day and night, heat wave days, warm nights,
 - **LST is incomplete for now:** day LST covers 2002-2022 and night LST 2002-2011, because the download was stopped partway; only years with all 8-day composites downloaded are filled. 2001 has gaps in the MODIS record and is left blank.
 - Land surface temperature is the temperature of the ground and roofs, not of the air; it runs well above air temperature on summer afternoons.
 - Blank cells are years outside a source's coverage.
+- `lgd_state_code` and `lgd_district_code` added on 5 Nov 2026 from the LGD directory (see [`_reference/README.md`](../_reference/README.md)). LGD codes identify today's state or district; for years before a split (Telangana 2014, Ladakh 2019, new districts) the same code covers a larger area than it does now.

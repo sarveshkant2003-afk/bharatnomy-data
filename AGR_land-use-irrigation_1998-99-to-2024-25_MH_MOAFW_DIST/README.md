@@ -16,6 +16,8 @@ The nine-fold land use classification (forests, non-agricultural uses, barren la
 |---|---|
 | `state_ut` | Maharashtra |
 | `district` | District as spelled on the portal (current names, e.g. Ahilyanagar, even for old years). `State total` = the portal's "Total of Maharashtra" row. `Maharashtra_Total` = a second total row the portal prints for 2021-22 to 2023-24 with only cropped-area and irrigation figures |
+| `lgd_state_code` | State/UT code in the Local Government Directory (LGD), from [`_reference/geography.csv`](../_reference/geography.csv). Blank for All India and for old units LGD no longer lists |
+| `lgd_district_code` | District code in the Local Government Directory (LGD), from [`_reference/geography.csv`](../_reference/geography.csv). Blank for totals and names that could not be matched |
 | `year` | Agricultural year (July-June) |
 | `reporting_area_ha` | Area for which land use is reported, ha |
 | `forests_ha` ... `fallow_land_total_ha` | Classification of reporting area, ha (same items as `AGR_land-use-classification_*`) |
@@ -28,3 +30,4 @@ The nine-fold land use classification (forests, non-agricultural uses, barren la
 - The portal has district data for Maharashtra only for 1998-99 to 2002-03 and 2020-21 to 2024-25; other years return empty tables.
 - Since 2020-21 most districts show `-` for cropped and irrigated area (district irrigation is not reported), so irrigation is only available for 1998-99 to 2002-03. Cells printed as `-` or left empty are blank here; the portal does not say why.
 - Agricultural vs non-agricultural land: agricultural land = net sown + current fallows + other fallows + culturable waste + tree crops (the LUS definition of agricultural or culturable land, as in `agricultural_land_000_ha` of `AGR_land-use-classification_*`); non-agricultural uses are in `area_non_agricultural_uses_ha`. Irrigated vs rain-fed: rain-fed = `net_area_sown_ha` - `net_irrigated_area_total_ha`.
+- `lgd_state_code` and `lgd_district_code` added on 5 Nov 2026 from the LGD directory (see [`_reference/README.md`](../_reference/README.md)). LGD codes identify today's state or district; for years before a split (Telangana 2014, Ladakh 2019, new districts) the same code covers a larger area than it does now.

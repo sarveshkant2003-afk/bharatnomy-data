@@ -1,0 +1,53 @@
+variable_id,name,lens_id,sub_theme_id,dataset,column,unit,geo_level,frequency,earliest_period,latest_period,type
+air-quality-index-aqi,Air Quality Index (AQI),CAR,CAR-AIR,ENV_aqi-daily_2015-to-2026_STATES_CPCB_CITY,aqi; air_quality,index (0-500),CITY,daily,2015-05-01,2026-10-27,raw
+crop-residue-burning,Crop residue burning,CAR,CAR-AIR,ENV_active-fires_2001-to-2025_STATES_BNY_DIST,fire_detections; fire_detections_confidence_30_plus; fire_detections_oct_dec; fire_detections_mar_may,fire detections per year,DIST,annual,2001,2025,derived
+monitoring-stations,Monitoring stations,CAR,CAR-AIR,ENV_aqi-days-by-category_2015-to-2026_STATES_BNY_CITY,stations_reporting_max,count,CITY,annual,2015,2026,derived
+very-poor-severe-aqi-days,Very poor / severe AQI days,CAR,CAR-AIR,ENV_aqi-days-by-category_2015-to-2026_STATES_BNY_CITY,days_very_poor_or_severe; days_very_poor; days_severe,days per year,CITY,annual,2015,2026,derived
+children-under-5-share,Children under 5 share,CAR,CAR-EXPOSURE,POP_single-year-age_2011_MH_ORGI_DIST,age; persons_total,persons by single year of age,DIST,one-off,2011,2011,raw
+elderly-population-share,Elderly population share,CAR,CAR-EXPOSURE,POP_single-year-age_2011_MH_ORGI_DIST,age; persons_total,persons by single year of age,DIST,one-off,2011,2011,raw
+literacy-rate,Literacy rate,CAR,CAR-EXPOSURE,POP_census-pca_2011_STATES_ORGI_DIST,literates_persons; population_age_0_6_persons; population_persons,persons,DIST,one-off,2011,2011,raw
+population-density,Population & density,CAR,CAR-EXPOSURE,POP_census-pca_2011_STATES_ORGI_DIST,population_persons; households,persons,DIST,one-off,2011,2011,raw
+slum-population,Slum population,CAR,CAR-EXPOSURE,HOU_slum-population_2011_STATES_ORGI_CITY,population_persons,persons,CITY,one-off,2011,2011,raw
+heatwave-days,Heatwave days,CAR,CAR-HEAT,CLM_temperature-indices_1951-to-2024_MH_BNY_DIST,heatwave_days; severe_heatwave_days,days per year,DIST,annual,1951,2024,derived
+humidity-heat-index,Humidity / heat index,CAR,CAR-HEAT,CLM_wind-humidity_1981-to-2025_MH_BNY_DIST,relative_humidity_mean_pct; relative_humidity_mean_mar_may_pct; relative_humidity_mean_jun_sep_pct; wet_bulb_temp_highest_c; wet_bulb_temp_mean_mar_may_c,%; °C,DIST,annual,1981,2025,derived
+land-surface-temperature,Land surface temperature,CAR,CAR-HEAT,CLM_heat-indicators-nagpur_1951-to-2025_MH_BNY_DIST,lst_day_mean_mar_may_c; lst_night_mean_mar_may_c; lst_day_highest_8day_c; lst_night_highest_8day_c,°C,CITY,annual,2002,2022,derived
+maximum-temperature,Maximum temperature,CAR,CAR-HEAT,CLM_temperature-indices_1951-to-2024_MH_BNY_DIST,tmax_mean_c; tmax_highest_c; tmax_mean_mar_may_c; days_tmax_40c_or_more; days_tmax_45c_or_more; days_tmax_above_p90,°C; days,DIST,annual,1951,2024,derived
+minimum-temperature,Minimum temperature,CAR,CAR-HEAT,CLM_temperature-indices_1951-to-2024_MH_BNY_DIST,tmin_mean_c; tmin_highest_c; tmin_lowest_c; tmin_mean_mar_may_c; nights_tmin_above_p90,°C; days,DIST,annual,1951,2024,derived
+warm-nights,Warm nights,CAR,CAR-HEAT,CLM_temperature-indices_1951-to-2024_MH_BNY_DIST,warm_nights,days per year,DIST,annual,1951,2024,derived
+kutcha-tin-asbestos-roofs,Kutcha / tin / asbestos roofs,CAR,CAR-HOUSING,HOU_household-amenities-hh14_2011_MH_ORGI_SDT,roof_grass_thatch_bamboo_wood_mud_etc_pct; roof_plastic_polythene_pct; roof_g_i_metal_asbestos_sheets_pct,% of households,SDT,one-off,2011,2011,raw
+kutcha-houses,Kutcha houses,CAR,CAR-HOUSING,HOU_household-amenities-hh14_2011_MH_ORGI_SDT,house_structure_total_temporary_pct; house_structure_semi_permanent_pct; wall_mud_unburnt_brick_pct,% of households,SDT,one-off,2011,2011,raw
+forest-green-cover,Forest / green cover,CAR,CAR-LAND,ENV_forest-cover_2023_STATES_FSI_DIST,forest_cover_pct_of_area; forest_cover_total_sq_km,% of area; sq km,DIST,one-off,2023,2023,raw
+green-tree-cover,Green / tree cover,CAR,CAR-LAND,ENV_forest-cover_2023_STATES_FSI_DIST,forest_cover_pct_of_area; forest_cover_total_sq_km,% of area; sq km,DIST,one-off,2023,2023,raw
+green-cover,Green cover,CAR,CAR-LAND,ENV_forest-cover_2023_STATES_FSI_DIST,forest_cover_pct_of_area; forest_cover_total_sq_km,% of area; sq km,DIST,one-off,2023,2023,raw
+shelterbelts-tree-cover,Shelterbelts / tree cover,CAR,CAR-LAND,ENV_forest-cover_2023_STATES_FSI_DIST,forest_cover_pct_of_area; forest_cover_total_sq_km,% of area; sq km,DIST,one-off,2023,2023,raw
+deaths-due-to-cyclones-storms,Deaths due to cyclones & storms,CAR,CAR-MORTALITY,HLT_deaths-forces-of-nature_2017-to-2022_STATES_NCRB,deaths_total,deaths,STATE,annual,2017,2022,raw
+deaths-due-to-floods-heavy-rain,Deaths due to floods & heavy rain,CAR,CAR-MORTALITY,HLT_deaths-forces-of-nature_2017-to-2022_STATES_NCRB,deaths_total,deaths,STATE,annual,2017,2022,raw
+heatstroke-cases-deaths,Heatstroke cases & deaths,CAR,CAR-MORTALITY,HLT_deaths-forces-of-nature_2017-to-2022_STATES_NCRB,deaths_total,deaths,STATE,annual,2017,2022,raw
+lightning-strikes-deaths,Lightning strikes & deaths,CAR,CAR-MORTALITY,HLT_deaths-forces-of-nature_2017-to-2022_STATES_NCRB,deaths_total,deaths,STATE,annual,2017,2022,raw
+annual-rainfall,Annual rainfall,CAR,CAR-RAIN,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,rainfall_annual_mm,mm,DIST,annual,1951,2025,derived
+consecutive-dry-days,Consecutive dry days,CAR,CAR-RAIN,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,consecutive_dry_days,days,DIST,annual,1951,2025,derived
+drought-index,Drought index,CAR,CAR-RAIN,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,spi_annual; spi_jun_sep,index (unitless),DIST,annual,1951,2025,derived
+heavy-rainfall-days,Heavy rainfall days,CAR,CAR-RAIN,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,heavy_rain_days_64_5mm,days per year,DIST,annual,1951,2025,derived
+maximum-1-day-rainfall,Maximum 1-day rainfall,CAR,CAR-RAIN,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,rx1day_mm,mm,DIST,annual,1951,2025,derived
+maximum-5-day-rainfall,Maximum 5-day rainfall,CAR,CAR-RAIN,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,rx5day_mm,mm,DIST,annual,1951,2025,derived
+monsoon-dry-spells,Monsoon dry spells,CAR,CAR-RAIN,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,monsoon_dry_spells_7day; monsoon_longest_dry_spell_days,count; days,DIST,annual,1951,2025,derived
+northeast-monsoon-rainfall,Northeast monsoon rainfall,CAR,CAR-RAIN,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,rainfall_oct_dec_mm,mm,DIST,annual,1951,2025,derived
+pre-monsoon-rainfall,Pre-monsoon rainfall,CAR,CAR-RAIN,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,rainfall_mar_may_mm,mm,DIST,annual,1951,2025,derived
+rainfall-deviation,Rainfall deviation,CAR,CAR-RAIN,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,rainfall_annual_departure_pct; rainfall_mar_may_departure_pct; rainfall_jun_sep_departure_pct; rainfall_oct_dec_departure_pct,% (vs 1971-2020 average),DIST,annual,1951,2025,derived
+rainfall-variability,Rainfall variability,CAR,CAR-RAIN,CLM_rainfall-variability_1971-to-2020_MH_BNY_DIST,rainfall_annual_cv_pct; rainfall_jun_sep_cv_pct,%,DIST,one-off (1971-2020),1971,2020,derived
+rainy-days,Rainy days,CAR,CAR-RAIN,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,rainy_days_2_5mm,days per year,DIST,annual,1951,2025,derived
+southwest-monsoon-rainfall,Southwest monsoon rainfall,CAR,CAR-RAIN,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,rainfall_jun_sep_mm,mm,DIST,annual,1951,2025,derived
+very-extremely-heavy-rainfall-days,Very / extremely heavy rainfall days,CAR,CAR-RAIN,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,very_heavy_rain_days_115_6mm; extremely_heavy_rain_days_204_5mm,days per year,DIST,annual,1951,2025,derived
+no-drinking-water-within-premises,No drinking water within premises,CAR,CAR-WATER,HOU_household-amenities-hh14_2011_MH_ORGI_SDT,drinking_water_location_within_premises_pct; drinking_water_location_near_premises_pct; drinking_water_location_away_pct,% of households,SDT,one-off,2011,2011,raw
+solid-waste-management,Solid waste management,CAR,CAR-WATER,WAT_msw-generated-processed_2023-12_STATES_MOHUA,waste_generated_tpd; waste_processed_tpd,tonnes per day,STATE,one-off,2023-12,2023-12,raw
+calm-days,Calm days,CAR,CAR-WIND,CLM_wind-humidity_1981-to-2025_MH_BNY_DIST,calm_days_below_1ms,days per year,DIST,annual,1981,2025,derived
+extreme-wind-days,Extreme wind days,CAR,CAR-WIND,CLM_wind-humidity_1981-to-2025_MH_BNY_DIST,strong_wind_days_10_8ms,days per year,DIST,annual,1981,2025,derived
+maximum-wind-speed-gusts,Maximum wind speed / gusts,CAR,CAR-WIND,CLM_wind-humidity_1981-to-2025_MH_BNY_DIST,wind_speed_10m_max_highest_ms,m/s,DIST,annual,1981,2025,derived
+mean-wind-speed,Mean wind speed,CAR,CAR-WIND,CLM_wind-humidity_1981-to-2025_MH_BNY_DIST,wind_speed_10m_mean_ms,m/s,DIST,annual,1981,2025,derived
+wind-direction,Wind direction,CAR,CAR-WIND,CLM_wind-humidity_1981-to-2025_MH_BNY_DIST,wind_direction_prevailing; wind_direction_prevailing_days,compass sector; days,DIST,annual,1981,2025,derived
+electricity-access-supply-hours,Electricity access & supply hours,EPM,EPM-ACCESS,HOU_household-amenities-hh14_2011_MH_ORGI_SDT,lighting_electricity_pct,% of households,SDT,one-off,2011,2011,raw
+solid-fuel-use-for-cooking,Solid fuel use for cooking,EPM,EPM-ACCESS,HOU_household-amenities-hh14_2011_MH_ORGI_SDT,cooking_fuel_fire_wood_pct; cooking_fuel_crop_residue_pct; cooking_fuel_cowdung_cake_pct; cooking_fuel_coal_lignite_charcoal_pct,% of households,SDT,one-off,2011,2011,raw
+wind-speed-at-hub-height,Wind speed at hub height,EPM,EPM-RENEW,CLM_wind-humidity_1981-to-2025_MH_BNY_DIST,wind_speed_50m_mean_ms,m/s,DIST,annual,1981,2025,derived
+agri-vs-non-agri-land,Agri vs non-agri land,MAC,MAC-AGRI,AGR_land-use-irrigation_1998-99-to-2024-25_MH_MOAFW_DIST,net_area_sown_ha; forests_ha; area_non_agricultural_uses_ha; barren_unculturable_land_ha; reporting_area_ha,ha,DIST,annual,1998-99,2024-25,raw
+irrigated-vs-rain-fed-area,Irrigated vs rain-fed area,MAC,MAC-AGRI,AGR_land-use-irrigation_1998-99-to-2024-25_MH_MOAFW_DIST,net_irrigated_area_total_ha; net_area_sown_ha,ha,DIST,annual,1998-99,2024-25,raw
+agricultural-workers,Agricultural workers,MAC,MAC-LABOUR,POP_census-pca_2011_STATES_ORGI_DIST,main_cultivators_persons; main_agricultural_labourers_persons; marginal_cultivators_persons; marginal_agricultural_labourers_persons; total_workers_persons,persons,DIST,one-off,2011,2011,raw

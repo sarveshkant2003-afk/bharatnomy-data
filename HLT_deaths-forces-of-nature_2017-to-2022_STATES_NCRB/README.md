@@ -15,6 +15,7 @@ Deaths from heat/sun stroke, cold, lightning, floods, landslides and other natur
 | Column | Meaning |
 |---|---|
 | `state_ut` | State or UT as in that year's report (Dadra & Nagar Haveli and Daman & Diu separate until 2019) |
+| `lgd_state_code` | State/UT code in the Local Government Directory (LGD), from [`_reference/geography.csv`](../_reference/geography.csv). Blank for All India and for old units LGD no longer lists |
 | `year` | Calendar year |
 | `cause` | Avalanche, Exposure to Cold, Cyclone, Tornado, Tsunami, Earthquake, Epidemic, Flood, Heat/Sun Stroke, Landslide, Lightning, Torrential Rain, Forest Fire, Causes other than above, or Total |
 | `deaths_male`, `deaths_female`, `deaths_transgender`, `deaths_total` | Number of deaths |
@@ -28,3 +29,4 @@ Deaths from heat/sun stroke, cold, lightning, floods, landslides and other natur
 - The 2020 table leaves Andaman & Nicobar Islands' Epidemic cells empty without explanation; they are blank here.
 - The "TOTAL (STATES)" and "TOTAL (UTs)" rows are left out; `All India` is kept.
 - The table-wise listing on the NCRB site stops at 2022; the 2023 and 2024 reports were not available table-wise.
+- `lgd_state_code` added on 5 Nov 2026 from the LGD directory (see [`_reference/README.md`](../_reference/README.md)). LGD codes identify today's state or district; for years before a split (Telangana 2014, Ladakh 2019, new districts) the same code covers a larger area than it does now.

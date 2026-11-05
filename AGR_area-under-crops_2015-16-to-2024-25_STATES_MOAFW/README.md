@@ -17,9 +17,11 @@ One column per crop, e.g. `rice_000_ha`. `total_*` columns are the publication's
 
 | Column | Meaning |
 |---|---|
+| `lgd_state_code` | State/UT code in the Local Government Directory (LGD), from [`_reference/geography.csv`](../_reference/geography.csv). Blank for All India and for old units LGD no longer lists |
 | `source_flag` | `provisional` = year printed with `(p)` |
 | `source_marks` | Symbols printed next to a number, as `<column>:<symbol>`. `*` is not explained by the source; bracketed numbers are area included in the total without a crop-wise split |
 
 ## Notes
 
 - Blank cells are blank in the publication; they are not zeros.
+- `lgd_state_code` added on 5 Nov 2026 from the LGD directory (see [`_reference/README.md`](../_reference/README.md)). LGD codes identify today's state or district; for years before a split (Telangana 2014, Ladakh 2019, new districts) the same code covers a larger area than it does now.

@@ -2,6 +2,8 @@
 
 **[Search the data →](https://sarveshkant2003-afk.github.io/bharatnomy-data/)** by topic, state, year or source.
 
+**[Variable map →](https://sarveshkant2003-afk.github.io/bharatnomy-data/variables.html)**: a searchable mind map of the climate sheet variables by Bharatnomy's five lenses and their sub-themes, showing which ones we have data for.
+
 Public datasets for Bharatnomy's research. One folder per table; each folder's `README.md` gives the source and explains every column.
 
 ## What's here
@@ -24,10 +26,17 @@ One folder per table, named by the [naming rules](#folder-names) below. Each fol
 | [`AGR_net-irrigated-area_2004-05-to-2020-21_STATES_RBI`](AGR_net-irrigated-area_2004-05-to-2020-21_STATES_RBI/) | Net irrigated area by state (older years) | RBI Handbook of Statistics on Indian States |
 | [`AGR_net-sown-area_2004-05-to-2020-21_STATES_RBI`](AGR_net-sown-area_2004-05-to-2020-21_STATES_RBI/) | Net sown area by state (older years) | RBI Handbook of Statistics on Indian States |
 | [`CLM_heat-indicators-nagpur_1951-to-2025_MH_BNY_DIST`](CLM_heat-indicators-nagpur_1951-to-2025_MH_BNY_DIST/) | Heat wave days, warm nights, hottest days, rainfall departure, land surface temperature, Nagpur | Our calculation from IMD gridded data and NASA MODIS |
+| [`CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST`](CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST/) | Annual and seasonal rainfall, departures, heavy-rain days, dry spells, SPI, Maharashtra districts | Our calculation from IMD gridded rainfall |
+| [`CLM_rainfall-variability_1971-to-2020_MH_BNY_DIST`](CLM_rainfall-variability_1971-to-2020_MH_BNY_DIST/) | Year-to-year rainfall variability, Maharashtra districts | Our calculation from IMD gridded rainfall |
+| [`CLM_temperature-indices_1951-to-2024_MH_BNY_DIST`](CLM_temperature-indices_1951-to-2024_MH_BNY_DIST/) | Mean and extreme temperature, heat wave days, warm nights, Maharashtra districts | Our calculation from IMD gridded temperature |
+| [`CLM_wind-humidity_1981-to-2025_MH_BNY_DIST`](CLM_wind-humidity_1981-to-2025_MH_BNY_DIST/) | Wind speed and direction, calm and strong-wind days, humidity, wet-bulb temperature, Maharashtra districts | Our calculation from NASA POWER |
 | [`ENV_aqi-daily_2015-to-2026_STATES_CPCB_CITY`](ENV_aqi-daily_2015-to-2026_STATES_CPCB_CITY/) | Daily Air Quality Index by city | CPCB daily AQI bulletins |
+| [`ENV_active-fires_2001-to-2025_STATES_BNY_DIST`](ENV_active-fires_2001-to-2025_STATES_BNY_DIST/) | Satellite fire detections (crop-residue and forest burning) by district, all India | Our count from NASA FIRMS MODIS |
+| [`ENV_aqi-days-by-category_2015-to-2026_STATES_BNY_CITY`](ENV_aqi-days-by-category_2015-to-2026_STATES_BNY_CITY/) | Days per year in each AQI category, very poor/severe days, stations reporting, by city | Our count from CPCB daily AQI bulletins |
 | [`ENV_forest-cover_2023_STATES_FSI_DIST`](ENV_forest-cover_2023_STATES_FSI_DIST/) | Forest cover by district | India State of Forest Report 2023 |
 | [`ENV_forest-tree-cover_2023_STATES_FSI`](ENV_forest-tree-cover_2023_STATES_FSI/) | Forest and tree cover by state | India State of Forest Report 2023 |
 | [`HLT_deaths-forces-of-nature_2017-to-2022_STATES_NCRB`](HLT_deaths-forces-of-nature_2017-to-2022_STATES_NCRB/) | Deaths from heat/sun stroke and other natural causes, by state | NCRB Accidental Deaths & Suicides in India |
+| [`HOU_household-amenities-hh14_2011_MH_ORGI_SDT`](HOU_household-amenities-hh14_2011_MH_ORGI_SDT/) | Household amenities and assets (roof material, water, electricity, cooking fuel, latrine, assets), Maharashtra districts and tehsils | Census 2011 table HH-14 |
 | [`HOU_slum-population_2011_STATES_ORGI_CITY`](HOU_slum-population_2011_STATES_ORGI_CITY/) | Slum population by town | Census 2011 slum PCA |
 | [`IND_asi-nic-1987-2-digit_1992-93-to-1997-98_STATES_MOSPI`](IND_asi-nic-1987-2-digit_1992-93-to-1997-98_STATES_MOSPI/) | Annual Survey of Industries by industry (NIC 1987 2-digit), by state | MoSPI ASI API |
 | [`IND_asi-nic-1987-3-digit_1992-93-to-1997-98_STATES_MOSPI`](IND_asi-nic-1987-3-digit_1992-93-to-1997-98_STATES_MOSPI/) | Annual Survey of Industries by industry (NIC 1987 3-digit), by state | MoSPI ASI API |
@@ -49,6 +58,8 @@ One folder per table, named by the [naming rules](#folder-names) below. Each fol
 
 Original source files (PDFs, API downloads) are in [`_sources/`](_sources/), one folder per release.
 
+Reference files are in [`_reference/`](_reference/) ([what they are](_reference/README.md)): `geography.csv` (state and district codes from LGD and Census 2011, with name variants), `lenses.csv` (lenses and sub-themes), `variables.csv` / `variables.xlsx` (the climate sheet variables we have data for, by their sheet names, with lens, unit, geography and coverage) and `variables-draft.csv` (where each climate sheet variable ended up). Scripts that build datasets are in [`pipelines/`](pipelines/).
+
 ## Find data by topic
 
 | Topic | Where |
@@ -60,11 +71,16 @@ Original source files (PDFs, API downloads) are in [`_sources/`](_sources/), one
 | Employment, occupations, job contracts, earnings (Nagpur unit-level survey records) | `LAB_plfs-*` |
 | Forest cover | `ENV_forest-*` |
 | Urban solid waste | `WAT_msw-*` |
-| Heat: temperature, heat waves, warm nights, land surface temperature, rainfall departure | `CLM_heat-indicators-*` (Nagpur) |
-| Air quality (AQI) | `ENV_aqi-*` |
+| Heat: temperature, heat waves, warm nights, land surface temperature | `CLM_temperature-indices_*` (Maharashtra districts); `CLM_heat-indicators-*` (Nagpur, with LST) |
+| Rainfall: seasonal totals, departure, heavy rain, dry spells, drought index (SPI), variability | `CLM_rainfall-*` (Maharashtra districts) |
+| District and state codes (LGD, Census 2011), name variants | [`_reference/geography.csv`](_reference/) |
+| Air quality (AQI), very poor / severe air days | `ENV_aqi-*` |
+| Wind, humidity, wet-bulb temperature | `CLM_wind-humidity_*` (Maharashtra districts) |
+| Fires, crop-residue burning | `ENV_active-fires_*` (all districts) |
 | Heat stroke deaths, deaths from natural causes | `HLT_deaths-forces-of-nature_*` |
 | Population, age, elderly, workers by category (cultivators, agricultural labourers) | `POP_*` |
 | Slums | `HOU_slum-*` |
+| Housing quality, roof material, drinking water, electricity, cooking fuel, latrines, household assets | `HOU_household-amenities-*` (Maharashtra, 2011) |
 | Tap water | `WAT_tap-water-*` |
 | District land use and irrigation | `AGR_land-use-irrigation_*_DIST` |
 
@@ -104,6 +120,8 @@ Example: `AGR_area-under-crops_2015-16-to-2024-25_STATES_MOAFW`.
 
 [`index.html`](index.html) is the search page, published with GitHub Pages at the link above. It reads `catalog.js`, which `tools/build_catalog.py` builds from every folder's name, README and CSV. A GitHub Action (`.github/workflows/pages.yml`) rebuilds `catalog.js` and republishes the page on every push, so a new folder that follows the naming rules shows up in search a minute or two after it is pushed. To try the page locally, run `python3 tools/build_catalog.py` first.
 
+
+[`variables.html`](variables.html) is the variable map (a searchable mind map of lenses, sub-themes and the climate sheet variables). It reads `registry.js`, which `tools/build_catalog.py` builds (with `registry.json`) from `_reference/lenses.csv` and `_reference/variables.csv`; the build fails if a variable points to a missing folder, column, lens or sub-theme, and so does the GitHub Action ([`validate.yml`](.github/workflows/validate.yml) on every push and pull request).
 ## Conventions
 
 - CSV, UTF-8, plain numbers. The unit is in the column name (`_000_ha` = thousand hectares, `_sq_km`, `_pct`, `_tpd` = tonnes per day).

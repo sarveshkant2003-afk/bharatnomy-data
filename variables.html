@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bharatnomy Variable Map</title>
+<meta name="description" content="Mind map of the climate variables in Bharatnomy's variable sheets, by lens, with search and data status.">
+<style>
+:root {
+  color-scheme: light;
+  --bg: #fbf8f1; --surface: #ffffff; --text: #241f19; --muted: #6e6658; --faint: #9a9182;
+  --border: #e9e2d3; --border-strong: #d9cfbb;
+  --accent: #1d6b52; --accent-soft: #e5f1eb; --mark: #fde9a6;
+  --shadow: 0 1px 2px rgba(60,45,20,.06), 0 6px 20px rgba(60,45,20,.08);
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; overflow: hidden; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .85em; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.bar { position: fixed; top: 0; left: 0; right: 0; z-index: 5; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 12px 16px; background: linear-gradient(180deg, #fffdf8 70%, rgba(251,248,241,0)); }
+.bar h1 { font-size: 18px; margin: 0; letter-spacing: -.01em; white-space: nowrap; }
+.search { position: relative; flex: 1 1 320px; max-width: 560px; }
+.search input { width: 100%; font: inherit; font-size: 15px; padding: 10px 14px 10px 38px; border: 1px solid var(--border-strong); border-radius: 999px; background: var(--surface); color: var(--text); box-shadow: var(--shadow); }
+.search input:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 4px var(--accent-soft), var(--shadow); }
+.search svg { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); color: var(--faint); pointer-events: none; }
+.count { color: var(--muted); font-size: 13px; white-space: nowrap; }
+.tools { display: flex; gap: 6px; margin-left: auto; flex-wrap: wrap; }
+.tools button, .tools a { font: inherit; font-size: 13px; border: 1px solid var(--border); background: var(--surface); color: var(--muted); border-radius: 999px; padding: 6px 12px; cursor: pointer; }
+.tools button:hover, .tools a:hover { color: var(--accent); border-color: var(--border-strong); text-decoration: none; }
+
+#map { position: fixed; inset: 0; width: 100%; height: 100%; cursor: grab; }
+#map:active { cursor: grabbing; }
+.link { fill: none; stroke-opacity: .6; }
+.node { cursor: pointer; }
+.node.var text { fill: var(--text); }
+.node.var text .unit { fill: var(--faint); font-size: 12px; }
+.node.var rect.hl { fill: var(--mark); opacity: .55; }
+.node.var:hover text .label { text-decoration: underline; }
+.node.sel text .label { fill: var(--accent); font-weight: 700; }
+.node.empty text { opacity: .55; }
+.node.sub:hover rect:first-child, .node.ds:hover rect:first-child { stroke-width: 2.5; }
+.node.lens:hover rect:first-child { filter: brightness(1.08); }
+#map { background-image: radial-gradient(#e7dfcd 1px, transparent 1px); background-size: 22px 22px; }
+
+.panel { position: fixed; right: 16px; top: 70px; z-index: 6; width: 360px; max-width: calc(100vw - 32px); max-height: calc(100vh - 90px); overflow: auto; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; box-shadow: var(--shadow); padding: 16px 18px; display: none; }
+.panel.open { display: block; }
+.panel h2 { font-size: 16px; margin: 0 26px 4px 0; line-height: 1.35; }
+.panel { border-top: 4px solid var(--lens, var(--accent)); }
+.panel .def { margin: 6px 0 10px; color: #4a4237; }
+.panel .status { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-weight: 600; color: var(--c); margin: 0 0 6px; }
+.panel .status .dot { width: 11px; height: 11px; border-radius: 50%; border: 2px solid var(--c); }
+.panel .status .dot.on { background: var(--c); }
+.panel .status .why { flex-basis: 100%; font-weight: 400; color: var(--muted); font-size: 13px; }
+.panel .crumb { font-size: 12px; color: var(--lens, var(--faint)); font-weight: 600; margin-bottom: 6px; }
+.panel dl { display: grid; grid-template-columns: 110px 1fr; gap: 5px 10px; margin: 10px 0; font-size: 13px; }
+.panel dt { color: var(--faint); }
+.panel dd { margin: 0; word-break: break-word; }
+.panel .close { position: absolute; right: 10px; top: 8px; border: 0; background: none; font-size: 22px; color: var(--faint); cursor: pointer; line-height: 1; }
+.panel .close:hover { color: var(--text); }
+.panel .links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+.panel .links a { font-size: 13px; border: 1px solid var(--border-strong); border-radius: 8px; padding: 5px 10px; color: var(--text); }
+.panel .links a.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.tag { font-size: 11.5px; border-radius: 5px; padding: 1px 7px; background: #f5efe2; }
+.tag.derived { background: #fdf0d9; color: #7a5410; }
+.tag.raw { background: var(--accent-soft); color: #15563f; }
+.hint .lg { display: inline-flex; align-items: center; gap: 5px; margin-right: 10px; color: var(--muted); }
+.hint .lg i { width: 10px; height: 10px; border-radius: 50%; border: 2px solid #b9b0a0; background: #fff; display: inline-block; }
+.hint { position: fixed; left: 16px; bottom: 12px; z-index: 5; color: var(--faint); font-size: 12.5px; background: rgba(251,248,241,.85); padding: 4px 8px; border-radius: 6px; }
+@media (max-width: 700px) {
+  .bar h1 { display: none; }
+  .tools { margin-left: 0; }
+  .panel { top: auto; bottom: 12px; right: 12px; left: 12px; width: auto; max-height: 55vh; }
+  .hint { display: none; }
+}
+</style>
+</head>
+<body>
+<div class="bar">
+  <h1>Bharatnomy Variable Map</h1>
+  <label class="search">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input id="q" type="search" placeholder="Search the sheet variables: heatwave, rainfall, PM2.5, cyclone…" autocomplete="off" aria-label="Search variables">
+  </label>
+  <span class="count" id="count"></span>
+  <div class="tools">
+    <button id="expand" type="button">Reset</button>
+    <button id="collapse" type="button">Close all</button>
+    <button id="fit" type="button">Fit to screen</button>
+    <a href="index.html">Dataset search</a>
+  </div>
+</div>
+<svg id="map" role="img" aria-label="Mind map of lenses and their variables"></svg>
+<div class="panel" id="panel" role="dialog" aria-label="Variable details"></div>
+<div class="hint"><span class="lg"><i style="background:#1d8a5a;border-color:#1d8a5a"></i>Available</span><span class="lg"><i style="background:#d08a16;border-color:#d08a16"></i>Partly available</span><span class="lg"><i></i>Not available yet</span> · Click a branch to open it · drag to move · scroll to zoom</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="registry.js?v=3"></script>
+<script>
+const REPO = "sarveshkant2003-afk/bharatnomy-data", BRANCH = "main";
+const R = window.REGISTRY || { lenses: [], datasets: {}, variables: [] };
+const COLORS = { CAR: "#1d6b52", EPM: "#b5651d", MAC: "#3d5a99", EQM: "#8a3e7a", COM: "#6f7a12" };
+const RIGHT = new Set(["CAR", "EPM"]);          // lenses drawn to the right of the centre; the rest go left
+const LEVELS = { IN: "All India", STATE: "State", DIST: "District", SDT: "Sub-district", CITY: "City", VIL: "Village" };
+const ROW = { lens: 64, var: 30 };                       // vertical space per node
+const STATUS = { found: ["#1d8a5a", "Available"], partial: ["#d08a16", "Partly available"], "not found": ["#b9b0a0", "Not available"], "not yet tried": ["#b9b0a0", "Not collected yet"] };
+const GAP = 64;                                       // horizontal gap between columns
+const MIN_ZOOM_FIT = 0.75;                            // "fit" never shrinks text below this
+const FONT = getComputedStyle(document.body).fontFamily;
+const ctx = document.createElement("canvas").getContext("2d");
+const textW = (t, size, weight) => { ctx.font = `${weight || 400} ${size}px ${FONT}`; return ctx.measureText(t).width; };
+
+const lensOf = {}, subName = {};
+R.lenses.forEach(l => l.sub_themes.forEach(s => { lensOf[s.id] = l.id; subName[s.id] = s.name; }));
+const VARS = (R.sheet_variables || []).map(v => ({ ...v, _t: [v.name, v.definition, v.sheet_unit, ...(v.data ? v.data.columns : [])].join(" ").toLowerCase() }));
+const hasData = v => v.status === "found" || v.status === "partial";
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const cut = (s, n) => s.length > n ? s.slice(0, n - 1) + "…" : s;
+const dsTitle = d => (R.datasets[d] || {}).title || d;
+
+const DEFAULT_OPEN = () => new Set(["root", "L:" + (R.lenses[0] || {}).id]);   // first lens open; one lens at a time
+let query = "", open = DEFAULT_OPEN(), selected = null;
+const terms = () => query.toLowerCase().split(/\s+/).filter(Boolean);
+const matching = () => { const t = terms(); return t.length ? VARS.filter(v => t.every(w => v._t.includes(w))) : VARS; };
+
+// ---------- tree: root -> lens -> sheet variable
+function buildTree(vars) {
+  const searching = terms().length > 0;
+  const root = { key: "root", kind: "root", name: "Bharatnomy", children: [] };
+  for (const l of R.lenses) {
+    const lv = vars.filter(v => v.lens_id === l.id).sort((a, b) => hasData(b) - hasData(a) || a.name.localeCompare(b.name));
+    if (searching && !lv.length) continue;
+    root.children.push({ key: "L:" + l.id, kind: "lens", lens: l.id, name: l.name, count: lv.length, have: lv.filter(hasData).length,
+      children: lv.map(v => ({ key: "V:" + v.name, kind: "var", lens: l.id, name: v.name, v })) });
+  }
+  return root;
+}
+function openForSearch(tree) {
+  open = new Set(["root"]);
+  (function walk(node) { if (node.children && node.children.length) { open.add(node.key); node.children.forEach(walk); } })(tree);
+}
+function visible(node) {
+  const n = { ...node, _hasKids: !!(node.children && node.children.length) };
+  n.children = open.has(node.key) && node.children ? node.children.map(visible) : null;
+  return n;
+}
+
+// ---------- labels and their sizes
+function label(d) {
+  const k = d.kind;
+  if (k === "root") return "Bharatnomy";
+  if (k === "lens") return d.name;
+  if (k === "sub") return cut(d.name, 40);
+  return cut(d.name, 60);
+}
+const SIZE = { root: [19, 750], lens: [16, 650], sub: [14.5, 600], var: [14, 500] };
+const countText = d => d.kind === "lens" ? `${d.have} / ${d.count}` : d.count ? `${d.have} / ${d.count}` : "none yet";
+function nodeW(d) {
+  const [sz, wt] = SIZE[d.kind];
+  if (d.kind === "root") return textW(label(d), sz, wt) + 44;
+  if (d.kind === "var") return 20 + textW(label(d), sz, wt) + 8;
+  const count = countText(d);
+  return 18 + textW(label(d), sz, wt) + 10 + textW(count, 12, 600) + 14 + (d._hasKids ? 22 : 0) + 4;
+}
+const nodeH = d => ({ root: 48, lens: 38, sub: 32, var: 24 }[d.kind]);
+
+// ---------- layout: root in the centre, lenses stacked on each side, an open lens's variables in columns
+const ROWH = 27, COL_GAP = 40, LENS_X = 170, BLOCK_GAP = 80;
+const svg = d3.select("#map");
+const g = svg.append("g");
+const gLinks = g.append("g"), gNodes = g.append("g");
+const zoom = d3.zoom().scaleExtent([0.3, 2.5]).on("zoom", e => g.attr("transform", e.transform));
+svg.call(zoom).on("dblclick.zoom", null);
+
+function layout(tree) {
+  const maxRows = Math.max(10, Math.floor((window.innerHeight - 150) / ROWH));
+  const root = { data: tree, depth: 0, px: 0, py: 0, dir: 1 };
+  root.w = nodeW(tree);
+  const nodes = [root], links = [];
+  for (const dir of [1, -1]) {
+    const lenses = tree.children.filter(l => RIGHT.has(l.lens) === (dir > 0));
+    const slots = lenses.map(l => {
+      const o = { data: { ...l, _hasKids: l.children.length > 0 }, depth: 1, dir, w: 0, vars: [] };
+      o.w = nodeW(o.data);
+      const isOpen = open.has(l.key) && l.children.length;
+      if (isOpen) {
+        const n = l.children.length, cols = Math.ceil(n / maxRows), rows = Math.ceil(n / cols);
+        o.rows = rows; o.cols = [];
+        for (let c = 0; c < cols; c++) o.cols.push(l.children.slice(c * rows, (c + 1) * rows));
+        o.slot = Math.max(64, rows * ROWH + 40);
+      } else o.slot = 64;
+      return o;
+    });
+    let y = -slots.reduce((a, o) => a + o.slot, 0) / 2;
+    for (const o of slots) {
+      o.py = y + o.slot / 2; o.px = dir * LENS_X; y += o.slot;
+      nodes.push(o);
+      links.push({ key: "rl:" + o.data.key, lens: o.data.lens, w: 3.2, d: curve(dir * root.w / 2, 0, o.px, o.py) });
+      if (!o.cols) continue;
+      const top = o.py - (o.rows * ROWH) / 2, bar = top - 6;
+      let x = o.px + dir * (o.w + BLOCK_GAP);
+      const spines = [];
+      o.cols.forEach((col, c) => {
+        const vs = col.map((v, r) => ({ data: v, depth: 2, dir, px: x, py: top + ROWH / 2 + r * ROWH, w: nodeW(v) }));
+        vs.forEach(v => nodes.push(v));
+        const sx = x - dir * 12;
+        spines.push(sx);
+        links.push({ key: "sp:" + o.data.key + c, lens: o.data.lens, w: 1.6, d: `M${sx},${bar} V${vs[vs.length - 1].py}` });
+        vs.forEach(v => links.push({ key: "tk:" + v.data.key, lens: o.data.lens, w: 1.4, d: `M${sx},${v.py} H${v.px - dir * 5}` }));
+        x += dir * (Math.max(...vs.map(v => v.w)) + COL_GAP);
+      });
+      links.push({ key: "lb:" + o.data.key, lens: o.data.lens, w: 2.2,
+        d: curve(o.px + dir * o.w, o.py, spines[0], bar) + (spines.length > 1 ? ` H${spines[spines.length - 1]}` : "") });
+    }
+  }
+  return { nodes, links };
+}
+function curve(sx, sy, tx, ty) {
+  const mx = sx + (tx - sx) * 0.55;
+  return `M${sx},${sy} C${mx},${sy} ${sx + (tx - sx) * 0.45},${ty} ${tx},${ty}`;
+}
+
+let current = [];
+function render(view) {
+  const vars = matching();
+  const { nodes, links } = layout(buildTree(vars));
+  current = nodes;
+  const t = svg.transition().duration(350);
+  gLinks.selectAll("path").data(links, d => d.key).join(
+    e => e.append("path").attr("class", "link").attr("fill", "none").attr("stroke", d => COLORS[d.lens]).attr("stroke-width", d => d.w)
+          .attr("d", d => d.d).attr("opacity", 0).call(s => s.transition(t).attr("opacity", 1)),
+    u => u.call(s => s.transition(t).attr("d", d => d.d)),
+    x => x.remove());
+  gNodes.selectAll("g.node").data(nodes, d => d.data.key).join(
+    e => { const s = e.append("g").attr("transform", d => `translate(${d.px},${d.py})`).attr("opacity", 0).on("click", (ev, d) => onClick(d));
+           s.call(drawNode); s.transition(t).attr("opacity", 1); return s; },
+    u => { u.selectAll("*").remove(); u.call(drawNode); u.transition(t).attr("transform", d => `translate(${d.px},${d.py})`); return u; },
+    x => x.remove());
+  document.getElementById("count").textContent = terms().length
+    ? `${vars.length} of ${VARS.length} sheet variables match`
+    : `${VARS.length} sheet variables · ${VARS.filter(hasData).length} with data`;
+  if (view === "fit") fitView();
+}
+
+function drawNode(sel) {
+  sel.each(function (d) {
+    const s = d3.select(this), k = d.data.kind, dir = d.dir || 1, col = k === "root" ? "#241f19" : COLORS[d.data.lens];
+    const w = d.w, h = nodeH(d.data), x0 = k === "root" ? -w / 2 : dir > 0 ? 0 : -w;
+    const isOpen = open.has(d.data.key), kids = d.data._hasKids;
+    s.attr("class", ["node", k, k === "var" && selected === d.data.key ? "sel" : "", k === "sub" && !d.data.count ? "empty" : ""].join(" "));
+    const [sz, wt] = SIZE[k];
+    if (k === "var") {
+      const v = d.data.v, [c] = STATUS[v.status] || STATUS["not yet tried"], ok = hasData(v);
+      if (terms().length) s.append("rect").attr("class", "hl").attr("x", dir > 0 ? 12 : -w).attr("y", -h / 2).attr("width", w - 12).attr("height", h).attr("rx", 6);
+      s.append("circle").attr("cx", dir > 0 ? 5 : -5).attr("r", 5).attr("fill", ok ? c : "#fff").attr("stroke", c).attr("stroke-width", 2);
+      s.append("text").attr("class", "label").attr("x", dir > 0 ? 16 : -16).attr("dy", "0.35em").attr("text-anchor", dir > 0 ? "start" : "end")
+        .attr("font-size", sz).attr("font-weight", ok ? 600 : 400).attr("fill", ok ? "#241f19" : "#8f8676").text(label(d.data));
+      s.append("title").text(`${v.name}: ${(STATUS[v.status] || [, ""])[1]}\n${v.definition}`);
+      return;
+    }
+    const filled = k === "root" || k === "lens";
+    s.append("rect").attr("x", x0).attr("y", -h / 2).attr("width", w).attr("height", h).attr("rx", h / 2)
+      .attr("fill", filled ? col : d3.color(col).copy({ opacity: k === "sub" ? 0.13 : 0.07 }))
+      .attr("stroke", filled ? "none" : col).attr("stroke-opacity", k === "sub" ? 0.75 : 0.45).attr("stroke-width", 1.5);
+    if (k === "root") { s.append("text").attr("text-anchor", "middle").attr("dy", "0.35em").attr("font-size", sz).attr("font-weight", wt).attr("fill", "#fff").text("Bharatnomy"); return; }
+    // text and count, laid out from the outer edge of the pill
+    const count = countText(d.data);
+    const lw = textW(label(d.data), sz, wt), cw = textW(count, 12, 600);
+    const toggle = kids ? 22 : 0;
+    let x = x0 + 18;
+    s.append("text").attr("x", x).attr("dy", "0.35em").attr("font-size", sz).attr("font-weight", wt).attr("fill", filled ? "#fff" : "#241f19").text(label(d.data));
+    x += lw + 10;
+    s.append("rect").attr("x", x - 5).attr("y", -9).attr("width", cw + 10).attr("height", 18).attr("rx", 9)
+      .attr("fill", filled ? "rgba(255,255,255,.25)" : d3.color(col).copy({ opacity: 0.16 }));
+    s.append("text").attr("x", x).attr("dy", "0.35em").attr("font-size", 12).attr("font-weight", 600).attr("fill", filled ? "#fff" : col).text(count);
+    if (kids) {
+      const cx = x + cw + 14 + 8;
+      s.append("circle").attr("cx", cx).attr("r", 8).attr("fill", filled ? "rgba(255,255,255,.25)" : "#fff").attr("stroke", filled ? "none" : col).attr("stroke-width", 1.2);
+      s.append("text").attr("x", cx).attr("dy", "0.33em").attr("text-anchor", "middle").attr("font-size", 13).attr("font-weight", 700)
+        .attr("fill", filled ? "#fff" : col).text(isOpen ? "–" : "+");
+    }
+    s.append("title").text(d.data.name + (kids ? (isOpen ? " (click to close)" : " (click to open)") : ""));
+  });
+}
+
+function onClick(d) {
+  const k = d.data.kind;
+  if (k === "var") { selected = d.data.key; showPanel(d.data.v); render(); return; }
+  if (k === "root" || !d.data._hasKids) return;
+  const wasOpen = open.has(d.data.key);
+  if (!terms().length) open = new Set(["root"]);          // one lens at a time (search keeps every match open)
+  wasOpen ? open.delete(d.data.key) : open.add(d.data.key);
+  render("fit");
+}
+function showPanel(v) {
+  const lens = R.lenses.find(l => l.id === v.lens_id) || {};
+  const [c, label] = STATUS[v.status] || STATUS["not yet tried"];
+  const d = v.data, ds = d ? (R.datasets[d.dataset] || {}) : null;
+  const period = d && d.earliest_period ? (d.earliest_period === d.latest_period ? d.earliest_period : `${d.earliest_period} to ${d.latest_period}`) : "";
+  const sources = (v.sheet_sources || "").split(/\s(?=\d\.\s)/).filter(Boolean);
+  const p = document.getElementById("panel");
+  p.style.setProperty("--lens", COLORS[v.lens_id]);
+  p.innerHTML = `<button class="close" aria-label="Close">×</button>
+    <div class="crumb">${esc(lens.name)}</div>
+    <h2>${esc(v.name)}</h2>
+    <p class="def">${esc(v.definition)}</p>
+    <p class="status" style="--c:${c}"><span class="dot ${hasData(v) ? "on" : ""}"></span>${label}${v.reason ? `<span class="why">${esc(v.reason)}</span>` : ""}</p>
+    <dl>
+      <dt>Unit (sheet)</dt><dd>${esc(v.sheet_unit)}</dd>
+      <dt>Sheet</dt><dd>${esc(v.sheets.join(", ").replace(/_/g, " "))}</dd>
+      ${d ? `<dt>Our data</dt><dd>${esc(ds.title || d.dataset)}</dd>
+      <dt>Columns</dt><dd>${d.columns.map(c => `<code>${esc(c)}</code>`).join(" ")}</dd>
+      <dt>Unit</dt><dd>${esc(d.unit)}</dd>
+      <dt>Geography</dt><dd>${esc(LEVELS[d.geo_level] || d.geo_level)}</dd>
+      <dt>Period</dt><dd>${esc(period)} (${esc(d.frequency)})</dd>
+      <dt>Type</dt><dd><span class="tag ${d.type}">${d.type === "derived" ? "derived (our calculation)" : "raw (as published)"}</span></dd>
+      <dt>Source used</dt><dd>${esc(v.source_used)}</dd>` : ""}
+      ${v.sources_tried ? `<dt>Sources tried</dt><dd>${esc(v.sources_tried)}</dd>` : ""}
+      ${sources.length ? `<dt>Sources (sheet)</dt><dd>${sources.map(x => esc(x)).join("<br>")}</dd>` : ""}
+    </dl>
+    ${d ? `<div class="links">
+      <a class="primary" href="https://github.com/${REPO}/tree/${BRANCH}/${encodeURIComponent(d.dataset)}">Open dataset</a>
+      <a href="https://github.com/${REPO}/blob/${BRANCH}/${encodeURIComponent(d.dataset)}/${encodeURIComponent(d.dataset)}.csv">CSV</a>
+    </div>` : ""}`;
+  p.classList.add("open");
+  p.querySelector(".close").onclick = () => { p.classList.remove("open"); selected = null; render(); };
+}
+
+// ---------- view
+function bounds(nodes) {
+  let x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
+  nodes.forEach(d => {
+    const a = d.data.kind === "root" ? d.px - d.w / 2 : d.dir > 0 ? d.px - 12 : d.px - d.w;
+    x0 = Math.min(x0, a); x1 = Math.max(x1, a + d.w); y0 = Math.min(y0, d.py - 24); y1 = Math.max(y1, d.py + 24);
+  });
+  return { x0, x1, y0, y1 };
+}
+function fitView() {
+  const W = window.innerWidth, H = window.innerHeight, top = 70;
+  const b = bounds(current);
+  let k = Math.min(1.15, (W - 40) / (b.x1 - b.x0), (H - top - 30) / (b.y1 - b.y0));
+  k = Math.max(k, 0.6);
+  // if it does not fit at a readable size, keep the centre of the map in view
+  const cx = (b.x1 - b.x0) * k > W ? 0 : (b.x0 + b.x1) / 2;
+  const cy = (b.y1 - b.y0) * k > H - top ? 0 : (b.y0 + b.y1) / 2;
+  svg.transition().duration(450).call(zoom.transform, d3.zoomIdentity.translate(W / 2 - k * cx, top + (H - top) / 2 - k * cy).scale(k));
+}
+let timer;
+const q = document.getElementById("q");
+q.addEventListener("input", () => {
+  clearTimeout(timer);
+  timer = setTimeout(() => {
+    query = q.value.trim();
+    history.replaceState(null, "", query ? "#q=" + encodeURIComponent(query) : location.pathname);
+    if (query) openForSearch(buildTree(matching())); else open = DEFAULT_OPEN();
+    render("fit");
+  }, 180);
+});
+q.addEventListener("keydown", e => { if (e.key === "Escape") { q.value = ""; q.dispatchEvent(new Event("input")); } });
+document.getElementById("expand").onclick = () => { open = DEFAULT_OPEN(); render("fit"); };
+document.getElementById("collapse").onclick = () => { open = new Set(["root"]); render("fit"); };
+document.getElementById("fit").onclick = () => fitView();
+window.addEventListener("resize", () => render("fit"));
+window.addEventListener("hashchange", () => { const v = decodeURIComponent((location.hash.match(/q=([^&]*)/) || [])[1] || ""); if (v !== query) { q.value = v; q.dispatchEvent(new Event("input")); } });
+
+const initial = decodeURIComponent((location.hash.match(/q=([^&]*)/) || [])[1] || "");
+if (initial) { q.value = initial; query = initial; openForSearch(buildTree(matching())); }
+render("fit");
+</script>
+</body>
+</html>

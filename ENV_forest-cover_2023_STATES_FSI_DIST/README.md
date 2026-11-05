@@ -15,6 +15,8 @@ Forest cover by canopy density for 750 districts, plus a `State total` row per s
 |---|---|
 | `state_ut` | State or Union Territory |
 | `district` | District as spelled in the report. `State total` = the state's published total |
+| `lgd_state_code` | State/UT code in the Local Government Directory (LGD), from [`_reference/geography.csv`](../_reference/geography.csv). Blank for All India and for old units LGD no longer lists |
+| `lgd_district_code` | District code in the Local Government Directory (LGD), from [`_reference/geography.csv`](../_reference/geography.csv). Blank for totals and names that could not be matched |
 | `geographical_area_sq_km` | District area, sq km |
 | `very_dense_forest_sq_km` | Canopy density 70% and above, sq km |
 | `moderately_dense_forest_sq_km` | Canopy density 40% to under 70%, sq km |
@@ -24,3 +26,7 @@ Forest cover by canopy density for 750 districts, plus a `State total` row per s
 | `change_since_2021_sq_km` | Change in forest cover since the 2021 assessment, sq km (can be negative) |
 | `scrub_sq_km` | Canopy density under 10%, sq km (not forest cover) |
 | `source_marks` | `district:H` = hill district; `district:**` = marked `**` in the report (no reason given) |
+
+## Notes
+
+- `lgd_state_code` and `lgd_district_code` added on 5 Nov 2026 from the LGD directory (see [`_reference/README.md`](../_reference/README.md)). LGD codes identify today's state or district; for years before a split (Telangana 2014, Ladakh 2019, new districts) the same code covers a larger area than it does now.

@@ -1,0 +1,19 @@
+# Checks every push and pull request: rebuilds catalog.js and registry.json, and fails if
+# _reference/variables.csv points to a missing dataset folder or column, or to a lens / sub-theme
+# that is not in _reference/lenses.csv (see tools/build_catalog.py).
+name: Validate catalog and variable registry
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build catalog.js and registry.json (fails on registry errors)
+        run: python3 tools/build_catalog.py

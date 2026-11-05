@@ -16,6 +16,8 @@ Population, households, literacy, Scheduled Castes and Tribes, and workers by ca
 |---|---|
 | `state_ut` | State or UT as it was in 2011 (Andhra Pradesh includes Telangana; Jammu & Kashmir includes Ladakh; Dadra & Nagar Haveli and Daman & Diu are separate) |
 | `district` | District as spelled by the Census. `State total` = the state's published total; blank on the `All India` row |
+| `lgd_state_code` | State/UT code in the Local Government Directory (LGD), from [`_reference/geography.csv`](../_reference/geography.csv). Blank for All India and for old units LGD no longer lists |
+| `lgd_district_code` | District code in the Local Government Directory (LGD), from [`_reference/geography.csv`](../_reference/geography.csv). Blank for totals and names that could not be matched |
 | `state_census_code`, `district_census_code` | Census 2011 codes (Nagpur = 27 / 505) |
 | `area` | `total`, `rural` or `urban` |
 | `households` | Number of households |
@@ -33,3 +35,4 @@ Every count has three columns: `_persons`, `_males`, `_females`.
 
 - Workers by category are the Census's closest measure of outdoor work: cultivators and agricultural labourers work outdoors; "other workers" mixes indoor and outdoor jobs (construction, transport, street vending are inside it). For job-level detail on Nagpur see `LAB_plfs-persons-nagpur_2025_MH_MOSPI_DIST`.
 - Districts are the 640 districts of 2011. Later splits are not reflected.
+- `lgd_state_code` and `lgd_district_code` added on 5 Nov 2026 from the LGD directory (see [`_reference/README.md`](../_reference/README.md)). LGD codes identify today's state or district; for years before a split (Telangana 2014, Ladakh 2019, new districts) the same code covers a larger area than it does now.

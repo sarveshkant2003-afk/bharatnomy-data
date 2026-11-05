@@ -15,6 +15,7 @@ Factory-sector statistics from MoSPI's Annual Survey of Industries (ASI), for ea
 | Column | Meaning |
 |---|---|
 | `state_ut` | State or Union Territory. `All India` = national total |
+| `lgd_state_code` | State/UT code in the Local Government Directory (LGD), from [`_reference/geography.csv`](../_reference/geography.csv). Blank for All India and for old units LGD no longer lists |
 | `year` | Financial year (April-March) |
 | `sector` | Combined |
 | `nic_code` | NIC 2004 industry code. `99999` = all industries; `99998` = other industries |
@@ -28,3 +29,4 @@ Factory-sector statistics from MoSPI's Annual Survey of Industries (ASI), for ea
 - Some value columns (output, product value, depreciation, rent) have a few negative values; they are as returned by the API.
 - No blank cells.
 - `total_emoluments`, `workmen_and_staff_welfare_exps` and the count columns have no unit in the API; the money ones are probably ₹ lakh but the API does not say.
+- `lgd_state_code` added on 5 Nov 2026 from the LGD directory (see [`_reference/README.md`](../_reference/README.md)). LGD codes identify today's state or district; for years before a split (Telangana 2014, Ladakh 2019, new districts) the same code covers a larger area than it does now.
