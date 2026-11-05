@@ -17,6 +17,8 @@ Field names are MoSPI's, from the data layout `mospi-plfs_data-layout-first-visi
 | Column | Meaning |
 |---|---|
 | `state_ut`, `district` | Maharashtra, Nagpur |
+| `lgd_state_code` | State/UT code in the Local Government Directory (LGD), from [`_reference/geography.csv`](../_reference/geography.csv). Blank for All India and for old units LGD no longer lists |
+| `lgd_district_code` | District code in the Local Government Directory (LGD), from [`_reference/geography.csv`](../_reference/geography.csv). Blank for totals and names that could not be matched |
 | `month` | Month of survey, `2025-01` to `2025-12` |
 | `file_id`, `sch`, `qtr`, `visit` | File code (CFVH5), schedule (104), quarter, visit (V1) |
 | `sec` | Sector: 1 = rural, 2 = urban |
@@ -42,3 +44,4 @@ Field names are MoSPI's, from the data layout `mospi-plfs_data-layout-first-visi
 - Changes from the original file: rows other than state 27 / district 09 dropped; whole numbers that the source CSV writes as `4.0` written as `4`; `month` written as `YYYY-MM`; `st`, `dc` renamed `state_code`, `district_code`; `_inr` added to money columns. No values changed.
 - Blank cells are blank in the source (e.g. `rea_sub` when the household was not a substitute). The source gives no reason code.
 - Checks: `inc_tot_inr` equals the sum of its four parts in all 707 households; `hce_tot_inr` equals its formula within ₹1 (rounding) in all households; no duplicate household keys.
+- `lgd_state_code` and `lgd_district_code` added on 5 Nov 2026 from the LGD directory (see [`_reference/README.md`](../_reference/README.md)). LGD codes identify today's state or district; for years before a split (Telangana 2014, Ladakh 2019, new districts) the same code covers a larger area than it does now.

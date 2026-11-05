@@ -15,6 +15,7 @@ From the Ministry of Agriculture's annual land use publication. Areas in thousan
 
 | Column | Meaning |
 |---|---|
+| `lgd_state_code` | State/UT code in the Local Government Directory (LGD), from [`_reference/geography.csv`](../_reference/geography.csv). Blank for All India and for old units LGD no longer lists |
 | `canals_government_000_ha`, `canals_private_000_ha`, `canals_total_000_ha` | Irrigated by canals |
 | `tanks_000_ha`, `tube_wells_000_ha`, `other_wells_000_ha`, `other_sources_000_ha` | Irrigated by each other source |
 | `gross_irrigated_area_000_ha` | Irrigated area counting each season |
@@ -24,3 +25,4 @@ From the Ministry of Agriculture's annual land use publication. Areas in thousan
 
 - Blank cells are blank in the publication; they are not zeros.
 - No All India row in the source.
+- `lgd_state_code` added on 5 Nov 2026 from the LGD directory (see [`_reference/README.md`](../_reference/README.md)). LGD codes identify today's state or district; for years before a split (Telangana 2014, Ladakh 2019, new districts) the same code covers a larger area than it does now.

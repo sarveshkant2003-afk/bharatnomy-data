@@ -17,6 +17,8 @@ Field names are MoSPI's, from the data layout `mospi-plfs_data-layout-first-visi
 | Column | Meaning |
 |---|---|
 | `state_ut`, `district` | Maharashtra, Nagpur |
+| `lgd_state_code` | State/UT code in the Local Government Directory (LGD), from [`_reference/geography.csv`](../_reference/geography.csv). Blank for All India and for old units LGD no longer lists |
+| `lgd_district_code` | District code in the Local Government Directory (LGD), from [`_reference/geography.csv`](../_reference/geography.csv). Blank for totals and names that could not be matched |
 | `month` | Month of survey, `2025-01` to `2025-12` |
 | `file_id`, `sch`, `qtr`, `visit` | File code (CFVP5), schedule (104), quarter (Q1-Q4), visit (V1 = first visit) |
 | `sec` | Sector: 1 = rural, 2 = urban |
@@ -55,3 +57,4 @@ Field names are MoSPI's, from the data layout `mospi-plfs_data-layout-first-visi
 - Blank cells are blank in the source and mean the question was skipped for that person (e.g. industry for a student). The source gives no reason code, so there is no `source_flag` column.
 - The schedule changed in July 2025 (some education and training items asked only before or only after; see the remarks in the data layout). The July-December 2025 instructions are in `docs-2025/`.
 - Checks: rows match the raw file (2,593); no duplicate person keys; ages 0-96; weekly hours at most 98; persons per household match `hh_size` in the household file for all 707 households.
+- `lgd_state_code` and `lgd_district_code` added on 5 Nov 2026 from the LGD directory (see [`_reference/README.md`](../_reference/README.md)). LGD codes identify today's state or district; for years before a split (Telangana 2014, Ladakh 2019, new districts) the same code covers a larger area than it does now.
