@@ -1,203 +1,111 @@
-"""Build _reference/variables.csv (and a minimal variables.xlsx) from the datasets in the repo.
+"""Build _reference/variables.csv (and a minimal variables.xlsx) from the climate variable sheets' log.
 
-One row per value column of every dataset folder: key columns (places, codes, time, flags) are left out.
-Names come from the dataset README's Columns table where a column is described there; lens and
-sub-theme come from the rules below (dataset, then column pattern); unit, geography level, frequency
-and coverage are read from the folder name and the CSV.
+Variables are the ones in the four climate variable sheets, named exactly as in the sheets
+(_reference/variables-draft.csv, one row per sheet row). This script
+  1. writes each sheet variable's lens and sub-theme (from SUB_THEMES below) into variables-draft.csv;
+  2. writes variables.csv with the sheet variables that have data (status found or partial), one row per
+     variable name (a name used in two sheets appears once).
 
 Run from the repo root:  python3 pipelines/reference/build_variables.py
 Then:                     python3 tools/build_catalog.py   (validates and writes registry.json)
 """
 import csv
 import re
-import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "tools"))
-from build_catalog import NAME, parse_readme  # noqa: E402
+DRAFT = ROOT / "_reference/variables-draft.csv"
+OUT = ROOT / "_reference/variables.csv"
+FIELDS = ["variable_id", "name", "lens_id", "sub_theme_id", "dataset", "column", "unit", "geo_level",
+          "frequency", "earliest_period", "latest_period", "type"]
 
-OUT = ROOT / "_reference" / "variables.csv"
-csv.field_size_limit(sys.maxsize)
-
-KEYS = {
-    "state_ut", "lgd_state_code", "district", "lgd_district_code", "city", "state_census_code",
-    "district_census_code", "district_census_name", "subdistrict", "subdistrict_census_code",
-    "town_census_code", "area", "residence", "area_level", "year", "date", "month", "period",
-    "source_flag", "source_marks", "sector", "nic_code", "nic_description", "cause", "age",
+# Sub-theme of every sheet row: {sheet: {sub-theme: [serial numbers]}}
+SUB_THEMES = {
+    "air_quality": {
+        "CAR-AIR": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 19, 22, 23, 24],
+        "EPM-DEMAND": [18], "EPM-ACCESS": [20, 21], "CAR-HEALTH": [25, 26],
+        "CAR-GOV": [27, 28, 29], "CAR-LAND": [30],
+    },
+    "heat_climate_resilience": {
+        "CAR-HEAT": [1, 2, 3, 4, 5, 6, 7, 10], "CAR-RAIN": [8, 9], "CAR-AIR": [11],
+        "CAR-EXPOSURE": [12, 13, 18, 19, 20, 27, 28], "MAC-LABOUR": [14, 15, 16, 44], "MAC-AGRI": [17, 46, 47],
+        "CAR-HOUSING": [21], "CAR-WATER": [22, 30, 49], "EPM-ACCESS": [23, 24],
+        "CAR-HEALTH": [25, 31, 32, 36, 38], "MAC-WELFARE": [26, 37, 39, 50], "CAR-LAND": [29],
+        "CAR-GOV": [33, 34, 35], "CAR-MORTALITY": [40, 41, 42], "EPM-DEMAND": [43], "COM-CROPS": [45],
+        "MAC-INDUSTRY": [48],
+    },
+    "rainfall": {
+        "CAR-RAIN": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 24, 25, 26, 27, 36],
+        "CAR-WATER": [20, 21, 22, 23, 37, 38, 39], "CAR-WIND": [28], "CAR-MORTALITY": [29, 30, 31],
+        "COM-WEATHER": [32], "CAR-EXPOSURE": [33], "CAR-HOUSING": [34], "CAR-LAND": [35, 41],
+        "MAC-AGRI": [40], "CAR-GOV": [42, 43],
+    },
+    "wind": {
+        "CAR-WIND": [1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14], "EPM-RENEW": [6, 7, 8], "CAR-AIR": [15],
+        "CAR-EXPOSURE": [16, 17], "CAR-HOUSING": [18, 19], "CAR-LAND": [20, 21], "CAR-GOV": [22, 23],
+        "CAR-MORTALITY": [24, 25, 27], "EPM-DEMAND": [26],
+    },
 }
-TIME = ("year", "date", "month")
-
-# (dataset prefix, column regex or None, sub_theme_id); first match wins
-RULES = [
-    ("CLM_heat-indicators", r"^rainfall_", "CAR-RAIN"),
-    ("CLM_heat-indicators", None, "CAR-HEAT"),
-    ("CLM_rainfall", None, "CAR-RAIN"),
-    ("CLM_temperature", None, "CAR-HEAT"),
-    ("CLM_wind-humidity", r"^(relative_humidity|wet_bulb)", "CAR-HEAT"),
-    ("CLM_wind-humidity", None, "CAR-WIND"),
-    ("ENV_aqi", None, "CAR-AIR"),
-    ("ENV_active-fires", None, "CAR-AIR"),
-    ("ENV_forest", None, "CAR-LAND"),
-    ("HLT_deaths-forces-of-nature", None, "CAR-MORTALITY"),
-    ("HOU_household-amenities", r"^(drinking_water|latrine|bathing|waste_water)", "CAR-WATER"),
-    ("HOU_household-amenities", r"^(cooking_fuel|lighting|kitchen)", "EPM-ACCESS"),
-    ("HOU_household-amenities", None, "CAR-HOUSING"),
-    ("HOU_slum", None, "CAR-EXPOSURE"),
-    ("POP_", None, "CAR-EXPOSURE"),
-    ("WAT_", None, "CAR-WATER"),
-    ("AGR_area-under-crops", None, "COM-CROPS"),
-    ("AGR_irrigated-area-by-crop", None, "COM-CROPS"),
-    ("AGR_", None, "MAC-AGRI"),
-    ("IND_asi", r"(electricity|coal|fuel|petroleum)", "EPM-DEMAND"),
-    ("IND_", None, "MAC-INDUSTRY"),
-    ("LAB_", None, "MAC-LABOUR"),
-]
-
-UNITS = [
-    (r"_000_ha$", "thousand ha"), (r"_ha$", "ha"), (r"_sq_km$", "sq km"), (r"_pct(_of_area)?$|_pct_", "%"),
-    (r"_mm$", "mm"), (r"_c$", "°C"), (r"_ms$", "m/s"), (r"_tpd$", "tonnes per day"),
-    (r"_inr_lakh$", "₹ lakh"), (r"_inr_000$", "₹ thousand"), (r"_inr_crore$", "₹ crore"),
-    (r"_000_tonne$", "thousand tonnes"), (r"_000_kwh$", "thousand kWh"), (r"_000$", "thousand"),
-    (r"^spi_", "index"), (r"^(days|nights|heatwave|severe_heatwave|warm_nights|rainy_days|heavy|very_heavy|extremely_heavy|calm_days|strong_wind_days|consecutive_dry|monsoon_longest)", "days"),
-    (r"^fire_detections", "count"), (r"^aqi", "index (0-500)"), (r"^deaths_", "deaths"),
-]
+HAS_DATA = {"found": 0, "partial": 1}
 
 
-def sub_theme(dataset, column):
-    for prefix, pattern, st in RULES:
-        if dataset.startswith(prefix) and (pattern is None or re.search(pattern, column)):
-            return st
-    return ""
-
-
-def unit_of(column):
-    for pattern, u in UNITS:
-        if re.search(pattern, column):
-            return u
-    return ""
-
-
-def geo_level(geo, level):
-    if level:
-        return level
-    return "IN" if geo == "IN" else "STATE"
-
-
-def coverage(path, header):
-    t = next((c for c in TIME if c in header), None)
-    if not t:
-        return None, [], header
-    i = header.index(t)
-    vals, numeric = set(), {c: False for c in header}
-    with open(path, newline="", encoding="utf-8") as f:
-        r = csv.reader(f)
-        next(r)
-        for row in r:
-            if row[i]:
-                vals.add(row[i])
-    return t, sorted(vals), header
-
-
-def numeric_columns(path, header, limit=2000):
-    """Columns with at least one value, judged on the first rows: numbers, or short text categories."""
-    seen = {c: set() for c in header}
-    with open(path, newline="", encoding="utf-8") as f:
-        r = csv.reader(f)
-        next(r)
-        for k, row in enumerate(r):
-            if k >= limit:
-                break
-            for c, v in zip(header, row):
-                if v != "" and len(seen[c]) < 50:
-                    seen[c].add(v)
-    return {c for c, v in seen.items() if v}
-
-
-UNIT_SUFFIX = r"_(000_ha|ha|sq_km|pct|pct_of_area|mm|c|ms|tpd|inr_lakh|inr_000|inr_crore|000_tonne|000_kwh|000)$"
-SPECIAL_UNITS = {"wind_direction_prevailing": "compass sector", "air_quality": "category",
-                 "prominent_pollutants": "pollutant names"}
-
-
-def humanise(column):
-    return re.sub(UNIT_SUFFIX, "", column).replace("_", " ").strip().capitalize()
-
-
-def unit_default(dataset, column):
-    """Unit for columns without a unit suffix: survey codes in PLFS records, otherwise a count."""
-    if column in SPECIAL_UNITS:
-        return SPECIAL_UNITS[column]
-    if dataset.startswith("LAB_plfs"):
-        return "code or value (see README)"
-    return "count"
+def slug(s):
+    return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
 
 
 def main():
     lenses = {r["sub_theme_id"]: r["lens_id"] for r in csv.DictReader(open(ROOT / "_reference/lenses.csv", encoding="utf-8"))}
-    rows = []
-    for d in sorted(p for p in ROOT.iterdir() if p.is_dir() and not p.name.startswith((".", "_"))):
-        m = NAME.match(d.name)
-        f = d / f"{d.name}.csv"
-        if not m or not f.exists():
-            continue
-        cat, subject, period, geo, source, level = m.groups()
-        header = next(csv.reader(open(f, newline="", encoding="utf-8")))
-        t, vals, _ = coverage(f, header)
-        filled = numeric_columns(f, header)
-        meanings = {}
-        if (d / "README.md").exists():
-            meanings = parse_readme((d / "README.md").read_text(encoding="utf-8"))[3]
-        freq = {"year": "annual", "date": "daily", "month": "monthly"}.get(t, "one-off")
-        if t is None:
-            years = re.findall(r"\d{4}(?:-\d{2})?", period)
-            first, last = (years[0], years[-1]) if years else ("", "")
-        else:
-            first, last = vals[0], vals[-1]
-        shared = {}
-        for c in header:
-            if c in meanings:
-                shared[meanings[c]] = shared.get(meanings[c], 0) + 1
-        for c in header:
-            if c in KEYS or c not in filled:
-                continue
-            st = sub_theme(d.name, c)
-            name = meanings.get(c) or humanise(c)
-            if c in meanings and shared[meanings[c]] > 1:  # one README row describes several columns
-                name = f"{humanise(c)}: {meanings[c]}"
-            rows.append({
-                "variable_id": f"{d.name}:{c}",
-                "name": name,
-                "lens_id": lenses.get(st, ""),
-                "sub_theme_id": st,
-                "dataset": d.name,
-                "column": c,
-                "unit": unit_of(c) or unit_default(d.name, c),
-                "geo_level": geo_level(geo, level),
-                "frequency": freq,
-                "earliest_period": first,
-                "latest_period": last,
-                "type": "derived" if source == "BNY" else "raw",
-            })
-    fields = list(rows[0])
-    with open(OUT, "w", newline="", encoding="utf-8") as fh:
-        w = csv.DictWriter(fh, fieldnames=fields, lineterminator="\n")
+    where = {(sh, str(n)): st for sh, m in SUB_THEMES.items() for st, ns in m.items() for n in ns}
+    with open(DRAFT, newline="", encoding="utf-8") as f:
+        r = csv.DictReader(f)
+        fields, rows = list(r.fieldnames), list(r)
+    for c in ("lens_id", "sub_theme_id"):
+        if c not in fields:
+            fields.insert(fields.index("variable_name") + 1, c) if c == "lens_id" else fields.insert(fields.index("lens_id") + 1, c)
+    missing = []
+    for row in rows:
+        st = where.get((row["sheet"], row["sno"]))
+        if not st:
+            missing.append((row["sheet"], row["sno"], row["variable_name"]))
+        row["sub_theme_id"], row["lens_id"] = st or "", lenses.get(st, "")
+    if missing:
+        raise SystemExit(f"sheet rows without a sub-theme in SUB_THEMES: {missing}")
+    with open(DRAFT, "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=fields, lineterminator="\n")
         w.writeheader()
         w.writerows(rows)
-    write_xlsx(rows, fields)
-    missing = [r["variable_id"] for r in rows if not r["sub_theme_id"]]
-    print(f"{len(rows)} variables -> {OUT.relative_to(ROOT)} and variables.xlsx; without sub-theme: {len(missing)}")
 
-
-def write_xlsx(rows, fields):
-    """Minimal workbook: one sheet, header row, values only."""
+    best = {}
+    for row in rows:
+        if row["status"] not in HAS_DATA or not row["dataset"]:
+            continue
+        name = row["variable_name"]
+        if name not in best or HAS_DATA[row["status"]] < HAS_DATA[best[name]["status"]]:
+            best[name] = row
+    out = []
+    for name, row in best.items():
+        source = row["dataset"].split("_")[4] if row["dataset"].count("_") >= 4 else ""
+        out.append({
+            "variable_id": slug(name), "name": name, "lens_id": row["lens_id"], "sub_theme_id": row["sub_theme_id"],
+            "dataset": row["dataset"], "column": row["column"], "unit": row["unit"], "geo_level": row["geo_level"],
+            "frequency": row["frequency"], "earliest_period": row["earliest_period"], "latest_period": row["latest_period"],
+            "type": "derived" if source == "BNY" else "raw",
+        })
+    out.sort(key=lambda r: (r["lens_id"], r["sub_theme_id"], r["name"]))
+    with open(OUT, "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=FIELDS, lineterminator="\n")
+        w.writeheader()
+        w.writerows(out)
     from openpyxl import Workbook
     wb = Workbook()
     ws = wb.active
     ws.title = "variables"
-    ws.append(fields)
-    for r in rows:
-        ws.append([r[f] for f in fields])
+    ws.append(FIELDS)
+    for r in out:
+        ws.append([r[f] for f in FIELDS])
     wb.save(OUT.with_suffix(".xlsx"))
+    print(f"{len(out)} sheet variables with data -> {OUT.relative_to(ROOT)} and variables.xlsx "
+          f"({len(rows)} sheet rows, {len({r['variable_name'] for r in rows})} distinct names)")
 
 
 if __name__ == "__main__":

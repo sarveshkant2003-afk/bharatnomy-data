@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bharatnomy Variable Map</title>
-<meta name="description" content="Mind map of every variable in Bharatnomy's datasets, by lens and sub-theme, with search.">
+<meta name="description" content="Mind map of the climate variables in Bharatnomy's variable sheets, by lens and sub-theme, with search and data status.">
 <style>
 :root {
   color-scheme: light;
@@ -50,6 +50,11 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 .panel.open { display: block; }
 .panel h2 { font-size: 16px; margin: 0 26px 4px 0; line-height: 1.35; }
 .panel { border-top: 4px solid var(--lens, var(--accent)); }
+.panel .def { margin: 6px 0 10px; color: #4a4237; }
+.panel .status { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-weight: 600; color: var(--c); margin: 0 0 6px; }
+.panel .status .dot { width: 11px; height: 11px; border-radius: 50%; border: 2px solid var(--c); }
+.panel .status .dot.on { background: var(--c); }
+.panel .status .why { flex-basis: 100%; font-weight: 400; color: var(--muted); font-size: 13px; }
 .panel .crumb { font-size: 12px; color: var(--lens, var(--faint)); font-weight: 600; margin-bottom: 6px; }
 .panel dl { display: grid; grid-template-columns: 110px 1fr; gap: 5px 10px; margin: 10px 0; font-size: 13px; }
 .panel dt { color: var(--faint); }
@@ -62,6 +67,8 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 .tag { font-size: 11.5px; border-radius: 5px; padding: 1px 7px; background: #f5efe2; }
 .tag.derived { background: #fdf0d9; color: #7a5410; }
 .tag.raw { background: var(--accent-soft); color: #15563f; }
+.hint .lg { display: inline-flex; align-items: center; gap: 5px; margin-right: 10px; color: var(--muted); }
+.hint .lg i { width: 10px; height: 10px; border-radius: 50%; border: 2px solid #b9b0a0; background: #fff; display: inline-block; }
 .hint { position: fixed; left: 16px; bottom: 12px; z-index: 5; color: var(--faint); font-size: 12.5px; background: rgba(251,248,241,.85); padding: 4px 8px; border-radius: 6px; }
 @media (max-width: 700px) {
   .bar h1 { display: none; }
@@ -76,7 +83,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
   <h1>Bharatnomy Variable Map</h1>
   <label class="search">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-    <input id="q" type="search" placeholder="Search variables: heat wave, rainfall, cooking fuel, wind…" autocomplete="off" aria-label="Search variables">
+    <input id="q" type="search" placeholder="Search the sheet variables: heatwave, rainfall, PM2.5, cyclone…" autocomplete="off" aria-label="Search variables">
   </label>
   <span class="count" id="count"></span>
   <div class="tools">
@@ -88,27 +95,28 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 </div>
 <svg id="map" role="img" aria-label="Mind map of lenses, sub-themes, datasets and variables"></svg>
 <div class="panel" id="panel" role="dialog" aria-label="Variable details"></div>
-<div class="hint">Click a branch to open it · drag to move · scroll to zoom</div>
+<div class="hint"><span class="lg"><i style="background:#1d8a5a;border-color:#1d8a5a"></i>Available</span><span class="lg"><i style="background:#d08a16;border-color:#d08a16"></i>Partly available</span><span class="lg"><i></i>Not available yet</span> · Click a branch to open it · drag to move · scroll to zoom</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
-<script src="registry.js?v=2"></script>
+<script src="registry.js?v=3"></script>
 <script>
 const REPO = "sarveshkant2003-afk/bharatnomy-data", BRANCH = "main";
 const R = window.REGISTRY || { lenses: [], datasets: {}, variables: [] };
 const COLORS = { CAR: "#1d6b52", EPM: "#b5651d", MAC: "#3d5a99", EQM: "#8a3e7a", COM: "#6f7a12" };
 const RIGHT = new Set(["CAR", "EPM"]);          // lenses drawn to the right of the centre; the rest go left
 const LEVELS = { IN: "All India", STATE: "State", DIST: "District", SDT: "Sub-district", CITY: "City", VIL: "Village" };
-const ROW = { lens: 64, sub: 44, ds: 40, var: 30 };   // vertical space per node
+const ROW = { lens: 64, sub: 44, var: 30 };            // vertical space per node
+const STATUS = { found: ["#1d8a5a", "Available"], partial: ["#d08a16", "Partly available"], "not found": ["#b9b0a0", "Not available"], "not yet tried": ["#b9b0a0", "Not collected yet"] };
 const GAP = 64;                                       // horizontal gap between columns
 const MIN_ZOOM_FIT = 0.75;                            // "fit" never shrinks text below this
-const SEARCH_OPEN_ALL = 150;                          // with this many matches or fewer, search opens down to variables
 const FONT = getComputedStyle(document.body).fontFamily;
 const ctx = document.createElement("canvas").getContext("2d");
 const textW = (t, size, weight) => { ctx.font = `${weight || 400} ${size}px ${FONT}`; return ctx.measureText(t).width; };
 
 const lensOf = {}, subName = {};
 R.lenses.forEach(l => l.sub_themes.forEach(s => { lensOf[s.id] = l.id; subName[s.id] = s.name; }));
-const VARS = R.variables.map(v => ({ ...v, _t: [v.name, v.column, v.unit, subName[v.sub_theme_id]].join(" ").toLowerCase() }));
+const VARS = (R.sheet_variables || []).map(v => ({ ...v, _t: [v.name, v.definition, v.sheet_unit, subName[v.sub_theme_id], ...(v.data ? v.data.columns : [])].join(" ").toLowerCase() }));
+const hasData = v => v.status === "found" || v.status === "partial";
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const cut = (s, n) => s.length > n ? s.slice(0, n - 1) + "…" : s;
 const dsTitle = d => (R.datasets[d] || {}).title || d;
@@ -118,33 +126,27 @@ let query = "", open = DEFAULT_OPEN(), selected = null;
 const terms = () => query.toLowerCase().split(/\s+/).filter(Boolean);
 const matching = () => { const t = terms(); return t.length ? VARS.filter(v => t.every(w => v._t.includes(w))) : VARS; };
 
-// ---------- tree: root -> lens -> sub-theme -> dataset -> variable
+// ---------- tree: root -> lens -> sub-theme -> sheet variable
 function buildTree(vars) {
   const searching = terms().length > 0;
   const root = { key: "root", kind: "root", name: "Bharatnomy", children: [] };
   for (const l of R.lenses) {
     const lv = vars.filter(v => v.lens_id === l.id);
     if (searching && !lv.length) continue;
-    const lens = { key: "L:" + l.id, kind: "lens", lens: l.id, name: l.name, count: lv.length, children: [] };
+    const lens = { key: "L:" + l.id, kind: "lens", lens: l.id, name: l.name, count: lv.length, have: lv.filter(hasData).length, children: [] };
     for (const s of l.sub_themes) {
-      const sv = lv.filter(v => v.sub_theme_id === s.id);
+      const sv = lv.filter(v => v.sub_theme_id === s.id).sort((a, b) => hasData(b) - hasData(a) || a.name.localeCompare(b.name));
       if (searching && !sv.length) continue;
-      const sub = { key: "S:" + s.id, kind: "sub", lens: l.id, name: s.name, count: sv.length, children: [] };
-      const byDs = d3.group(sv, v => v.dataset);
-      for (const [ds, dv] of [...byDs].sort((a, b) => dsTitle(a[0]).localeCompare(dsTitle(b[0])))) {
-        sub.children.push({ key: "D:" + s.id + ":" + ds, kind: "ds", lens: l.id, name: dsTitle(ds), dataset: ds, count: dv.length,
-          children: dv.map(v => ({ key: "V:" + v.variable_id, kind: "var", lens: l.id, name: v.name, v })) });
-      }
-      lens.children.push(sub);
+      lens.children.push({ key: "S:" + s.id, kind: "sub", lens: l.id, name: s.name, count: sv.length, have: sv.filter(hasData).length,
+        children: sv.map(v => ({ key: "V:" + v.name, kind: "var", lens: l.id, name: v.name, v })) });
     }
     root.children.push(lens);
   }
   return root;
 }
-function openForSearch(tree, n) {
+function openForSearch(tree) {
   open = new Set(["root"]);
-  const depth = n <= SEARCH_OPEN_ALL ? 3 : n <= 1000 ? 2 : 1;
-  (function walk(node, d) { if (d <= depth && node.children && node.children.length) { open.add(node.key); node.children.forEach(c => walk(c, d + 1)); } })(tree, 0);
+  (function walk(node) { if (node.children && node.children.length) { open.add(node.key); node.children.forEach(walk); } })(tree);
 }
 function visible(node) {
   const n = { ...node, _hasKids: !!(node.children && node.children.length) };
@@ -158,18 +160,18 @@ function label(d) {
   if (k === "root") return "Bharatnomy";
   if (k === "lens") return d.name;
   if (k === "sub") return cut(d.name, 40);
-  if (k === "ds") return cut(d.name, 52);
-  return cut(d.name, 70);
+  return cut(d.name, 60);
 }
-const SIZE = { root: [19, 750], lens: [16, 650], sub: [14.5, 600], ds: [13.5, 500], var: [13.5, 400] };
+const SIZE = { root: [19, 750], lens: [16, 650], sub: [14.5, 600], var: [14, 500] };
+const countText = d => d.kind === "lens" ? `${d.have} / ${d.count}` : d.count ? `${d.have} / ${d.count}` : "none yet";
 function nodeW(d) {
   const [sz, wt] = SIZE[d.kind];
   if (d.kind === "root") return textW(label(d), sz, wt) + 44;
-  if (d.kind === "var") return 16 + textW(label(d), sz, wt) + (d.v.unit ? textW("  " + d.v.unit, 12) : 0);
-  const count = d.kind === "lens" ? String(d.count) : (d.count ? String(d.count) : "none yet");
+  if (d.kind === "var") return 20 + textW(label(d), sz, wt) + 8;
+  const count = countText(d);
   return 18 + textW(label(d), sz, wt) + 10 + textW(count, 12, 600) + 14 + (d._hasKids ? 22 : 0) + 4;
 }
-const nodeH = d => ({ root: 48, lens: 38, sub: 32, ds: 30, var: 22 }[d.kind]);
+const nodeH = d => ({ root: 48, lens: 38, sub: 32, var: 24 }[d.kind]);
 
 // ---------- layout: two half-trees, columns placed by the widest label of the previous column
 function layoutSide(vis, ids, dir) {
@@ -201,7 +203,7 @@ function render(view) {
   current = nodes;
 
   const color = d => d.data.kind === "root" ? "#241f19" : COLORS[d.data.lens] || "#666";
-  const width = { 1: 3.2, 2: 2.4, 3: 1.8, 4: 1.3 };
+  const width = { 1: 3.2, 2: 2.4, 3: 1.5 };
   const path = d => {
     const p = d.parent;
     const sx = p.depth === 0 ? d.dir * p.w / 2 : p.px + d.dir * p.w, sy = p.py, tx = d.px, ty = d.py;
@@ -221,8 +223,8 @@ function render(view) {
     x => x.remove());
 
   document.getElementById("count").textContent = terms().length
-    ? `${vars.length.toLocaleString()} of ${VARS.length.toLocaleString()} variables match`
-    : `${VARS.length.toLocaleString()} variables · ${R.lenses.length} lenses`;
+    ? `${vars.length} of ${VARS.length} sheet variables match`
+    : `${VARS.length} sheet variables · ${VARS.filter(hasData).length} with data`;
   if (view === "fit") fitView();
 }
 
@@ -234,13 +236,12 @@ function drawNode(sel) {
     s.attr("class", ["node", k, k === "var" && selected === d.data.key ? "sel" : "", k === "sub" && !d.data.count ? "empty" : ""].join(" "));
     const [sz, wt] = SIZE[k];
     if (k === "var") {
-      const hit = terms().length > 0;
-      if (hit) s.append("rect").attr("class", "hl").attr("x", x0 + 10).attr("y", -h / 2).attr("width", w - 10).attr("height", h).attr("rx", 5);
-      s.append("circle").attr("cx", dir > 0 ? 4 : -4).attr("r", 3.5).attr("fill", col);
-      const tx = s.append("text").attr("x", dir > 0 ? 14 : -14).attr("dy", "0.35em").attr("text-anchor", dir > 0 ? "start" : "end").attr("font-size", sz);
-      tx.append("tspan").attr("class", "label").text(label(d.data));
-      if (d.data.v.unit) tx.append("tspan").attr("class", "unit").text("  " + d.data.v.unit);
-      s.append("title").text(`${d.data.name}\n${d.data.v.column}`);
+      const v = d.data.v, [c] = STATUS[v.status] || STATUS["not yet tried"], ok = hasData(v);
+      if (terms().length) s.append("rect").attr("class", "hl").attr("x", dir > 0 ? 12 : -w).attr("y", -h / 2).attr("width", w - 12).attr("height", h).attr("rx", 6);
+      s.append("circle").attr("cx", dir > 0 ? 5 : -5).attr("r", 5).attr("fill", ok ? c : "#fff").attr("stroke", c).attr("stroke-width", 2);
+      s.append("text").attr("class", "label").attr("x", dir > 0 ? 16 : -16).attr("dy", "0.35em").attr("text-anchor", dir > 0 ? "start" : "end")
+        .attr("font-size", sz).attr("font-weight", ok ? 600 : 400).attr("fill", ok ? "#241f19" : "#8f8676").text(label(d.data));
+      s.append("title").text(`${v.name}: ${(STATUS[v.status] || [, ""])[1]}\n${v.definition}`);
       return;
     }
     const filled = k === "root" || k === "lens";
@@ -249,7 +250,7 @@ function drawNode(sel) {
       .attr("stroke", filled ? "none" : col).attr("stroke-opacity", k === "sub" ? 0.75 : 0.45).attr("stroke-width", 1.5);
     if (k === "root") { s.append("text").attr("text-anchor", "middle").attr("dy", "0.35em").attr("font-size", sz).attr("font-weight", wt).attr("fill", "#fff").text("Bharatnomy"); return; }
     // text and count, laid out from the outer edge of the pill
-    const count = k === "lens" ? String(d.data.count) : (d.data.count ? String(d.data.count) : "none yet");
+    const count = countText(d.data);
     const lw = textW(label(d.data), sz, wt), cw = textW(count, 12, 600);
     const toggle = kids ? 22 : 0;
     let x = x0 + 18;
@@ -285,27 +286,35 @@ function under(k, key) {
 }
 
 function showPanel(v) {
-  const ds = R.datasets[v.dataset] || {}, lens = R.lenses.find(l => l.id === v.lens_id) || {};
-  const period = v.earliest_period ? (v.earliest_period === v.latest_period ? v.earliest_period : `${v.earliest_period} to ${v.latest_period}`) : "";
+  const lens = R.lenses.find(l => l.id === v.lens_id) || {};
+  const [c, label] = STATUS[v.status] || STATUS["not yet tried"];
+  const d = v.data, ds = d ? (R.datasets[d.dataset] || {}) : null;
+  const period = d && d.earliest_period ? (d.earliest_period === d.latest_period ? d.earliest_period : `${d.earliest_period} to ${d.latest_period}`) : "";
+  const sources = (v.sheet_sources || "").split(/\s(?=\d\.\s)/).filter(Boolean);
   const p = document.getElementById("panel");
   p.style.setProperty("--lens", COLORS[v.lens_id]);
   p.innerHTML = `<button class="close" aria-label="Close">×</button>
     <div class="crumb">${esc(lens.name)} › ${esc(subName[v.sub_theme_id])}</div>
     <h2>${esc(v.name)}</h2>
+    <p class="def">${esc(v.definition)}</p>
+    <p class="status" style="--c:${c}"><span class="dot ${hasData(v) ? "on" : ""}"></span>${label}${v.reason ? `<span class="why">${esc(v.reason)}</span>` : ""}</p>
     <dl>
-      <dt>Column</dt><dd><code>${esc(v.column)}</code></dd>
-      <dt>Unit</dt><dd>${esc(v.unit)}</dd>
-      <dt>Geography</dt><dd>${esc(LEVELS[v.geo_level] || v.geo_level)}</dd>
-      <dt>Period</dt><dd>${esc(period)} (${esc(v.frequency)})</dd>
-      <dt>Type</dt><dd><span class="tag ${v.type}">${v.type === "derived" ? "derived (our calculation)" : "raw (as published)"}</span></dd>
-      <dt>Dataset</dt><dd>${esc(ds.title || v.dataset)}<br><code>${esc(v.dataset)}</code></dd>
-      ${ds.agency ? `<dt>Source</dt><dd>${esc(ds.agency)}</dd>` : ""}
+      <dt>Unit (sheet)</dt><dd>${esc(v.sheet_unit)}</dd>
+      <dt>Sheet</dt><dd>${esc(v.sheets.join(", ").replace(/_/g, " "))}</dd>
+      ${d ? `<dt>Our data</dt><dd>${esc(ds.title || d.dataset)}</dd>
+      <dt>Columns</dt><dd>${d.columns.map(c => `<code>${esc(c)}</code>`).join(" ")}</dd>
+      <dt>Unit</dt><dd>${esc(d.unit)}</dd>
+      <dt>Geography</dt><dd>${esc(LEVELS[d.geo_level] || d.geo_level)}</dd>
+      <dt>Period</dt><dd>${esc(period)} (${esc(d.frequency)})</dd>
+      <dt>Type</dt><dd><span class="tag ${d.type}">${d.type === "derived" ? "derived (our calculation)" : "raw (as published)"}</span></dd>
+      <dt>Source used</dt><dd>${esc(v.source_used)}</dd>` : ""}
+      ${v.sources_tried ? `<dt>Sources tried</dt><dd>${esc(v.sources_tried)}</dd>` : ""}
+      ${sources.length ? `<dt>Sources (sheet)</dt><dd>${sources.map(x => esc(x)).join("<br>")}</dd>` : ""}
     </dl>
-    <div class="links">
-      <a class="primary" href="https://github.com/${REPO}/tree/${BRANCH}/${encodeURIComponent(v.dataset)}">Open dataset</a>
-      <a href="https://github.com/${REPO}/blob/${BRANCH}/${encodeURIComponent(v.dataset)}/${encodeURIComponent(v.dataset)}.csv">CSV</a>
-      <a href="index.html#q=${encodeURIComponent(v.column)}">In dataset search</a>
-    </div>`;
+    ${d ? `<div class="links">
+      <a class="primary" href="https://github.com/${REPO}/tree/${BRANCH}/${encodeURIComponent(d.dataset)}">Open dataset</a>
+      <a href="https://github.com/${REPO}/blob/${BRANCH}/${encodeURIComponent(d.dataset)}/${encodeURIComponent(d.dataset)}.csv">CSV</a>
+    </div>` : ""}`;
   p.classList.add("open");
   p.querySelector(".close").onclick = () => { p.classList.remove("open"); selected = null; render(); };
 }
@@ -342,7 +351,7 @@ q.addEventListener("input", () => {
   timer = setTimeout(() => {
     query = q.value.trim();
     history.replaceState(null, "", query ? "#q=" + encodeURIComponent(query) : location.pathname);
-    if (query) openForSearch(buildTree(matching()), matching().length); else open = DEFAULT_OPEN();
+    if (query) openForSearch(buildTree(matching())); else open = DEFAULT_OPEN();
     render("fit");
   }, 180);
 });
@@ -354,7 +363,7 @@ window.addEventListener("resize", () => fitView());
 window.addEventListener("hashchange", () => { const v = decodeURIComponent((location.hash.match(/q=([^&]*)/) || [])[1] || ""); if (v !== query) { q.value = v; q.dispatchEvent(new Event("input")); } });
 
 const initial = decodeURIComponent((location.hash.match(/q=([^&]*)/) || [])[1] || "");
-if (initial) { q.value = initial; query = initial; openForSearch(buildTree(matching()), matching().length); }
+if (initial) { q.value = initial; query = initial; openForSearch(buildTree(matching())); }
 render("fit");
 </script>
 </body>
