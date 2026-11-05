@@ -98,4 +98,4 @@ Which sheet variables (the four climate variable sheets) map to which dataset co
 - uses a lens or sub-theme that is not in `lenses.csv`, or a sub-theme of another lens;
 - has an empty field, a duplicate `variable_id`, or a `type` other than `raw` / `derived`.
 
-The same data is written to `registry.js` for [`variables.html`](../variables.html), the variable explorer on the search site: browse by lens and sub-theme, filter by geography, frequency and type, and search by name or column.
+The same data is written to `registry.js` for [`variables.html`](../variables.html), the **variable map** on the search site: a mind map with Bharatnomy at the centre and the five lenses around it. Click a lens to open its sub-themes, a sub-theme to open its datasets, and a dataset to see its variables; click a variable for its unit, geography, period, source and links. Typing in the search box trims the map to the matching variables and opens their branches.

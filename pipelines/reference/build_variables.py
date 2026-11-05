@@ -153,13 +153,20 @@ def main():
             first, last = (years[0], years[-1]) if years else ("", "")
         else:
             first, last = vals[0], vals[-1]
+        shared = {}
+        for c in header:
+            if c in meanings:
+                shared[meanings[c]] = shared.get(meanings[c], 0) + 1
         for c in header:
             if c in KEYS or c not in filled:
                 continue
             st = sub_theme(d.name, c)
+            name = meanings.get(c) or humanise(c)
+            if c in meanings and shared[meanings[c]] > 1:  # one README row describes several columns
+                name = f"{humanise(c)}: {meanings[c]}"
             rows.append({
                 "variable_id": f"{d.name}:{c}",
-                "name": meanings.get(c) or humanise(c),
+                "name": name,
                 "lens_id": lenses.get(st, ""),
                 "sub_theme_id": st,
                 "dataset": d.name,

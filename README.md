@@ -2,7 +2,7 @@
 
 **[Search the data →](https://sarveshkant2003-afk.github.io/bharatnomy-data/)** by topic, state, year or source.
 
-**[Browse variables by lens →](https://sarveshkant2003-afk.github.io/bharatnomy-data/variables.html)**: every variable in the repo, grouped by Bharatnomy's five lenses and their sub-themes.
+**[Variable map →](https://sarveshkant2003-afk.github.io/bharatnomy-data/variables.html)**: a searchable mind map of every variable in the repo, by Bharatnomy's five lenses and their sub-themes.
 
 Public datasets for Bharatnomy's research. One folder per table; each folder's `README.md` gives the source and explains every column.
 
@@ -121,7 +121,7 @@ Example: `AGR_area-under-crops_2015-16-to-2024-25_STATES_MOAFW`.
 [`index.html`](index.html) is the search page, published with GitHub Pages at the link above. It reads `catalog.js`, which `tools/build_catalog.py` builds from every folder's name, README and CSV. A GitHub Action (`.github/workflows/pages.yml`) rebuilds `catalog.js` and republishes the page on every push, so a new folder that follows the naming rules shows up in search a minute or two after it is pushed. To try the page locally, run `python3 tools/build_catalog.py` first.
 
 
-[`variables.html`](variables.html) is the variable explorer. It reads `registry.js`, which `tools/build_catalog.py` builds (with `registry.json`) from `_reference/lenses.csv` and `_reference/variables.csv`; the build fails if a variable points to a missing folder, column, lens or sub-theme, and so does the GitHub Action ([`validate.yml`](.github/workflows/validate.yml) on every push and pull request).
+[`variables.html`](variables.html) is the variable map (a searchable mind map of lenses, sub-themes, datasets and variables). It reads `registry.js`, which `tools/build_catalog.py` builds (with `registry.json`) from `_reference/lenses.csv` and `_reference/variables.csv`; the build fails if a variable points to a missing folder, column, lens or sub-theme, and so does the GitHub Action ([`validate.yml`](.github/workflows/validate.yml) on every push and pull request).
 ## Conventions
 
 - CSV, UTF-8, plain numbers. The unit is in the column name (`_000_ha` = thousand hectares, `_sq_km`, `_pct`, `_tpd` = tonnes per day).
