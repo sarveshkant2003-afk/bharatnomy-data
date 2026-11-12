@@ -63,6 +63,7 @@ One folder per table, named by the [naming rules](#folder-names) below. Each fol
 | [`LAB_plfs-households-nagpur_2025_MH_MOSPI_DIST`](LAB_plfs-households-nagpur_2025_MH_MOSPI_DIST/) | PLFS household records, Nagpur district, 2025 | MoSPI PLFS unit-level data |
 | [`LAB_plfs-persons-nagpur_2025_MH_MOSPI_DIST`](LAB_plfs-persons-nagpur_2025_MH_MOSPI_DIST/) | PLFS person records (jobs, industry, contracts, earnings), Nagpur district, 2025 | MoSPI PLFS unit-level data |
 | [`POP_census-pca_2011_STATES_ORGI_DIST`](POP_census-pca_2011_STATES_ORGI_DIST/) | Population, literacy and workers by category, by district | Census 2011 Primary Census Abstract |
+| [`POP_coastal-districts_2011_STATES_BNY_DIST`](POP_coastal-districts_2011_STATES_BNY_DIST/) | Coastal districts, coastline length and their 2011 population | Our calculation from Natural Earth coastline and Census 2011 |
 | [`POP_disabled-population_2011_STATES_ORGI_DIST`](POP_disabled-population_2011_STATES_ORGI_DIST/) | Disabled population by type, age and sex, districts | Census 2011 C-20 |
 | [`POP_single-year-age_2011_MH_ORGI_DIST`](POP_single-year-age_2011_MH_ORGI_DIST/) | Population by single year of age, Maharashtra districts (elderly share) | Census 2011 table C-13 |
 | [`SOC_multidimensional-poverty_2015-16-to-2019-21_STATES_NITI_DIST`](SOC_multidimensional-poverty_2015-16-to-2019-21_STATES_NITI_DIST/) | Multidimensional poverty (headcount, intensity, MPI) by district, NFHS-4 and NFHS-5 | NITI Aayog National MPI 2023 |
@@ -86,6 +87,7 @@ Reference files are in [`_reference/`](_reference/) ([what they are](_reference/
 | Forest cover | `ENV_forest-*` |
 | Power: installed capacity (coal, gas, nuclear, hydro, renewables); peak demand and shortages | `ENG_installed-capacity_*`; `ENG_peak-demand_*` (monthly, by state) |
 | Poverty: multidimensional poverty index | `SOC_multidimensional-poverty_*` (districts) |
+| Coastal districts and population | `POP_coastal-districts_*` |
 | Disability | `POP_disabled-population_*` (districts, 2011) |
 | Crops: area, production, yield by district | `AGR_crop-area-production-yield_*` (two files by year range) |
 | Reservoirs: weekly live storage | `WAT_reservoir-storage_*` |

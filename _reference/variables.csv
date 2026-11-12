@@ -9,6 +9,7 @@ ventilation-mixing-height,Ventilation / mixing height,CAR,CAR-AIR,CLM_aerosol-so
 ventilation-coefficient,Ventilation coefficient,CAR,CAR-AIR,CLM_aerosol-soil-evaporation-boundary-layer_1981-to-2025_MH_BNY_DIST,ventilation_coefficient_approx_m2s,m2/s,DIST,monthly,1981-01,2025-12,derived
 very-poor-severe-aqi-days,Very poor / severe AQI days,CAR,CAR-AIR,ENV_aqi-days-by-category_2015-to-2026_STATES_BNY_CITY,days_very_poor_or_severe; days_very_poor; days_severe,days per year,CITY,annual,2015,2026,derived
 children-under-5-share,Children under 5 share,CAR,CAR-EXPOSURE,POP_single-year-age_2011_MH_ORGI_DIST,age; persons_total,persons by single year of age,DIST,one-off,2011,2011,raw
+coastal-population,Coastal population,CAR,CAR-EXPOSURE,POP_coastal-districts_2011_STATES_BNY_DIST,population_persons; is_coastal,persons,DIST,one-off (census),2011,2011,derived
 elderly-population-share,Elderly population share,CAR,CAR-EXPOSURE,POP_single-year-age_2011_MH_ORGI_DIST,age; persons_total,persons by single year of age,DIST,one-off,2011,2011,raw
 literacy-rate,Literacy rate,CAR,CAR-EXPOSURE,POP_census-pca_2011_STATES_ORGI_DIST,literates_persons; population_age_0_6_persons; population_persons,persons,DIST,one-off,2011,2011,raw
 persons-with-disability,Persons with disability,CAR,CAR-EXPOSURE,POP_disabled-population_2011_STATES_ORGI_DIST,disabled_total_persons,persons,DIST,one-off (census),2011,2011,raw
@@ -21,6 +22,7 @@ land-surface-temperature,Land surface temperature,CAR,CAR-HEAT,CLM_heat-indicato
 maximum-temperature,Maximum temperature,CAR,CAR-HEAT,CLM_temperature-indices_1951-to-2024_MH_BNY_DIST,tmax_mean_c; tmax_highest_c; tmax_mean_mar_may_c; days_tmax_40c_or_more; days_tmax_45c_or_more; days_tmax_above_p90,°C; days,DIST,annual,1951,2024,derived
 minimum-temperature,Minimum temperature,CAR,CAR-HEAT,CLM_temperature-indices_1951-to-2024_MH_BNY_DIST,tmin_mean_c; tmin_highest_c; tmin_lowest_c; tmin_mean_mar_may_c; nights_tmin_above_p90,°C; days,DIST,annual,1951,2024,derived
 warm-nights,Warm nights,CAR,CAR-HEAT,CLM_temperature-indices_1951-to-2024_MH_BNY_DIST,warm_nights,days per year,DIST,annual,1951,2024,derived
+housing-vulnerable-to-wind,Housing vulnerable to wind,CAR,CAR-HOUSING,HOU_household-amenities-hh14_2011_MH_ORGI_SDT,roof_grass_thatch_bamboo_wood_mud_etc_pct; roof_plastic_polythene_pct; roof_g_i_metal_asbestos_sheets_pct; house_condition_total_dilapidated_pct,% of households,SDT,one-off (census),2011,2011,raw
 kutcha-tin-asbestos-roofs,Kutcha / tin / asbestos roofs,CAR,CAR-HOUSING,HOU_household-amenities-hh14_2011_MH_ORGI_SDT,roof_grass_thatch_bamboo_wood_mud_etc_pct; roof_plastic_polythene_pct; roof_g_i_metal_asbestos_sheets_pct,% of households,SDT,one-off,2011,2011,raw
 kutcha-houses,Kutcha houses,CAR,CAR-HOUSING,HOU_household-amenities-hh14_2011_MH_ORGI_SDT,house_structure_total_temporary_pct; house_structure_semi_permanent_pct; wall_mud_unburnt_brick_pct,% of households,SDT,one-off,2011,2011,raw
 forest-green-cover,Forest / green cover,CAR,CAR-LAND,ENV_forest-cover_2023_STATES_FSI_DIST,forest_cover_pct_of_area; forest_cover_total_sq_km,% of area; sq km,DIST,one-off,2023,2023,raw
