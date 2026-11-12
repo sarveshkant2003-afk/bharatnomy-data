@@ -26,6 +26,7 @@ One folder per table, named by the [naming rules](#folder-names) below. Each fol
 | [`AGR_net-irrigated-area_2004-05-to-2020-21_STATES_RBI`](AGR_net-irrigated-area_2004-05-to-2020-21_STATES_RBI/) | Net irrigated area by state (older years) | RBI Handbook of Statistics on Indian States |
 | [`AGR_net-sown-area_2004-05-to-2020-21_STATES_RBI`](AGR_net-sown-area_2004-05-to-2020-21_STATES_RBI/) | Net sown area by state (older years) | RBI Handbook of Statistics on Indian States |
 | [`CLM_cyclone-best-tracks_1982-to-2026_IN_IMD`](CLM_cyclone-best-tracks_1982-to-2026_IN_IMD/) | Cyclone tracks every 3-6 hours: position, wind, pressure, grade, landfall notes | IMD RSMC New Delhi |
+| [`CLM_cyclone-crossings_1982-to-2025_STATES_BNY_DIST`](CLM_cyclone-crossings_1982-to-2025_STATES_BNY_DIST/) | Depressions and cyclones crossing each district per year, with strongest wind | Our calculation from IMD best tracks |
 | [`CLM_cyclone-intensity-landfall_1990-to-2025_IN_IMD`](CLM_cyclone-intensity-landfall_1990-to-2025_IN_IMD/) | Cyclone peak intensity, landfall place, wind and pressure at landfall, storm surge (text) | IMD RSMC New Delhi |
 | [`CLM_cyclone-rainfall-damage_1990-to-2025_IN_IMD`](CLM_cyclone-rainfall-damage_1990-to-2025_IN_IMD/) | Cyclone heavy rainfall, deaths and damage (text) | IMD RSMC New Delhi |
 | [`CLM_heat-indicators-nagpur_1951-to-2025_MH_BNY_DIST`](CLM_heat-indicators-nagpur_1951-to-2025_MH_BNY_DIST/) | Heat wave days, warm nights, hottest days, rainfall departure, land surface temperature, Nagpur | Our calculation from IMD gridded data and NASA MODIS |
@@ -81,7 +82,7 @@ Reference files are in [`_reference/`](_reference/) ([what they are](_reference/
 | Rainfall: seasonal totals, departure, heavy rain, dry spells, drought index (SPI), variability | `CLM_rainfall-*` (Maharashtra districts) |
 | District and state codes (LGD, Census 2011), name variants | [`_reference/geography.csv`](_reference/) |
 | Air quality (AQI), very poor / severe air days | `ENV_aqi-*` |
-| Cyclones: tracks, frequency, intensity, landfall, storm surge, damage | `CLM_cyclone-*`, `CLM_severe-cyclone-*` (North Indian Ocean) |
+| Cyclones: tracks, frequency, intensity, landfall, storm surge, damage | `CLM_cyclone-*`, `CLM_severe-cyclone-*` (North Indian Ocean); `CLM_cyclone-crossings_*` (all districts) |
 | Wind, humidity, wet-bulb temperature | `CLM_wind-humidity_*` (Maharashtra districts) |
 | Fires, crop-residue burning | `ENV_active-fires_*` (all districts) |
 | Heat stroke deaths, deaths from natural causes | `HLT_deaths-forces-of-nature_*` |

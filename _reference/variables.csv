@@ -24,6 +24,7 @@ shelterbelts-tree-cover,Shelterbelts / tree cover,CAR,CAR-LAND,ENV_forest-cover_
 deaths-due-to-cyclones-storms,Deaths due to cyclones & storms,CAR,CAR-MORTALITY,HLT_deaths-forces-of-nature_2017-to-2022_STATES_NCRB,deaths_total,deaths,STATE,annual,2017,2022,raw
 deaths-due-to-floods-heavy-rain,Deaths due to floods & heavy rain,CAR,CAR-MORTALITY,HLT_deaths-forces-of-nature_2017-to-2022_STATES_NCRB,deaths_total,deaths,STATE,annual,2017,2022,raw
 heatstroke-cases-deaths,Heatstroke cases & deaths,CAR,CAR-MORTALITY,HLT_deaths-forces-of-nature_2017-to-2022_STATES_NCRB,deaths_total,deaths,STATE,annual,2017,2022,raw
+houses-crops-damaged,Houses & crops damaged,CAR,CAR-MORTALITY,CLM_cyclone-rainfall-damage_1990-to-2025_IN_IMD,damage,text,IN,per cyclone,1990,2025,raw
 lightning-strikes-deaths,Lightning strikes & deaths,CAR,CAR-MORTALITY,HLT_deaths-forces-of-nature_2017-to-2022_STATES_NCRB,deaths_total,deaths,STATE,annual,2017,2022,raw
 annual-rainfall,Annual rainfall,CAR,CAR-RAIN,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,rainfall_annual_mm,mm,DIST,annual,1951,2025,derived
 consecutive-dry-days,Consecutive dry days,CAR,CAR-RAIN,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,consecutive_dry_days,days,DIST,annual,1951,2025,derived
@@ -42,9 +43,13 @@ very-extremely-heavy-rainfall-days,Very / extremely heavy rainfall days,CAR,CAR-
 no-drinking-water-within-premises,No drinking water within premises,CAR,CAR-WATER,HOU_household-amenities-hh14_2011_MH_ORGI_SDT,drinking_water_location_within_premises_pct; drinking_water_location_near_premises_pct; drinking_water_location_away_pct,% of households,SDT,one-off,2011,2011,raw
 solid-waste-management,Solid waste management,CAR,CAR-WATER,WAT_msw-generated-processed_2023-12_STATES_MOHUA,waste_generated_tpd; waste_processed_tpd,tonnes per day,STATE,one-off,2023-12,2023-12,raw
 calm-days,Calm days,CAR,CAR-WIND,CLM_wind-humidity_1981-to-2025_MH_BNY_DIST,calm_days_below_1ms,days per year,DIST,annual,1981,2025,derived
+cyclone-frequency,Cyclone frequency,CAR,CAR-WIND,CLM_cyclone-crossings_1982-to-2025_STATES_BNY_DIST,systems_crossing; cyclonic_storms_crossing_34kt,count,DIST,annual,1982,2025,derived
+cyclone-intensity,Cyclone intensity,CAR,CAR-WIND,CLM_cyclone-crossings_1982-to-2025_STATES_BNY_DIST,max_wind_over_district_kt,knots,DIST,annual,1982,2025,derived
+cyclones,Cyclones,CAR,CAR-WIND,CLM_cyclone-crossings_1982-to-2025_STATES_BNY_DIST,cyclonic_storms_crossing_34kt; systems_crossing,count,DIST,annual,1982,2025,derived
 extreme-wind-days,Extreme wind days,CAR,CAR-WIND,CLM_wind-humidity_1981-to-2025_MH_BNY_DIST,strong_wind_days_10_8ms,days per year,DIST,annual,1981,2025,derived
 maximum-wind-speed-gusts,Maximum wind speed / gusts,CAR,CAR-WIND,CLM_wind-humidity_1981-to-2025_MH_BNY_DIST,wind_speed_10m_max_highest_ms,m/s,DIST,annual,1981,2025,derived
 mean-wind-speed,Mean wind speed,CAR,CAR-WIND,CLM_wind-humidity_1981-to-2025_MH_BNY_DIST,wind_speed_10m_mean_ms,m/s,DIST,annual,1981,2025,derived
+storm-surge-height,Storm surge height,CAR,CAR-WIND,CLM_cyclone-intensity-landfall_1990-to-2025_IN_IMD,storm_surge,m (text),IN,per cyclone,1990,2025,raw
 wind-direction,Wind direction,CAR,CAR-WIND,CLM_wind-humidity_1981-to-2025_MH_BNY_DIST,wind_direction_prevailing; wind_direction_prevailing_days,compass sector; days,DIST,annual,1981,2025,derived
 electricity-access-supply-hours,Electricity access & supply hours,EPM,EPM-ACCESS,HOU_household-amenities-hh14_2011_MH_ORGI_SDT,lighting_electricity_pct,% of households,SDT,one-off,2011,2011,raw
 solid-fuel-use-for-cooking,Solid fuel use for cooking,EPM,EPM-ACCESS,HOU_household-amenities-hh14_2011_MH_ORGI_SDT,cooking_fuel_fire_wood_pct; cooking_fuel_crop_residue_pct; cooking_fuel_cowdung_cake_pct; cooking_fuel_coal_lignite_charcoal_pct,% of households,SDT,one-off,2011,2011,raw

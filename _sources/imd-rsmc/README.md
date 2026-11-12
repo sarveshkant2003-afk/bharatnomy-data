@@ -6,6 +6,7 @@ Original files from India Meteorological Department's Regional Specialised Meteo
 - [`CLM_severe-cyclone-frequency_1965-to-2025_IN_IMD/`](../../CLM_severe-cyclone-frequency_1965-to-2025_IN_IMD/) (`scs.xls`, all six sheets)
 - [`CLM_cyclone-intensity-landfall_1990-to-2025_IN_IMD/`](../../CLM_cyclone-intensity-landfall_1990-to-2025_IN_IMD/) (`tcintensity.xls`, sheet TC DATA)
 - [`CLM_cyclone-rainfall-damage_1990-to-2025_IN_IMD/`](../../CLM_cyclone-rainfall-damage_1990-to-2025_IN_IMD/) (`tcintensity.xls`, sheet TC RAINFALL)
+- [`CLM_cyclone-crossings_1982-to-2025_STATES_BNY_DIST/`](../../CLM_cyclone-crossings_1982-to-2025_STATES_BNY_DIST/) (our calculation from the best tracks and 2011 district boundaries)
 
 ## Source
 
