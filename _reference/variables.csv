@@ -11,6 +11,7 @@ elderly-population-share,Elderly population share,CAR,CAR-EXPOSURE,POP_single-ye
 literacy-rate,Literacy rate,CAR,CAR-EXPOSURE,POP_census-pca_2011_STATES_ORGI_DIST,literates_persons; population_age_0_6_persons; population_persons,persons,DIST,one-off,2011,2011,raw
 population-density,Population & density,CAR,CAR-EXPOSURE,POP_census-pca_2011_STATES_ORGI_DIST,population_persons; households,persons,DIST,one-off,2011,2011,raw
 slum-population,Slum population,CAR,CAR-EXPOSURE,HOU_slum-population_2011_STATES_ORGI_CITY,population_persons,persons,CITY,one-off,2011,2011,raw
+urbanisation-built-up-area,Urbanisation & built-up area,CAR,CAR-EXPOSURE,POP_census-pca_2011_STATES_ORGI_DIST,population_persons,persons,DIST,one-off (census),2011,2011,raw
 heatwave-days,Heatwave days,CAR,CAR-HEAT,CLM_temperature-indices_1951-to-2024_MH_BNY_DIST,heatwave_days; severe_heatwave_days,days per year,DIST,annual,1951,2024,derived
 humidity-heat-index,Humidity / heat index,CAR,CAR-HEAT,CLM_wind-humidity_1981-to-2025_MH_BNY_DIST,relative_humidity_mean_pct; relative_humidity_mean_mar_may_pct; relative_humidity_mean_jun_sep_pct; wet_bulb_temp_highest_c; wet_bulb_temp_mean_mar_may_c,%; °C,DIST,annual,1981,2025,derived
 land-surface-temperature,Land surface temperature,CAR,CAR-HEAT,CLM_heat-indicators-nagpur_1951-to-2025_MH_BNY_DIST,lst_day_mean_mar_may_c; lst_night_mean_mar_may_c; lst_day_highest_8day_c; lst_night_highest_8day_c,°C,CITY,annual,2002,2022,derived
@@ -62,3 +63,4 @@ wind-speed-at-hub-height,Wind speed at hub height,EPM,EPM-RENEW,CLM_wind-humidit
 agri-vs-non-agri-land,Agri vs non-agri land,MAC,MAC-AGRI,AGR_land-use-irrigation_1998-99-to-2024-25_MH_MOAFW_DIST,net_area_sown_ha; forests_ha; area_non_agricultural_uses_ha; barren_unculturable_land_ha; reporting_area_ha,ha,DIST,annual,1998-99,2024-25,raw
 irrigated-vs-rain-fed-area,Irrigated vs rain-fed area,MAC,MAC-AGRI,AGR_land-use-irrigation_1998-99-to-2024-25_MH_MOAFW_DIST,net_irrigated_area_total_ha; net_area_sown_ha,ha,DIST,annual,1998-99,2024-25,raw
 agricultural-workers,Agricultural workers,MAC,MAC-LABOUR,POP_census-pca_2011_STATES_ORGI_DIST,main_cultivators_persons; main_agricultural_labourers_persons; marginal_cultivators_persons; marginal_agricultural_labourers_persons; total_workers_persons,persons,DIST,one-off,2011,2011,raw
+outdoor-workers,Outdoor workers,MAC,MAC-LABOUR,POP_census-pca_2011_STATES_ORGI_DIST,main_cultivators_persons; main_agricultural_labourers_persons; total_workers_persons,persons,DIST,one-off (census),2011,2011,raw
