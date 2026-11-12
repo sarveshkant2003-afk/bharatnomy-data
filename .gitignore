@@ -50,3 +50,6 @@ _sources/jrc-ghsl/raw/
 
 # DES crop APY report pages (about 150 MB): steps in _sources/moafw-apy/README.md
 _sources/moafw-apy/raw/*.html
+
+# Global Wind Atlas rasters (about 450 MB): steps in _sources/global-wind-atlas/README.md
+_sources/global-wind-atlas/raw/

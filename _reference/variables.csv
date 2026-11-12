@@ -70,6 +70,7 @@ solid-fuel-use-for-cooking,Solid fuel use for cooking,EPM,EPM-ACCESS,HOU_househo
 peak-electricity-demand,Peak electricity demand,EPM,EPM-DEMAND,ENG_peak-demand_2013-01-to-2026-08_STATES_CEA,peak_demand_mw; peak_met_mw,MW,STATE,monthly,2013-01,2026-08,raw
 thermal-power-plants,Thermal power plants,EPM,EPM-DEMAND,ENG_installed-capacity_2026-09_STATES_CEA,coal_mw; lignite_mw; gas_mw; thermal_total_mw,MW,STATE,monthly (latest only),2026-09,2026-09,raw
 installed-wind-capacity,Installed wind capacity,EPM,EPM-RENEW,ENG_installed-capacity_2026-09_STATES_CEA,res_mnre_mw,MW,STATE,monthly (latest only),2026-09,2026-09,raw
+wind-power-density,Wind power density,EPM,EPM-RENEW,CLM_wind-resource-100m_2008-to-2017_STATES_BNY_DIST,power_density_100m_mean_w_m2; power_density_100m_p90_w_m2,W/m2,DIST,long-term mean (2008-2017),2008,2017,derived
 wind-speed-at-hub-height,Wind speed at hub height,EPM,EPM-RENEW,CLM_wind-humidity_1981-to-2025_MH_BNY_DIST,wind_speed_50m_mean_ms,m/s,DIST,annual,1981,2025,derived
 agri-vs-non-agri-land,Agri vs non-agri land,MAC,MAC-AGRI,AGR_land-use-irrigation_1998-99-to-2024-25_MH_MOAFW_DIST,net_area_sown_ha; forests_ha; area_non_agricultural_uses_ha; barren_unculturable_land_ha; reporting_area_ha,ha,DIST,annual,1998-99,2024-25,raw
 irrigated-vs-rain-fed-area,Irrigated vs rain-fed area,MAC,MAC-AGRI,AGR_land-use-irrigation_1998-99-to-2024-25_MH_MOAFW_DIST,net_irrigated_area_total_ha; net_area_sown_ha,ha,DIST,annual,1998-99,2024-25,raw
