@@ -59,6 +59,7 @@ storm-surge-height,Storm surge height,CAR,CAR-WIND,CLM_cyclone-intensity-landfal
 wind-direction,Wind direction,CAR,CAR-WIND,CLM_wind-humidity_1981-to-2025_MH_BNY_DIST,wind_direction_prevailing; wind_direction_prevailing_days,compass sector; days,DIST,annual,1981,2025,derived
 electricity-access-supply-hours,Electricity access & supply hours,EPM,EPM-ACCESS,HOU_household-amenities-hh14_2011_MH_ORGI_SDT,lighting_electricity_pct,% of households,SDT,one-off,2011,2011,raw
 solid-fuel-use-for-cooking,Solid fuel use for cooking,EPM,EPM-ACCESS,HOU_household-amenities-hh14_2011_MH_ORGI_SDT,cooking_fuel_fire_wood_pct; cooking_fuel_crop_residue_pct; cooking_fuel_cowdung_cake_pct; cooking_fuel_coal_lignite_charcoal_pct,% of households,SDT,one-off,2011,2011,raw
+peak-electricity-demand,Peak electricity demand,EPM,EPM-DEMAND,ENG_peak-demand_2013-01-to-2026-08_STATES_CEA,peak_demand_mw; peak_met_mw,MW,STATE,monthly,2013-01,2026-08,raw
 thermal-power-plants,Thermal power plants,EPM,EPM-DEMAND,ENG_installed-capacity_2026-09_STATES_CEA,coal_mw; lignite_mw; gas_mw; thermal_total_mw,MW,STATE,monthly (latest only),2026-09,2026-09,raw
 installed-wind-capacity,Installed wind capacity,EPM,EPM-RENEW,ENG_installed-capacity_2026-09_STATES_CEA,res_mnre_mw,MW,STATE,monthly (latest only),2026-09,2026-09,raw
 wind-speed-at-hub-height,Wind speed at hub height,EPM,EPM-RENEW,CLM_wind-humidity_1981-to-2025_MH_BNY_DIST,wind_speed_50m_mean_ms,m/s,DIST,annual,1981,2025,derived

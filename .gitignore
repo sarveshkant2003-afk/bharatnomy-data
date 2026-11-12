@@ -38,3 +38,6 @@ _sources/nasa-power/raw/
 
 # NASA FIRMS fire detections (about 150 MB): steps in _sources/nasa-firms/README.md
 _sources/nasa-firms/raw/
+
+# CEA monthly peak power supply PDFs (about 50 MB): steps in _sources/cea-power-supply-position/README.md
+_sources/cea-power-supply-position/raw/*.pdf
