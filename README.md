@@ -25,9 +25,13 @@ One folder per table, named by the [naming rules](#folder-names) below. Each fol
 | [`AGR_net-irrigated-area-by-source_2015-16-to-2024-25_STATES_MOAFW`](AGR_net-irrigated-area-by-source_2015-16-to-2024-25_STATES_MOAFW/) | Net irrigated area by source, by state | Land Use Statistics at a Glance 2024-25 |
 | [`AGR_net-irrigated-area_2004-05-to-2020-21_STATES_RBI`](AGR_net-irrigated-area_2004-05-to-2020-21_STATES_RBI/) | Net irrigated area by state (older years) | RBI Handbook of Statistics on Indian States |
 | [`AGR_net-sown-area_2004-05-to-2020-21_STATES_RBI`](AGR_net-sown-area_2004-05-to-2020-21_STATES_RBI/) | Net sown area by state (older years) | RBI Handbook of Statistics on Indian States |
+| [`CLM_cyclone-best-tracks_1982-to-2026_IN_IMD`](CLM_cyclone-best-tracks_1982-to-2026_IN_IMD/) | Cyclone tracks every 3-6 hours: position, wind, pressure, grade, landfall notes | IMD RSMC New Delhi |
+| [`CLM_cyclone-intensity-landfall_1990-to-2025_IN_IMD`](CLM_cyclone-intensity-landfall_1990-to-2025_IN_IMD/) | Cyclone peak intensity, landfall place, wind and pressure at landfall, storm surge (text) | IMD RSMC New Delhi |
+| [`CLM_cyclone-rainfall-damage_1990-to-2025_IN_IMD`](CLM_cyclone-rainfall-damage_1990-to-2025_IN_IMD/) | Cyclone heavy rainfall, deaths and damage (text) | IMD RSMC New Delhi |
 | [`CLM_heat-indicators-nagpur_1951-to-2025_MH_BNY_DIST`](CLM_heat-indicators-nagpur_1951-to-2025_MH_BNY_DIST/) | Heat wave days, warm nights, hottest days, rainfall departure, land surface temperature, Nagpur | Our calculation from IMD gridded data and NASA MODIS |
 | [`CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST`](CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST/) | Annual and seasonal rainfall, departures, heavy-rain days, dry spells, SPI, Maharashtra districts | Our calculation from IMD gridded rainfall |
 | [`CLM_rainfall-variability_1971-to-2020_MH_BNY_DIST`](CLM_rainfall-variability_1971-to-2020_MH_BNY_DIST/) | Year-to-year rainfall variability, Maharashtra districts | Our calculation from IMD gridded rainfall |
+| [`CLM_severe-cyclone-frequency_1965-to-2025_IN_IMD`](CLM_severe-cyclone-frequency_1965-to-2025_IN_IMD/) | Severe cyclones per month by intensity, North Indian Ocean | IMD RSMC New Delhi |
 | [`CLM_temperature-indices_1951-to-2024_MH_BNY_DIST`](CLM_temperature-indices_1951-to-2024_MH_BNY_DIST/) | Mean and extreme temperature, heat wave days, warm nights, Maharashtra districts | Our calculation from IMD gridded temperature |
 | [`CLM_wind-humidity_1981-to-2025_MH_BNY_DIST`](CLM_wind-humidity_1981-to-2025_MH_BNY_DIST/) | Wind speed and direction, calm and strong-wind days, humidity, wet-bulb temperature, Maharashtra districts | Our calculation from NASA POWER |
 | [`ENV_aqi-daily_2015-to-2026_STATES_CPCB_CITY`](ENV_aqi-daily_2015-to-2026_STATES_CPCB_CITY/) | Daily Air Quality Index by city | CPCB daily AQI bulletins |
@@ -77,6 +81,7 @@ Reference files are in [`_reference/`](_reference/) ([what they are](_reference/
 | Rainfall: seasonal totals, departure, heavy rain, dry spells, drought index (SPI), variability | `CLM_rainfall-*` (Maharashtra districts) |
 | District and state codes (LGD, Census 2011), name variants | [`_reference/geography.csv`](_reference/) |
 | Air quality (AQI), very poor / severe air days | `ENV_aqi-*` |
+| Cyclones: tracks, frequency, intensity, landfall, storm surge, damage | `CLM_cyclone-*`, `CLM_severe-cyclone-*` (North Indian Ocean) |
 | Wind, humidity, wet-bulb temperature | `CLM_wind-humidity_*` (Maharashtra districts) |
 | Fires, crop-residue burning | `ENV_active-fires_*` (all districts) |
 | Heat stroke deaths, deaths from natural causes | `HLT_deaths-forces-of-nature_*` |
@@ -110,6 +115,7 @@ Example: `AGR_area-under-crops_2015-16-to-2024-25_STATES_MOAFW`.
 | `BNY` | Bharatnomy (our own calculation; the README names the data it is built from) |
 | `CPCB` | Central Pollution Control Board |
 | `FSI` | Forest Survey of India |
+| `IMD` | India Meteorological Department |
 | `MOAFW` | Ministry of Agriculture & Farmers' Welfare |
 | `MOHUA` | Ministry of Housing & Urban Affairs |
 | `MOJS` | Ministry of Jal Shakti |
