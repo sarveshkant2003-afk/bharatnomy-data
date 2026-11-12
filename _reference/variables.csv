@@ -26,6 +26,7 @@ green-tree-cover,Green / tree cover,CAR,CAR-LAND,ENV_forest-cover_2023_STATES_FS
 green-cover,Green cover,CAR,CAR-LAND,ENV_forest-cover_2023_STATES_FSI_DIST,forest_cover_pct_of_area; forest_cover_total_sq_km,% of area; sq km,DIST,one-off,2023,2023,raw
 mangrove-cover,Mangrove cover,CAR,CAR-LAND,ENV_mangrove-cover_2021-to-2023_STATES_FSI_DIST,mangrove_cover_total_sq_km,sq km,DIST,biennial,2021,2023,raw
 shelterbelts-tree-cover,Shelterbelts / tree cover,CAR,CAR-LAND,ENV_forest-cover_2023_STATES_FSI_DIST,forest_cover_pct_of_area; forest_cover_total_sq_km,% of area; sq km,DIST,one-off,2023,2023,raw
+cause-specific-mortality,Cause-specific mortality,CAR,CAR-MORTALITY,HLT_deaths-forces-of-nature_2017-to-2022_STATES_NCRB,deaths_total,deaths,STATE,annual,2017,2022,raw
 deaths-due-to-cyclones-storms,Deaths due to cyclones & storms,CAR,CAR-MORTALITY,HLT_deaths-forces-of-nature_2017-to-2022_STATES_NCRB,deaths_total,deaths,STATE,annual,2017,2022,raw
 deaths-due-to-floods-heavy-rain,Deaths due to floods & heavy rain,CAR,CAR-MORTALITY,HLT_deaths-forces-of-nature_2017-to-2022_STATES_NCRB,deaths_total,deaths,STATE,annual,2017,2022,raw
 heatstroke-cases-deaths,Heatstroke cases & deaths,CAR,CAR-MORTALITY,HLT_deaths-forces-of-nature_2017-to-2022_STATES_NCRB,deaths_total,deaths,STATE,annual,2017,2022,raw
