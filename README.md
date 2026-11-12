@@ -62,6 +62,7 @@ One folder per table, named by the [naming rules](#folder-names) below. Each fol
 | [`LAB_plfs-persons-nagpur_2025_MH_MOSPI_DIST`](LAB_plfs-persons-nagpur_2025_MH_MOSPI_DIST/) | PLFS person records (jobs, industry, contracts, earnings), Nagpur district, 2025 | MoSPI PLFS unit-level data |
 | [`POP_census-pca_2011_STATES_ORGI_DIST`](POP_census-pca_2011_STATES_ORGI_DIST/) | Population, literacy and workers by category, by district | Census 2011 Primary Census Abstract |
 | [`POP_single-year-age_2011_MH_ORGI_DIST`](POP_single-year-age_2011_MH_ORGI_DIST/) | Population by single year of age, Maharashtra districts (elderly share) | Census 2011 table C-13 |
+| [`SOC_multidimensional-poverty_2015-16-to-2019-21_STATES_NITI_DIST`](SOC_multidimensional-poverty_2015-16-to-2019-21_STATES_NITI_DIST/) | Multidimensional poverty (headcount, intensity, MPI) by district, NFHS-4 and NFHS-5 | NITI Aayog National MPI 2023 |
 | [`WAT_msw-generated-processed_2023-12_STATES_MOHUA`](WAT_msw-generated-processed_2023-12_STATES_MOHUA/) | Municipal solid waste generated and processed | MoHUA Swachhatam portal |
 | [`WAT_tap-water-connections-rural_2026-10_STATES_MOJS_DIST`](WAT_tap-water-connections-rural_2026-10_STATES_MOJS_DIST/) | Rural households with tap water connections by district | Jal Jeevan Mission dashboard |
 
@@ -80,6 +81,7 @@ Reference files are in [`_reference/`](_reference/) ([what they are](_reference/
 | Employment, occupations, job contracts, earnings (Nagpur unit-level survey records) | `LAB_plfs-*` |
 | Forest cover | `ENV_forest-*` |
 | Power: installed capacity (coal, gas, nuclear, hydro, renewables); peak demand and shortages | `ENG_installed-capacity_*`; `ENG_peak-demand_*` (monthly, by state) |
+| Poverty: multidimensional poverty index | `SOC_multidimensional-poverty_*` (districts) |
 | Mangroves | `ENV_mangrove-*` |
 | Urban solid waste | `WAT_msw-*` |
 | Heat: temperature, heat waves, warm nights, land surface temperature | `CLM_temperature-indices_*` (Maharashtra districts); `CLM_heat-indicators-*` (Nagpur, with LST) |
@@ -128,6 +130,7 @@ Example: `AGR_area-under-crops_2015-16-to-2024-25_STATES_MOAFW`.
 | `MOJS` | Ministry of Jal Shakti |
 | `MOSPI` | Ministry of Statistics and Programme Implementation |
 | `NCRB` | National Crime Records Bureau |
+| `NITI` | NITI Aayog |
 | `ORGI` | Office of the Registrar General & Census Commissioner, India |
 | `RBI` | Reserve Bank of India (republished tables; the original agency is in each README) |
 
