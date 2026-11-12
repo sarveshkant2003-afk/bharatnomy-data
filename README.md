@@ -14,6 +14,8 @@ One folder per table, named by the [naming rules](#folder-names) below. Each fol
 |---|---|---|
 | [`AGR_area-under-crops_1950-51-to-2024-25_IN_MOAFW`](AGR_area-under-crops_1950-51-to-2024-25_IN_MOAFW/) | Area under crops, All India | Land Use Statistics at a Glance 2024-25 |
 | [`AGR_area-under-crops_2015-16-to-2024-25_STATES_MOAFW`](AGR_area-under-crops_2015-16-to-2024-25_STATES_MOAFW/) | Area under crops by state | Land Use Statistics at a Glance 2024-25 |
+| [`AGR_crop-area-production-yield_1997-98-to-2009-10_STATES_MOAFW_DIST`](AGR_crop-area-production-yield_1997-98-to-2009-10_STATES_MOAFW_DIST/) | Crop area, production and yield by district, every crop and season (part 1) | DES crops APY report |
+| [`AGR_crop-area-production-yield_2010-11-to-2022-23_STATES_MOAFW_DIST`](AGR_crop-area-production-yield_2010-11-to-2022-23_STATES_MOAFW_DIST/) | Crop area, production and yield by district, every crop and season (part 2) | DES crops APY report |
 | [`AGR_gross-irrigated-area-by-source_2015-16-to-2024-25_STATES_MOAFW`](AGR_gross-irrigated-area-by-source_2015-16-to-2024-25_STATES_MOAFW/) | Gross irrigated area by source, by state | Land Use Statistics at a Glance 2024-25 |
 | [`AGR_irrigated-area-by-crop_1950-51-to-2024-25_IN_MOAFW`](AGR_irrigated-area-by-crop_1950-51-to-2024-25_IN_MOAFW/) | Irrigated area by crop, All India | Land Use Statistics at a Glance 2024-25 |
 | [`AGR_irrigated-area-by-crop_2015-16-to-2024-25_STATES_MOAFW`](AGR_irrigated-area-by-crop_2015-16-to-2024-25_STATES_MOAFW/) | Irrigated area by crop, by state | Land Use Statistics at a Glance 2024-25 |
@@ -84,6 +86,7 @@ Reference files are in [`_reference/`](_reference/) ([what they are](_reference/
 | Power: installed capacity (coal, gas, nuclear, hydro, renewables); peak demand and shortages | `ENG_installed-capacity_*`; `ENG_peak-demand_*` (monthly, by state) |
 | Poverty: multidimensional poverty index | `SOC_multidimensional-poverty_*` (districts) |
 | Disability | `POP_disabled-population_*` (districts, 2011) |
+| Crops: area, production, yield by district | `AGR_crop-area-production-yield_*` (two files by year range) |
 | Mangroves | `ENV_mangrove-*` |
 | Urban solid waste | `WAT_msw-*` |
 | Heat: temperature, heat waves, warm nights, land surface temperature | `CLM_temperature-indices_*` (Maharashtra districts); `CLM_heat-indicators-*` (Nagpur, with LST) |

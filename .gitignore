@@ -41,3 +41,12 @@ _sources/nasa-firms/raw/
 
 # CEA monthly peak power supply PDFs (about 50 MB): steps in _sources/cea-power-supply-position/README.md
 _sources/cea-power-supply-position/raw/*.pdf
+
+# CWC weekly reservoir bulletins (several hundred MB): steps in _sources/cwc-reservoir-bulletin/README.md
+_sources/cwc-reservoir-bulletin/raw/pdf/
+
+# JRC GHSL built-up grids (about 3 GB): steps in _sources/jrc-ghsl/README.md
+_sources/jrc-ghsl/raw/
+
+# DES crop APY report pages (about 150 MB): steps in _sources/moafw-apy/README.md
+_sources/moafw-apy/raw/*.html
