@@ -7,6 +7,7 @@ Original files for this release. The cleaned data is in one folder per table:
 - [`HOU_slum-population_2011_STATES_ORGI_CITY/`](../../HOU_slum-population_2011_STATES_ORGI_CITY/)
 - [`HOU_household-amenities-hh14_2011_MH_ORGI_SDT/`](../../HOU_household-amenities-hh14_2011_MH_ORGI_SDT/): `raw/hl14-mh/`, table HH-14 for the 35 districts of Maharashtra (catalog 9795-9829, downloaded 5 Nov 2026, 51 MB; fetch and build scripts in [`pipelines/orgi-census2011/`](../../pipelines/orgi-census2011/)). Only district and sub-district rows are converted; town, ward and village rows are not yet
 - [`_reference/geography.csv`](../../_reference/geography.csv): `orgi-census2011_basic-population-subdistrict-town_2011.xlsx` (catalog 42559, Basic Population Figures of India/State/District/Sub-District/Town, downloaded 5 Nov 2026) gives the Census 2011 code and name of every state, district and sub-district
+- [`POP_disabled-population_2011_STATES_ORGI_DIST/`](../../POP_disabled-population_2011_STATES_ORGI_DIST/): `raw/c20/`, table C-20 for India and every state/UT (catalog ids in `raw/orgi-census2011_c20-catalog-ids_2011.tsv`, downloaded 12 Nov 2026, 5.4 MB)
 
 ## Source
 

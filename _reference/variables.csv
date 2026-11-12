@@ -9,6 +9,7 @@ very-poor-severe-aqi-days,Very poor / severe AQI days,CAR,CAR-AIR,ENV_aqi-days-b
 children-under-5-share,Children under 5 share,CAR,CAR-EXPOSURE,POP_single-year-age_2011_MH_ORGI_DIST,age; persons_total,persons by single year of age,DIST,one-off,2011,2011,raw
 elderly-population-share,Elderly population share,CAR,CAR-EXPOSURE,POP_single-year-age_2011_MH_ORGI_DIST,age; persons_total,persons by single year of age,DIST,one-off,2011,2011,raw
 literacy-rate,Literacy rate,CAR,CAR-EXPOSURE,POP_census-pca_2011_STATES_ORGI_DIST,literates_persons; population_age_0_6_persons; population_persons,persons,DIST,one-off,2011,2011,raw
+persons-with-disability,Persons with disability,CAR,CAR-EXPOSURE,POP_disabled-population_2011_STATES_ORGI_DIST,disabled_total_persons,persons,DIST,one-off (census),2011,2011,raw
 population-density,Population & density,CAR,CAR-EXPOSURE,POP_census-pca_2011_STATES_ORGI_DIST,population_persons; households,persons,DIST,one-off,2011,2011,raw
 slum-population,Slum population,CAR,CAR-EXPOSURE,HOU_slum-population_2011_STATES_ORGI_CITY,population_persons,persons,CITY,one-off,2011,2011,raw
 urbanisation-built-up-area,Urbanisation & built-up area,CAR,CAR-EXPOSURE,POP_census-pca_2011_STATES_ORGI_DIST,population_persons,persons,DIST,one-off (census),2011,2011,raw
