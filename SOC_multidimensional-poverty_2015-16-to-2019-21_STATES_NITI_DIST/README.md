@@ -26,7 +26,7 @@ Share of people who are multidimensionally poor (deprived in at least a third of
 
 ## Notes
 
-- **Bihar's districts are missing.** In the PDF, Bihar's district table (page 80 of the report) is printed on top of a hidden, squeezed copy of Assam's table; the two layers share the same font and colour and cannot be separated reliably. Bihar's state figures are included. Bihar's district values can be read from the report by eye, or from NITI's MPI dashboard.
+- **Bihar's districts are missing.** In the PDF, Bihar's district table (page 80 of the report) is printed on top of a hidden, squeezed copy of Assam's table; the two layers share the same font and colour and cannot be separated reliably. Bihar's state figures are included.
 - Districts are those of NFHS-5 (2019-21); some states have since split districts (e.g. Andhra Pradesh had 13 districts then and has 28 in LGD today). Only 575 districts are comparable between the two rounds (report, p. 33).
 - Some names differ from LGD (e.g. SPSR Nellore, Warangal Rural/Urban, Kanchipuram); 17 district names have no `lgd_district_code`.
 - Intensity is blank (`–`) where the headcount ratio is 0.
