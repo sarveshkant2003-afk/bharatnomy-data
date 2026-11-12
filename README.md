@@ -44,6 +44,7 @@ One folder per table, named by the [naming rules](#folder-names) below. Each fol
 | [`ENG_peak-demand_2013-01-to-2026-08_STATES_CEA`](ENG_peak-demand_2013-01-to-2026-08_STATES_CEA/) | Peak electricity demand and peak met by state, monthly | CEA power supply position reports |
 | [`ENV_active-fires_2001-to-2025_STATES_BNY_DIST`](ENV_active-fires_2001-to-2025_STATES_BNY_DIST/) | Satellite fire detections (crop-residue and forest burning) by district, all India | Our count from NASA FIRMS MODIS |
 | [`ENV_aqi-days-by-category_2015-to-2026_STATES_BNY_CITY`](ENV_aqi-days-by-category_2015-to-2026_STATES_BNY_CITY/) | Days per year in each AQI category, very poor/severe days, stations reporting, by city | Our count from CPCB daily AQI bulletins |
+| [`ENV_built-up-surface_1975-to-2030_STATES_BNY_DIST`](ENV_built-up-surface_1975-to-2030_STATES_BNY_DIST/) | Built-up surface and its share of area, every district, 1975-2030 | Our calculation from JRC GHSL |
 | [`ENV_forest-cover_2023_STATES_FSI_DIST`](ENV_forest-cover_2023_STATES_FSI_DIST/) | Forest cover by district | India State of Forest Report 2023 |
 | [`ENV_forest-tree-cover_2023_STATES_FSI`](ENV_forest-tree-cover_2023_STATES_FSI/) | Forest and tree cover by state | India State of Forest Report 2023 |
 | [`ENV_mangrove-cover_2021-to-2023_STATES_FSI_DIST`](ENV_mangrove-cover_2021-to-2023_STATES_FSI_DIST/) | Mangrove cover by coastal district, 2021 and 2023 | India State of Forest Report 2023 |
@@ -92,6 +93,7 @@ Reference files are in [`_reference/`](_reference/) ([what they are](_reference/
 | Disability | `POP_disabled-population_*` (districts, 2011) |
 | Crops: area, production, yield by district | `AGR_crop-area-production-yield_*` (two files by year range) |
 | Reservoirs: weekly live storage | `WAT_reservoir-storage_*` |
+| Built-up area, urban expansion | `ENV_built-up-surface_*` (all districts, every 5 years) |
 | Mangroves | `ENV_mangrove-*` |
 | Urban solid waste | `WAT_msw-*` |
 | Heat: temperature, heat waves, warm nights, land surface temperature | `CLM_temperature-indices_*` (Maharashtra districts); `CLM_heat-indicators-*` (Nagpur, with LST) |
@@ -137,6 +139,7 @@ Example: `AGR_area-under-crops_2015-16-to-2024-25_STATES_MOAFW`.
 | `CEA` | Central Electricity Authority |
 | `FSI` | Forest Survey of India |
 | `IMD` | India Meteorological Department |
+| `JRC` | European Commission Joint Research Centre (used through BNY calculations) |
 | `MOAFW` | Ministry of Agriculture & Farmers' Welfare |
 | `MOHUA` | Ministry of Housing & Urban Affairs |
 | `MOJS` | Ministry of Jal Shakti |
