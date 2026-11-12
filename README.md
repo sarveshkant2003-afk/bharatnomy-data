@@ -25,6 +25,7 @@ One folder per table, named by the [naming rules](#folder-names) below. Each fol
 | [`AGR_net-irrigated-area-by-source_2015-16-to-2024-25_STATES_MOAFW`](AGR_net-irrigated-area-by-source_2015-16-to-2024-25_STATES_MOAFW/) | Net irrigated area by source, by state | Land Use Statistics at a Glance 2024-25 |
 | [`AGR_net-irrigated-area_2004-05-to-2020-21_STATES_RBI`](AGR_net-irrigated-area_2004-05-to-2020-21_STATES_RBI/) | Net irrigated area by state (older years) | RBI Handbook of Statistics on Indian States |
 | [`AGR_net-sown-area_2004-05-to-2020-21_STATES_RBI`](AGR_net-sown-area_2004-05-to-2020-21_STATES_RBI/) | Net sown area by state (older years) | RBI Handbook of Statistics on Indian States |
+| [`CLM_aerosol-soil-evaporation-boundary-layer_1981-to-2025_MH_BNY_DIST`](CLM_aerosol-soil-evaporation-boundary-layer_1981-to-2025_MH_BNY_DIST/) | Monthly aerosol optical depth, soil wetness, evaporation, mixing height and ventilation coefficient, Maharashtra districts | Our calculation from NASA POWER |
 | [`CLM_cyclone-best-tracks_1982-to-2026_IN_IMD`](CLM_cyclone-best-tracks_1982-to-2026_IN_IMD/) | Cyclone tracks every 3-6 hours: position, wind, pressure, grade, landfall notes | IMD RSMC New Delhi |
 | [`CLM_cyclone-crossings_1982-to-2025_STATES_BNY_DIST`](CLM_cyclone-crossings_1982-to-2025_STATES_BNY_DIST/) | Depressions and cyclones crossing each district per year, with strongest wind | Our calculation from IMD best tracks |
 | [`CLM_cyclone-intensity-landfall_1990-to-2025_IN_IMD`](CLM_cyclone-intensity-landfall_1990-to-2025_IN_IMD/) | Cyclone peak intensity, landfall place, wind and pressure at landfall, storm surge (text) | IMD RSMC New Delhi |
@@ -83,6 +84,7 @@ Reference files are in [`_reference/`](_reference/) ([what they are](_reference/
 | District and state codes (LGD, Census 2011), name variants | [`_reference/geography.csv`](_reference/) |
 | Air quality (AQI), very poor / severe air days | `ENV_aqi-*` |
 | Cyclones: tracks, frequency, intensity, landfall, storm surge, damage | `CLM_cyclone-*`, `CLM_severe-cyclone-*` (North Indian Ocean); `CLM_cyclone-crossings_*` (all districts) |
+| Aerosols (AOD), soil wetness, evaporation, mixing height, ventilation coefficient | `CLM_aerosol-soil-evaporation-boundary-layer_*` (Maharashtra districts, monthly) |
 | Wind, humidity, wet-bulb temperature | `CLM_wind-humidity_*` (Maharashtra districts) |
 | Fires, crop-residue burning | `ENV_active-fires_*` (all districts) |
 | Heat stroke deaths, deaths from natural causes | `HLT_deaths-forces-of-nature_*` |
