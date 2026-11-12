@@ -4,7 +4,7 @@ Which districts (2011 boundaries) touch the sea coast, how much coastline each h
 
 ## Source
 
-- **Coastline:** Natural Earth 1:10m coastline (public domain), version 5.1, https://www.naturalearthdata.com/downloads/10m-physical-vectors/10m-coastline/ (file in [`_sources/natural-earth/raw/`](../_sources/natural-earth/raw/))
+- **Coastline:** Natural Earth 1:10m coastline (public domain), file version 5.0.0-pre9, https://www.naturalearthdata.com/downloads/10m-physical-vectors/10m-coastline/ (file in [`_sources/natural-earth/raw/`](../_sources/natural-earth/raw/))
 - **District boundaries:** Census 2011 district map from DataMeet (see [`_sources/datameet-maps/`](../_sources/datameet-maps/))
 - **Population:** ORGI Census 2011 Primary Census Abstract, from [`POP_census-pca_2011_STATES_ORGI_DIST`](../POP_census-pca_2011_STATES_ORGI_DIST/)
 - **Downloaded:** 12 Nov 2026
