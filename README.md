@@ -67,6 +67,7 @@ One folder per table, named by the [naming rules](#folder-names) below. Each fol
 | [`POP_single-year-age_2011_MH_ORGI_DIST`](POP_single-year-age_2011_MH_ORGI_DIST/) | Population by single year of age, Maharashtra districts (elderly share) | Census 2011 table C-13 |
 | [`SOC_multidimensional-poverty_2015-16-to-2019-21_STATES_NITI_DIST`](SOC_multidimensional-poverty_2015-16-to-2019-21_STATES_NITI_DIST/) | Multidimensional poverty (headcount, intensity, MPI) by district, NFHS-4 and NFHS-5 | NITI Aayog National MPI 2023 |
 | [`WAT_msw-generated-processed_2023-12_STATES_MOHUA`](WAT_msw-generated-processed_2023-12_STATES_MOHUA/) | Municipal solid waste generated and processed | MoHUA Swachhatam portal |
+| [`WAT_reservoir-storage_2015-to-2025_STATES_CWC`](WAT_reservoir-storage_2015-to-2025_STATES_CWC/) | Weekly live storage of 91-161 important reservoirs, by state | CWC weekly bulletins |
 | [`WAT_tap-water-connections-rural_2026-10_STATES_MOJS_DIST`](WAT_tap-water-connections-rural_2026-10_STATES_MOJS_DIST/) | Rural households with tap water connections by district | Jal Jeevan Mission dashboard |
 
 Original source files (PDFs, API downloads) are in [`_sources/`](_sources/), one folder per release.
@@ -87,6 +88,7 @@ Reference files are in [`_reference/`](_reference/) ([what they are](_reference/
 | Poverty: multidimensional poverty index | `SOC_multidimensional-poverty_*` (districts) |
 | Disability | `POP_disabled-population_*` (districts, 2011) |
 | Crops: area, production, yield by district | `AGR_crop-area-production-yield_*` (two files by year range) |
+| Reservoirs: weekly live storage | `WAT_reservoir-storage_*` |
 | Mangroves | `ENV_mangrove-*` |
 | Urban solid waste | `WAT_msw-*` |
 | Heat: temperature, heat waves, warm nights, land surface temperature | `CLM_temperature-indices_*` (Maharashtra districts); `CLM_heat-indicators-*` (Nagpur, with LST) |
@@ -127,6 +129,7 @@ Example: `AGR_area-under-crops_2015-16-to-2024-25_STATES_MOAFW`.
 |---|---|
 | `BNY` | Bharatnomy (our own calculation; the README names the data it is built from) |
 | `CPCB` | Central Pollution Control Board |
+| `CWC` | Central Water Commission |
 | `CEA` | Central Electricity Authority |
 | `FSI` | Forest Survey of India |
 | `IMD` | India Meteorological Department |

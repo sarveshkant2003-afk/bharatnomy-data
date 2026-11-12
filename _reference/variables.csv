@@ -51,6 +51,7 @@ soil-moisture,Soil moisture,CAR,CAR-RAIN,CLM_aerosol-soil-evaporation-boundary-l
 southwest-monsoon-rainfall,Southwest monsoon rainfall,CAR,CAR-RAIN,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,rainfall_jun_sep_mm,mm,DIST,annual,1951,2025,derived
 very-extremely-heavy-rainfall-days,Very / extremely heavy rainfall days,CAR,CAR-RAIN,CLM_rainfall-indices_1951-to-2025_MH_BNY_DIST,very_heavy_rain_days_115_6mm; extremely_heavy_rain_days_204_5mm,days per year,DIST,annual,1951,2025,derived
 no-drinking-water-within-premises,No drinking water within premises,CAR,CAR-WATER,HOU_household-amenities-hh14_2011_MH_ORGI_SDT,drinking_water_location_within_premises_pct; drinking_water_location_near_premises_pct; drinking_water_location_away_pct,% of households,SDT,one-off,2011,2011,raw
+reservoir-storage,Reservoir storage,CAR,CAR-WATER,WAT_reservoir-storage_2015-to-2025_STATES_CWC,storage_pct_of_capacity; current_live_storage_bcm,% of live capacity; BCM,STATE (by reservoir),weekly,2015-04-16,2025-05-08,raw
 solid-waste-management,Solid waste management,CAR,CAR-WATER,WAT_msw-generated-processed_2023-12_STATES_MOHUA,waste_generated_tpd; waste_processed_tpd,tonnes per day,STATE,one-off,2023-12,2023-12,raw
 calm-days,Calm days,CAR,CAR-WIND,CLM_wind-humidity_1981-to-2025_MH_BNY_DIST,calm_days_below_1ms,days per year,DIST,annual,1981,2025,derived
 cyclone-frequency,Cyclone frequency,CAR,CAR-WIND,CLM_cyclone-crossings_1982-to-2025_STATES_BNY_DIST,systems_crossing; cyclonic_storms_crossing_34kt,count,DIST,annual,1982,2025,derived
