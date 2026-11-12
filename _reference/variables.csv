@@ -1,7 +1,9 @@
 variable_id,name,lens_id,sub_theme_id,dataset,column,unit,geo_level,frequency,earliest_period,latest_period,type
 aerosol-optical-depth-aod,Aerosol optical depth (AOD),CAR,CAR-AIR,CLM_aerosol-soil-evaporation-boundary-layer_1981-to-2025_MH_BNY_DIST,aod_550nm,unitless,DIST,monthly,2001-01,2025-12,derived
 air-quality-index-aqi,Air Quality Index (AQI),CAR,CAR-AIR,ENV_aqi-daily_2015-to-2026_STATES_CPCB_CITY,aqi; air_quality,index (0-500),CITY,daily,2015-05-01,2026-10-27,raw
+air-quality-pm2-5-ozone,"Air quality (PM2.5, ozone)",CAR,CAR-AIR,ENV_aqi-days-by-category_2015-to-2026_STATES_BNY_CITY,aqi_mean; days_pm25_prominent; days_o3_prominent,index; days,CITY,annual,2015,2026,derived
 crop-residue-burning,Crop residue burning,CAR,CAR-AIR,ENV_active-fires_2001-to-2025_STATES_BNY_DIST,fire_detections; fire_detections_confidence_30_plus; fire_detections_oct_dec; fire_detections_mar_may,fire detections per year,DIST,annual,2001,2025,derived
+days-exceeding-naaqs,Days exceeding NAAQS,CAR,CAR-AIR,ENV_aqi-days-by-category_2015-to-2026_STATES_BNY_CITY,days_aqi_above_100,days per year,CITY,annual,2015,2026,derived
 monitoring-stations,Monitoring stations,CAR,CAR-AIR,ENV_aqi-days-by-category_2015-to-2026_STATES_BNY_CITY,stations_reporting_max,count,CITY,annual,2015,2026,derived
 ventilation-mixing-height,Ventilation / mixing height,CAR,CAR-AIR,CLM_aerosol-soil-evaporation-boundary-layer_1981-to-2025_MH_BNY_DIST,mixing_height_approx_m,m,DIST,monthly,1981-01,2025-12,derived
 ventilation-coefficient,Ventilation coefficient,CAR,CAR-AIR,CLM_aerosol-soil-evaporation-boundary-layer_1981-to-2025_MH_BNY_DIST,ventilation_coefficient_approx_m2s,m2/s,DIST,monthly,1981-01,2025-12,derived
