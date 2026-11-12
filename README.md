@@ -37,6 +37,7 @@ One folder per table, named by the [naming rules](#folder-names) below. Each fol
 | [`CLM_temperature-indices_1951-to-2024_MH_BNY_DIST`](CLM_temperature-indices_1951-to-2024_MH_BNY_DIST/) | Mean and extreme temperature, heat wave days, warm nights, Maharashtra districts | Our calculation from IMD gridded temperature |
 | [`CLM_wind-humidity_1981-to-2025_MH_BNY_DIST`](CLM_wind-humidity_1981-to-2025_MH_BNY_DIST/) | Wind speed and direction, calm and strong-wind days, humidity, wet-bulb temperature, Maharashtra districts | Our calculation from NASA POWER |
 | [`ENV_aqi-daily_2015-to-2026_STATES_CPCB_CITY`](ENV_aqi-daily_2015-to-2026_STATES_CPCB_CITY/) | Daily Air Quality Index by city | CPCB daily AQI bulletins |
+| [`ENG_installed-capacity_2026-09_STATES_CEA`](ENG_installed-capacity_2026-09_STATES_CEA/) | Installed power capacity by state, fuel and owner (MW) | CEA installed capacity report |
 | [`ENV_active-fires_2001-to-2025_STATES_BNY_DIST`](ENV_active-fires_2001-to-2025_STATES_BNY_DIST/) | Satellite fire detections (crop-residue and forest burning) by district, all India | Our count from NASA FIRMS MODIS |
 | [`ENV_aqi-days-by-category_2015-to-2026_STATES_BNY_CITY`](ENV_aqi-days-by-category_2015-to-2026_STATES_BNY_CITY/) | Days per year in each AQI category, very poor/severe days, stations reporting, by city | Our count from CPCB daily AQI bulletins |
 | [`ENV_forest-cover_2023_STATES_FSI_DIST`](ENV_forest-cover_2023_STATES_FSI_DIST/) | Forest cover by district | India State of Forest Report 2023 |
@@ -77,6 +78,7 @@ Reference files are in [`_reference/`](_reference/) ([what they are](_reference/
 | Factories, industry (output, employment, wages, capital by industry) | `IND_asi-*` (1992-93 onwards); `IND_factories_*_RBI` |
 | Employment, occupations, job contracts, earnings (Nagpur unit-level survey records) | `LAB_plfs-*` |
 | Forest cover | `ENV_forest-*` |
+| Power: installed capacity (coal, gas, nuclear, hydro, renewables) | `ENG_installed-capacity_*` |
 | Mangroves | `ENV_mangrove-*` |
 | Urban solid waste | `WAT_msw-*` |
 | Heat: temperature, heat waves, warm nights, land surface temperature | `CLM_temperature-indices_*` (Maharashtra districts); `CLM_heat-indicators-*` (Nagpur, with LST) |
@@ -117,6 +119,7 @@ Example: `AGR_area-under-crops_2015-16-to-2024-25_STATES_MOAFW`.
 |---|---|
 | `BNY` | Bharatnomy (our own calculation; the README names the data it is built from) |
 | `CPCB` | Central Pollution Control Board |
+| `CEA` | Central Electricity Authority |
 | `FSI` | Forest Survey of India |
 | `IMD` | India Meteorological Department |
 | `MOAFW` | Ministry of Agriculture & Farmers' Welfare |

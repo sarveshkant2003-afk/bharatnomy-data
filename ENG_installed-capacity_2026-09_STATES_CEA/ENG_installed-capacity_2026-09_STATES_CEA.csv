@@ -1,0 +1,182 @@
+state_ut,region,utility_area,sector,coal_mw,lignite_mw,gas_mw,diesel_mw,thermal_total_mw,nuclear_mw,hydro_mw,res_mnre_mw,renewable_total_mw,grand_total_mw
+Delhi,Northern,Delhi,State,0,0,1710.4,0,1710.4,0,0,0,0,1710.4
+Delhi,Northern,Delhi,Private,878.22,0,0,0,878.22,0,0,550.4,550.4,1428.62
+Delhi,Northern,Delhi,Central,2786.144,0,207.0144,0,2993.1584,153.382,1178.0144,0.37,1178.3844,4324.9248
+Delhi,Northern,Delhi,Sub-Total,3664.364,0,1917.4144,0,5581.7784,153.382,1178.0144,550.77,1728.7844,7463.9448
+Haryana,Northern,Haryana,State,2510,0,150,0,2660,0,200,142.6,342.6,3002.6
+Haryana,Northern,Haryana,Private,4561.78,0,0,0,4561.78,0,539,3156.1388,3695.1388,8256.9188
+Haryana,Northern,Haryana,Central,1610.8078,0,431.59,0,2042.3978,123.042,1702.1222,5,1707.1222,3872.562
+Haryana,Northern,Haryana,Sub-Total,8682.5878,0,581.59,0,9264.1778,123.042,2441.1222,3303.7388,5744.861,15132.0808
+Himachal Pradesh,Northern,Himachal Pradesh,State,0,0,0,0,0,0,905.59,262.91,1168.5,1168.5
+Himachal Pradesh,Northern,Himachal Pradesh,Private,0,0,0,0,0,0,1609.4,1145.0372,2754.4372,2754.4372
+Himachal Pradesh,Northern,Himachal Pradesh,Central,144.673,0,0,0,144.673,42.224,1432.0242,1,1433.0242,1619.9212
+Himachal Pradesh,Northern,Himachal Pradesh,Sub-Total,144.673,0,0,0,144.673,42.224,3947.0142,1408.9472,5355.9614,5542.8584
+,Northern,Jammu & Kashmir and Ladakh,State,0,0,0,0,0,0,1230,142.97,1372.97,1372.97
+,Northern,Jammu & Kashmir and Ladakh,Private,0,0,0,0,0,0,0,388.0454,388.0454,388.0454
+,Northern,Jammu & Kashmir and Ladakh,Central,577.1034,0,129.0749,0,706.1783,95.126,1115.8824,0,1115.8824,1917.1867
+,Northern,Jammu & Kashmir and Ladakh,Sub-Total,577.1034,0,129.0749,0,706.1783,95.126,2345.8824,531.0154,2876.8978,3678.202
+Punjab,Northern,Punjab,State,2300,0,150,0,2450,0,1243.4,135.3,1378.7,3828.7
+Punjab,Northern,Punjab,Private,4474,0,0,0,4474,0,288,2323.684,2611.684,7085.684
+Punjab,Northern,Punjab,Central,1475.998,0,0,0,1475.998,229.089,2296.0354,0,2296.0354,4001.1224
+Punjab,Northern,Punjab,Sub-Total,8249.998,0,150,0,8399.998,229.089,3827.4354,2458.984,6286.4194,14915.5064
+Rajasthan,Northern,Rajasthan,State,7580,0,600.5,0,8180.5,0,434.5,184.2,618.7,8799.2
+Rajasthan,Northern,Rajasthan,Private,3301,1080,0,0,4381,0,104,45547.9849,45651.9849,50032.9849
+Rajasthan,Northern,Rajasthan,Central,1491.6398,250,171.1286,0,1912.7684,806.74,1665.168,5450.82,7115.988,9835.4964
+Rajasthan,Northern,Rajasthan,Sub-Total,12372.6398,1330,771.6286,0,14474.2684,806.74,2203.668,51183.0049,53386.6729,68667.6813
+Uttar Pradesh,Northern,Uttar Pradesh,State,9115,0,0,0,9115,0,724.1,21.134,745.234,9860.234
+Uttar Pradesh,Northern,Uttar Pradesh,Private,8814.33,0,0,0,8814.33,0,842.4,8492.8685,9335.2685,18149.5985
+Uttar Pradesh,Northern,Uttar Pradesh,Central,7798.1888,0,1029.5094,0,8827.6982,370.452,2108.5223,567.06,2675.5823,11873.7325
+Uttar Pradesh,Northern,Uttar Pradesh,Sub-Total,25727.5188,0,1029.5094,0,26757.0282,370.452,3675.0223,9081.0625,12756.0848,39883.565
+Uttarakhand,Northern,Uttarakhand,State,0,0,0,0,0,0,1372.15,3.1,1375.25,1375.25
+Uttarakhand,Northern,Uttarakhand,Private,99,0,664,0,763,0,248.2,1370.1085,1618.3085,2381.3085
+Uttarakhand,Northern,Uttarakhand,Central,554.6278,0,69.6611,0,624.2889,47.508,743.5001,2.236,745.7361,1417.533
+Uttarakhand,Northern,Uttarakhand,Sub-Total,653.6278,0,733.6611,0,1387.2889,47.508,2363.8501,1375.4445,3739.2947,5174.0916
+Chandigarh,Northern,Chandigarh,State,0,0,0,0,0,0,0,0,0,0
+Chandigarh,Northern,Chandigarh,Private,0,0,0,0,0,0,0,78.85,78.85,78.85
+Chandigarh,Northern,Chandigarh,Central,44.8564,0,15.0269,0,59.8833,10.409,106.2073,0,106.2073,176.4996
+Chandigarh,Northern,Chandigarh,Sub-Total,44.8564,0,15.0269,0,59.8833,10.409,106.2073,78.85,185.0573,255.3496
+,Northern,Central - Unallocated,Total,1703.67,0,291.0547,0,1994.7247,342.028,871.4538,0,871.4538,3208.2065
+,Northern,Total (Northern Region),State,21505,0,2610.9,0,24115.9,0,6109.74,892.214,7001.954,31117.854
+,Northern,Total (Northern Region),Private,22128.33,1080,664,0,23872.33,0,3631,63053.1173,66684.1173,90556.4473
+,Northern,Total (Northern Region),Central,18187.709,250,2344.06,0,20781.769,2220,13218.93,6026.486,19245.416,42247.185
+,Northern,Total (Northern Region),Grand Total,61821.039,1330,5618.96,0,68769.999,2220,22959.67,69971.8173,92931.4873,163921.4863
+Goa,Western,Goa,State,0,0,0,0,0,0,0,0,0,0
+Goa,Western,Goa,Private,0,0,0,0,0,0,0,103.2019,103.2019,103.2019
+Goa,Western,Goa,Central,492.268,0,19.67,0,511.938,41.68,6,1,7,560.618
+Goa,Western,Goa,Sub-Total,492.268,0,19.67,0,511.938,41.68,6,104.2019,110.2019,663.8199
+Gujarat,Western,Gujarat,State,4510,900,2021.72,0,7431.72,0,772,14692.565,15464.565,22896.285
+Gujarat,Western,Gujarat,Private,7144.67,500,2655,0,10299.67,0,0,34830.8676,34830.8676,45130.5376
+Gujarat,Western,Gujarat,Central,4920.94,0,424,0,5344.94,1034.89,265.08,3998.03,4263.11,10642.94
+Gujarat,Western,Gujarat,Sub-Total,16575.61,1400,5100.72,0,23076.33,1034.89,1037.08,53521.4626,54558.5426,78669.7626
+Madhya Pradesh,Western,Madhya Pradesh,State,4570,0,0,0,4570,0,1703.66,168.56,1872.22,6442.22
+Madhya Pradesh,Western,Madhya Pradesh,Private,5744,0,75,0,5819,0,0,9589.6818,9589.6818,15408.6818
+Madhya Pradesh,Western,Madhya Pradesh,Central,5186.6,0,257,0,5443.6,491.98,1572.5,884.2,2456.7,8392.28
+Madhya Pradesh,Western,Madhya Pradesh,Sub-Total,15500.6,0,332,0,15832.6,491.98,3276.16,10642.4418,13918.6018,30243.1818
+Chhattisgarh,Western,Chhattisgarh,State,1840,0,0,0,1840,0,120,217.076,337.076,2177.076
+Chhattisgarh,Western,Chhattisgarh,Private,8072.5,0,0,0,8072.5,0,0,2428.664,2428.664,10501.164
+Chhattisgarh,Western,Chhattisgarh,Central,2789.366,0,0,0,2789.366,135.57,231.5,0,231.5,3156.436
+Chhattisgarh,Western,Chhattisgarh,Sub-Total,12701.866,0,0,0,12701.866,135.57,351.5,2645.74,2997.24,15834.676
+Maharashtra,Western,Maharashtra,State,10200,0,672,0,10872,0,2850.84,353.205,3204.045,14076.045
+Maharashtra,Western,Maharashtra,Private,9536,0,180,0,9716,0,481,29844.9283,30325.9283,40041.9283
+Maharashtra,Western,Maharashtra,Central,4858.238,0,2272.73,0,7130.968,1068.66,91.5,70.86,162.36,8361.988
+Maharashtra,Western,Maharashtra,Sub-Total,24594.238,0,3124.73,0,27718.968,1068.66,3423.34,30268.9933,33692.3333,62479.9613
+Dadra & Nagar Haveli and Daman & Diu,Western,Dadra and Nagar Haveli and Daman and Diu,State,0,0,0,0,0,0,0,0,0,0
+Dadra & Nagar Haveli and Daman & Diu,Western,Dadra and Nagar Haveli and Daman and Diu,Private,200,0,0,0,200,0,0,147.15,147.15,347.15
+Dadra & Nagar Haveli and Daman & Diu,Western,Dadra and Nagar Haveli and Daman and Diu,Central,387.148,0,109.68,0,496.828,29.22,0,0,0,526.048
+Dadra & Nagar Haveli and Daman & Diu,Western,Dadra and Nagar Haveli and Daman and Diu,Sub-Total,587.148,0,109.68,0,696.828,29.22,0,147.15,147.15,873.198
+,Western,Central - Unallocated,Total,2835.45,0,197.59,0,3033.04,438,0,0,0,3471.04
+,Western,Total (Western Region),State,21120,900,2693.72,0,24713.72,0,5446.5,15431.406,20877.906,45591.626
+,Western,Total (Western Region),Private,30697.17,500,2910,0,34107.17,0,481,76944.4935,77425.4935,111532.6635
+,Western,Total (Western Region),Central,21470.01,0,3280.67,0,24750.68,3240,2166.58,4954.09,7120.67,35111.35
+,Western,Total (Western Region),Grand Total,73287.18,1400,8884.39,0,83571.57,3240,8094.08,97329.9895,105424.0696,192235.6395
+Andhra Pradesh,Southern,Andhra Pradesh,State,6610,0,0,0,6610,0,1673.6,476.892,2150.492,8760.492
+Andhra Pradesh,Southern,Andhra Pradesh,Private,4573.88,0,1065.304,36.8,5675.984,0,1680,12530.66,14210.66,19886.644
+Andhra Pradesh,Southern,Andhra Pradesh,Central,1546.9461,180.23,0,0,1727.1761,127.27,0,782.06,782.06,2636.5061
+Andhra Pradesh,Southern,Andhra Pradesh,Sub-Total,12730.8261,180.23,1065.304,36.8,14013.1601,127.27,3353.6,13789.612,17143.212,31283.6421
+Telangana,Southern,Telangana,State,9380,0,0,0,9380,0,2479.93,51.81,2531.74,11911.74
+Telangana,Southern,Telangana,Private,1389.45,0,438.7,0,1828.15,0,0,5463.21,5463.21,7291.36
+Telangana,Southern,Telangana,Central,3166.8539,61.3,0,0,3228.1539,148.73,0,110,110,3486.8839
+Telangana,Southern,Telangana,Sub-Total,13936.3039,61.3,438.7,0,14436.3039,148.73,2479.93,5625.02,8104.95,22689.9839
+Karnataka,Southern,Karnataka,State,5020,0,370.05,0,5390.05,0,3631.6,436.59,4068.19,9458.24
+Karnataka,Southern,Karnataka,Private,2050,0,0,0,2050,0,0,23446.9513,23446.9513,25496.9513
+Karnataka,Southern,Karnataka,Central,2877.8,471.9,0,0,3349.7,698,0,640,640,4687.7
+Karnataka,Southern,Karnataka,Sub-Total,9947.8,471.9,370.05,0,10789.75,698,3631.6,24523.5413,28155.1413,39642.8913
+Kerala,Southern,Kerala,State,0,0,0,96,96,0,2008.15,216.911,2225.061,2321.061
+Kerala,Southern,Kerala,Private,832.5,0,0,0,832.5,0,0,2618.467,2618.467,3450.967
+Kerala,Southern,Kerala,Central,1403.316,314.2,359.58,0,2077.096,362,0,142,142,2581.096
+Kerala,Southern,Kerala,Sub-Total,2235.816,314.2,359.58,96,3005.596,362,2008.15,2977.378,4985.528,8353.124
+Tamil Nadu,Southern,Tamil Nadu,State,5780,0,394.08,0,6174.08,0,2203.2,275.15,2478.35,8652.43
+Tamil Nadu,Southern,Tamil Nadu,Private,5710.17,250,330.5,0,6290.67,0,0,27260.7706,27260.7706,33551.4406
+Tamil Nadu,Southern,Tamil Nadu,Central,3025.32,1666.57,0,0,4691.89,1448,0,380.56,380.56,6520.45
+Tamil Nadu,Southern,Tamil Nadu,Sub-Total,14515.49,1916.57,724.58,0,17156.64,1448,2203.2,27916.4806,30119.6806,48724.3206
+,Southern,NLC,State,0,0,0,0,0,0,0,0,0,0
+,Southern,NLC,Private,0,0,0,0,0,0,0,0,0,0
+,Southern,NLC,Central,0,166,0,0,166,0,0,0,0,166
+,Southern,NLC,Sub-Total,0,166,0,0,166,0,0,0,0,166
+Puducherry,Southern,Puducherry,State,0,0,32.5,0,32.5,0,0,0,0,32.5
+Puducherry,Southern,Puducherry,Private,0,0,0,0,0,0,0,92.51,92.51,92.51
+Puducherry,Southern,Puducherry,Central,140.8,111.8,0,0,252.6,86,0,0,0,338.6
+Puducherry,Southern,Puducherry,Sub-Total,140.8,111.8,32.5,0,285.1,86,0,92.51,92.51,463.61
+,Southern,Central - Unallocated,Total,1666,418,0,0,2084,450,0,0,0,2534
+,Southern,Total (Southern Region),State,26790,0,796.63,96,27682.63,0,11996.48,1457.353,13453.833,41136.463
+,Southern,Total (Southern Region),Private,14556,250,1834.504,36.8,16677.304,0,1680,71412.5689,73092.5689,89769.8729
+,Southern,Total (Southern Region),Central,13827.036,3390,359.58,0,17576.616,3320,0,2054.62,2054.62,22951.236
+,Southern,Total (Southern Region),Grand Total,55173.036,3640,2990.714,132.8,61936.55,3320,13676.48,74924.5419,88601.0219,153857.5719
+Bihar,Eastern,Bihar,State,0,0,0,0,0,0,0,70.7,70.7,70.7
+Bihar,Eastern,Bihar,Private,700,0,0,0,700,0,0,717.46,717.46,1417.46
+Bihar,Eastern,Bihar,Central,7934.786,0,0,0,7934.786,0,72.876,0,72.876,8007.662
+Bihar,Eastern,Bihar,Sub-Total,8634.786,0,0,0,8634.786,0,72.876,788.16,861.036,9495.822
+Jharkhand,Eastern,Jharkhand,State,420,0,0,0,420,0,130,0.05,130.05,550.05
+Jharkhand,Eastern,Jharkhand,Private,580,0,0,0,580,0,0,415.584,415.584,995.584
+Jharkhand,Eastern,Jharkhand,Central,3101.28,0,0,0,3101.28,0,46.9842,4,50.9842,3152.2642
+Jharkhand,Eastern,Jharkhand,Sub-Total,4101.28,0,0,0,4101.28,0,176.9842,419.634,596.6182,4697.8982
+West Bengal,Eastern,West Bengal,State,5470,0,0,0,5470,0,986,342.84,1328.84,6798.84
+West Bengal,Eastern,West Bengal,Private,2185,0,0,0,2185,0,0,446.917,446.917,2631.917
+West Bengal,Eastern,West Bengal,Central,1873.698,0,0,0,1873.698,0,497.2978,24.103,521.4008,2395.0988
+West Bengal,Eastern,West Bengal,Sub-Total,9528.698,0,0,0,9528.698,0,1483.2978,813.86,2297.1578,11825.8558
+,Eastern,DVC,State,0,0,0,0,0,0,0,0,0,0
+,Eastern,DVC,Private,150,0,0,0,150,0,0,0,0,150
+,Eastern,DVC,Central,2887.015,0,0,0,2887.015,0,221.2638,0,221.2638,3108.2788
+,Eastern,DVC,Sub-Total,3037.015,0,0,0,3037.015,0,221.2638,0,221.2638,3258.2788
+Odisha,Eastern,Odisha,State,1740,0,0,0,1740,0,2074.22,7.63,2081.85,3821.85
+Odisha,Eastern,Odisha,Private,2096,0,0,0,2096,0,0,1469.0524,1469.0524,3565.0524
+Odisha,Eastern,Odisha,Central,2136.466,0,0,0,2136.466,0,105.009,10,115.009,2251.475
+Odisha,Eastern,Odisha,Sub-Total,5972.466,0,0,0,5972.466,0,2179.229,1486.6824,3665.9114,9638.3774
+Sikkim,Eastern,Sikkim,State,0,0,0,0,0,0,360,0,360,360
+Sikkim,Eastern,Sikkim,Private,0,0,0,0,0,0,209,62.666,271.666,271.666
+Sikkim,Eastern,Sikkim,Central,119.104,0,0,0,119.104,0,74.2692,0,74.2692,193.3732
+Sikkim,Eastern,Sikkim,Sub-Total,119.104,0,0,0,119.104,0,643.2692,62.666,705.9352,825.0392
+,Eastern,Central - Unallocated,Total,2274.33,0,0,0,2274.33,0,85.5,0,85.5,2359.83
+,Eastern,Total (Eastern Region),State,7630,0,0,0,7630,0,3550.22,421.22,3971.44,11601.44
+,Eastern,Total (Eastern Region),Private,5711,0,0,0,5711,0,209,3111.6794,3320.6794,9031.6794
+,Eastern,Total (Eastern Region),Central,20326.679,0,0,0,20326.679,0,1103.2,38.103,1141.303,21467.982
+,Eastern,Total (Eastern Region),Grand Total,33667.679,0,0,0,33667.679,0,4862.42,3571.0024,8433.4224,42101.1014
+Assam,North-Eastern,Assam,State,0,0,291.355,0,291.355,0,100,5.01,105.01,396.365
+Assam,North-Eastern,Assam,Private,0,0,0,0,0,0,0,794.2554,794.2554,794.2554
+Assam,North-Eastern,Assam,Central,695.516,0,435.56,0,1131.076,0,534.1,97.745,631.845,1762.921
+Assam,North-Eastern,Assam,Sub-Total,695.516,0,726.915,0,1422.431,0,634.1,897.0104,1531.1104,2953.5414
+Arunachal Pradesh,North-Eastern,Arunachal Pradesh,State,0,0,0,0,0,0,0,143.364,143.364,143.364
+Arunachal Pradesh,North-Eastern,Arunachal Pradesh,Private,0,0,0,0,0,0,0,14.3686,14.3686,14.3686
+Arunachal Pradesh,North-Eastern,Arunachal Pradesh,Central,37.05,0,46.82,0,83.87,0,713.19,0,713.19,797.06
+Arunachal Pradesh,North-Eastern,Arunachal Pradesh,Sub-Total,37.05,0,46.82,0,83.87,0,713.19,157.7326,870.9226,954.7926
+Meghalaya,North-Eastern,Meghalaya,State,0,0,0,0,0,0,322,55.03,377.03,377.03
+Meghalaya,North-Eastern,Meghalaya,Private,0,0,0,0,0,0,0,18.0764,18.0764,18.0764
+Meghalaya,North-Eastern,Meghalaya,Central,51.6,0,109.69,0,161.29,0,119.6,0,119.6,280.89
+Meghalaya,North-Eastern,Meghalaya,Sub-Total,51.6,0,109.69,0,161.29,0,441.6,73.1064,514.7064,675.9964
+Tripura,North-Eastern,Tripura,State,0,0,105,0,105,0,0,0,0,105
+Tripura,North-Eastern,Tripura,Private,0,0,0,0,0,0,0,60.397,60.397,60.397
+Tripura,North-Eastern,Tripura,Central,111.55,0,381.94,0,493.49,0,92.57,5.247,97.817,591.307
+Tripura,North-Eastern,Tripura,Sub-Total,111.55,0,486.94,0,598.49,0,92.57,65.644,158.214,756.704
+Manipur,North-Eastern,Manipur,State,0,0,0,36,36,0,0,0.715,0.715,36.715
+Manipur,North-Eastern,Manipur,Private,0,0,0,0,0,0,0,22.325,22.325,22.325
+Manipur,North-Eastern,Manipur,Central,47.1,0,81.58,0,128.68,0,108.72,0,108.72,237.4
+Manipur,North-Eastern,Manipur,Sub-Total,47.1,0,81.58,36,164.68,0,108.72,23.04,131.76,296.44
+Nagaland,North-Eastern,Nagaland,State,0,0,0,0,0,0,0,35.07,35.07,35.07
+Nagaland,North-Eastern,Nagaland,Private,0,0,0,0,0,0,0,4.48,4.48,4.48
+Nagaland,North-Eastern,Nagaland,Central,32.1,0,73.93,0,106.03,0,80.69,0,80.69,186.72
+Nagaland,North-Eastern,Nagaland,Sub-Total,32.1,0,73.93,0,106.03,0,80.69,39.55,120.24,226.27
+Mizoram,North-Eastern,Mizoram,State,0,0,0,0,0,0,0,0,0,0
+Mizoram,North-Eastern,Mizoram,Private,0,0,0,0,0,0,0,80.99,80.99,80.99
+Mizoram,North-Eastern,Mizoram,Central,31.05,0,60.46,0,91.51,0,111.74,0,111.74,203.25
+Mizoram,North-Eastern,Mizoram,Sub-Total,31.05,0,60.46,0,91.51,0,111.74,80.99,192.73,284.24
+,North-Eastern,Central - Unallocated,Total,112.6,0,63.62,0,176.22,0,289.4,0,289.4,465.62
+,North-Eastern,Total (North- Eastern Region),State,0,0,396.355,36,432.355,0,422,239.189,661.189,1093.544
+,North-Eastern,Total (North- Eastern Region),Private,0,0,0,0,0,0,0,994.8924,994.8924,994.8924
+,North-Eastern,Total (North- Eastern Region),Central,1118.566,0,1253.6,0,2372.166,0,2050.01,102.992,2153.002,4525.168
+,North-Eastern,Total (North- Eastern Region),Grand Total,1118.566,0,1649.955,36,2804.521,0,2472.01,1337.0734,3809.0834,6613.6044
+Andaman & Nicobar Islands,Islands,Andaman & Nicobar,State,0,0,0,57.523,57.523,0,0,5.25,5.25,62.773
+Andaman & Nicobar Islands,Islands,Andaman & Nicobar,Private,0,0,0,35.19,35.19,0,0,27.82,27.82,63.01
+Andaman & Nicobar Islands,Islands,Andaman & Nicobar,Central,0,0,0,0,0,0,0,5,5,5
+Andaman & Nicobar Islands,Islands,Andaman & Nicobar,Sub-Total,0,0,0,92.713,92.713,0,0,38.07,38.07,130.783
+Lakshadweep,Islands,Lakshadweep,State,0,0,0,26.83,26.83,0,0,0,0,26.83
+Lakshadweep,Islands,Lakshadweep,Private,0,0,0,0,0,0,0,9.37,9.37,9.37
+Lakshadweep,Islands,Lakshadweep,Central,0,0,0,0,0,0,0,0,0,0
+Lakshadweep,Islands,Lakshadweep,Sub-Total,0,0,0,26.83,26.83,0,0,9.37,9.37,36.2
+,Islands,Total (Islands),State,0,0,0,84.353,84.353,0,0,5.25,5.25,89.603
+,Islands,Total (Islands),Private,0,0,0,35.19,35.19,0,0,37.19,37.19,72.38
+,Islands,Total (Islands),Central,0,0,0,0,0,0,0,5,5,5
+,Islands,Total (Islands),Grand Total,0,0,0,119.543,119.543,0,0,47.44,47.44,166.983
+All India,All India,All India,State,77045,900,6497.605,216.353,84658.958,0,27524.94,18446.632,45971.572,130630.53
+All India,All India,All India,Private,73092.5,1830,5408.504,71.99,80402.994,0,6001,215553.9415,221554.9415,301957.9356
+All India,All India,All India,Central,74930,3640,7237.91,0,85807.91,8780,18538.72,13181.291,31720.011,126307.921
+All India,All India,All India,Grand Total,225067.5,6370,19144.019,288.343,250869.862,8780,52064.66,247181.8645,299246.5245,558896.3866
