@@ -35,6 +35,7 @@ One folder per table, named by the [naming rules](#folder-names) below. Each fol
 | [`ENV_aqi-days-by-category_2015-to-2026_STATES_BNY_CITY`](ENV_aqi-days-by-category_2015-to-2026_STATES_BNY_CITY/) | Days per year in each AQI category, very poor/severe days, stations reporting, by city | Our count from CPCB daily AQI bulletins |
 | [`ENV_forest-cover_2023_STATES_FSI_DIST`](ENV_forest-cover_2023_STATES_FSI_DIST/) | Forest cover by district | India State of Forest Report 2023 |
 | [`ENV_forest-tree-cover_2023_STATES_FSI`](ENV_forest-tree-cover_2023_STATES_FSI/) | Forest and tree cover by state | India State of Forest Report 2023 |
+| [`ENV_mangrove-cover_2021-to-2023_STATES_FSI_DIST`](ENV_mangrove-cover_2021-to-2023_STATES_FSI_DIST/) | Mangrove cover by coastal district, 2021 and 2023 | India State of Forest Report 2023 |
 | [`HLT_deaths-forces-of-nature_2017-to-2022_STATES_NCRB`](HLT_deaths-forces-of-nature_2017-to-2022_STATES_NCRB/) | Deaths from heat/sun stroke and other natural causes, by state | NCRB Accidental Deaths & Suicides in India |
 | [`HOU_household-amenities-hh14_2011_MH_ORGI_SDT`](HOU_household-amenities-hh14_2011_MH_ORGI_SDT/) | Household amenities and assets (roof material, water, electricity, cooking fuel, latrine, assets), Maharashtra districts and tehsils | Census 2011 table HH-14 |
 | [`HOU_slum-population_2011_STATES_ORGI_CITY`](HOU_slum-population_2011_STATES_ORGI_CITY/) | Slum population by town | Census 2011 slum PCA |
@@ -70,6 +71,7 @@ Reference files are in [`_reference/`](_reference/) ([what they are](_reference/
 | Factories, industry (output, employment, wages, capital by industry) | `IND_asi-*` (1992-93 onwards); `IND_factories_*_RBI` |
 | Employment, occupations, job contracts, earnings (Nagpur unit-level survey records) | `LAB_plfs-*` |
 | Forest cover | `ENV_forest-*` |
+| Mangroves | `ENV_mangrove-*` |
 | Urban solid waste | `WAT_msw-*` |
 | Heat: temperature, heat waves, warm nights, land surface temperature | `CLM_temperature-indices_*` (Maharashtra districts); `CLM_heat-indicators-*` (Nagpur, with LST) |
 | Rainfall: seasonal totals, departure, heavy rain, dry spells, drought index (SPI), variability | `CLM_rainfall-*` (Maharashtra districts) |

@@ -1,0 +1,165 @@
+state_ut,lgd_state_code,district,lgd_district_code,year,very_dense_mangrove_sq_km,moderately_dense_mangrove_sq_km,open_mangrove_sq_km,mangrove_cover_total_sq_km,change_since_2021_sq_km,source_flag
+Andhra Pradesh,28,Bapatla,750,2021,0.00,35.25,35.82,71.07,,not_applicable
+Andhra Pradesh,28,Bapatla,750,2023,0.00,35.26,37.66,72.92,1.85,
+Andhra Pradesh,28,Eluru,748,2021,0.00,0.00,0.02,0.02,,not_applicable
+Andhra Pradesh,28,Eluru,748,2023,0.00,0.00,0.02,0.02,0.00,
+Andhra Pradesh,28,Kakinada,746,2021,0.00,79.17,33.60,112.77,,not_applicable
+Andhra Pradesh,28,Kakinada,746,2023,0.00,79.17,34.62,113.79,1.02,
+Andhra Pradesh,28,Konaseema,747,2021,0.00,47.08,28.01,75.09,,not_applicable
+Andhra Pradesh,28,Konaseema,747,2023,0.00,46.95,27.47,74.42,-0.67,
+Andhra Pradesh,28,Krishna,510,2021,0.00,49.43,89.14,138.57,,not_applicable
+Andhra Pradesh,28,Krishna,510,2023,0.00,50.74,97.71,148.45,9.88,
+Andhra Pradesh,28,Prakasam,517,2021,0.00,0.09,0.60,0.69,,not_applicable
+Andhra Pradesh,28,Prakasam,517,2023,0.00,0.09,0.66,0.75,0.06,
+Andhra Pradesh,28,Sri Potti Sriramulu Nellore,515,2021,0.00,1.61,7.04,8.65,,not_applicable
+Andhra Pradesh,28,Sri Potti Sriramulu Nellore,515,2023,0.00,1.59,7.07,8.66,0.01,
+Andhra Pradesh,28,Srikakulam,519,2021,0.00,0.00,0.28,0.28,,not_applicable
+Andhra Pradesh,28,Srikakulam,519,2023,0.00,0.00,0.82,0.82,0.54,
+Andhra Pradesh,28,Tirupati,752,2021,0.00,0.10,1.13,1.23,,not_applicable
+Andhra Pradesh,28,Tirupati,752,2023,0.00,0.10,1.19,1.29,0.06,
+Andhra Pradesh,28,Visakhapatnam,520,2021,0.00,0.00,0.05,0.05,,not_applicable
+Andhra Pradesh,28,Visakhapatnam,520,2023,0.00,0.00,0.31,0.31,0.26,
+Andhra Pradesh,28,State total,,2021,0.00,212.73,195.69,408.42,,not_applicable
+Andhra Pradesh,28,State total,,2023,0.00,213.90,207.53,421.43,13.01,
+Goa,30,North Goa,551,2021,0.00,19.13,3.67,22.80,,not_applicable
+Goa,30,North Goa,551,2023,0.00,18.96,5.05,24.01,1.21,
+Goa,30,South Goa,552,2021,0.00,4.79,1.80,6.59,,not_applicable
+Goa,30,South Goa,552,2023,0.00,4.79,2.54,7.33,0.74,
+Goa,30,State total,,2021,0.00,23.92,5.47,29.39,,not_applicable
+Goa,30,State total,,2023,0.00,23.75,7.59,31.34,1.95,
+Gujarat,24,Ahmadabad,438,2021,0.00,1.46,28.01,29.47,,not_applicable
+Gujarat,24,Ahmadabad,438,2023,0.00,1.46,38.80,40.26,10.79,
+Gujarat,24,Amreli,439,2021,0.00,0.00,1.67,1.67,,not_applicable
+Gujarat,24,Amreli,439,2023,0.00,0.00,1.78,1.78,0.11,
+Gujarat,24,Anand,440,2021,0.00,0.00,8.67,8.67,,not_applicable
+Gujarat,24,Anand,440,2023,0.00,0.00,8.39,8.39,-0.28,
+Gujarat,24,Bharuch,442,2021,0.00,14.33,35.29,49.62,,not_applicable
+Gujarat,24,Bharuch,442,2023,0.00,14.33,42.51,56.84,7.22,
+Gujarat,24,Bhavnagar,443,2021,0.00,4.63,23.78,28.41,,not_applicable
+Gujarat,24,Bhavnagar,443,2023,0.00,4.63,25.99,30.62,2.21,
+Gujarat,24,Devbhumi Dwarka,674,2021,0.00,6.96,67.79,74.75,,not_applicable
+Gujarat,24,Devbhumi Dwarka,674,2023,0.00,6.96,71.04,78.00,3.25,
+Gujarat,24,Gir Somnath,675,2021,0.00,0.00,7.17,7.17,,not_applicable
+Gujarat,24,Gir Somnath,675,2023,0.00,0.00,9.87,9.87,2.70,
+Gujarat,24,Jamnagar,447,2021,0.00,24.41,148.09,172.50,,not_applicable
+Gujarat,24,Jamnagar,447,2023,0.00,43.96,118.57,162.53,-9.97,
+Gujarat,24,Junagadh,448,2021,0.00,0.00,0.00,0.00,,not_applicable
+Gujarat,24,Junagadh,448,2023,0.00,0.00,0.00,0.00,0.00,
+Gujarat,24,Kachchh/ Kutch,449,2021,0.00,110.84,658.72,769.56,,not_applicable
+Gujarat,24,Kachchh/ Kutch,449,2023,0.00,102.86,605.56,708.42,-61.14,
+Gujarat,24,Morbi,673,2021,0.00,0.58,5.40,5.98,,not_applicable
+Gujarat,24,Morbi,673,2023,0.00,0.58,4.36,4.94,-1.04,
+Gujarat,24,Navsari,453,2021,0.00,0.05,15.91,15.96,,not_applicable
+Gujarat,24,Navsari,453,2023,0.00,0.05,17.39,17.44,1.48,
+Gujarat,24,Porbandar,456,2021,0.00,0.28,0.98,1.26,,not_applicable
+Gujarat,24,Porbandar,456,2023,0.00,0.28,1.07,1.35,0.09,
+Gujarat,24,Rajkot,457,2021,0.00,0.00,0.00,0.00,,not_applicable
+Gujarat,24,Rajkot,457,2023,0.00,0.00,0.00,0.00,0.00,
+Gujarat,24,Surat,459,2021,0.00,3.70,23.96,27.66,,not_applicable
+Gujarat,24,Surat,459,2023,0.00,3.70,31.93,35.63,7.97,
+Gujarat,24,Vadodara,461,2021,0.00,0.00,1.70,1.70,,not_applicable
+Gujarat,24,Vadodara,461,2023,0.00,0.00,1.70,1.70,0.00,
+Gujarat,24,Valsad,462,2021,0.00,0.28,5.79,6.07,,not_applicable
+Gujarat,24,Valsad,462,2023,0.00,0.28,6.01,6.29,0.22,
+Gujarat,24,State total,,2021,0.00,167.52,1032.93,1200.45,,not_applicable
+Gujarat,24,State total,,2023,0.00,179.09,984.97,1164.06,-36.39,
+Karnataka,29,Dakshin Kannada,534,2021,0.08,0.16,0.37,0.61,,not_applicable
+Karnataka,29,Dakshin Kannada,534,2023,0.08,0.71,0.48,1.27,0.66,
+Karnataka,29,Udupi,549,2021,0.03,2.05,0.22,2.30,,not_applicable
+Karnataka,29,Udupi,549,2023,0.03,2.36,1.58,3.97,1.67,
+Karnataka,29,Uttar Kannada,550,2021,0.00,0.00,8.75,8.75,,not_applicable
+Karnataka,29,Uttar Kannada,550,2023,0.00,0.08,8.88,8.96,0.21,
+Karnataka,29,State total,,2021,0.11,2.21,9.34,11.66,,not_applicable
+Karnataka,29,State total,,2023,0.11,3.15,10.94,14.20,2.54,
+Kerala,32,Ernakulum,555,2021,0.00,0.77,1.30,2.07,,not_applicable
+Kerala,32,Ernakulum,555,2023,0.00,0.77,1.30,2.07,0.00,
+Kerala,32,Kannur,557,2021,0.00,3.87,2.57,6.44,,not_applicable
+Kerala,32,Kannur,557,2023,0.00,3.87,2.57,6.44,0.00,
+Kerala,32,Kasaragod,558,2021,0.00,0.07,0.85,0.92,,not_applicable
+Kerala,32,Kasaragod,558,2023,0.00,0.07,0.85,0.92,0.00,
+Kerala,32,Kollam,559,2021,0.00,0.00,0.00,0.00,,not_applicable
+Kerala,32,Kollam,559,2023,0.00,0.02,0.00,0.02,0.02,
+Kerala,32,State total,,2021,0.00,4.71,4.72,9.43,,not_applicable
+Kerala,32,State total,,2023,0.00,4.73,4.72,9.45,0.02,
+Maharashtra,27,Mumbai Sub-urban,483,2021,0.00,25.29,31.69,56.98,,not_applicable
+Maharashtra,27,Mumbai Sub-urban,483,2023,0.00,25.15,31.65,56.80,-0.18,
+Maharashtra,27,Mumbai city,482,2021,0.00,0.42,2.43,2.85,,not_applicable
+Maharashtra,27,Mumbai city,482,2023,0.00,0.38,2.44,2.82,-0.03,
+Maharashtra,27,Palghar,665,2021,0.00,2.27,31.99,34.26,,not_applicable
+Maharashtra,27,Palghar,665,2023,0.00,2.28,36.12,38.40,4.14,
+Maharashtra,27,Raigarh,491,2021,0.00,14.66,104.29,118.95,,not_applicable
+Maharashtra,27,Raigarh,491,2023,0.00,18.75,107.57,126.32,7.37,
+Maharashtra,27,Ratnagiri,492,2021,0.00,13.71,15.29,29.00,,not_applicable
+Maharashtra,27,Ratnagiri,492,2023,0.00,13.78,16.72,30.50,1.50,
+Maharashtra,27,Sindhudurg,495,2021,0.00,4.98,5.82,10.80,,not_applicable
+Maharashtra,27,Sindhudurg,495,2023,0.00,4.64,6.68,11.32,0.52,
+Maharashtra,27,Thane,497,2021,0.00,24.88,24.98,49.86,,not_applicable
+Maharashtra,27,Thane,497,2023,0.00,24.84,24.09,48.93,-0.93,
+Maharashtra,27,State total,,2021,0.00,86.21,216.49,302.70,,not_applicable
+Maharashtra,27,State total,,2023,0.00,89.82,225.27,315.09,12.39,
+Odisha,21,Baleshwar,346,2021,0.00,0.57,4.19,4.76,,not_applicable
+Odisha,21,Baleshwar,346,2023,0.00,0.57,4.25,4.82,0.06,
+Odisha,21,Bhadrak,348,2021,0.12,8.92,23.42,32.46,,not_applicable
+Odisha,21,Bhadrak,348,2023,0.12,8.92,23.35,32.39,-0.07,
+Odisha,21,Jagatsinghpur,355,2021,0.00,1.32,7.10,8.42,,not_applicable
+Odisha,21,Jagatsinghpur,355,2023,0.00,1.32,7.10,8.42,0.00,
+Odisha,21,Kendrapara,360,2021,81.55,83.80,45.67,211.02,,not_applicable
+Odisha,21,Kendrapara,360,2023,81.55,83.80,47.34,212.69,1.67,
+Odisha,21,Puri,369,2021,0.00,0.00,0.85,0.85,,not_applicable
+Odisha,21,Puri,369,2023,0.00,0.00,0.74,0.74,-0.11,
+Odisha,21,State total,,2021,81.67,94.61,81.23,257.51,,not_applicable
+Odisha,21,State total,,2023,81.67,94.61,82.78,259.06,1.55,
+Tamil Nadu,33,Chennai,568,2021,0.00,0.00,0.39,0.39,,not_applicable
+Tamil Nadu,33,Chennai,568,2023,0.00,0.00,0.39,0.39,0.00,
+Tamil Nadu,33,Cuddalore,570,2021,0.00,7.21,1.25,8.46,,not_applicable
+Tamil Nadu,33,Cuddalore,570,2023,0.00,7.21,1.25,8.46,0.00,
+Tamil Nadu,33,Mayiladuthurai,735,2021,0.00,0.17,2.36,2.53,,not_applicable
+Tamil Nadu,33,Mayiladuthurai,735,2023,0.00,0.17,2.38,2.55,0.02,
+Tamil Nadu,33,Nagapattinam,579,2021,0.03,0.48,0.50,1.01,,not_applicable
+Tamil Nadu,33,Nagapattinam,579,2023,0.03,0.48,0.65,1.16,0.15,
+Tamil Nadu,33,Pudukkottai,582,2021,0.62,0.15,0.76,1.53,,not_applicable
+Tamil Nadu,33,Pudukkottai,582,2023,0.62,0.15,0.76,1.53,0.00,
+Tamil Nadu,33,Ramanathapuram,583,2021,0.40,0.54,1.43,2.37,,not_applicable
+Tamil Nadu,33,Ramanathapuram,583,2023,0.43,0.56,1.47,2.46,0.09,
+Tamil Nadu,33,Thanjavur,586,2021,0.11,8.81,4.47,13.39,,not_applicable
+Tamil Nadu,33,Thanjavur,586,2023,0.11,8.80,4.43,13.34,-0.05,
+Tamil Nadu,33,Thiruvallur,589,2021,0.00,0.00,0.56,0.56,,not_applicable
+Tamil Nadu,33,Thiruvallur,589,2023,0.00,0.00,0.39,0.39,-0.17,
+Tamil Nadu,33,Thiruvarur,590,2021,0.00,7.13,1.04,8.17,,not_applicable
+Tamil Nadu,33,Thiruvarur,590,2023,0.00,7.15,1.05,8.20,0.03,
+Tamil Nadu,33,Thoothukkudi,594,2021,0.00,0.52,2.79,3.31,,not_applicable
+Tamil Nadu,33,Thoothukkudi,594,2023,0.00,0.52,2.69,3.21,-0.10,
+Tamil Nadu,33,Villupuram,596,2021,0.00,0.00,0.19,0.19,,not_applicable
+Tamil Nadu,33,Villupuram,596,2023,0.00,0.03,0.19,0.22,0.03,
+Tamil Nadu,33,State total,,2021,1.16,25.01,15.74,41.91,,not_applicable
+Tamil Nadu,33,State total,,2023,1.19,25.07,15.65,41.91,0.00,
+West Bengal,19,North 24 Parganas,303,2021,13.44,11.47,1.72,26.63,,not_applicable
+West Bengal,19,North 24 Parganas,303,2023,13.44,11.47,1.72,26.63,0.00,
+West Bengal,19,Purba Medinipur,317,2021,0.00,0.79,2.86,3.65,,not_applicable
+West Bengal,19,Purba Medinipur,317,2023,0.00,0.79,2.86,3.65,0.00,
+West Bengal,19,South 24 Parganas,304,2021,970.21,691.23,426.03,2087.47,,not_applicable
+West Bengal,19,South 24 Parganas,304,2023,968.19,691.53,429.16,2088.88,1.41,
+West Bengal,19,State total,,2021,983.65,703.49,430.61,2117.75,,not_applicable
+West Bengal,19,State total,,2023,981.63,703.79,433.74,2119.16,1.41,
+Andaman & Nicobar Islands,35,Nicobar,603,2021,0.00,1.44,0.06,1.50,,not_applicable
+Andaman & Nicobar Islands,35,Nicobar,603,2023,0.22,1.77,0.38,2.37,0.87,
+Andaman & Nicobar Islands,35,North Andaman,,2021,285.66,109.56,28.14,423.36,,not_applicable
+Andaman & Nicobar Islands,35,North Andaman,,2023,285.21,107.58,25.39,418.18,-5.18,
+Andaman & Nicobar Islands,35,South Andaman,602,2021,112.98,54.36,20.74,188.08,,not_applicable
+Andaman & Nicobar Islands,35,South Andaman,602,2023,113.94,53.29,20.51,187.74,-0.34,
+Andaman & Nicobar Islands,35,State total,,2021,398.64,165.36,48.94,612.94,,not_applicable
+Andaman & Nicobar Islands,35,State total,,2023,399.37,162.64,46.28,608.29,-4.65,
+Dadra & Nagar Haveli and Daman & Diu,38,Daman,463,2021,0.00,0.21,0.79,1.00,,not_applicable
+Dadra & Nagar Haveli and Daman & Diu,38,Daman,463,2023,0.00,0.21,1.14,1.35,0.35,
+Dadra & Nagar Haveli and Daman & Diu,38,Diu,464,2021,0.00,0.00,2.30,2.30,,not_applicable
+Dadra & Nagar Haveli and Daman & Diu,38,Diu,464,2023,0.00,0.00,2.51,2.51,0.21,
+Dadra & Nagar Haveli and Daman & Diu,38,State total,,2021,0.00,0.21,3.09,3.30,,not_applicable
+Dadra & Nagar Haveli and Daman & Diu,38,State total,,2023,0.00,0.21,3.65,3.86,0.56,
+Puducherry,34,Karaikal,598,2021,0.00,0.08,0.00,0.08,,not_applicable
+Puducherry,34,Karaikal,598,2023,0.00,0.08,0.02,0.10,0.02,
+Puducherry,34,Puducherry,600,2021,0.00,0.00,0.41,0.41,,not_applicable
+Puducherry,34,Puducherry,600,2023,0.00,0.00,0.54,0.54,0.13,
+Puducherry,34,Yanam,,2021,0.00,0.00,3.16,3.16,,not_applicable
+Puducherry,34,Yanam,,2023,0.00,0.00,3.19,3.19,0.03,
+Puducherry,34,State total,,2021,0.00,0.08,3.57,3.65,,not_applicable
+Puducherry,34,State total,,2023,0.00,0.08,3.75,3.83,0.18,
